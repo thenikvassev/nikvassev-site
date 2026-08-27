@@ -68,7 +68,7 @@ export default function HomePage() {
           </div>
           <MediaFrame
             src="/photos/nik-hero-portrait.jpg"
-            alt="Nik Vassev smiling outdoors in a cream polo, palms behind him."
+            alt="Nik Vassev smiling outdoors in a cream polo and glasses, palms behind him."
             ratio="portrait"
             priority
             className="mx-auto w-full max-w-sm lg:max-w-none"
