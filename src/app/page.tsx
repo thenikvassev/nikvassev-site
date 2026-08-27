@@ -71,7 +71,7 @@ export default function HomePage() {
         src="/photos/nik-hero-portrait.jpg"
         alt="Nik Vassev smiling outdoors in a cream polo and glasses, palms behind him."
         className="h-[88vh] min-h-[32rem] w-full"
-        objectPosition="center 18%"
+        objectPosition="center 32%"
         priority
       />
 
