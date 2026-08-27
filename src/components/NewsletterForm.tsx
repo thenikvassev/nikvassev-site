@@ -27,7 +27,7 @@ export function NewsletterForm({ variant = "light" }: Props) {
         }`}
         role="status"
       >
-        Thanks. You are on the list for Systems Over Hustle.
+        You&apos;re in. First email hits Thursday.
       </p>
     );
   }
@@ -36,7 +36,7 @@ export function NewsletterForm({ variant = "light" }: Props) {
     <form
       onSubmit={onSubmit}
       className="flex w-full flex-col gap-3 sm:flex-row"
-      aria-label="Subscribe to Systems Over Hustle"
+      aria-label="Join the newsletter"
     >
       <label htmlFor={`email-${variant}`} className="sr-only">
         Email address
@@ -64,7 +64,7 @@ export function NewsletterForm({ variant = "light" }: Props) {
             : "pill-btn-primary shrink-0"
         }
       >
-        Subscribe
+        Join the newsletter
       </button>
     </form>
   );

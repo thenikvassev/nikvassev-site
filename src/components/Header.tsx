@@ -5,6 +5,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { siteConfig } from "@/lib/site";
 
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  if (href.startsWith("/#")) return false;
+  return pathname.startsWith(href);
+}
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -24,18 +30,12 @@ export function Header() {
           className="hidden min-w-0 items-center xl:flex xl:gap-6"
         >
           {siteConfig.nav.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
-            const nowrap = "nowrap" in item && item.nowrap;
+            const active = isActive(pathname, item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-[11px] font-semibold uppercase tracking-section transition-colors ${
-                  nowrap ? "whitespace-nowrap" : ""
-                } ${
+                className={`whitespace-nowrap text-[11px] font-semibold uppercase tracking-section transition-colors ${
                   active
                     ? "text-forest underline decoration-tan underline-offset-8"
                     : "text-ink-muted hover:text-forest"
@@ -47,18 +47,24 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-5 xl:flex">
+        <div className="hidden shrink-0 items-center gap-4 xl:flex">
           <Link
-            href="/#newsletter"
-            className="text-[11px] font-semibold uppercase tracking-section text-ink-muted hover:text-forest"
+            href="/#work"
+            className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-section text-ink-muted hover:text-forest"
           >
-            Subscribe
+            Build your brand strategy
           </Link>
           <Link
             href="/brand-strategy#book"
-            className="pill-btn-primary whitespace-nowrap !px-4 !py-2 text-xs"
+            className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-section text-ink-muted hover:text-forest"
           >
             Book a call
+          </Link>
+          <Link
+            href="/#newsletter"
+            className="pill-btn-primary whitespace-nowrap !px-4 !py-2 text-xs"
+          >
+            Join the newsletter
           </Link>
         </div>
 
@@ -91,14 +97,21 @@ export function Header() {
             ))}
             <Link
               href="/#newsletter"
-              className="mt-2 pill-btn-secondary text-center"
+              className="mt-2 pill-btn-primary text-center"
               onClick={() => setOpen(false)}
             >
-              Subscribe
+              Join the newsletter
+            </Link>
+            <Link
+              href="/#work"
+              className="pill-btn-secondary text-center"
+              onClick={() => setOpen(false)}
+            >
+              Build your brand strategy
             </Link>
             <Link
               href="/brand-strategy#book"
-              className="pill-btn-primary text-center whitespace-nowrap"
+              className="pill-btn-secondary text-center"
               onClick={() => setOpen(false)}
             >
               Book a call
