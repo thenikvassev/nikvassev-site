@@ -88,13 +88,26 @@ export default function AboutPage() {
 
         <div className="prose-nik mt-10 max-w-reading text-base md:text-lg">
           <p>
-            Nik Vassev is a brand strategist, serial founder and growth
-            marketer. He helps entrepreneurs build high-impact companies using
-            brand strategy, growth marketing and AI systems, without trading
-            away health, relationships or life.
+            Nik Vassev is a serial tech founder, brand strategist, and growth
+            marketer who has spent over a decade in the entrepreneurial
+            trenches. Having built and scaled companies across AI, healthtech,
+            and marketing—raising tens of millions in capital and leading a
+            tech venture to a successful exit—Nik learned the hard way that
+            outworking a broken process only leads to burnout.
           </p>
           <p>
-            He founded{" "}
+            After co-founding Novobeing (a therapeutic VR platform validated in
+            clinical trials alongside researchers at Harvard and Penn Medicine)
+            and scaling Mindleap Health through to its acquisition, Nik
+            reshaped his entire approach to business. Today, he advocates for a
+            radical redefinition of entrepreneurial success: building
+            high-impact, category-defining companies through intelligent brand
+            strategy, modern growth marketing, and practical AI systems—without
+            trading away your health, sanity, or freedom in the process.
+          </p>
+          <p>
+            Currently writing from the Caribbean coast of Mexico, Nik is the
+            founder of{" "}
             <a
               href="https://guideiq.ai"
               className="font-medium text-forest underline underline-offset-4"
@@ -102,8 +115,8 @@ export default function AboutPage() {
               rel="noopener noreferrer"
             >
               Guide IQ
-            </a>
-            , an AI Brand Strategist for early-stage companies, and co-founded{" "}
+            </a>{" "}
+            (an AI brand strategy engine) and{" "}
             <a
               href="https://storylinepros.com"
               className="font-medium text-forest underline underline-offset-4"
@@ -112,20 +125,16 @@ export default function AboutPage() {
             >
               Storyline Pros
             </a>{" "}
-            with Cynthia Salarizadeh for later-stage B2B emerging tech that
-            needs narrative engineering and AI visibility. Earlier he founded
-            Mindleap Health (acquired for $3.5M) and co-founded Novobeing
-            (therapeutic VR with Harvard and Penn Medicine). He has served on
-            the board at Digimax.
+            (an AI visibility and narrative engineering firm). He is a regular
+            contributor to Entrepreneur magazine, a mentor to dozens of
+            early-stage founders through Futurepreneur Canada, and the author
+            of the weekly newsletter Systems Over Hustle.
           </p>
           <p>
-            He is a Canadian expat with Bulgarian roots, based in{" "}
-            {siteConfig.location} and working across {siteConfig.region}.{" "}
-            <strong className="font-semibold text-ink">
-              Systems Over Hustle
-            </strong>{" "}
-            is his weekly newsletter for founders who want practical tools
-            instead of more grind.
+            When he’s not designing AI workflows or helping founders scale
+            their market presence, you can find him exploring the outdoors,
+            studying human performance, and proving that the best businesses
+            are built to support your life, not consume it.
           </p>
         </div>
 
