@@ -18,7 +18,11 @@ export function CinematicPhoto({
   sizes = "100vw",
 }: Props) {
   return (
-    <div className={`relative overflow-hidden bg-cream ${className}`}>
+    <div
+      className={`overflow-hidden bg-cream ${
+        className.includes("absolute") ? "" : "relative"
+      } ${className}`}
+    >
       <Image
         src={src}
         alt={alt}

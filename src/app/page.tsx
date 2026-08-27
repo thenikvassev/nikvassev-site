@@ -90,7 +90,7 @@ export default function HomePage() {
           className="absolute inset-0 h-full w-full"
           objectPosition="center"
         />
-        <div className="absolute inset-0 bg-forest-dark/70" />
+        <div className="absolute inset-0 bg-forest-dark/55" />
         <div className="relative grid min-h-[85vh] lg:grid-cols-2">
           <div className="hidden lg:block" />
           <div className="flex items-center justify-center px-5 py-20 md:px-12">
@@ -200,7 +200,7 @@ export default function HomePage() {
           className="absolute inset-0 h-full w-full"
           objectPosition="center 30%"
         />
-        <div className="absolute inset-0 bg-forest-dark/70" />
+        <div className="absolute inset-0 bg-forest-dark/55" />
         <div className="relative grid min-h-[75vh] lg:grid-cols-2">
           <div className="flex items-center px-5 py-20 md:px-12 lg:px-16">
             <div className="copy-measure text-white">
