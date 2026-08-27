@@ -33,29 +33,35 @@ const config: Config = {
       },
       borderRadius: {
         card: "16px",
-        btn: "8px",
+        panel: "24px",
+        btn: "9999px",
       },
       maxWidth: {
-        reading: "42rem",
+        reading: "40rem",
+        measure: "35rem",
+        narrow: "30rem",
         content: "56rem",
-        wide: "72rem",
+        wide: "75rem",
       },
       letterSpacing: {
         section: "0.18em",
-        display: "-0.5px",
+        display: "-0.02em",
       },
       lineHeight: {
-        display: "1.3",
+        display: "1.2",
       },
       boxShadow: {
-        lift: "0 16px 40px rgba(3, 36, 21, 0.10)",
+        lift: "0 12px 32px rgba(3, 36, 21, 0.10)",
         rest: "0 2px 12px rgba(3, 36, 21, 0.04)",
       },
       transitionTimingFunction: {
-        editorial: "cubic-bezier(0.16, 1, 0.3, 1)",
+        editorial: "ease-out",
       },
       transitionDuration: {
-        editorial: "750ms",
+        editorial: "140ms",
+      },
+      spacing: {
+        section: "6rem",
       },
     },
   },

@@ -38,7 +38,7 @@
 
 @layer components {
   .section-label {
-    @apply inline-flex items-center gap-2.5 font-sans text-[11px] font-semibold uppercase tracking-section text-forest;
+    @apply inline-flex items-center gap-2 font-sans text-[11px] font-semibold uppercase tracking-section text-forest;
   }
 
   .section-label::before {
@@ -47,19 +47,19 @@
   }
 
   .section-shell {
-    @apply mx-auto max-w-wide px-5 md:px-8;
+    @apply mx-auto max-w-wide px-6;
   }
 
   .section-pad {
-    @apply py-20 md:py-28;
+    @apply py-section;
   }
 
   .pill-btn {
-    @apply inline-flex items-center justify-center rounded-btn px-6 py-3 text-sm font-semibold transition-[background-color,border-color,color,transform,box-shadow] duration-300 ease-editorial focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
+    @apply inline-flex items-center justify-center rounded-btn px-6 py-3 text-sm font-semibold transition-[opacity,transform,filter,background-color,border-color,color] duration-editorial ease-editorial focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
   }
 
   .pill-btn-primary {
-    @apply pill-btn bg-forest text-white hover:bg-forest-dark;
+    @apply pill-btn bg-forest text-white hover:brightness-110;
   }
 
   .pill-btn-secondary {
@@ -67,11 +67,11 @@
   }
 
   .card {
-    @apply rounded-card border border-tan bg-cream-card p-6 shadow-rest transition-[transform,box-shadow,border-color] duration-300 ease-editorial;
+    @apply rounded-card border border-tan bg-cream-card p-6 shadow-rest transition-[opacity,transform,filter] duration-editorial ease-editorial;
   }
 
   .card-lift {
-    @apply card hover:-translate-y-2 hover:shadow-lift;
+    @apply card hover:scale-[1.02] hover:brightness-[1.03] hover:shadow-lift;
   }
 
   .prose-nik {
@@ -82,9 +82,8 @@
     @apply mt-4;
   }
 
-  /* Occasional Storyline-style inverted panel */
   .panel-invert {
-    @apply rounded-card bg-forest-dark text-white;
+    @apply rounded-panel bg-forest-dark text-white;
   }
 
   .editorial-lines {
@@ -105,9 +104,11 @@
   .editorial-img {
     transition: none !important;
     transform: none !important;
+    filter: none !important;
   }
 
   .card-lift:hover {
     transform: none !important;
+    filter: none !important;
   }
 }

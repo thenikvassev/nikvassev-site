@@ -12,10 +12,10 @@ export function Footer() {
           <p className="section-label !text-white/60 before:!bg-white/30">
             Stay in the loop
           </p>
-          <p className="mt-5 max-w-2xl font-serif text-3xl tracking-display md:text-4xl lg:text-5xl">
+          <p className="mt-5 max-w-measure font-serif text-3xl tracking-display md:text-4xl lg:text-5xl">
             {siteConfig.newsletterPitch}
           </p>
-          <p className="mt-5 max-w-lg font-sans text-white/75">
+          <p className="mt-5 max-w-narrow font-sans text-white/75">
             Thursdays. Free.
           </p>
           <div className="mt-8 max-w-md">

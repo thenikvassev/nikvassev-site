@@ -7,6 +7,7 @@ type Props = {
   ratio?: "video" | "photo" | "portrait" | "wide";
   className?: string;
   priority?: boolean;
+  panel?: boolean;
 };
 
 const ratioClass = {
@@ -23,12 +24,15 @@ export function MediaFrame({
   ratio = "video",
   className = "",
   priority = false,
+  panel = false,
 }: Props) {
   const isSvg = Boolean(src?.endsWith(".svg"));
 
   return (
     <figure
-      className={`group relative overflow-hidden rounded-card border border-tan bg-cream ${ratioClass[ratio]} ${className}`}
+      className={`group relative overflow-hidden border border-tan bg-cream ${
+        panel ? "rounded-panel" : "rounded-card"
+      } ${ratioClass[ratio]} ${className}`}
     >
       {src && isSvg && (
         // eslint-disable-next-line @next/next/no-img-element

@@ -45,7 +45,7 @@ export default function HomePage() {
                 </h1>
               </HeroItem>
               <HeroItem>
-                <p className="mt-7 max-w-reading text-lg leading-relaxed text-ink-muted md:text-xl">
+                <p className="mt-7 max-w-measure text-lg leading-relaxed text-ink-muted md:text-xl">
                   Growth marketing, brand strategy and AI visibility for startup
                   founders.
                 </p>
@@ -95,6 +95,7 @@ export default function HomePage() {
                   alt="Nik Vassev smiling outdoors in a cream polo and glasses, palms behind him."
                   ratio="portrait"
                   priority
+                  panel
                 />
                 <p className="mt-6 text-base leading-relaxed text-ink-muted md:text-lg">
                   I&apos;m Nik Vassev, a serial founder, brand strategist and
@@ -119,7 +120,7 @@ export default function HomePage() {
               Tools and teams I run today
             </h2>
           </Reveal>
-          <Stagger className="mt-10 grid gap-5 md:grid-cols-2" delay={0.05}>
+          <Stagger className="mt-10 grid gap-6 md:grid-cols-2" delay={0.04}>
             <StaggerItem>
               <CardLink
                 href="/brand-strategy"
@@ -151,7 +152,7 @@ export default function HomePage() {
             Companies I have built and scaled
           </h2>
         </Reveal>
-        <Stagger className="mt-10 grid gap-5 sm:grid-cols-2" delay={0.04}>
+        <Stagger className="mt-10 grid gap-6 sm:grid-cols-2" delay={0.04}>
           {projects.map((p) => (
             <StaggerItem key={p.slug}>
               <CardLink
@@ -180,7 +181,7 @@ export default function HomePage() {
               Start here
             </h2>
           </Reveal>
-          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" delay={0.04}>
+          <Stagger className="mt-10 grid gap-6 md:grid-cols-3" delay={0.04}>
             {guides.map((g) => (
               <StaggerItem key={g.slug}>
                 <CardLink
@@ -209,7 +210,7 @@ export default function HomePage() {
               Two clear lanes. Pick the stage you are in.
             </h2>
           </Reveal>
-          <Stagger className="mt-10 grid gap-5 md:grid-cols-2" delay={0.05}>
+          <Stagger className="mt-10 grid gap-6 md:grid-cols-2" delay={0.04}>
             <StaggerItem>
               <div className="card-lift h-full p-7 md:p-8">
                 <p className="section-label">Early stage</p>
@@ -259,11 +260,12 @@ export default function HomePage() {
               src="/photos/nik-keynote.png"
               alt="Nik Vassev on stage in a dark suit, holding a microphone during a keynote."
               ratio="photo"
+              panel
             />
           </Reveal>
           <Reveal delay={0.1}>
             <div>
-              <p className="max-w-reading text-ink-muted md:text-lg">
+              <p className="max-w-measure text-ink-muted md:text-lg">
                 I speak on brand strategy, AI visibility and building companies
                 that leave room for a life. For podcasts, press or a stage, write
                 or send a LinkedIn note.
