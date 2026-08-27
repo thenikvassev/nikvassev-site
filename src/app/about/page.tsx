@@ -90,9 +90,9 @@ export default function AboutPage() {
           <p>
             Nik Vassev is a serial tech founder, brand strategist, and growth
             marketer who has spent over a decade in the entrepreneurial
-            trenches. Having built and scaled companies across AI, healthtech,
-            and marketing—raising tens of millions in capital and leading a
-            tech venture to a successful exit—Nik learned the hard way that
+            trenches. Having built and scaled companies across AI, healthtech
+            and marketing, he has raised tens of millions in capital and led a
+            tech venture to a successful exit. Nik learned the hard way that
             outworking a broken process only leads to burnout.
           </p>
           <p>
@@ -102,8 +102,8 @@ export default function AboutPage() {
             reshaped his entire approach to business. Today, he advocates for a
             radical redefinition of entrepreneurial success: building
             high-impact, category-defining companies through intelligent brand
-            strategy, modern growth marketing, and practical AI systems—without
-            trading away your health, sanity, or freedom in the process.
+            strategy, modern growth marketing, and practical AI systems, without
+            trading away your health, sanity or freedom in the process.
           </p>
           <p>
             Currently writing from the Caribbean coast of Mexico, Nik is the
