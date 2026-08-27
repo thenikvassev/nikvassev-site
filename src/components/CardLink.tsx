@@ -21,7 +21,7 @@ export function CardLink({
   imageAlt,
 }: Props) {
   const className =
-    "card group block overflow-hidden p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest";
+    "card-lift group block overflow-hidden p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest";
 
   const inner = (
     <>
@@ -30,12 +30,12 @@ export function CardLink({
           src={image}
           alt={imageAlt ?? title}
           ratio="video"
-          className="rounded-none border-0 border-b border-tan/40"
+          className="rounded-none border-0 border-b border-tan"
         />
       )}
-      <div className="p-6">
+      <div className="p-6 md:p-7">
         {meta && <p className="section-label mb-3">{meta}</p>}
-        <h3 className="text-lg tracking-tight text-ink group-hover:text-forest">
+        <h3 className="text-lg tracking-tight text-ink transition-colors duration-300 group-hover:text-forest">
           {title}
         </h3>
         <p className="mt-2 text-sm leading-relaxed text-ink-muted">{benefit}</p>

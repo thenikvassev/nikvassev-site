@@ -38,6 +38,7 @@ const config: Config = {
       maxWidth: {
         reading: "42rem",
         content: "56rem",
+        wide: "72rem",
       },
       letterSpacing: {
         section: "0.18em",
@@ -45,6 +46,16 @@ const config: Config = {
       },
       lineHeight: {
         display: "1.3",
+      },
+      boxShadow: {
+        lift: "0 16px 40px rgba(3, 36, 21, 0.10)",
+        rest: "0 2px 12px rgba(3, 36, 21, 0.04)",
+      },
+      transitionTimingFunction: {
+        editorial: "cubic-bezier(0.16, 1, 0.3, 1)",
+      },
+      transitionDuration: {
+        editorial: "750ms",
       },
     },
   },

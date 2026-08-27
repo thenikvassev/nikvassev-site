@@ -28,11 +28,15 @@ export function MediaFrame({
 
   return (
     <figure
-      className={`relative overflow-hidden rounded-card border border-tan/40 bg-cream ${ratioClass[ratio]} ${className}`}
+      className={`group relative overflow-hidden rounded-card border border-tan bg-cream ${ratioClass[ratio]} ${className}`}
     >
       {src && isSvg && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} className="h-full w-full object-cover" />
+        <img
+          src={src}
+          alt={alt}
+          className="editorial-img h-full w-full object-cover transition-transform duration-700 ease-editorial group-hover:scale-[1.03]"
+        />
       )}
       {src && !isSvg && (
         <Image
@@ -40,7 +44,7 @@ export function MediaFrame({
           alt={alt}
           fill
           priority={priority}
-          className="object-cover"
+          className="editorial-img object-cover transition-transform duration-700 ease-editorial group-hover:scale-[1.03]"
           sizes="(min-width: 1024px) 896px, 100vw"
         />
       )}
