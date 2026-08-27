@@ -50,7 +50,7 @@ export function NewsletterForm({ variant = "light" }: Props) {
         placeholder="you@company.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className={`min-w-0 flex-1 rounded-btn border px-5 py-3 text-sm outline-none focus:ring-2 focus:ring-offset-1 ${
+        className={`min-w-0 flex-1 rounded-btn border px-5 py-3 text-sm outline-none transition-[border-color,box-shadow] duration-editorial ease-editorial focus:ring-2 focus:ring-offset-1 ${
           isDark
             ? "border-white/25 bg-white/10 text-white placeholder:text-white/50 focus:ring-white/40 focus:ring-offset-forest-dark"
             : "border-tan bg-white text-ink placeholder:text-ink-faint focus:ring-forest/40 focus:ring-offset-white"

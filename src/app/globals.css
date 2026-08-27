@@ -28,19 +28,50 @@
   ::selection {
     @apply bg-cream text-ink;
   }
+
+  a,
+  button {
+    transition-property: opacity, transform, filter;
+    transition-duration: 140ms;
+    transition-timing-function: ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    a,
+    button {
+      transition: none;
+    }
+  }
 }
 
 @layer components {
   .section-label {
-    @apply font-sans text-[11px] font-semibold uppercase tracking-section text-forest;
+    @apply inline-flex items-center gap-2 font-sans text-[11px] font-semibold uppercase tracking-section text-forest;
+  }
+
+  .section-label::before {
+    content: "";
+    @apply block h-px w-4 bg-tan;
+  }
+
+  .section-shell {
+    @apply mx-auto max-w-wide px-6;
+  }
+
+  .section-pad {
+    @apply py-section;
   }
 
   .pill-btn {
-    @apply inline-flex items-center justify-center rounded-btn px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
+    @apply inline-flex items-center justify-center rounded-btn px-6 py-3 text-sm font-semibold transition-[opacity,transform,filter,background-color,border-color,color] duration-editorial ease-editorial focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
   }
 
   .pill-btn-primary {
-    @apply pill-btn bg-forest text-white hover:bg-forest-dark;
+    @apply pill-btn bg-forest text-white hover:brightness-110;
   }
 
   .pill-btn-secondary {
@@ -48,7 +79,11 @@
   }
 
   .card {
-    @apply rounded-card border border-tan/40 bg-cream-card p-6 shadow-sm transition-shadow hover:shadow-md;
+    @apply rounded-card border border-tan bg-cream-card p-6 shadow-rest transition-[opacity,transform,filter] duration-editorial ease-editorial;
+  }
+
+  .card-lift {
+    @apply card hover:scale-[1.02] hover:brightness-[1.03] hover:shadow-lift;
   }
 
   .prose-nik {
@@ -59,8 +94,33 @@
     @apply mt-4;
   }
 
-  /* Occasional Storyline-style inverted panel */
   .panel-invert {
-    @apply rounded-card bg-forest-dark text-white;
+    @apply rounded-panel bg-forest-dark text-white;
+  }
+
+  .editorial-lines {
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(8.333% - 1px),
+      rgb(203 188 163 / 0.28) calc(8.333% - 1px),
+      rgb(203 188 163 / 0.28) 8.333%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card-lift,
+  .pill-btn,
+  .editorial-img {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .card-lift:hover {
+    transform: none !important;
+    filter: none !important;
   }
 }
