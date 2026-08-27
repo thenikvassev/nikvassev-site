@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { MediaFrame } from "@/components/MediaFrame";
+import { ClientsRow } from "@/components/ClientsRow";
 import { PressRow } from "@/components/PressRow";
 import { siteConfig } from "@/lib/site";
 
@@ -176,28 +176,9 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="mt-12">
-          <p className="section-label">Logos from the path</p>
-          <div className="mt-4 flex flex-wrap items-center gap-6 rounded-card bg-forest px-6 py-6">
-            {[
-              ["/logos/nfl.png", "NFL"],
-              ["/logos/volkswagen.png", "Volkswagen"],
-              ["/logos/harvard.png", "Harvard University"],
-              ["/logos/penn.png", "University of Pennsylvania"],
-              ["/logos/futurpreneur.png", "Futurpreneur Canada"],
-            ].map(([src, alt]) => (
-              <Image
-                key={src}
-                src={src}
-                alt={alt}
-                width={120}
-                height={48}
-                className="h-8 w-auto object-contain md:h-10"
-              />
-            ))}
-          </div>
-        </div>
       </section>
+
+      <ClientsRow />
     </>
   );
 }

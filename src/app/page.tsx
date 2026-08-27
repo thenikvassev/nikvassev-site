@@ -3,6 +3,7 @@ import Link from "next/link";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { CardLink } from "@/components/CardLink";
 import { MediaFrame } from "@/components/MediaFrame";
+import { ClientsRow } from "@/components/ClientsRow";
 import { PressRow } from "@/components/PressRow";
 import { projects } from "@/lib/projects";
 import { guides } from "@/lib/resources";
@@ -77,6 +78,8 @@ export default function HomePage() {
       </section>
 
       <PressRow invert />
+
+      <ClientsRow />
 
       <section className="border-t border-tan/40 bg-cream">
         <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
