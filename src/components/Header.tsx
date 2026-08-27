@@ -11,7 +11,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-tan/50 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-[80rem] items-center justify-between gap-3 overflow-hidden px-5 py-4 md:px-8">
+      <div className="mx-auto flex max-w-[88rem] items-center justify-between gap-3 overflow-hidden px-5 py-4 md:px-8">
         <Link
           href="/"
           className="shrink-0 font-serif text-2xl tracking-display text-ink hover:text-forest md:text-[1.85rem]"
@@ -21,7 +21,7 @@ export function Header() {
 
         <nav
           aria-label="Primary"
-          className="hidden min-w-0 items-center xl:flex xl:gap-0.5"
+          className="hidden min-w-0 items-center xl:flex xl:gap-6"
         >
           {siteConfig.nav.map((item) => {
             const active =
@@ -33,12 +33,12 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-btn px-2.5 py-1.5 text-sm font-semibold transition-colors ${
+                className={`text-[11px] font-semibold uppercase tracking-section transition-colors ${
                   nowrap ? "whitespace-nowrap" : ""
                 } ${
                   active
-                    ? "bg-forest text-white"
-                    : "text-ink-muted hover:bg-cream hover:text-forest"
+                    ? "text-forest underline decoration-tan underline-offset-8"
+                    : "text-ink-muted hover:text-forest"
                 }`}
               >
                 {item.label}
@@ -47,10 +47,10 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-2 xl:flex">
+        <div className="hidden shrink-0 items-center gap-5 xl:flex">
           <Link
             href="/#newsletter"
-            className="pill-btn-secondary !px-4 !py-2 text-xs"
+            className="text-[11px] font-semibold uppercase tracking-section text-ink-muted hover:text-forest"
           >
             Subscribe
           </Link>

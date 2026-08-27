@@ -47,6 +47,14 @@
     @apply pill-btn border border-forest bg-transparent text-forest hover:bg-cream;
   }
 
+  .pill-btn-invert {
+    @apply pill-btn bg-white text-forest hover:bg-cream;
+  }
+
+  .identity-line {
+    @apply font-serif text-[2.6rem] leading-[1.12] tracking-display text-ink md:text-6xl lg:text-7xl xl:text-8xl;
+  }
+
   .card {
     @apply rounded-card border border-tan/40 bg-cream-card p-6 shadow-sm transition-shadow hover:shadow-md;
   }
