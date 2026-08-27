@@ -20,7 +20,6 @@ export const siteConfig = {
     { href: "/#newsletter", label: "Newsletter" },
     { href: "/#work", label: "Work" },
     { href: "/#contact", label: "Contact" },
-    { href: "/resources", label: "Blog" },
   ],
 } as const;
 

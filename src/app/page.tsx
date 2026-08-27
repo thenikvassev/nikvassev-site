@@ -20,6 +20,7 @@ const proof = [
   { kicker: "Author", value: "Entrepreneur" },
   { kicker: "Featured", value: "Forbes and The Guardian" },
   { kicker: "Startups mentored", value: "50+" },
+  { kicker: "Founder", value: "Guide IQ and Storyline Pros" },
 ] as const;
 
 const homepagePress = pressLogos.filter((logo) =>
@@ -46,17 +47,17 @@ export default function HomePage() {
                 Scale revenue with brand strategy and AI visibility.
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-ink-muted">
-                GEO and AI agents, used on companies I still run.
+                GEO and AI agents, used at Guide IQ and Storyline Pros.
               </p>
               <p className="mt-6 text-base leading-relaxed text-ink-muted md:text-lg">
                 I&apos;m Nik Vassev, a serial founder, brand strategist and
-                growth marketer. I help founders scale revenue with brand
-                strategy, GEO and AI agents.
+                growth marketer. I run Guide IQ and Storyline Pros. I help
+                founders scale revenue with brand strategy, GEO and AI agents.
               </p>
             </div>
 
             <div
-              className="mt-14 grid max-w-xl grid-cols-3 divide-x divide-tan"
+              className="mt-14 grid max-w-2xl grid-cols-2 divide-x divide-tan lg:grid-cols-4"
               aria-label="Proof"
             >
               {proof.map((item) => (
@@ -135,6 +136,18 @@ export default function HomePage() {
                   Book a call
                 </Link>
               </div>
+              <p className="mt-6 text-sm text-ink-muted">
+                <a
+                  href="https://storylinepros.com"
+                  className="font-medium text-forest underline underline-offset-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Storyline Pros
+                </a>
+                {" · "}
+                AI visibility for later-stage companies.
+              </p>
             </div>
           </div>
           <CinematicPhoto
@@ -172,9 +185,9 @@ export default function HomePage() {
               </h2>
               <p className="mt-8 text-base leading-relaxed text-ink-muted md:text-lg">
                 I&apos;m a founder and brand strategist. I write Systems Over
-                Hustle and I built Guide IQ so early-stage founders can get a
-                brand strategy without an agency retainer. I work from the chair,
-                on companies I still run.
+                Hustle, I built Guide IQ for early-stage brand strategy, and I
+                run Storyline Pros for companies that need AI visibility. I work
+                from the chair, on companies I still run.
               </p>
               <div className="mt-10">
                 <Link href="/about" className="pill-btn-primary">
