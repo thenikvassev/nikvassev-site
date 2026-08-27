@@ -8,10 +8,10 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Resources",
   description:
-    "Systems Over Hustle newsletter, guides, and writing for founders building with brand strategy and practical AI systems.",
+    "Systems Over Hustle newsletter, guides and writing for founders building with brand strategy and practical AI systems.",
   openGraph: {
     title: "Resources | Nik Vassev",
-    description: "Newsletter, guides, and sample posts from Systems Over Hustle.",
+    description: "Newsletter, guides and sample posts from Systems Over Hustle.",
   },
 };
 
@@ -23,14 +23,14 @@ export default function ResourcesPage() {
         Tools and writing for founders who want systems.
       </h1>
       <p className="mt-6 max-w-reading text-lg text-ink-muted">
-        {siteConfig.newsletterOneLiner}
+        {siteConfig.newsletterPitch}
       </p>
 
-      <section className="mt-12 rounded-2xl border border-tan/40 bg-white p-6 md:p-8">
+      <section className="mt-12 rounded-card border border-tan/40 bg-white p-6 md:p-8">
         <p className="section-label">Newsletter</p>
         <h2 className="mt-3 text-xl">{siteConfig.newsletter}</h2>
         <p className="mt-2 max-w-lg text-sm text-ink-muted">
-          Weekly on Thursdays. Practical tools and strategies. No hustle worship.
+          {siteConfig.newsletterPitch} Weekly on Thursdays.
         </p>
         <div className="mt-5 max-w-md">
           <NewsletterForm />
@@ -46,6 +46,8 @@ export default function ResourcesPage() {
               href={g.href}
               title={g.title}
               benefit={g.benefit}
+              image={g.image}
+              imageAlt={g.imageAlt}
             />
           ))}
         </div>
@@ -77,11 +79,15 @@ export default function ResourcesPage() {
             href="/brand-strategy"
             title="Brand strategy"
             benefit="Guide IQ and coaching for early-stage brand clarity."
+            image="/photos/guide-iq-tablet.png"
+            imageAlt="Guide IQ on a tablet"
           />
           <CardLink
             href="/ai-visibility"
             title="AI visibility"
             benefit="Storyline Pros for later-stage B2B emerging tech."
+            image="/placeholders/storyline-media.svg"
+            imageAlt="Placeholder for Storyline Pros"
           />
         </div>
       </section>

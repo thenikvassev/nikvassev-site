@@ -5,11 +5,11 @@ import { projects } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Active ventures and prior companies from Nik Vassev: Guide IQ, Novobeing, Mindleap Health, and more.",
+    "Active ventures and prior companies from Nik Vassev: Guide IQ, Novobeing, Mindleap Health, Digimax and Storyline Pros.",
   openGraph: {
     title: "Projects | Nik Vassev",
     description:
-      "Active ventures and prior companies: Guide IQ, Novobeing, Mindleap Health.",
+      "Active ventures and prior companies: Guide IQ, Novobeing, Mindleap Health, Digimax.",
   },
 };
 
@@ -37,6 +37,8 @@ export default function ProjectsPage() {
               title={p.name}
               benefit={p.oneLiner}
               meta={p.role}
+              image={p.image}
+              imageAlt={p.imageAlt}
             />
           ))}
           <CardLink
@@ -44,6 +46,8 @@ export default function ProjectsPage() {
             title="Storyline Pros"
             benefit="Narrative engineering and AI visibility for later-stage B2B emerging tech. Co-founded with Cynthia Salarizadeh."
             meta="Co-Founder"
+            image="/placeholders/storyline-media.svg"
+            imageAlt="Placeholder for Storyline Pros"
           />
         </div>
       </section>
@@ -58,6 +62,8 @@ export default function ProjectsPage() {
               title={p.name}
               benefit={p.oneLiner}
               meta={p.role}
+              image={p.image}
+              imageAlt={p.imageAlt}
             />
           ))}
         </div>

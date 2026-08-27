@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { CardLink } from "@/components/CardLink";
+import { MediaFrame } from "@/components/MediaFrame";
+import { PressRow } from "@/components/PressRow";
 import { projects } from "@/lib/projects";
 import { guides } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
@@ -9,63 +11,73 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: `${siteConfig.name} | Systems Over Hustle`,
   description:
-    "Practical brand strategy, growth marketing, and AI systems for entrepreneurs building high-impact companies without burning out.",
+    "Practical brand strategy, growth marketing and AI systems for entrepreneurs building high-impact companies without burning out.",
   openGraph: {
     title: `${siteConfig.name} | Systems Over Hustle`,
     description:
-      "Practical brand strategy, growth marketing, and AI systems for entrepreneurs building high-impact companies without burning out.",
+      "Practical brand strategy, growth marketing and AI systems for entrepreneurs building high-impact companies without burning out.",
   },
 };
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero — Greg funnel, Civio clothes */}
       <section className="mx-auto max-w-content px-5 pb-16 pt-16 md:px-8 md:pb-24 md:pt-24">
-        <p className="section-label">Systems Over Hustle</p>
-        <h1 className="mt-4 max-w-2xl text-4xl tracking-display text-ink md:text-5xl">
-          Build a high-impact company without burning out your life.
-        </h1>
-        <p className="mt-6 max-w-reading text-lg leading-relaxed text-ink-muted">
-          I help entrepreneurs grow with brand strategy, growth marketing, and
-          practical AI systems. Freedom is the goal: a business that can run
-          without you glued to every task.
-        </p>
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+          <div>
+            <p className="section-label">Systems Over Hustle</p>
+            <p className="mt-2 text-sm font-medium text-ink-muted">practical.</p>
+            <h1 className="mt-4 max-w-2xl text-4xl tracking-display text-ink md:text-5xl">
+              Build a high-impact company without burning out your life.
+            </h1>
+            <p className="mt-6 max-w-reading text-lg leading-relaxed text-ink-muted">
+              Brand strategy, AI agents, and growth marketing for startup founders.
+            </p>
 
-        <div id="newsletter" className="mt-10 max-w-lg scroll-mt-28">
-          <p className="mb-3 text-sm font-medium text-ink">
-            {siteConfig.newsletter} — {siteConfig.newsletterOneLiner}
-          </p>
-          <NewsletterForm />
-          <p className="mt-3 text-xs text-ink-faint">
-            Weekly on Thursdays. Unsubscribe anytime.
-          </p>
+            <div id="newsletter" className="mt-10 max-w-lg scroll-mt-28">
+              <p className="mb-3 text-sm font-medium text-ink">
+                {siteConfig.newsletterPitch}
+              </p>
+              <NewsletterForm />
+              <p className="mt-3 text-xs text-ink-faint">
+                Weekly on Thursdays. Unsubscribe anytime.
+              </p>
+            </div>
+
+            <p className="mt-8 text-sm text-ink-muted">
+              Founder of{" "}
+              <a
+                href="https://guideiq.ai"
+                className="font-medium text-forest underline underline-offset-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Guide IQ
+              </a>{" "}
+              and co-founder of{" "}
+              <a
+                href="https://storylinepros.com"
+                className="font-medium text-forest underline underline-offset-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Storyline Pros
+              </a>
+              . Writing at Entrepreneur. Mentoring at Futurpreneur Canada.
+            </p>
+          </div>
+          <MediaFrame
+            src="/photos/nik-portrait-mexico.jpg"
+            alt="Nik Vassev sitting on a terrace in Mexico, cream shirt, palms in the background."
+            ratio="portrait"
+            priority
+            className="mx-auto w-full max-w-sm lg:max-w-none"
+          />
         </div>
-
-        <p className="mt-8 text-sm text-ink-muted">
-          Founder of{" "}
-          <a
-            href="https://guideiq.ai"
-            className="font-medium text-forest underline underline-offset-4"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Guide IQ
-          </a>{" "}
-          and co-founder of{" "}
-          <a
-            href="https://storylinepros.com"
-            className="font-medium text-forest underline underline-offset-4"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Storyline Pros
-          </a>
-          . Writing at Entrepreneur. Mentoring at Futurepreneur Canada.
-        </p>
       </section>
 
-      {/* Ventures */}
+      <PressRow invert />
+
       <section className="border-t border-tan/40 bg-cream">
         <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
           <p className="section-label">Ventures</p>
@@ -76,26 +88,29 @@ export default function HomePage() {
             <CardLink
               href="/brand-strategy"
               title="Guide IQ"
-              benefit="AI Brand Strategist for early-stage founders. Brand DNA, voice, and a 90-day GTM in about 15 minutes."
+              benefit="AI Brand Strategist for early-stage founders. Brand DNA, voice and a 90-day GTM in about 15 minutes."
               meta="Brand strategy"
+              image="/photos/guide-iq-tablet.png"
+              imageAlt="Guide IQ on a tablet"
             />
             <CardLink
               href="/ai-visibility"
               title="Storyline Pros"
-              benefit="Narrative engineering and AI visibility for later-stage B2B emerging tech. Performance-based PR with a make-good guarantee."
+              benefit="Narrative engineering and AI visibility for later-stage B2B emerging tech. Performance-based PR with a make-good if a story does not publish."
               meta="AI visibility"
+              image="/placeholders/storyline-media.svg"
+              imageAlt="Placeholder for Storyline earned media"
             />
           </div>
         </div>
       </section>
 
-      {/* Projects track record */}
       <section className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
         <p className="section-label">Selected work</p>
         <h2 className="mt-3 text-2xl tracking-display md:text-3xl">
           Companies I have built and scaled
         </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {projects.map((p) => (
             <CardLink
               key={p.slug}
@@ -103,6 +118,8 @@ export default function HomePage() {
               title={p.name}
               benefit={p.oneLiner}
               meta={p.status === "active" ? "Active" : "Prior"}
+              image={p.image}
+              imageAlt={p.imageAlt}
             />
           ))}
         </div>
@@ -113,7 +130,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Guides */}
       <section className="border-t border-tan/40">
         <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
           <p className="section-label">Popular guides</p>
@@ -127,6 +143,8 @@ export default function HomePage() {
                 href={g.href}
                 title={g.title}
                 benefit={g.benefit}
+                image={g.image}
+                imageAlt={g.imageAlt}
               />
             ))}
           </div>
@@ -138,7 +156,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Work with Nik */}
       <section className="border-t border-tan/40 bg-cream">
         <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
           <p className="section-label">Work together</p>
@@ -165,7 +182,7 @@ export default function HomePage() {
               <h3 className="mt-3 text-lg">AI visibility</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-muted">
                 Storyline Pros. Narrative engineering and earned media so AI
-                systems recommend your company when buyers and investors ask.
+                systems can cite your company when buyers and investors ask.
               </p>
               <Link
                 href="/ai-visibility"
@@ -174,6 +191,56 @@ export default function HomePage() {
                 Explore AI visibility →
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
+        <p className="section-label">Speaking and media</p>
+        <h2 className="mt-3 max-w-xl text-2xl tracking-display md:text-3xl">
+          Get in touch for speaking, podcasts and press.
+        </h2>
+        <div className="mt-8 grid items-start gap-6 lg:grid-cols-2">
+          <MediaFrame
+            src="/photos/nik-keynote.png"
+            alt="Nik Vassev on stage in a dark suit, holding a microphone during a keynote."
+            ratio="photo"
+          />
+          <div>
+            <p className="max-w-reading text-ink-muted">
+              I speak on brand strategy, AI visibility and building companies
+              that leave room for a life. For podcasts, press or a stage, write
+              or send a LinkedIn note.
+            </p>
+            <p className="mt-4 text-sm text-ink">
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="font-medium text-forest underline underline-offset-4"
+              >
+                {siteConfig.email}
+              </a>
+            </p>
+            <p className="mt-2 text-sm">
+              <a
+                href={siteConfig.social.linkedin}
+                className="font-medium text-forest underline underline-offset-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </p>
+            <div className="mt-6">
+              <Link href="/brand-strategy#book" className="pill-btn-primary">
+                Book a call
+              </Link>
+            </div>
+            <MediaFrame
+              src="/placeholders/speaking-media.svg"
+              alt="Placeholder for a podcast or press photo"
+              ratio="wide"
+              className="mt-6"
+            />
           </div>
         </div>
       </section>

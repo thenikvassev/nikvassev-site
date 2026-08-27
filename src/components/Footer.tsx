@@ -7,15 +7,14 @@ export function Footer() {
 
   return (
     <footer className="mt-24">
-      {/* Restrained inverted band — Storyline key1 */}
       <div className="bg-forest-dark text-white">
         <div className="mx-auto max-w-content px-5 py-14 md:px-8 md:py-16">
           <p className="section-label !text-white/60">Stay in the loop</p>
-          <h2 className="mt-3 max-w-xl text-2xl tracking-display md:text-3xl">
-            {siteConfig.newsletter}
-          </h2>
+          <p className="mt-3 max-w-xl font-serif text-2xl tracking-display md:text-3xl">
+            {siteConfig.newsletterPitch}
+          </p>
           <p className="mt-3 max-w-lg font-sans text-white/75">
-            {siteConfig.newsletterOneLiner} Thursdays. Free.
+            Thursdays. Free.
           </p>
           <div className="mt-6 max-w-md">
             <NewsletterForm variant="dark" />
@@ -50,7 +49,10 @@ export function Footer() {
               Based in {siteConfig.location}
             </p>
           </div>
-          <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-muted">
+          <nav
+            aria-label="Footer"
+            className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-muted"
+          >
             {siteConfig.nav.map((item) => (
               <Link key={item.href} href={item.href} className="hover:text-forest">
                 {item.label}

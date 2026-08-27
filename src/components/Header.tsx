@@ -11,25 +11,31 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-tan/50 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-4 md:px-8">
+      <div className="mx-auto flex max-w-[80rem] items-center justify-between gap-3 overflow-hidden px-5 py-4 md:px-8">
         <Link
           href="/"
-          className="font-sans text-sm font-semibold tracking-tight text-ink hover:text-forest"
+          className="shrink-0 font-serif text-2xl tracking-display text-ink hover:text-forest md:text-[1.85rem]"
         >
           Nik Vassev
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+        <nav
+          aria-label="Primary"
+          className="hidden min-w-0 items-center xl:flex xl:gap-0.5"
+        >
           {siteConfig.nav.map((item) => {
             const active =
               item.href === "/"
                 ? pathname === "/"
                 : pathname.startsWith(item.href);
+            const nowrap = "nowrap" in item && item.nowrap;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-btn px-3 py-1.5 text-sm font-semibold transition-colors ${
+                className={`rounded-btn px-2.5 py-1.5 text-sm font-semibold transition-colors ${
+                  nowrap ? "whitespace-nowrap" : ""
+                } ${
                   active
                     ? "bg-forest text-white"
                     : "text-ink-muted hover:bg-cream hover:text-forest"
@@ -41,18 +47,24 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link href="/#newsletter" className="pill-btn-secondary !py-2 !px-4 text-xs">
+        <div className="hidden shrink-0 items-center gap-2 xl:flex">
+          <Link
+            href="/#newsletter"
+            className="pill-btn-secondary !px-4 !py-2 text-xs"
+          >
             Subscribe
           </Link>
-          <Link href="/brand-strategy#book" className="pill-btn-primary !py-2 !px-4 text-xs">
+          <Link
+            href="/brand-strategy#book"
+            className="pill-btn-primary whitespace-nowrap !px-4 !py-2 text-xs"
+          >
             Book a call
           </Link>
         </div>
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-btn border border-tan px-3 py-2 text-sm font-semibold text-ink lg:hidden"
+          className="inline-flex items-center justify-center rounded-btn border border-tan px-3 py-2 text-sm font-semibold text-ink xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -64,7 +76,7 @@ export function Header() {
       {open && (
         <div
           id="mobile-nav"
-          className="border-t border-tan/50 bg-white px-5 py-4 lg:hidden"
+          className="border-t border-tan/50 bg-white px-5 py-4 xl:hidden"
         >
           <nav aria-label="Mobile" className="flex flex-col gap-1">
             {siteConfig.nav.map((item) => (
@@ -86,7 +98,7 @@ export function Header() {
             </Link>
             <Link
               href="/brand-strategy#book"
-              className="pill-btn-primary text-center"
+              className="pill-btn-primary text-center whitespace-nowrap"
               onClick={() => setOpen(false)}
             >
               Book a call

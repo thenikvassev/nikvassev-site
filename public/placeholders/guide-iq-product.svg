@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Photo: Guide IQ product">
+  <rect width="1600" height="900" fill="#E8E4D9"/>
+  <rect x="28" y="28" width="1544" height="844" rx="16" fill="#FFFFFF" fill-opacity="0.35" stroke="#0A3B24" stroke-width="2" stroke-dasharray="12 10" opacity="0.45"/>
+  <circle cx="800.0" cy="410.0" r="36" fill="none" stroke="#0A3B24" stroke-width="2" opacity="0.35"/>
+  <text x="800.0" y="470.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#0A3B24">Photo: Guide IQ product</text>
+  <text x="800.0" y="512.0" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#032415" opacity="0.65">Product still. Nik will replace this frame.</text>
+</svg>
