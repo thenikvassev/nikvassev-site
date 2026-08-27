@@ -27,7 +27,6 @@ export default function HomePage() {
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
           <div>
             <p className="section-label">Systems Over Hustle</p>
-            <p className="mt-2 text-sm font-medium text-ink-muted">practical.</p>
             <h1 className="mt-4 max-w-2xl text-4xl tracking-display text-ink md:text-5xl">
               Build a high-impact company without burning out your life.
             </h1>
@@ -68,8 +67,8 @@ export default function HomePage() {
             </p>
           </div>
           <MediaFrame
-            src="/photos/nik-portrait-mexico.jpg"
-            alt="Nik Vassev sitting on a terrace in Mexico, cream shirt, palms in the background."
+            src="/photos/nik-hero-portrait.jpg"
+            alt="Nik Vassev smiling outdoors in a cream polo, palms behind him."
             ratio="portrait"
             priority
             className="mx-auto w-full max-w-sm lg:max-w-none"
