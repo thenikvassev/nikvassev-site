@@ -139,14 +139,12 @@ export default function HomePage() {
               <p className="mt-6 text-sm text-ink-muted">
                 <a
                   href="https://storylinepros.com"
-                  className="font-medium text-forest underline underline-offset-4"
+                  className="underline underline-offset-4 hover:text-forest"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Storyline Pros
+                  Storyline Pros · AI visibility for later-stage companies.
                 </a>
-                {" · "}
-                AI visibility for later-stage companies.
               </p>
             </div>
           </div>
