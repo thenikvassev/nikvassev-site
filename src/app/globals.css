@@ -52,7 +52,11 @@
   }
 
   .identity-line {
-    @apply font-serif text-[2.6rem] leading-[1.12] tracking-display text-ink md:text-6xl lg:text-7xl xl:text-8xl;
+    @apply font-serif text-[2.4rem] leading-[1.08] tracking-display text-ink md:text-6xl lg:text-7xl;
+  }
+
+  .copy-measure {
+    @apply w-full max-w-[28.125rem];
   }
 
   .card {
@@ -70,5 +74,30 @@
   /* Occasional Storyline-style inverted panel */
   .panel-invert {
     @apply rounded-card bg-forest-dark text-white;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes hero-fade {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .hero-stack > .identity-line {
+    animation: hero-fade 420ms ease-out both;
+  }
+
+  .hero-stack > .identity-line:nth-child(2) {
+    animation-delay: 90ms;
+  }
+
+  .hero-stack > .identity-line:nth-child(3) {
+    animation-delay: 180ms;
   }
 }

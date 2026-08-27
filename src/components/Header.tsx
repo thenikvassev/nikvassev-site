@@ -14,10 +14,17 @@ function isActive(pathname: string, href: string) {
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const home = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-tan/50 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-[88rem] items-center justify-between gap-3 overflow-hidden px-5 py-4 md:px-8">
+    <header
+      className={
+        home
+          ? "absolute inset-x-0 top-0 z-50"
+          : "relative z-50 border-b border-tan/50 bg-white"
+      }
+    >
+      <div className="mx-auto flex max-w-[88rem] items-center justify-between gap-3 px-5 py-5 md:px-8">
         <Link
           href="/"
           className="shrink-0 font-serif text-2xl tracking-display text-ink hover:text-forest md:text-[1.85rem]"
@@ -27,7 +34,7 @@ export function Header() {
 
         <nav
           aria-label="Primary"
-          className="hidden min-w-0 items-center xl:flex xl:gap-6"
+          className="hidden min-w-0 items-center xl:flex xl:gap-7"
         >
           {siteConfig.nav.map((item) => {
             const active = isActive(pathname, item.href);
@@ -47,16 +54,16 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-4 xl:flex">
+        <div className="hidden shrink-0 items-center gap-5 xl:flex">
           <Link
             href="/#work"
-            className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-section text-ink-muted hover:text-forest"
+            className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-section text-ink-muted transition-colors hover:text-forest"
           >
             Build your brand strategy
           </Link>
           <Link
             href="/brand-strategy#book"
-            className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-section text-ink-muted hover:text-forest"
+            className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-section text-ink-muted transition-colors hover:text-forest"
           >
             Book a call
           </Link>
@@ -70,7 +77,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-btn border border-tan px-3 py-2 text-sm font-semibold text-ink xl:hidden"
+          className="inline-flex items-center justify-center rounded-btn border border-tan bg-white/80 px-3 py-2 text-sm font-semibold text-ink xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}

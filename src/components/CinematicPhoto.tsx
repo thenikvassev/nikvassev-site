@@ -6,6 +6,7 @@ type Props = {
   className?: string;
   objectPosition?: string;
   priority?: boolean;
+  sizes?: string;
 };
 
 export function CinematicPhoto({
@@ -14,6 +15,7 @@ export function CinematicPhoto({
   className = "",
   objectPosition = "center",
   priority = false,
+  sizes = "100vw",
 }: Props) {
   return (
     <div className={`relative overflow-hidden bg-cream ${className}`}>
@@ -24,7 +26,7 @@ export function CinematicPhoto({
         priority={priority}
         className="object-cover"
         style={{ objectPosition }}
-        sizes="100vw"
+        sizes={sizes}
       />
     </div>
   );
