@@ -45,7 +45,7 @@ const config: Config = {
       },
       letterSpacing: {
         section: "0.18em",
-        display: "-0.02em",
+        display: "-0.03em",
       },
       lineHeight: {
         display: "1.2",

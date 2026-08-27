@@ -29,9 +29,21 @@
     @apply bg-cream text-ink;
   }
 
+  a,
+  button {
+    transition-property: opacity, transform, filter;
+    transition-duration: 140ms;
+    transition-timing-function: ease-out;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+
+    a,
+    button {
+      transition: none;
     }
   }
 }

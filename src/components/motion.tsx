@@ -4,8 +4,7 @@ import { type ReactNode } from "react";
 import { motion, useReducedMotion, type HTMLMotionProps } from "framer-motion";
 
 const systemEase = "easeOut" as const;
-const revealMs = 0.42;
-const hoverMs = 0.14;
+const systemMs = 0.14;
 
 type RevealProps = {
   children: ReactNode;
@@ -14,8 +13,8 @@ type RevealProps = {
 };
 
 /**
- * Scroll reveal that keeps copy in the HTML.
- * Crawlers see the text. After paint, we nudge opacity, 20px, and a light blur.
+ * Sevora system reveal: opacity 0→1, 16–24px rise, light blur→0.
+ * Children stay in the HTML for crawlers.
  */
 export function Reveal({ children, className, delay = 0 }: RevealProps) {
   const reduce = useReducedMotion();
@@ -23,10 +22,10 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { y: 20, opacity: 0.96, filter: "blur(5px)" }}
+      initial={reduce ? false : { y: 20, opacity: 0, filter: "blur(4px)" }}
       whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.16, margin: "-64px 0px" }}
-      transition={{ duration: revealMs, delay, ease: systemEase }}
+      transition={{ duration: systemMs, delay, ease: systemEase }}
     >
       {children}
     </motion.div>
@@ -54,7 +53,7 @@ export function Stagger({
         hidden: {},
         show: {
           transition: {
-            staggerChildren: reduce ? 0 : 0.06,
+            staggerChildren: reduce ? 0 : systemMs,
             delayChildren: reduce ? 0 : delay,
           },
         },
@@ -80,12 +79,12 @@ export function StaggerItem({
       variants={{
         hidden: reduce
           ? { opacity: 1, y: 0, filter: "blur(0px)" }
-          : { opacity: 0.96, y: 18, filter: "blur(5px)" },
+          : { opacity: 0, y: 20, filter: "blur(4px)" },
         show: {
           opacity: 1,
           y: 0,
           filter: "blur(0px)",
-          transition: { duration: revealMs, ease: systemEase },
+          transition: { duration: systemMs, ease: systemEase },
         },
       }}
     >
@@ -112,8 +111,8 @@ export function HeroStagger({
         hidden: {},
         show: {
           transition: {
-            staggerChildren: reduce ? 0 : 0.07,
-            delayChildren: reduce ? 0 : 0.04,
+            staggerChildren: reduce ? 0 : systemMs,
+            delayChildren: reduce ? 0 : systemMs,
           },
         },
       }}
@@ -138,12 +137,12 @@ export function HeroItem({
       variants={{
         hidden: reduce
           ? { opacity: 1, y: 0, filter: "blur(0px)" }
-          : { opacity: 0.01, y: 20, filter: "blur(6px)" },
+          : { opacity: 0, y: 20, filter: "blur(4px)" },
         show: {
           opacity: 1,
           y: 0,
           filter: "blur(0px)",
-          transition: { duration: 0.5, ease: systemEase },
+          transition: { duration: systemMs, ease: systemEase },
         },
       }}
     >
@@ -163,9 +162,9 @@ export function FadeIn({
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { opacity: 0.01, y: 16, filter: "blur(5px)" }}
+      initial={reduce ? false : { opacity: 0, y: 16, filter: "blur(4px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: revealMs, delay, ease: systemEase }}
+      transition={{ duration: systemMs, delay, ease: systemEase }}
       {...rest}
     >
       {children}
@@ -173,4 +172,4 @@ export function FadeIn({
   );
 }
 
-export { hoverMs };
+export { systemMs };

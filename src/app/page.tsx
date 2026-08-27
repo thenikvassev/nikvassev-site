@@ -35,29 +35,29 @@ export default function HomePage() {
           className="editorial-lines pointer-events-none absolute inset-0 opacity-70"
           aria-hidden
         />
-        <div className="section-shell relative pb-20 pt-16 md:pb-28 md:pt-24">
+        <div className="section-shell relative section-pad">
           <HeroStagger className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
             <div>
               <HeroItem>
                 <p className="section-label">Systems Over Hustle</p>
-                <h1 className="mt-5 max-w-3xl text-4xl leading-[1.15] tracking-display text-ink md:text-6xl md:leading-[1.12] lg:text-[4.25rem]">
+                <h1 className="mt-6 max-w-reading text-4xl leading-[1.15] tracking-display text-ink md:text-6xl md:leading-[1.12] lg:text-[4.25rem]">
                   Scale revenue with brand strategy, GEO and AI agents.
                 </h1>
               </HeroItem>
               <HeroItem>
-                <p className="mt-7 max-w-measure text-lg leading-relaxed text-ink-muted md:text-xl">
+                <p className="mt-8 max-w-measure text-lg leading-relaxed text-ink-muted md:text-xl">
                   Growth marketing, brand strategy and AI visibility for startup
                   founders.
                 </p>
               </HeroItem>
 
               <HeroItem>
-                <div id="newsletter" className="mt-10 max-w-lg scroll-mt-28">
-                  <p className="mb-3 text-sm font-medium text-ink">
+                <div id="newsletter" className="mt-12 max-w-measure scroll-mt-28">
+                  <p className="mb-4 text-sm font-medium text-ink">
                     {siteConfig.newsletterPitch}
                   </p>
                   <NewsletterForm />
-                  <p className="mt-3 text-xs text-ink-faint">
+                  <p className="mt-4 text-xs text-ink-faint">
                     Weekly on Thursdays. Unsubscribe anytime.
                   </p>
                 </div>
@@ -120,7 +120,7 @@ export default function HomePage() {
               Tools and teams I run today
             </h2>
           </Reveal>
-          <Stagger className="mt-10 grid gap-6 md:grid-cols-2" delay={0.04}>
+          <Stagger className="mt-12 grid gap-6 md:grid-cols-2">
             <StaggerItem>
               <CardLink
                 href="/brand-strategy"
@@ -148,11 +148,11 @@ export default function HomePage() {
       <section className="section-shell section-pad">
         <Reveal>
           <p className="section-label">Selected work</p>
-          <h2 className="mt-4 text-3xl tracking-display md:text-4xl lg:text-5xl">
-            Companies I have built and scaled
-          </h2>
-        </Reveal>
-        <Stagger className="mt-10 grid gap-6 sm:grid-cols-2" delay={0.04}>
+            <h2 className="mt-4 text-3xl tracking-display md:text-4xl lg:text-5xl">
+              Companies I have built and scaled
+            </h2>
+          </Reveal>
+          <Stagger className="mt-12 grid gap-6 sm:grid-cols-2">
           {projects.map((p) => (
             <StaggerItem key={p.slug}>
               <CardLink
@@ -166,7 +166,7 @@ export default function HomePage() {
             </StaggerItem>
           ))}
         </Stagger>
-        <Reveal className="mt-10" delay={0.08}>
+        <Reveal className="mt-12" delay={0.14}>
           <Link href="/projects" className="pill-btn-secondary">
             All projects
           </Link>
@@ -181,7 +181,7 @@ export default function HomePage() {
               Start here
             </h2>
           </Reveal>
-          <Stagger className="mt-10 grid gap-6 md:grid-cols-3" delay={0.04}>
+          <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
             {guides.map((g) => (
               <StaggerItem key={g.slug}>
                 <CardLink
@@ -194,7 +194,7 @@ export default function HomePage() {
               </StaggerItem>
             ))}
           </Stagger>
-          <Reveal className="mt-10" delay={0.08}>
+          <Reveal className="mt-12" delay={0.14}>
             <Link href="/resources" className="pill-btn-secondary">
               Resources
             </Link>
@@ -206,11 +206,11 @@ export default function HomePage() {
         <div className="section-shell section-pad">
           <Reveal>
             <p className="section-label">Work together</p>
-            <h2 className="mt-4 max-w-2xl text-3xl tracking-display md:text-4xl lg:text-5xl">
+            <h2 className="mt-4 max-w-reading text-3xl tracking-display md:text-4xl lg:text-5xl">
               Two clear lanes. Pick the stage you are in.
             </h2>
           </Reveal>
-          <Stagger className="mt-10 grid gap-6 md:grid-cols-2" delay={0.04}>
+          <Stagger className="mt-12 grid gap-6 md:grid-cols-2">
             <StaggerItem>
               <div className="card-lift h-full p-7 md:p-8">
                 <p className="section-label">Early stage</p>
@@ -250,11 +250,11 @@ export default function HomePage() {
       <section className="section-shell section-pad">
         <Reveal>
           <p className="section-label">Speaking and media</p>
-          <h2 className="mt-4 max-w-2xl text-3xl tracking-display md:text-4xl lg:text-5xl">
+          <h2 className="mt-4 max-w-reading text-3xl tracking-display md:text-4xl lg:text-5xl">
             Get in touch for speaking, podcasts and press.
           </h2>
         </Reveal>
-        <div className="mt-10 grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="mt-12 grid items-start gap-8 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <MediaFrame
               src="/photos/nik-keynote.png"
@@ -263,7 +263,7 @@ export default function HomePage() {
               panel
             />
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.14}>
             <div>
               <p className="max-w-measure text-ink-muted md:text-lg">
                 I speak on brand strategy, AI visibility and building companies
