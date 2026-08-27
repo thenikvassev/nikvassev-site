@@ -12,11 +12,11 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: `${siteConfig.name} | Systems Over Hustle`,
   description:
-    "Practical brand strategy, growth marketing and AI systems for entrepreneurs building high-impact companies without burning out.",
+    "Brand strategy, growth marketing and AI visibility for startups scaling revenue with GEO and AI agents.",
   openGraph: {
     title: `${siteConfig.name} | Systems Over Hustle`,
     description:
-      "Practical brand strategy, growth marketing and AI systems for entrepreneurs building high-impact companies without burning out.",
+      "Brand strategy, growth marketing and AI visibility for startups scaling revenue with GEO and AI agents.",
   },
 };
 
@@ -28,10 +28,10 @@ export default function HomePage() {
           <div>
             <p className="section-label">Systems Over Hustle</p>
             <h1 className="mt-4 max-w-2xl text-4xl tracking-display text-ink md:text-5xl">
-              Build a high-impact company without burning out your life.
+              Scale revenue with brand strategy, GEO and AI agents.
             </h1>
             <p className="mt-6 max-w-reading text-lg leading-relaxed text-ink-muted">
-              Brand strategy, AI agents, and growth marketing for startup founders.
+              Growth marketing, brand strategy and AI visibility for startup founders.
             </p>
 
             <div id="newsletter" className="mt-10 max-w-lg scroll-mt-28">
@@ -66,13 +66,19 @@ export default function HomePage() {
               . Writing at Entrepreneur. Mentoring at Futurpreneur Canada.
             </p>
           </div>
-          <MediaFrame
-            src="/photos/nik-hero-portrait.jpg"
-            alt="Nik Vassev smiling outdoors in a cream polo and glasses, palms behind him."
-            ratio="portrait"
-            priority
-            className="mx-auto w-full max-w-sm lg:max-w-none"
-          />
+          <div className="mx-auto w-full max-w-sm lg:max-w-none">
+            <MediaFrame
+              src="/photos/nik-hero-portrait.jpg"
+              alt="Nik Vassev smiling outdoors in a cream polo and glasses, palms behind him."
+              ratio="portrait"
+              priority
+            />
+            <p className="mt-6 text-base leading-relaxed text-ink-muted">
+              I&apos;m Nik Vassev, a serial founder, brand strategist and growth
+              marketer. I help startups scale revenue using modern brand
+              strategy, GEO and AI agents.
+            </p>
+          </div>
         </div>
       </section>
 
