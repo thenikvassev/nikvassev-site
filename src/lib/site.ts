@@ -3,7 +3,7 @@ export const siteConfig = {
   url: "https://nikvassev.com",
   newsletter: "Systems Over Hustle",
   newsletterPitch:
-    "Join my newsletter for practical tools and strategies for growing your startup without the grind.",
+    "Practical tools and strategies for growing your company without the grind.",
   tagline: "Systems Over Hustle",
   description:
     "Brand strategist, serial founder and growth marketer helping entrepreneurs build high-impact companies using brand strategy, growth marketing and AI systems.",
@@ -17,10 +17,9 @@ export const siteConfig = {
   nav: [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
-    { href: "/ai-visibility", label: "AI Visibility", nowrap: true },
-    { href: "/brand-strategy", label: "Brand Strategy", nowrap: true },
-    { href: "/resources", label: "Resources" },
+    { href: "/#newsletter", label: "Newsletter" },
+    { href: "/#work", label: "Work" },
+    { href: "/#contact", label: "Contact" },
   ],
 } as const;
 

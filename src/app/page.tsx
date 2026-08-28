@@ -1,254 +1,396 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { CinematicPhoto } from "@/components/CinematicPhoto";
+import { ContactForm } from "@/components/ContactForm";
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { CardLink } from "@/components/CardLink";
-import { MediaFrame } from "@/components/MediaFrame";
-import { ClientsRow } from "@/components/ClientsRow";
-import { PressRow } from "@/components/PressRow";
-import { projects } from "@/lib/projects";
-import { guides } from "@/lib/resources";
-import { siteConfig } from "@/lib/site";
+import { pressLogos, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} | Systems Over Hustle`,
-  description:
-    "Brand strategy, growth marketing and AI visibility for startups scaling revenue with GEO and AI agents.",
+  description: "Scale revenue with brand strategy and AI visibility.",
   openGraph: {
     title: `${siteConfig.name} | Systems Over Hustle`,
-    description:
-      "Brand strategy, growth marketing and AI visibility for startups scaling revenue with GEO and AI agents.",
+    description: "Scale revenue with brand strategy and AI visibility.",
   },
 };
 
+const identity = ["Founder.", "Brand strategist.", "Growth marketer."];
+
+const heroGraf =
+  "Scale revenue with brand strategy and AI visibility. GEO and AI agents, used at Guide IQ and Storyline Pros. I'm Nik Vassev, a serial founder, brand strategist and growth marketer. I run Guide IQ and Storyline Pros.";
+
+const proof = [
+  { kicker: "Author", value: "Entrepreneur" },
+  { kicker: "Featured", value: "Forbes and The Guardian" },
+  { kicker: "Startups mentored", value: "50+" },
+] as const;
+
+const homepagePress = pressLogos.filter((logo) =>
+  ["Entrepreneur", "Forbes", "The Guardian"].includes(logo.alt),
+);
+
+const splitSizes = "(min-width: 1024px) 50vw, 100vw";
+
+function IdentityHeadline({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <h1 className={`hero-stack ${className}`}>
+      {identity.map((line) => (
+        <span key={line} className="identity-line block">
+          {line}
+        </span>
+      ))}
+    </h1>
+  );
+}
+
 export default function HomePage() {
+  const ticker = [...homepagePress, ...homepagePress, ...homepagePress];
+
   return (
     <>
-      <section className="mx-auto max-w-content px-5 pb-16 pt-16 md:px-8 md:pb-24 md:pt-24">
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-          <div>
-            <p className="section-label">Systems Over Hustle</p>
-            <h1 className="mt-4 max-w-2xl text-4xl tracking-display text-ink md:text-5xl">
-              Scale revenue with brand strategy, GEO and AI agents.
-            </h1>
-            <p className="mt-6 max-w-reading text-lg leading-relaxed text-ink-muted">
-              Growth marketing, brand strategy and AI visibility for startup founders.
-            </p>
+      <section className="relative h-[760px] overflow-hidden bg-cream lg:hidden">
+        <CinematicPhoto
+          src="/photos/nik-hero-portrait.jpg"
+          alt="Nik Vassev smiling outdoors in a cream polo and glasses, palms behind him."
+          className="absolute inset-0 h-full w-full"
+          objectPosition="80% 22%"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream/80 via-cream/35 to-transparent" />
+        <div className="absolute inset-x-0 top-[168px] px-9">
+          <IdentityHeadline />
+          <p className="hero-bio mt-5 max-w-[220px]">{heroGraf}</p>
+        </div>
+      </section>
 
-            <div id="newsletter" className="mt-10 max-w-lg scroll-mt-28">
-              <p className="mb-3 text-sm font-medium text-ink">
+      <section className="hidden bg-cream lg:block">
+        <div className="grid min-h-screen lg:grid-cols-2">
+          <div className="flex min-h-screen flex-col justify-between px-16 pb-12 pt-[160px] xl:px-20">
+            <div className="copy-measure">
+              <IdentityHeadline />
+              <p className="hero-bio mt-8">{heroGraf}</p>
+            </div>
+            <div
+              className="mt-14 grid max-w-xl grid-cols-3 divide-x divide-tan"
+              aria-label="Proof"
+            >
+              {proof.map((item) => (
+                <p key={item.value} className="min-w-0 px-5 first:pl-0 last:pr-0">
+                  <span className="block font-serif text-3xl tracking-display">
+                    {item.value}
+                  </span>
+                  <span className="mt-2 block font-sans text-[11px] font-semibold uppercase tracking-section text-forest">
+                    {item.kicker}
+                  </span>
+                </p>
+              ))}
+            </div>
+          </div>
+          <CinematicPhoto
+            src="/photos/nik-hero-portrait.jpg"
+            alt="Nik Vassev smiling outdoors in a cream polo and glasses, palms behind him."
+            className="min-h-screen w-full"
+            objectPosition="center 28%"
+            priority
+            sizes={splitSizes}
+          />
+        </div>
+      </section>
+
+      <section className="bg-forest-dark px-6 py-16 lg:hidden" aria-label="Proof">
+        <ul className="mx-auto flex max-w-[230px] flex-col items-center gap-[60px] text-center">
+          {proof.map((item) => (
+            <li key={item.value} className="w-full">
+              <p className="font-serif text-4xl tracking-display text-white">
+                {item.value}
+              </p>
+              <p className="mt-3 text-[11px] font-semibold uppercase tracking-section text-white/60">
+                {item.kicker}
+              </p>
+              <span className="mx-auto mt-6 block h-px w-full bg-white/25" />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div id="newsletter" className="scroll-mt-8">
+      <section
+        className="bg-forest-dark px-[30px] pb-16 pt-4 lg:hidden"
+      >
+        <div className="relative mx-auto h-[300px] w-full max-w-[330px] overflow-hidden">
+          <Image
+            src="/photos/nik-speaking.jpg"
+            alt="Nik Vassev speaking on stage, pointing at a slide titled What Not To Do."
+            fill
+            className="object-cover"
+            sizes="330px"
+          />
+        </div>
+        <div className="mx-auto mt-10 max-w-[330px] text-center text-white">
+          <p className="section-label !text-white/55">Systems Over Hustle</p>
+          <p className="mt-4 font-serif text-3xl tracking-display">
+            {siteConfig.newsletterPitch}
+          </p>
+          <p className="mt-4 text-sm text-white/75">One email every Thursday.</p>
+          <div className="mt-8">
+            <NewsletterForm variant="dark" stacked />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative hidden min-h-[85vh] lg:block">
+        <CinematicPhoto
+          src="/photos/nik-speaking.jpg"
+          alt="Nik Vassev speaking on stage, pointing at a slide titled What Not To Do."
+          className="absolute inset-0 h-full w-full"
+          objectPosition="center"
+        />
+        <div className="absolute inset-0 bg-forest-dark/55" />
+        <div className="relative grid min-h-[85vh] lg:grid-cols-2">
+          <div />
+          <div className="flex items-center justify-center px-12 py-20">
+            <div className="copy-measure bg-white p-10">
+              <p className="section-label">Systems Over Hustle</p>
+              <p className="mt-4 font-serif text-3xl tracking-display text-ink md:text-4xl">
                 {siteConfig.newsletterPitch}
               </p>
-              <NewsletterForm />
-              <p className="mt-3 text-xs text-ink-faint">
-                Weekly on Thursdays. Unsubscribe anytime.
+              <p className="mt-4 text-sm text-ink-muted">
+                One email every Thursday.
               </p>
+              <div className="mt-8">
+                <NewsletterForm />
+              </div>
             </div>
-
-            <p className="mt-8 text-sm text-ink-muted">
-              Founder of{" "}
-              <a
-                href="https://guideiq.ai"
-                className="font-medium text-forest underline underline-offset-4"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Guide IQ
-              </a>{" "}
-              and co-founder of{" "}
-              <a
-                href="https://storylinepros.com"
-                className="font-medium text-forest underline underline-offset-4"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Storyline Pros
-              </a>
-              . Writing at Entrepreneur. Mentoring at Futurpreneur Canada.
-            </p>
-          </div>
-          <div className="mx-auto w-full max-w-sm lg:max-w-none">
-            <MediaFrame
-              src="/photos/nik-hero-portrait.jpg"
-              alt="Nik Vassev smiling outdoors in a cream polo and glasses, palms behind him."
-              ratio="portrait"
-              priority
-            />
-            <p className="mt-6 text-base leading-relaxed text-ink-muted">
-              I&apos;m Nik Vassev, a serial founder, brand strategist and growth
-              marketer. I help startups scale revenue using modern brand
-              strategy, GEO and AI agents.
-            </p>
           </div>
         </div>
       </section>
+      </div>
 
-      <PressRow invert />
-
-      <ClientsRow />
-
-      <section className="border-t border-tan/40 bg-cream">
-        <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-          <p className="section-label">Ventures</p>
-          <h2 className="mt-3 text-2xl tracking-display md:text-3xl">
-            Tools and teams I run today
-          </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <CardLink
-              href="/brand-strategy"
-              title="Guide IQ"
-              benefit="AI Brand Strategist for early-stage founders. Brand DNA, voice and a 90-day GTM in about 15 minutes."
-              meta="Brand strategy"
-              image="/photos/guide-iq-tablet.png"
-              imageAlt="Guide IQ on a tablet"
-            />
-            <CardLink
-              href="/ai-visibility"
-              title="Storyline Pros"
-              benefit="Narrative engineering and AI visibility for later-stage B2B emerging tech. Performance-based PR with a make-good if a story does not publish."
-              meta="AI visibility"
-              image="/placeholders/storyline-media.svg"
-              imageAlt="Placeholder for Storyline earned media"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-        <p className="section-label">Selected work</p>
-        <h2 className="mt-3 text-2xl tracking-display md:text-3xl">
-          Companies I have built and scaled
-        </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {projects.map((p) => (
-            <CardLink
-              key={p.slug}
-              href={`/projects/${p.slug}`}
-              title={p.name}
-              benefit={p.oneLiner}
-              meta={p.status === "active" ? "Active" : "Prior"}
-              image={p.image}
-              imageAlt={p.imageAlt}
-            />
-          ))}
-        </div>
-        <div className="mt-8">
-          <Link href="/projects" className="pill-btn-secondary">
-            All projects
+      <div id="work" className="scroll-mt-8">
+      <section className="bg-white px-12 py-16 lg:hidden">
+        <p className="section-label">Guide IQ</p>
+        <h2 className="mt-4 text-4xl">Build your brand strategy</h2>
+        <p className="mt-6 text-base leading-relaxed text-ink-muted">
+          Twelve founder questions. A full brand strategy and a 90-day plan, in
+          about 15 minutes.
+        </p>
+        <div className="mt-8 flex flex-col items-start gap-3">
+          <a
+            href="https://guideiq.ai"
+            className="rect-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Start with Guide IQ
+          </a>
+          <Link href="/brand-strategy#book" className="rect-btn-outline">
+            Book a call
           </Link>
         </div>
       </section>
 
-      <section className="border-t border-tan/40">
-        <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-          <p className="section-label">Popular guides</p>
-          <h2 className="mt-3 text-2xl tracking-display md:text-3xl">
-            Start here
-          </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {guides.map((g) => (
-              <CardLink
-                key={g.slug}
-                href={g.href}
-                title={g.title}
-                benefit={g.benefit}
-                image={g.image}
-                imageAlt={g.imageAlt}
-              />
-            ))}
-          </div>
-          <div className="mt-8">
-            <Link href="/resources" className="pill-btn-secondary">
-              Resources
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CinematicPhoto
+        src="/photos/nik-portrait-studio.jpg"
+        alt="Nik Vassev seated in a studio, black blazer and glasses, smiling at the camera."
+        className="h-[400px] w-full lg:hidden"
+        objectPosition="center 18%"
+      />
 
-      <section className="border-t border-tan/40 bg-cream">
-        <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-          <p className="section-label">Work together</p>
-          <h2 className="mt-3 max-w-xl text-2xl tracking-display md:text-3xl">
-            Two clear lanes. Pick the stage you are in.
-          </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <div className="card">
-              <p className="section-label">Early stage</p>
-              <h3 className="mt-3 text-lg">Brand strategy</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                Guide IQ plus strategist coaching. Get clear Brand DNA and a
-                plan you can run with the AI tools you already use.
-              </p>
-              <Link
-                href="/brand-strategy"
-                className="mt-5 inline-block text-sm font-medium text-forest"
-              >
-                Explore brand strategy →
-              </Link>
-            </div>
-            <div className="card">
-              <p className="section-label">Later stage B2B</p>
-              <h3 className="mt-3 text-lg">AI visibility</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                Storyline Pros. Narrative engineering and earned media so AI
-                systems can cite your company when buyers and investors ask.
-              </p>
-              <Link
-                href="/ai-visibility"
-                className="mt-5 inline-block text-sm font-medium text-forest"
-              >
-                Explore AI visibility →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-        <p className="section-label">Speaking and media</p>
-        <h2 className="mt-3 max-w-xl text-2xl tracking-display md:text-3xl">
-          Get in touch for speaking, podcasts and press.
+      <section className="bg-white px-12 py-16 lg:hidden">
+        <p className="section-label">Storyline Pros</p>
+        <h2 className="mt-4 text-4xl">
+          AI visibility for later-stage companies.
         </h2>
-        <div className="mt-8 grid items-start gap-6 lg:grid-cols-2">
-          <MediaFrame
+        <div className="mt-8">
+          <a
+            href="https://storylinepros.com"
+            className="rect-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Storyline Pros
+          </a>
+        </div>
+      </section>
+
+      <CinematicPhoto
+        src="/photos/nik-keynote.png"
+        alt="Nik Vassev on stage in a dark suit, holding a microphone during a keynote."
+        className="h-[400px] w-full lg:hidden"
+        objectPosition="center 20%"
+      />
+
+      <section className="hidden bg-white lg:block">
+        <div className="grid lg:grid-cols-2">
+          <div className="flex items-center justify-center px-16 py-24">
+            <div className="copy-measure">
+              <p className="section-label">Guide IQ</p>
+              <h2 className="mt-4 text-5xl lg:text-6xl">
+                Build your brand strategy
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-ink-muted">
+                Twelve founder questions. A full brand strategy and a 90-day
+                plan, in about 15 minutes.
+              </p>
+              <div className="mt-8 flex flex-col items-start gap-3">
+                <a
+                  href="https://guideiq.ai"
+                  className="rect-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Start with Guide IQ
+                </a>
+                <Link href="/brand-strategy#book" className="rect-btn-outline">
+                  Book a call
+                </Link>
+              </div>
+            </div>
+          </div>
+          <CinematicPhoto
+            src="/photos/nik-portrait-studio.jpg"
+            alt="Nik Vassev seated in a studio, black blazer and glasses, smiling at the camera."
+            className="min-h-[85vh] w-full"
+            objectPosition="center 18%"
+            sizes={splitSizes}
+          />
+        </div>
+      </section>
+
+      <section className="hidden bg-white lg:block">
+        <div className="grid lg:grid-cols-2">
+          <CinematicPhoto
             src="/photos/nik-keynote.png"
             alt="Nik Vassev on stage in a dark suit, holding a microphone during a keynote."
-            ratio="photo"
+            className="min-h-[85vh] w-full"
+            objectPosition="center 20%"
+            sizes={splitSizes}
           />
-          <div>
-            <p className="max-w-reading text-ink-muted">
-              I speak on brand strategy, AI visibility and building companies
-              that leave room for a life. For podcasts, press or a stage, write
-              or send a LinkedIn note.
-            </p>
-            <p className="mt-4 text-sm text-ink">
+          <div className="flex items-center justify-center px-16 py-24">
+            <div className="copy-measure">
+              <p className="section-label">Storyline Pros</p>
+              <h2 className="mt-4 text-5xl">
+                AI visibility for later-stage companies.
+              </h2>
+              <div className="mt-8">
+                <a
+                  href="https://storylinepros.com"
+                  className="rect-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Storyline Pros
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <section className="overflow-hidden bg-forest-dark py-8" aria-label="Press">
+        <div className="flex w-max press-marquee items-center gap-16 px-8">
+          {ticker.map((logo, i) => (
+            <Image
+              key={`${logo.src}-${i}`}
+              src={logo.src}
+              alt={logo.alt}
+              width={220}
+              height={64}
+              className="h-8 w-auto max-h-8 object-contain brightness-0 invert"
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white px-12 py-16 lg:hidden">
+        <h2 className="text-4xl">I AM NIK VASSEV</h2>
+        <p className="mt-8 text-base leading-relaxed text-ink-muted">
+          I&apos;m a founder and brand strategist. I write Systems Over Hustle,
+          I built Guide IQ for early-stage brand strategy, and I run Storyline
+          Pros for companies that need AI visibility. I work from the chair, on
+          companies I still run.
+        </p>
+        <div className="mt-10">
+          <Link href="/about" className="rect-btn">
+            About Nik
+          </Link>
+        </div>
+      </section>
+
+      <CinematicPhoto
+        src="/photos/nik-portrait-mexico.jpg"
+        alt="Nik Vassev seated outdoors in Mexico, cream polo and glasses, smiling at the camera."
+        className="h-[400px] w-full lg:hidden"
+        objectPosition="center 18%"
+      />
+
+      <section className="hidden bg-white lg:block">
+        <div className="grid lg:grid-cols-2">
+          <div className="flex items-center justify-center px-16 py-24">
+            <div className="copy-measure">
+              <h2 className="text-6xl lg:text-7xl">I AM NIK VASSEV</h2>
+              <p className="mt-8 text-lg leading-relaxed text-ink-muted">
+                I&apos;m a founder and brand strategist. I write Systems Over
+                Hustle, I built Guide IQ for early-stage brand strategy, and I
+                run Storyline Pros for companies that need AI visibility. I work
+                from the chair, on companies I still run.
+              </p>
+              <div className="mt-10">
+                <Link href="/about" className="rect-btn">
+                  About Nik
+                </Link>
+              </div>
+            </div>
+          </div>
+          <CinematicPhoto
+            src="/photos/nik-portrait-mexico.jpg"
+            alt="Nik Vassev seated outdoors in Mexico, cream polo and glasses, smiling at the camera."
+            className="min-h-[85vh] w-full"
+            objectPosition="center 18%"
+            sizes={splitSizes}
+          />
+        </div>
+      </section>
+
+      <section id="contact" className="relative min-h-[85vh] scroll-mt-8">
+        <CinematicPhoto
+          src="/photos/nik-beach.jpg"
+          alt="Nik Vassev working at the beach."
+          className="absolute inset-0 h-full w-full"
+          objectPosition="center 30%"
+        />
+        <div className="absolute inset-0 bg-forest-dark/50" />
+        <div className="relative flex min-h-[85vh] items-center justify-center px-6 py-20 lg:justify-start lg:px-16">
+          <div className="w-full max-w-[330px] bg-cream/45 p-6 backdrop-blur-md md:p-8">
+            <h2 className="text-center font-serif text-3xl tracking-display text-white">
+              Contact
+            </h2>
+            <p className="mt-3 text-center text-sm text-white/80">
+              Prefer a conversation?{" "}
+              <Link
+                href="/brand-strategy#book"
+                className="underline underline-offset-4 hover:text-white"
+              >
+                Book a strategy call
+              </Link>{" "}
+              or write{" "}
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="font-medium text-forest underline underline-offset-4"
+                className="underline underline-offset-4 hover:text-white"
               >
                 {siteConfig.email}
               </a>
-            </p>
-            <p className="mt-2 text-sm">
-              <a
-                href={siteConfig.social.linkedin}
-                className="font-medium text-forest underline underline-offset-4"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
+              .
             </p>
             <div className="mt-6">
-              <Link href="/brand-strategy#book" className="pill-btn-primary">
-                Book a call
-              </Link>
+              <ContactForm />
             </div>
-            <MediaFrame
-              src="/placeholders/speaking-media.svg"
-              alt="Placeholder for a podcast or press photo"
-              ratio="wide"
-              className="mt-6"
-            />
           </div>
         </div>
       </section>
