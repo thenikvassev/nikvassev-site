@@ -51,8 +51,20 @@
     @apply pill-btn bg-white text-forest hover:bg-cream;
   }
 
+  .rect-btn {
+    @apply inline-flex h-[60px] w-[201px] items-center justify-center bg-forest text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-forest-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
+  }
+
+  .rect-btn-outline {
+    @apply inline-flex h-[60px] w-[201px] items-center justify-center border border-forest bg-transparent text-sm font-semibold uppercase tracking-wide text-forest transition-colors hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
+  }
+
   .identity-line {
-    @apply font-serif text-[2.4rem] leading-[1.08] tracking-display text-ink md:text-6xl lg:text-7xl;
+    @apply font-serif text-[2.125rem] leading-[1.05] tracking-display text-ink lg:text-6xl xl:text-7xl;
+  }
+
+  .hero-bio {
+    @apply text-[17px] leading-relaxed text-ink-muted;
   }
 
   .copy-measure {
@@ -100,4 +112,17 @@
   .hero-stack > .identity-line:nth-child(3) {
     animation-delay: 180ms;
   }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.press-marquee {
+  animation: marquee 28s linear infinite;
 }

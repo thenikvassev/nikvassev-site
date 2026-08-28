@@ -4,10 +4,11 @@ import { siteConfig } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="bg-forest-dark text-white">
-      <div className="mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 py-14 text-center md:py-16">
+      <div className="flex flex-col items-center gap-8 px-5 py-16 text-center">
+        <p className="font-serif text-xl tracking-display">Nik Vassev</p>
         <nav
           aria-label="Footer"
-          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-semibold uppercase tracking-section text-white/70"
+          className="flex flex-col items-center gap-5 text-[11px] font-semibold uppercase tracking-section text-white/70 md:flex-row md:gap-6"
         >
           {siteConfig.nav.map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-white">
@@ -15,7 +16,23 @@ export function Footer() {
             </Link>
           ))}
         </nav>
-        <p className="text-sm text-white/60">
+        <div className="flex gap-6 text-[11px] font-semibold uppercase tracking-section text-white/70">
+          <a
+            href={siteConfig.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href={siteConfig.social.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            X
+          </a>
+        </div>
+        <p className="text-xs uppercase tracking-section text-white/50">
           Nik Vassev. Systems Over Hustle. © 2026
         </p>
       </div>
