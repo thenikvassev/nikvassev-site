@@ -58,9 +58,10 @@ export default function HomePage() {
           src="/photos/nik-hero-portrait.jpg"
           alt="Nik Vassev smiling outdoors in a cream polo and glasses, palms behind him."
           className="absolute inset-0 h-full w-full"
-          objectPosition="72% 28%"
+          objectPosition="80% 22%"
           priority
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream/80 via-cream/35 to-transparent" />
         <div className="absolute inset-x-0 top-[168px] px-9">
           <IdentityHeadline />
           <p className="hero-bio mt-5 max-w-[220px]">{heroGraf}</p>
