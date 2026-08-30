@@ -2,110 +2,115 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { siteConfig } from "@/lib/site";
+import { useEffect, useState } from "react";
+import { headerNav } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [solid, setSolid] = useState(!isHome);
   const [open, setOpen] = useState(false);
 
-  return (
-    <header className="sticky top-0 z-50 border-b border-tan/50 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-[80rem] items-center justify-between gap-3 overflow-hidden px-5 py-4 md:px-8">
-        <Link
-          href="/"
-          className="shrink-0 font-serif text-2xl tracking-display text-ink hover:text-forest md:text-[1.85rem]"
-        >
-          Nik Vassev
-        </Link>
+  useEffect(() => {
+    if (!isHome) {
+      setSolid(true);
+      return;
+    }
 
-        <nav
-          aria-label="Primary"
-          className="hidden min-w-0 items-center xl:flex xl:gap-0.5"
-        >
-          {siteConfig.nav.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
-            const nowrap = "nowrap" in item && item.nowrap;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`rounded-btn px-2.5 py-1.5 text-sm font-semibold transition-colors ${
-                  nowrap ? "whitespace-nowrap" : ""
-                } ${
-                  active
-                    ? "bg-forest text-white"
-                    : "text-ink-muted hover:bg-cream hover:text-forest"
-                }`}
-              >
+    const onScroll = () => setSolid(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHome]);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const headerClass = [
+    "nv nv-header",
+    isHome ? "is-home" : "is-inner",
+    solid ? "is-solid" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <>
+      <header className={headerClass}>
+        <div className="nv-header-bar">
+          <Link href="/" className="nv-wordmark" onClick={() => setOpen(false)}>
+            <span className="nv-mark" aria-hidden />
+            Nik Vassev
+          </Link>
+
+          <nav aria-label="Primary" className="nv-links">
+            {headerNav.map((item) => (
+              <Link key={item.href} href={item.href}>
                 {item.label}
               </Link>
-            );
-          })}
-        </nav>
+            ))}
+          </nav>
 
-        <div className="hidden shrink-0 items-center gap-2 xl:flex">
-          <Link
-            href="/#newsletter"
-            className="pill-btn-secondary !px-4 !py-2 text-xs"
-          >
-            Subscribe
-          </Link>
-          <Link
-            href="/brand-strategy#book"
-            className="pill-btn-primary whitespace-nowrap !px-4 !py-2 text-xs"
-          >
-            Book a call
-          </Link>
+          <div className="nv-header-right">
+            <Link href="/brand-strategy#book" className="nv-cta">
+              Let&apos;s Talk
+              <ArrowIcon />
+            </Link>
+            <button
+              type="button"
+              className={`nv-burger${open ? " is-open" : ""}`}
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((v) => !v)}
+            >
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
 
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-btn border border-tan px-3 py-2 text-sm font-semibold text-ink xl:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? "Close" : "Menu"}
-        </button>
-      </div>
-
-      {open && (
         <div
           id="mobile-nav"
-          className="border-t border-tan/50 bg-white px-5 py-4 xl:hidden"
+          className={`nv-panel${open ? " is-open" : ""}`}
+          hidden={!open}
         >
-          <nav aria-label="Mobile" className="flex flex-col gap-1">
-            {siteConfig.nav.map((item) => (
+          <nav aria-label="Mobile">
+            {headerNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-btn px-3 py-2.5 text-sm font-semibold text-ink hover:bg-cream"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/#newsletter"
-              className="mt-2 pill-btn-secondary text-center"
-              onClick={() => setOpen(false)}
-            >
-              Subscribe
-            </Link>
-            <Link
-              href="/brand-strategy#book"
-              className="pill-btn-primary text-center whitespace-nowrap"
-              onClick={() => setOpen(false)}
-            >
-              Book a call
-            </Link>
           </nav>
         </div>
-      )}
-    </header>
+      </header>
+      {!isHome && <div className="nv-nav-spacer" aria-hidden />}
+    </>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden>
+      <path
+        d="M3 8h10M9 4l4 4-4 4"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }

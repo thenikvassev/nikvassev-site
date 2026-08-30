@@ -24,6 +24,22 @@ export const siteConfig = {
   ],
 } as const;
 
+export const headerNav = [
+  { href: "/#about", label: "About" },
+  { href: "/brand-strategy", label: "Method" },
+  { href: "/#work", label: "Work With Me" },
+  { href: "/#newsletter", label: "Newsletter" },
+] as const;
+
+export const trackRecordLogos = [
+  { src: "/logos/ibm-watson.png", alt: "IBM Watson" },
+  { src: "/logos/meta.svg", alt: "Meta" },
+  { src: "/logos/harvard.png", alt: "Harvard University" },
+  { src: "/logos/penn.png", alt: "Penn" },
+  { src: "/logos/canada.png", alt: "Government of Canada" },
+  { src: "/logos/futurpreneur.png", alt: "Futurpreneur" },
+] as const;
+
 export type NavItem = (typeof siteConfig.nav)[number];
 
 export const pressLogos = [

@@ -7,7 +7,7 @@ export function Footer() {
 
   return (
     <footer className="mt-24">
-      <div className="bg-forest-dark text-white">
+      <div id="newsletter" className="scroll-mt-28 bg-forest-dark text-white">
         <div className="mx-auto max-w-content px-5 py-14 md:px-8 md:py-16">
           <p className="section-label !text-white/60">Stay in the loop</p>
           <p className="mt-3 max-w-xl font-serif text-2xl tracking-display md:text-3xl">

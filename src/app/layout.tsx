@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader } from "next/font/google";
+import { Archivo, Fraunces, Inter, Newsreader } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
+import "./claude-home.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,6 +18,21 @@ const newsreader = Newsreader({
   variable: "--font-newsreader",
   display: "swap",
   weight: ["400"],
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+  weight: ["400", "500", "700", "800"],
+  style: ["normal", "italic"],
+});
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -51,7 +67,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${newsreader.variable} ${fraunces.variable} ${archivo.variable}`}
+    >
       <body className="min-h-screen font-sans antialiased">
         <a
           href="#main"
