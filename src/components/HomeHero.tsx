@@ -12,40 +12,43 @@ export function HomeHero() {
     reduceMotion.current = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    if (reduceMotion.current) return;
-
     const media = mediaRef.current;
     const badge = badgeRef.current;
     if (!media || !badge) return;
 
     const onScroll = () => {
+      if (reduceMotion.current) return;
       const y = window.scrollY;
       media.style.transform = `translate3d(0, ${y * 0.14}px, 0)`;
+      badge.style.transform = `translate3d(0, ${y * 0.05}px, 0)`;
+    };
 
-      const mark = document.querySelector<HTMLElement>(".nv-mark");
-      if (!mark) return;
-      badge.style.transform = "none";
+    if (reduceMotion.current) {
+      return;
+    }
+
+    const mark = document.querySelector<HTMLElement>(".nv-mark");
+    if (mark && window.scrollY < 8) {
       const markBox = mark.getBoundingClientRect();
       const restBox = badge.getBoundingClientRect();
-      const progress = Math.min(1, y / 280);
-      const eased = 1 - (1 - progress) ** 3;
       const fromX =
         markBox.left + markBox.width / 2 - (restBox.left + restBox.width / 2);
       const fromY =
         markBox.top + markBox.height / 2 - (restBox.top + restBox.height / 2);
-      const x = fromX * (1 - eased);
-      const yMove = fromY * (1 - eased);
-      const scale = 0.18 + 0.82 * eased;
-      badge.style.transform = `translate3d(${x}px, ${yMove}px, 0) scale(${scale})`;
-    };
+      badge.style.transition = "none";
+      badge.style.transform = `translate3d(${fromX}px, ${fromY}px, 0) scale(0.18)`;
+      requestAnimationFrame(() => {
+        badge.style.transition =
+          "transform 0.95s cubic-bezier(0.22, 1, 0.36, 1)";
+        badge.style.transform = "translate3d(0, 0, 0) scale(1)";
+      });
+      window.setTimeout(() => {
+        badge.style.transition = "";
+      }, 1000);
+    }
 
-    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -118,7 +121,7 @@ export function HomeHero() {
       </div>
 
       <a className="nv-scroll" href="#about">
-        Scroll
+        <span>Scroll</span>
       </a>
     </section>
   );
