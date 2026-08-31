@@ -236,7 +236,8 @@
 .nv-hero-photo--desktop {
   display: none;
   object-position: 60% 22%;
-  transform: scale(1.08);
+  transform: scale(1.16);
+  filter: grayscale(0.3);
 }
 
 @media (min-width: 900px) {
