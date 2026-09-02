@@ -269,10 +269,11 @@
 
 .nv-hero-photo--desktop {
   display: none;
-  object-position: 50% 50%;
-  transform: none;
-  transform-origin: center center;
-  filter: grayscale(0.3);
+  object-fit: cover;
+  object-position: 50% 30%;
+  transform: scale(1.28);
+  transform-origin: 50% 30%;
+  filter: grayscale(0.28);
 }
 
 @media (min-width: 900px) {
@@ -296,8 +297,8 @@
 @media (min-width: 900px) {
   .nv-hero-overlay {
     background:
-      linear-gradient(90deg, rgba(13, 12, 9, 0.18) 0%, rgba(13, 12, 9, 0.06) 32%, transparent 58%),
-      linear-gradient(180deg, rgba(13, 12, 9, 0.1) 0%, transparent 20%);
+      linear-gradient(180deg, rgba(13, 12, 9, 0.2) 0%, transparent 26%, transparent 68%, rgba(13, 12, 9, 0.26) 100%),
+      rgba(251, 250, 247, 0.16);
   }
 }
 
