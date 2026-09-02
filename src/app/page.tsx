@@ -93,7 +93,7 @@ export default function HomePage() {
             src="/photos/nik-speaker.jpg"
             alt="Nik Vassev in a burgundy blazer and glasses against a black studio backdrop."
             fill
-            sizes="100vw"
+            sizes="(min-width: 900px) 58vw, 100vw"
             className="nv-speaking-img"
           />
         </div>
