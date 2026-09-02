@@ -8,7 +8,10 @@ export function TrackRecord() {
       aria-labelledby="track-record-heading"
     >
       <p className="nv-eyebrow">TRACK RECORD</p>
-      <h2 id="track-record-heading">Clients &amp; Partners I&apos;ve Worked With</h2>
+      <h2 id="track-record-heading">
+        <span>Clients and Partners</span>
+        <span>I&apos;ve Worked With</span>
+      </h2>
       <ul className="nv-logo-grid">
         {trackRecordLogos.map((logo) => (
           <li key={logo.src}>

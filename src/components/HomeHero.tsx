@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 export function HomeHero() {
   const mediaRef = useRef<HTMLDivElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLAnchorElement>(null);
   const reduceMotion = useRef(false);
 
   useEffect(() => {
@@ -75,8 +76,13 @@ export function HomeHero() {
 
       <div className="nv-hero-stage">
         <div className="nv-hero-panel">
-          <div className="nv-badge" ref={badgeRef} aria-hidden>
-            <svg className="nv-badge-spin" viewBox="0 0 200 200">
+          <Link
+            href="/about"
+            className="nv-badge"
+            ref={badgeRef}
+            aria-label="About"
+          >
+            <svg className="nv-badge-spin" viewBox="0 0 200 200" aria-hidden>
               <defs>
                 <path
                   id="nv-badge-circle"
@@ -90,11 +96,12 @@ export function HomeHero() {
                 letterSpacing="3.2"
               >
                 <textPath href="#nv-badge-circle">
-                  SERIAL FOUNDER * BRAND STRATEGIST * GROWTH MARKETER *
+                  BRAND STRATEGIST * GROWTH MARKETER * BRAND STRATEGIST *
+                  GROWTH MARKETER *
                 </textPath>
               </text>
             </svg>
-            <div className="nv-badge-core">
+            <div className="nv-badge-core" aria-hidden>
               <svg viewBox="0 0 24 24" fill="none">
                 <path
                   d="M7 17L17 7M9 7h8v8"
@@ -105,7 +112,7 @@ export function HomeHero() {
                 />
               </svg>
             </div>
-          </div>
+          </Link>
 
           <div className="nv-hero-copy">
             <h1 className="nv-hero-name">

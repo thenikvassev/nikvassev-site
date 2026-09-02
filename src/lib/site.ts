@@ -17,10 +17,8 @@ export const siteConfig = {
   nav: [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
     { href: "/ai-visibility", label: "AI Visibility", nowrap: true },
     { href: "/brand-strategy", label: "Brand Strategy", nowrap: true },
-    { href: "/resources", label: "Resources" },
   ],
 } as const;
 

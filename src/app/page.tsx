@@ -5,7 +5,6 @@ import { MediaFrame } from "@/components/MediaFrame";
 import { HomeHero } from "@/components/HomeHero";
 import { AboutIntro } from "@/components/AboutIntro";
 import { TrackRecord } from "@/components/TrackRecord";
-import { projects } from "@/lib/projects";
 import { guides } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
@@ -27,63 +26,11 @@ export default function HomePage() {
       <AboutIntro />
       <TrackRecord />
 
-      <section className="border-t border-tan/40 bg-cream">
-        <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-          <p className="section-label">Ventures</p>
-          <h2 className="mt-3 text-2xl tracking-display md:text-3xl">
-            Tools and teams I run today
-          </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <CardLink
-              href="/brand-strategy"
-              title="Guide IQ"
-              benefit="AI Brand Strategist for early-stage founders. Brand DNA, voice and a 90-day GTM in about 15 minutes."
-              meta="Brand strategy"
-              image="/photos/guide-iq-tablet.png"
-              imageAlt="Guide IQ on a tablet"
-            />
-            <CardLink
-              href="/ai-visibility"
-              title="Storyline Pros"
-              benefit="Narrative engineering and AI visibility for later-stage B2B emerging tech. Performance-based PR with a make-good if a story does not publish."
-              meta="AI visibility"
-              image="/placeholders/storyline-media.svg"
-              imageAlt="Placeholder for Storyline earned media"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-        <p className="section-label">Selected work</p>
-        <h2 className="mt-3 text-2xl tracking-display md:text-3xl">
-          Companies I have built and scaled
-        </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {projects.map((p) => (
-            <CardLink
-              key={p.slug}
-              href={`/projects/${p.slug}`}
-              title={p.name}
-              benefit={p.oneLiner}
-              meta={p.status === "active" ? "Active" : "Prior"}
-              image={p.image}
-              imageAlt={p.imageAlt}
-            />
-          ))}
-        </div>
-        <div className="mt-8">
-          <Link href="/projects" className="pill-btn-secondary">
-            All projects
-          </Link>
-        </div>
-      </section>
-
       <section className="border-t border-tan/40">
         <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-          <p className="section-label">Popular guides</p>
+          <p className="section-label">Founder resources</p>
           <h2 className="mt-3 text-2xl tracking-display md:text-3xl">
-            Start here
+            Explore my blog and free guides
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {guides.map((g) => (
