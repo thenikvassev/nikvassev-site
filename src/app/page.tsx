@@ -52,42 +52,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="work" className="scroll-mt-28 border-t border-tan/40 bg-cream">
-        <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-          <p className="section-label">Work together</p>
-          <h2 className="mt-3 max-w-xl text-2xl tracking-display md:text-3xl">
-            Two clear lanes. Pick the stage you are in.
-          </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <div className="card">
-              <p className="section-label">Early stage</p>
-              <h3 className="mt-3 text-lg">Brand strategy</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                Guide IQ plus strategist coaching. Get clear Brand DNA and a
-                plan you can run with the AI tools you already use.
-              </p>
-              <Link
-                href="/brand-strategy"
-                className="mt-5 inline-block text-sm font-medium text-forest"
-              >
-                Explore brand strategy →
-              </Link>
-            </div>
-            <div className="card">
-              <p className="section-label">Later stage B2B</p>
-              <h3 className="mt-3 text-lg">AI visibility</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                Storyline Pros. Narrative engineering and earned media so AI
-                systems can cite your company when buyers and investors ask.
-              </p>
-              <Link
-                href="/ai-visibility"
-                className="mt-5 inline-block text-sm font-medium text-forest"
-              >
-                Explore AI visibility →
-              </Link>
-            </div>
-          </div>
+      <section id="work" className="nv nv-ways scroll-mt-28">
+        <p className="nv-ways-eyebrow">What I&apos;m building now</p>
+        <h2>Three ways to work with me</h2>
+        <div className="nv-ways-grid">
+          <article className="nv-ways-card">
+            <p className="nv-ways-label">For founders</p>
+            <h3>Guide IQ</h3>
+            <p>
+              An AI-powered brand strategy engine I built. Give it your inputs,
+              get a complete brand strategy and 90-day go-to-market plan in 15
+              minutes.
+            </p>
+            <Link href="/brand-strategy">Build your strategy →</Link>
+          </article>
+          <article className="nv-ways-card">
+            <p className="nv-ways-label">For growth-stage startups</p>
+            <h3>Storyline Pros</h3>
+            <p>
+              My AI visibility and narrative engineering firm, for startups who
+              need to become the answer AI search engines recommend in their
+              category.
+            </p>
+            <Link href="/ai-visibility">See how it works →</Link>
+          </article>
+          <article className="nv-ways-card">
+            <p className="nv-ways-label">My weekly newsletter</p>
+            <h3>Systems Over Hustle</h3>
+            <p>
+              Every Thursday, I share one actionable framework on brand
+              strategy, growth marketing, AI systems, and building a life you
+              don&apos;t need a vacation from.
+            </p>
+            <Link href="/#newsletter">Get the newsletter →</Link>
+          </article>
         </div>
       </section>
 

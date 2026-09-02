@@ -792,6 +792,113 @@
   opacity: 1;
 }
 
+/* ---------- Three ways ---------- */
+
+.nv-ways {
+  background: #e8e4d9;
+  color: #17160f;
+  padding: 4.6rem 1.35rem 5rem;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .nv-ways {
+    padding: 6.2rem 2.25rem 6.6rem;
+  }
+}
+
+.nv-ways-eyebrow {
+  margin: 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0a3b24;
+}
+
+.nv-ways h2 {
+  margin: 0.75rem auto 0;
+  max-width: 20ch;
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: clamp(2.1rem, 5vw, 3.15rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  color: #17160f;
+}
+
+.nv-ways-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+  max-width: 73.75rem;
+  margin: 2.6rem auto 0;
+  text-align: left;
+}
+
+@media (min-width: 900px) {
+  .nv-ways-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.35rem;
+    margin-top: 3.2rem;
+  }
+}
+
+.nv-ways-card {
+  background: #efece5;
+  border-radius: 22px;
+  padding: 1.7rem 1.45rem 1.6rem;
+}
+
+@media (min-width: 900px) {
+  .nv-ways-card {
+    padding: 2rem 1.7rem 1.85rem;
+  }
+}
+
+.nv-ways-label {
+  margin: 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0a3b24;
+}
+
+.nv-ways-card h3 {
+  margin: 0.85rem 0 0;
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #17160f;
+}
+
+.nv-ways-card p {
+  margin: 0.7rem 0 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6d6b60;
+}
+
+.nv-ways-card a {
+  display: inline-block;
+  margin-top: 1.35rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #0a3b24;
+  text-decoration: none;
+}
+
+.nv-ways-card a:hover {
+  color: #032415;
+}
+
 @keyframes nv-spin {
   to {
     transform: rotate(360deg);
