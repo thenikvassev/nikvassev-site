@@ -296,8 +296,8 @@
 @media (min-width: 900px) {
   .nv-hero-overlay {
     background:
-      linear-gradient(90deg, rgba(13, 12, 9, 0.32) 0%, rgba(13, 12, 9, 0.1) 36%, transparent 62%),
-      linear-gradient(180deg, rgba(13, 12, 9, 0.12) 0%, transparent 22%);
+      linear-gradient(90deg, rgba(13, 12, 9, 0.18) 0%, rgba(13, 12, 9, 0.06) 32%, transparent 58%),
+      linear-gradient(180deg, rgba(13, 12, 9, 0.1) 0%, transparent 20%);
   }
 }
 
@@ -309,29 +309,13 @@
 }
 
 @media (min-width: 900px) {
-  .nv-hero-stage {
+  .nv-hero-stage,
+  .nv-hero-panel {
     position: absolute;
     inset: 0;
+    max-width: 73.75rem;
+    margin: 0 auto;
     pointer-events: none;
-  }
-
-  /* Light rectangle in the JPEG: ~21–81% x, ~17–69% y (center 51% / 43%). */
-  .nv-hero-panel {
-    position: absolute;
-    left: 50%;
-    top: 43%;
-    width: min(73.75rem, 68%);
-    height: 52%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-}
-
-@media (min-width: 900px) and (min-aspect-ratio: 16/9) {
-  .nv-hero-panel {
-    top: 49.5%;
-    width: min(73.75rem, 61%);
-    height: 66%;
   }
 }
 
@@ -353,9 +337,7 @@
     bottom: 0;
     height: auto;
     justify-content: flex-end;
-    padding: 0 28px 0;
-    /* Last-name baseline sits on the panel edge; tagline stays on the cream. */
-    transform: translateY(2.15rem);
+    padding: 0 32px 52px;
     pointer-events: auto;
   }
 }
