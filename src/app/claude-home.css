@@ -354,7 +354,8 @@
     height: auto;
     justify-content: flex-end;
     padding: 0 28px 0;
-    transform: translateY(4.85rem);
+    /* Last-name baseline sits on the panel edge; tagline stays on the cream. */
+    transform: translateY(2.15rem);
     pointer-events: auto;
   }
 }
