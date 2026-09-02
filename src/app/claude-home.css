@@ -1048,6 +1048,89 @@
   color: #032415;
 }
 
+/* ---------- Newsletter band ---------- */
+
+.nv-newsletter {
+  background: #032415;
+  color: #e8e4d9;
+  padding: 4.4rem 1.35rem 4.6rem;
+}
+
+@media (min-width: 900px) {
+  .nv-newsletter {
+    padding: 6.4rem 2rem 6.6rem;
+    text-align: center;
+  }
+}
+
+.nv-newsletter-inner {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.nv-newsletter h2 {
+  margin: 0;
+  font-family: var(--nv-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(2.2rem, 4.6vw, 3.2rem);
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  color: #e8e4d9;
+}
+
+.nv-newsletter-body {
+  margin: 1.15rem 0 0;
+  font-family: var(--nv-sans);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nv-newsletter-lead {
+  margin: 1.55rem 0 0;
+  font-family: var(--nv-sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.nv-newsletter-form {
+  max-width: 32rem;
+  margin: 1.45rem 0 0;
+}
+
+@media (min-width: 900px) {
+  .nv-newsletter-form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.nv-newsletter-form input {
+  background: #fbfaf7 !important;
+  border-color: #e8e4d9 !important;
+  color: #17160f !important;
+}
+
+.nv-newsletter-form input::placeholder {
+  color: #6d6b60 !important;
+}
+
+.nv-newsletter-form button {
+  background: #e8e4d9 !important;
+  color: #032415 !important;
+}
+
+.nv-newsletter-note {
+  margin: 0.95rem 0 0;
+  font-family: var(--nv-sans);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 @keyframes nv-spin {
   to {
     transform: rotate(360deg);

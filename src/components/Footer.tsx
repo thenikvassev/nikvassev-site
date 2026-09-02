@@ -7,34 +7,23 @@ export function Footer() {
 
   return (
     <footer className="mt-24">
-      <div id="newsletter" className="scroll-mt-28 bg-forest-dark text-white">
-        <div className="mx-auto max-w-content px-5 py-14 md:px-8 md:py-16">
-          <p className="section-label !text-white/60">Stay in the loop</p>
-          <p className="mt-3 max-w-xl font-serif text-2xl tracking-display md:text-3xl">
-            {siteConfig.newsletterPitch}
+      <div id="newsletter" className="nv nv-newsletter scroll-mt-28">
+        <div className="nv-newsletter-inner">
+          <h2>Brand strategy &amp; AI systems to dominate your category.</h2>
+          <p className="nv-newsletter-body">
+            I write a weekly letter called Systems Over Hustle. Every Thursday,
+            it&apos;s packed with real-world brand strategy, AI workflows, and
+            practical insights to help you build a high-impact company without
+            outworking a broken process.
           </p>
-          <p className="mt-3 max-w-lg font-sans text-white/75">
-            Thursdays. Free.
+          <p className="nv-newsletter-lead">
+            Join the entrepreneurs building smarter, not harder.
           </p>
-          <div className="mt-6 max-w-md">
+          <div className="nv-newsletter-form">
             <NewsletterForm variant="dark" />
           </div>
-          <p className="mt-8 font-sans text-sm text-white/70">
-            Prefer a conversation?{" "}
-            <Link
-              href="/brand-strategy#book"
-              className="underline underline-offset-4 hover:text-white"
-            >
-              Book a strategy call
-            </Link>{" "}
-            or write{" "}
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="underline underline-offset-4 hover:text-white"
-            >
-              {siteConfig.email}
-            </a>
-            .
+          <p className="nv-newsletter-note">
+            1 actionable framework delivered every Thursday. Zero fluff.
           </p>
         </div>
       </div>
