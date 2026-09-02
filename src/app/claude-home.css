@@ -793,7 +793,7 @@
 
 .nv-clients .nv-eyebrow {
   margin-bottom: 0;
-  color: #f4f0e4;
+  color: #f4f0e4 !important;
 }
 
 .nv-clients h2 {
