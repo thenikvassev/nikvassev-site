@@ -13,9 +13,14 @@ export function AboutIntro() {
           <p className="nv-eyebrow">Introduction</p>
           <h2 id="about-heading">About Me</h2>
           <p className="nv-about-bio">
-            I&apos;m a brand strategist, serial founder and growth marketer. I
-            help entrepreneurs build high-impact companies through brand
-            strategy, growth marketing and AI systems.
+            Nik Vassev is a serial entrepreneur and brand strategist who turns
+            startup narratives into category-dominating authority. Across his
+            career building and exiting tech ventures, his companies have
+            reached nine-figure valuations and closed tens of millions in
+            enterprise deals with global institutions and Fortune 500 companies.
+            Today, he translates that real-world track record into actionable
+            systems for growth marketing, AI visibility and predictable growth
+            for innovative startups.
           </p>
         </div>
         <div className="nv-stats">

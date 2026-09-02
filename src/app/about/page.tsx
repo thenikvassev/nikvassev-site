@@ -88,12 +88,14 @@ export default function AboutPage() {
 
         <div className="prose-nik mt-10 max-w-reading text-base md:text-lg">
           <p>
-            Nik Vassev is a serial tech founder, brand strategist, and growth
-            marketer who has spent over a decade in the entrepreneurial
-            trenches. Having built and scaled companies across AI, healthtech
-            and marketing, he has raised tens of millions in capital and led a
-            tech venture to a successful exit. Nik learned the hard way that
-            outworking a broken process only leads to burnout.
+            Nik Vassev is a serial entrepreneur and brand strategist who turns
+            startup narratives into category-dominating authority. Across his
+            career building and exiting tech ventures, his companies have
+            reached nine-figure valuations and closed tens of millions in
+            enterprise deals with global institutions and Fortune 500 companies.
+            Today, he translates that real-world track record into actionable
+            systems for growth marketing, AI visibility and predictable growth
+            for innovative startups.
           </p>
           <p>
             After co-founding Novobeing (a therapeutic VR platform validated in
