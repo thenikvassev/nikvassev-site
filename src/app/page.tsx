@@ -26,12 +26,10 @@ export default function HomePage() {
       <AboutIntro />
       <TrackRecord />
 
-      <section className="border-t border-tan/40">
+      <section className="nv nv-home-block border-t border-tan/40">
         <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-          <p className="section-label">Founder resources</p>
-          <h2 className="mt-3 text-2xl tracking-display md:text-3xl">
-            Explore my blog and free guides
-          </h2>
+          <p className="nv-eyebrow">Founder resources</p>
+          <h2 className="nv-section-title">Explore my blog and free guides</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {guides.map((g) => (
               <CardLink
@@ -89,9 +87,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-        <p className="section-label">Speaking and media</p>
-        <h2 className="mt-3 max-w-xl text-2xl tracking-display md:text-3xl">
+      <section className="nv nv-home-block mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
+        <p className="nv-eyebrow">Speaking and media</p>
+        <h2 className="nv-section-title nv-section-title--narrow">
           Get in touch for speaking, podcasts and press.
         </h2>
         <div className="mt-8 grid items-start gap-6 lg:grid-cols-2">

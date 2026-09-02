@@ -50,7 +50,8 @@ export function Header() {
             <span className="nv-mark" aria-hidden>
               ✻
             </span>
-            Nik Vassev
+            <span className="nv-word-first">Nik</span>
+            <span className="nv-word-last">Vassev</span>
           </Link>
 
           <nav aria-label="Primary" className="nv-links">

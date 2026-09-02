@@ -28,7 +28,7 @@ export const trackRecordLogos = [
   { src: "/logos/harvard.png", alt: "Harvard University" },
   { src: "/logos/penn.png", alt: "Penn" },
   { src: "/logos/canada.png", alt: "Government of Canada" },
-  { src: "/logos/futurpreneur.png", alt: "Futurpreneur" },
+  { src: "/logos/futurpreneur.svg", alt: "Futurpreneur" },
 ] as const;
 
 export type NavItem = (typeof siteConfig.nav)[number];

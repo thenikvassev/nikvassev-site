@@ -55,8 +55,8 @@
 
 .nv-wordmark {
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: baseline;
+  gap: 0.32rem;
   flex-shrink: 0;
   font-family: var(--nv-serif);
   font-style: italic;
@@ -66,6 +66,20 @@
   color: inherit;
   text-decoration: none;
   line-height: 1;
+}
+
+.nv-word-first {
+  color: #0a3b24;
+}
+
+.nv-word-last {
+  color: inherit;
+}
+
+@media (min-width: 861px) {
+  .nv-wordmark {
+    font-size: 1.62rem;
+  }
 }
 
 .nv-mark {
@@ -93,6 +107,12 @@
 @media (min-width: 861px) {
   .nv-links {
     display: flex;
+    flex-wrap: nowrap;
+    gap: 0.35rem 0.95rem;
+  }
+
+  .nv-links a {
+    font-size: 0.69rem;
   }
 }
 
@@ -143,6 +163,13 @@
   padding: 0.62rem 1.05rem 0.62rem 1.15rem;
   text-decoration: none;
   white-space: nowrap;
+}
+
+@media (min-width: 861px) {
+  .nv-cta {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.88rem 0.5rem 0.95rem;
+  }
 }
 
 .nv-cta svg {
@@ -634,7 +661,9 @@
   color: var(--nv-accent);
 }
 
-.nv-about h2 {
+.nv-about h2,
+.nv-section-title,
+.nv-ways h2 {
   margin: 0.7rem 0 0;
   font-family: var(--nv-serif);
   font-style: normal;
@@ -643,6 +672,10 @@
   letter-spacing: -0.035em;
   line-height: 1.08;
   color: var(--nv-ink);
+}
+
+.nv-section-title--narrow {
+  max-width: 22rem;
 }
 
 .nv-about-bio {
@@ -807,25 +840,21 @@
   }
 }
 
-.nv-ways-eyebrow {
+.nv-ways-eyebrow,
+.nv-ways-label {
   margin: 0;
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--nv-sans);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #0a3b24;
+  color: var(--nv-accent);
 }
 
 .nv-ways h2 {
-  margin: 0.75rem auto 0;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 20ch;
-  font-family: var(--font-newsreader), Georgia, serif;
-  font-size: clamp(2.1rem, 5vw, 3.15rem);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.12;
-  color: #17160f;
 }
 
 .nv-ways-grid {
@@ -857,24 +886,14 @@
   }
 }
 
-.nv-ways-label {
-  margin: 0;
-  font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #0a3b24;
-}
-
 .nv-ways-card h3 {
   margin: 0.85rem 0 0;
-  font-family: var(--font-newsreader), Georgia, serif;
+  font-family: var(--nv-serif);
   font-size: 1.55rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.15;
-  color: #17160f;
+  color: var(--nv-ink);
 }
 
 .nv-ways-card p {
