@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { CardLink } from "@/components/CardLink";
-import { MediaFrame } from "@/components/MediaFrame";
 import { HomeHero } from "@/components/HomeHero";
 import { AboutIntro } from "@/components/AboutIntro";
 import { TrackRecord } from "@/components/TrackRecord";
@@ -87,49 +87,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="nv nv-speaking">
-        <div className="nv-speaking-inner">
-          <p className="nv-eyebrow">Speaking and media</p>
-          <h2 className="nv-section-title">
+      <section className="nv nv-speaking" aria-labelledby="speaking-heading">
+        <div className="nv-speaking-photo">
+          <Image
+            src="/photos/nik-speaker.jpg"
+            alt="Nik Vassev in a burgundy blazer and glasses against a black studio backdrop."
+            fill
+            sizes="100vw"
+            className="nv-speaking-img"
+          />
+        </div>
+        <div className="nv-speaking-card">
+          <p className="nv-speaking-eyebrow">Speaker</p>
+          <h2 id="speaking-heading">
             Get in touch for speaking, podcasts and press.
           </h2>
-          <div className="nv-speaking-row">
-            <MediaFrame
-              src="/photos/nik-keynote.png"
-              alt="Nik Vassev on stage in a dark suit, holding a microphone during a keynote."
-              ratio="photo"
-            />
-            <div>
-              <p className="max-w-reading text-ink-muted">
-                I speak on brand strategy, AI visibility and building companies
-                that leave room for a life. For podcasts, press or a stage, write
-                or send a LinkedIn note.
-              </p>
-              <p className="mt-4 text-sm text-ink">
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="font-medium text-forest underline underline-offset-4"
-                >
-                  {siteConfig.email}
-                </a>
-              </p>
-              <p className="mt-2 text-sm">
-                <a
-                  href={siteConfig.social.linkedin}
-                  className="font-medium text-forest underline underline-offset-4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </p>
-              <div className="mt-6">
-                <Link href="/brand-strategy#book" className="pill-btn-primary">
-                  Book a call
-                </Link>
-              </div>
-            </div>
-          </div>
+          <p className="nv-speaking-body">
+            I speak on brand strategy, AI visibility and building companies
+            that leave room for a life. For podcasts, press or a stage, write
+            or send a LinkedIn note.
+          </p>
+          <p className="nv-speaking-contact">
+            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+            <a
+              href={siteConfig.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </p>
+          <a
+            className="nv-speaking-cta"
+            href={`mailto:${siteConfig.email}`}
+          >
+            Hire Nik to speak →
+          </a>
         </div>
       </section>
     </>
