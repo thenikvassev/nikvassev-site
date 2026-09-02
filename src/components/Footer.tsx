@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteConfig } from "@/lib/site";
+import { footerNav, siteConfig } from "@/lib/site";
 import { NewsletterForm } from "./NewsletterForm";
 
 export function Footer() {
@@ -53,7 +53,7 @@ export function Footer() {
             aria-label="Footer"
             className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-muted"
           >
-            {siteConfig.nav.map((item) => (
+            {footerNav.map((item) => (
               <Link key={item.href} href={item.href} className="hover:text-forest">
                 {item.label}
               </Link>

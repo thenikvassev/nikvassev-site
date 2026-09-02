@@ -68,12 +68,14 @@
   line-height: 1;
 }
 
-.nv-word-first {
-  color: #0a3b24;
-}
-
+.nv-word-first,
 .nv-word-last {
   color: inherit;
+}
+
+.nv-header.is-home:not(.is-solid) .nv-word-first,
+.nv-header.is-home:not(.is-solid) .nv-word-last {
+  color: #f4f0e4;
 }
 
 @media (min-width: 861px) {
@@ -112,7 +114,8 @@
   }
 
   .nv-links a {
-    font-size: 0.69rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
   }
 }
 
@@ -394,13 +397,13 @@
 
   .nv-hero-name .first {
     font-family: var(--font-newsreader), Georgia, serif;
-    font-size: clamp(2.8rem, 5.2vw, 5.4rem);
+    font-size: clamp(3.15rem, 5.9vw, 6.1rem);
     font-weight: 400;
   }
 
   .nv-hero-name .last {
     font-family: var(--font-inter), system-ui, sans-serif;
-    font-size: clamp(3.4rem, 8.2vw, 8.8rem);
+    font-size: clamp(3.85rem, 9.3vw, 10rem);
     font-weight: 800;
     letter-spacing: -0.05em;
   }
@@ -416,7 +419,8 @@
 
 @media (min-width: 900px) {
   .nv-hero-name .first {
-    color: #f4f0e4;
+    color: #0a3b24;
+    text-shadow: 0 0 18px rgba(251, 250, 247, 0.45);
   }
 
   .nv-hero-name .last {
@@ -483,7 +487,7 @@
   .nv-hero-seen strong {
     margin-bottom: 0.45rem;
     font-family: var(--font-inter), system-ui, sans-serif;
-    font-size: 0.62rem;
+    font-size: 0.74rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
   }
@@ -500,22 +504,11 @@
     content: none;
   }
 
-  .press-forbes {
-    font-family: var(--font-newsreader), Georgia, serif;
-    font-size: 1.15rem;
-    font-weight: 400;
-    font-style: italic;
-  }
-
-  .press-guardian {
-    font-family: var(--font-newsreader), Georgia, serif;
-    font-size: 1.05rem;
-    font-style: italic;
-  }
-
+  .press-forbes,
+  .press-guardian,
   .press-entrepreneur {
     font-family: var(--font-newsreader), Georgia, serif;
-    font-size: 1.1rem;
+    font-size: 1.42rem;
     font-weight: 400;
     font-style: italic;
     letter-spacing: 0;
@@ -659,7 +652,11 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--nv-accent);
+  color: #0a3b24;
+}
+
+.nv-home-block .nv-eyebrow {
+  color: #0a3b24;
 }
 
 .nv-about h2,
@@ -675,8 +672,35 @@
   color: var(--nv-ink);
 }
 
-.nv-section-title--narrow {
-  max-width: 22rem;
+.nv-speaking {
+  padding: 4.6rem 1.35rem 5rem;
+}
+
+@media (min-width: 900px) {
+  .nv-speaking {
+    padding: 6.2rem 2.25rem 6.6rem;
+  }
+}
+
+.nv-speaking-inner {
+  max-width: 73.75rem;
+  margin: 0 auto;
+}
+
+.nv-speaking-row {
+  display: grid;
+  gap: 1.8rem;
+  margin-top: 2.4rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .nv-speaking-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.4rem;
+    align-items: center;
+    margin-top: 2.8rem;
+  }
 }
 
 .nv-about-bio {
@@ -841,15 +865,24 @@
   }
 }
 
-.nv-ways-eyebrow,
-.nv-ways-label {
+.nv-ways-eyebrow {
   margin: 0;
   font-family: var(--nv-sans);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--nv-accent);
+  color: #0a3b24;
+}
+
+.nv-ways-label {
+  margin: 0;
+  font-family: var(--nv-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0a3b24;
 }
 
 .nv-ways h2 {

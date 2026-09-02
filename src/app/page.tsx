@@ -55,7 +55,7 @@ export default function HomePage() {
         <h2>Three ways to work with me</h2>
         <div className="nv-ways-grid">
           <article className="nv-ways-card">
-            <p className="nv-ways-label">For founders</p>
+            <p className="nv-ways-label">For early-stage startups</p>
             <h3>Guide IQ</h3>
             <p>
               An AI-powered brand strategy engine I built. Give it your inputs,
@@ -87,52 +87,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="nv nv-home-block mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-        <p className="nv-eyebrow">Speaking and media</p>
-        <h2 className="nv-section-title nv-section-title--narrow">
-          Get in touch for speaking, podcasts and press.
-        </h2>
-        <div className="mt-8 grid items-start gap-6 lg:grid-cols-2">
-          <MediaFrame
-            src="/photos/nik-keynote.png"
-            alt="Nik Vassev on stage in a dark suit, holding a microphone during a keynote."
-            ratio="photo"
-          />
-          <div>
-            <p className="max-w-reading text-ink-muted">
-              I speak on brand strategy, AI visibility and building companies
-              that leave room for a life. For podcasts, press or a stage, write
-              or send a LinkedIn note.
-            </p>
-            <p className="mt-4 text-sm text-ink">
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="font-medium text-forest underline underline-offset-4"
-              >
-                {siteConfig.email}
-              </a>
-            </p>
-            <p className="mt-2 text-sm">
-              <a
-                href={siteConfig.social.linkedin}
-                className="font-medium text-forest underline underline-offset-4"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </p>
-            <div className="mt-6">
-              <Link href="/brand-strategy#book" className="pill-btn-primary">
-                Book a call
-              </Link>
-            </div>
+      <section className="nv nv-speaking">
+        <div className="nv-speaking-inner">
+          <p className="nv-eyebrow">Speaking and media</p>
+          <h2 className="nv-section-title">
+            Get in touch for speaking, podcasts and press.
+          </h2>
+          <div className="nv-speaking-row">
             <MediaFrame
-              src="/placeholders/speaking-media.svg"
-              alt="Placeholder for a podcast or press photo"
-              ratio="wide"
-              className="mt-6"
+              src="/photos/nik-keynote.png"
+              alt="Nik Vassev on stage in a dark suit, holding a microphone during a keynote."
+              ratio="photo"
             />
+            <div>
+              <p className="max-w-reading text-ink-muted">
+                I speak on brand strategy, AI visibility and building companies
+                that leave room for a life. For podcasts, press or a stage, write
+                or send a LinkedIn note.
+              </p>
+              <p className="mt-4 text-sm text-ink">
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="font-medium text-forest underline underline-offset-4"
+                >
+                  {siteConfig.email}
+                </a>
+              </p>
+              <p className="mt-2 text-sm">
+                <a
+                  href={siteConfig.social.linkedin}
+                  className="font-medium text-forest underline underline-offset-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </p>
+              <div className="mt-6">
+                <Link href="/brand-strategy#book" className="pill-btn-primary">
+                  Book a call
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
