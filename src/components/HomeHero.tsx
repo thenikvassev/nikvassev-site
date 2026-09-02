@@ -73,51 +73,59 @@ export function HomeHero() {
       </div>
       <div className="nv-hero-overlay" />
 
-      <div className="nv-badge" ref={badgeRef} aria-hidden>
-        <svg className="nv-badge-spin" viewBox="0 0 200 200">
-          <defs>
-            <path
-              id="nv-badge-circle"
-              d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"
-            />
-          </defs>
-          <text
-            fill="currentColor"
-            fontSize="13.2"
-            fontFamily="var(--nv-sans), system-ui, sans-serif"
-            letterSpacing="3.2"
-          >
-            <textPath href="#nv-badge-circle">
-              SERIAL FOUNDER * BRAND STRATEGIST * GROWTH MARKETER *
-            </textPath>
-          </text>
-        </svg>
-        <div className="nv-badge-core">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path
-              d="M7 17L17 7M9 7h8v8"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
+      <div className="nv-hero-stage">
+        <div className="nv-hero-panel">
+          <div className="nv-badge" ref={badgeRef} aria-hidden>
+            <svg className="nv-badge-spin" viewBox="0 0 200 200">
+              <defs>
+                <path
+                  id="nv-badge-circle"
+                  d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"
+                />
+              </defs>
+              <text
+                fill="currentColor"
+                fontSize="13.2"
+                fontFamily="var(--font-inter), system-ui, sans-serif"
+                letterSpacing="3.2"
+              >
+                <textPath href="#nv-badge-circle">
+                  SERIAL FOUNDER * BRAND STRATEGIST * GROWTH MARKETER *
+                </textPath>
+              </text>
+            </svg>
+            <div className="nv-badge-core">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
 
-      <div className="nv-hero-copy">
-        <h1 className="nv-hero-name">
-          <span className="first">Nik</span>
-          <span className="last">Vassev</span>
-        </h1>
-        <p className="nv-hero-tagline">
-          <span className="founder">Serial Founder · </span>
-          Brand Strategist · Growth Marketer
-        </p>
-        <p className="nv-hero-seen">
-          <strong>As Seen In</strong>
-          Forbes · The Guardian · Entrepreneur
-        </p>
+          <div className="nv-hero-copy">
+            <h1 className="nv-hero-name">
+              <span className="first">Nik</span>
+              <span className="last">Vassev</span>
+            </h1>
+            <p className="nv-hero-tagline">
+              <span className="founder">Serial Founder · </span>
+              Brand Strategist · Growth Marketer
+            </p>
+            <p className="nv-hero-seen">
+              <strong>As Seen In</strong>
+              <span className="nv-hero-press">
+                <span className="press-forbes">Forbes</span>
+                <span className="press-guardian">The Guardian</span>
+                <span className="press-entrepreneur">Entrepreneur</span>
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
 
       <a className="nv-scroll" href="#about">

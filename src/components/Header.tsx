@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { headerNav } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
@@ -47,16 +47,31 @@ export function Header() {
       <header className={headerClass}>
         <div className="nv-header-bar">
           <Link href="/" className="nv-wordmark" onClick={() => setOpen(false)}>
-            <span className="nv-mark" aria-hidden />
+            <span className="nv-mark" aria-hidden>
+              ✻
+            </span>
             Nik Vassev
           </Link>
 
           <nav aria-label="Primary" className="nv-links">
-            {headerNav.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
+            {siteConfig.nav.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+              const nowrap = "nowrap" in item && item.nowrap;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`${active ? "is-active" : ""}${
+                    nowrap ? " is-nowrap" : ""
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="nv-header-right">
@@ -84,15 +99,22 @@ export function Header() {
           hidden={!open}
         >
           <nav aria-label="Mobile">
-            {headerNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {siteConfig.nav.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={active ? "is-active" : ""}
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </header>
@@ -105,7 +127,7 @@ function ArrowIcon() {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden>
       <path
-        d="M3 8h10M9 4l4 4-4 4"
+        d="M4 12L12 4M6.5 4H12v5.5"
         stroke="currentColor"
         strokeWidth="1.6"
         strokeLinecap="round"

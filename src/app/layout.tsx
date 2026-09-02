@@ -10,7 +10,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["400", "600"],
+  weight: ["400", "600", "800"],
 });
 
 const newsreader = Newsreader({
@@ -18,6 +18,7 @@ const newsreader = Newsreader({
   variable: "--font-newsreader",
   display: "swap",
   weight: ["400"],
+  style: ["normal", "italic"],
 });
 
 const fraunces = Fraunces({

@@ -24,13 +24,6 @@ export const siteConfig = {
   ],
 } as const;
 
-export const headerNav = [
-  { href: "/#about", label: "About" },
-  { href: "/brand-strategy", label: "Method" },
-  { href: "/#work", label: "Work With Me" },
-  { href: "/#newsletter", label: "Newsletter" },
-] as const;
-
 export const trackRecordLogos = [
   { src: "/logos/ibm-watson.png", alt: "IBM Watson" },
   { src: "/logos/meta.svg", alt: "Meta" },
