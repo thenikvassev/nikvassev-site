@@ -107,21 +107,13 @@ export default function HomePage() {
             workflows, brand strategies, and growth systems he uses to
             actively scale tech startups and build high-impact brands.
           </p>
-          <p className="nv-speaking-contact">
-            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            <a
-              href={siteConfig.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </p>
           <a
             className="nv-speaking-cta"
-            href={`mailto:${siteConfig.email}`}
+            href="https://tally.so/r/7RkyqR"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Hire Nik to speak →
+            Book Nik
           </a>
         </div>
       </section>
