@@ -100,7 +100,11 @@ export default function HomePage() {
         <div className="nv-speaking-card">
           <p className="nv-speaking-eyebrow">Speaker</p>
           <h2 id="speaking-heading">
-            Real-World Exits. Actionable Systems. Zero Hype.
+            Real-World Exits.
+            <br />
+            Actionable Systems.
+            <br />
+            Zero Hype.
           </h2>
           <p className="nv-speaking-body">
             Bring Nik to your podcast or stage to break down the exact AI
