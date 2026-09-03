@@ -1,13 +1,13 @@
 /* Claude homepage chrome — scoped to nav / hero / about / clients only. */
 
 .nv {
-  --nv-bg: #fbfaf7;
-  --nv-surface: #efece5;
+  --nv-bg: #e8e4d9;
+  --nv-surface: #e8e4d9;
   --nv-accent: #0a3b24;
-  --nv-ink: #17160f;
-  --nv-serif: var(--font-newsreader), Georgia, serif;
+  --nv-ink: #0a3b24;
+  --nv-serif: var(--font-pp-editorial), Georgia, serif;
   --nv-sans: var(--font-inter), system-ui, sans-serif;
-  --nv-hairline: rgba(23, 22, 15, 0.12);
+  --nv-hairline: rgba(10, 59, 36, 0.14);
 }
 
 /* ---------- Header ---------- */
@@ -27,7 +27,7 @@
 .nv-header.is-solid,
 .nv-header.is-inner {
   color: var(--nv-ink);
-  background: rgba(251, 250, 247, 0.88);
+  background: rgba(232, 228, 217, 0.92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   box-shadow: 0 1px 0 var(--nv-hairline);
@@ -60,7 +60,7 @@
   flex-shrink: 0;
   font-family: var(--nv-serif);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 200;
   font-size: 1.28rem;
   letter-spacing: -0.02em;
   color: inherit;
@@ -186,8 +186,8 @@
 }
 
 .nv-header.is-home:not(.is-solid) .nv-cta {
-  background: #fff;
-  color: var(--nv-ink);
+  background: #e8e4d9;
+  color: #0a3b24;
 }
 
 .nv-cta:hover {
@@ -270,7 +270,7 @@
   min-height: 36rem;
   overflow: hidden;
   color: #fff;
-  background: #111;
+  background: #032415;
 }
 
 @media (min-width: 900px) {
@@ -278,7 +278,7 @@
     height: 100vh;
     min-height: 640px;
     max-height: 980px;
-    background: #0d0c09;
+    background: #032415;
   }
 }
 
@@ -407,9 +407,9 @@
   }
 
   .nv-hero-name .last {
-    font-family: var(--nv-sans);
+    font-family: var(--nv-serif);
     font-size: clamp(4.2rem, 10vw, 11rem);
-    font-weight: 800;
+    font-weight: 200;
     letter-spacing: -0.05em;
   }
 }
@@ -437,7 +437,7 @@
 .nv-hero-name .last {
   display: block;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 200;
 }
 
 .nv-hero-tagline {
@@ -506,7 +506,7 @@
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.15rem 1.15rem;
-    color: #17160f;
+    color: #0a3b24;
   }
 
   .nv-hero-press span + span::before {
@@ -702,7 +702,7 @@
   z-index: 2;
   margin: 0;
   padding: 2rem 1.45rem 2.2rem;
-  background: #fbfaf7;
+  background: #e8e4d9;
   border-top: 6px solid #cbbca3;
 }
 
@@ -724,7 +724,7 @@
   font-size: clamp(1.7rem, 4vw, 2.4rem);
   letter-spacing: -0.03em;
   line-height: 1.15;
-  color: #17160f;
+  color: #0a3b24;
 }
 
 .nv-speaking-body {
@@ -757,7 +757,7 @@
   padding: 0.72rem 1.25rem;
   border-radius: 999px;
   background: #0a3b24;
-  color: #fbfaf7;
+  color: #e8e4d9;
   font-family: var(--nv-sans);
   font-size: 0.82rem;
   font-weight: 600;
@@ -953,7 +953,7 @@
 
 .nv-ways {
   background: #e8e4d9;
-  color: #17160f;
+  color: #0a3b24;
   padding: 4.6rem 1.35rem 5rem;
   text-align: center;
 }
@@ -1009,7 +1009,8 @@
 }
 
 .nv-ways-card {
-  background: #efece5;
+  background: #e8e4d9;
+  border: 1px solid rgba(10, 59, 36, 0.16);
   border-radius: 22px;
   padding: 1.7rem 1.45rem 1.6rem;
 }
@@ -1039,17 +1040,24 @@
 }
 
 .nv-ways-card a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 1.35rem;
+  padding: 0.62rem 1.15rem;
+  border-radius: 999px;
+  background: #0a3b24;
+  color: #e8e4d9;
   font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  color: #0a3b24;
+  letter-spacing: 0.04em;
   text-decoration: none;
 }
 
 .nv-ways-card a:hover {
-  color: #032415;
+  background: #032415;
+  color: #e8e4d9;
 }
 
 /* ---------- Newsletter band ---------- */
@@ -1113,18 +1121,18 @@
 }
 
 .nv-newsletter-form input {
-  background: #fbfaf7 !important;
-  border-color: #e8e4d9 !important;
-  color: #17160f !important;
+  background: #e8e4d9 !important;
+  border: 2px solid #cbbca3 !important;
+  color: #0a3b24 !important;
 }
 
 .nv-newsletter-form input::placeholder {
-  color: #6d6b60 !important;
+  color: #6b7a72 !important;
 }
 
 .nv-newsletter-form button {
-  background: #e8e4d9 !important;
-  color: #032415 !important;
+  background: #0a3b24 !important;
+  color: #e8e4d9 !important;
 }
 
 .nv-newsletter-note {
@@ -1138,8 +1146,8 @@
 /* ---------- Bottom legal strip ---------- */
 
 .nv-legal {
-  border-top: 1px solid rgba(203, 188, 163, 0.5);
-  background: #ffffff;
+  border-top: 1px solid rgba(10, 59, 36, 0.14);
+  background: #e8e4d9;
 }
 
 .nv-legal-inner {
@@ -1160,7 +1168,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.4;
-  color: #17160f;
+  color: #0a3b24;
 }
 
 .nv-legal-socials {
@@ -1177,8 +1185,8 @@
   width: 2.35rem;
   height: 2.35rem;
   border-radius: 999px;
-  border: 1.5px solid #17160f;
-  color: #17160f;
+  border: 1.5px solid #0a3b24;
+  color: #0a3b24;
   background: transparent;
   text-decoration: none;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -1186,9 +1194,9 @@
 
 .nv-legal-social:hover,
 .nv-legal-social:focus-visible {
-  background: #17160f;
-  color: #ffffff;
-  border-color: #17160f;
+  background: #0a3b24;
+  color: #e8e4d9;
+  border-color: #0a3b24;
 }
 
 .nv-legal-social:focus-visible {

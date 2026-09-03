@@ -26,7 +26,7 @@ export default function ResourcesPage() {
         {siteConfig.newsletterPitch}
       </p>
 
-      <section className="mt-12 rounded-card border border-tan/40 bg-white p-6 md:p-8">
+      <section className="mt-12 rounded-card border border-forest/15 bg-cream p-6 md:p-8">
         <p className="section-label">Newsletter</p>
         <h2 className="mt-3 text-xl">{siteConfig.newsletter}</h2>
         <p className="mt-2 max-w-lg text-sm text-ink-muted">

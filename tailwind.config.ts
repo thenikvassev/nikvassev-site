@@ -9,36 +9,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Storyline Pros kit tokens (exact)
         forest: {
-          DEFAULT: "#0A3B24", // --color-kit-dark: primary green text + button fills
-          dark: "#032415", // --color-kit-key1: inverted spotlight panels
-          soft: "#E8E4D9", // reuse cream wash for soft hover/section tint
+          DEFAULT: "#0A3B24",
+          dark: "#032415",
+          soft: "#E8E4D9",
         },
         cream: {
-          DEFAULT: "#E8E4D9", // --color-kit-light: cream section bg
-          card: "#FFFFFF",
-          warm: "#CBBCA3", // --color-kit-key2: tan dividers/highlights
+          DEFAULT: "#E8E4D9",
+          card: "#E8E4D9",
+          warm: "#CBBCA3",
         },
         tan: "#CBBCA3",
         ink: {
-          DEFAULT: "#0A3B24", // body text = Storyline dark green
+          DEFAULT: "#0A3B24",
           muted: "#3d4848",
           faint: "#6b7a72",
         },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: [
-          "var(--font-pp-editorial)",
-          "var(--font-newsreader)",
-          "Georgia",
-          "serif",
-        ],
+        serif: ["var(--font-pp-editorial)", "Georgia", "serif"],
       },
       borderRadius: {
         card: "16px",
-        btn: "8px",
+        btn: "9999px",
       },
       maxWidth: {
         reading: "42rem",

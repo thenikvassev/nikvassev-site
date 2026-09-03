@@ -63,8 +63,8 @@ export function NewsletterForm({ variant = "light" }: Props) {
   if (status === "success") {
     return (
       <p
-        className={`rounded-btn px-4 py-3 text-sm ${
-          isDark ? "bg-white/10 text-white" : "bg-cream text-forest"
+        className={`rounded-full px-4 py-3 text-sm ${
+          isDark ? "bg-cream text-forest" : "bg-forest text-white"
         }`}
         role="status"
         aria-live="polite"
@@ -103,10 +103,10 @@ export function NewsletterForm({ variant = "light" }: Props) {
               setError(null);
             }
           }}
-          className={`min-w-0 flex-1 rounded-btn border px-5 py-3 text-sm outline-none focus:ring-2 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-70 ${
+          className={`min-w-0 flex-1 rounded-full border-2 px-5 py-3 text-sm outline-none focus:ring-2 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-70 ${
             isDark
-              ? "border-white/25 bg-white/10 text-white placeholder:text-white/50 focus:ring-white/40 focus:ring-offset-forest-dark"
-              : "border-tan bg-white text-ink placeholder:text-ink-faint focus:ring-forest/40 focus:ring-offset-white"
+              ? "border-tan bg-cream text-forest placeholder:text-ink-faint focus:ring-white/50 focus:ring-offset-forest-dark"
+              : "border-forest bg-cream text-forest placeholder:text-ink-faint focus:ring-forest/40 focus:ring-offset-cream"
           }`}
         />
         <button
@@ -114,7 +114,7 @@ export function NewsletterForm({ variant = "light" }: Props) {
           disabled={isLoading}
           className={
             isDark
-              ? "pill-btn shrink-0 bg-white text-forest hover:bg-cream disabled:cursor-not-allowed disabled:opacity-70"
+              ? "pill-btn shrink-0 bg-forest text-white hover:bg-forest-dark disabled:cursor-not-allowed disabled:opacity-70"
               : "pill-btn-primary shrink-0 disabled:cursor-not-allowed disabled:opacity-70"
           }
         >

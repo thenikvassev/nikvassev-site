@@ -7,7 +7,7 @@
 }
 
 :root {
-  --font-pp-editorial: "PP Editorial New", var(--font-newsreader), Georgia, serif;
+  --font-pp-editorial: "PP Editorial New", Georgia, serif;
 }
 
 @tailwind base;
@@ -22,10 +22,10 @@
   }
 
   body {
-    @apply bg-white text-ink font-sans;
+    @apply bg-cream text-ink font-sans;
   }
 
-  /* Display titles — PP Editorial New Ultralight (hero excluded via .nv-hero-name) */
+  /* Display titles — PP Editorial New Light */
   h1,
   h2 {
     @apply font-serif font-extralight leading-display tracking-display;
@@ -40,7 +40,7 @@
   }
 
   ::selection {
-    @apply bg-cream text-ink;
+    @apply bg-forest text-white;
   }
 }
 
@@ -50,7 +50,7 @@
   }
 
   .pill-btn {
-    @apply inline-flex items-center justify-center rounded-btn px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
   }
 
   .pill-btn-primary {
@@ -58,11 +58,11 @@
   }
 
   .pill-btn-secondary {
-    @apply pill-btn border border-forest bg-transparent text-forest hover:bg-cream;
+    @apply pill-btn border border-forest bg-transparent text-forest hover:bg-forest/10;
   }
 
   .card {
-    @apply rounded-card border border-tan/40 bg-cream-card p-6 shadow-sm transition-shadow hover:shadow-md;
+    @apply rounded-card border border-forest/15 bg-cream p-6 shadow-sm transition-shadow hover:shadow-md;
   }
 
   .prose-nik {
