@@ -19,10 +19,14 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    background-color: #e8e4d9;
   }
 
   body {
     @apply bg-cream text-ink font-sans;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   /* Display titles — PP Editorial New Light */

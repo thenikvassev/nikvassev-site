@@ -681,26 +681,39 @@
 .nv-speaking {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
   background: #032415;
 }
 
 .nv-speaking-photo {
   position: relative;
+  display: block;
   width: 100%;
+  max-width: 100%;
   min-height: 22rem;
-  height: 56vw;
-  max-height: 28rem;
+  height: 72vw;
+  max-height: 32rem;
+  overflow: hidden;
+  background: #032415;
 }
 
+.nv-speaking-photo img,
 .nv-speaking-img {
-  object-fit: cover;
-  object-position: 50% 28%;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: 20% 40%;
 }
 
 .nv-speaking-card {
   position: relative;
   z-index: 2;
   margin: 0;
+  width: 100%;
   padding: 2rem 1.45rem 2.2rem;
   background: #e8e4d9;
   border-top: 6px solid #cbbca3;
@@ -768,7 +781,9 @@
 @media (min-width: 900px) {
   .nv-speaking {
     display: grid;
-    grid-template-columns: 1.15fr 0.9fr;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+    align-items: stretch;
+    width: 100%;
     min-height: 70vh;
   }
 
@@ -776,21 +791,25 @@
     position: relative;
     inset: auto;
     width: 100%;
-    height: 100%;
+    height: auto;
     min-height: 70vh;
     max-height: none;
+    align-self: stretch;
   }
 
+  .nv-speaking-photo img,
   .nv-speaking-img {
-    object-position: 50% 22%;
+    object-position: 18% 38%;
   }
 
   .nv-speaking-card {
     position: relative;
     top: auto;
     right: auto;
-    width: auto;
-    height: 100%;
+    min-width: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
     transform: none;
     display: flex;
     flex-direction: column;
@@ -1063,6 +1082,8 @@
 /* ---------- Newsletter band ---------- */
 
 .nv-newsletter {
+  width: 100%;
+  max-width: 100%;
   background: #032415;
   color: #e8e4d9;
   padding: 4.4rem 1.35rem 4.6rem;
@@ -1146,6 +1167,8 @@
 /* ---------- Bottom legal strip ---------- */
 
 .nv-legal {
+  width: 100%;
+  max-width: 100%;
   border-top: 1px solid rgba(10, 59, 36, 0.14);
   background: #e8e4d9;
 }

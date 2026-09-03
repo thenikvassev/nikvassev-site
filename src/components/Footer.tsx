@@ -99,7 +99,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24">
+    <footer className="w-full max-w-full">
       <div id="newsletter" className="nv nv-newsletter scroll-mt-28">
         <div className="nv-newsletter-inner">
           <h2>Brand strategy &amp; AI systems to dominate your category.</h2>
