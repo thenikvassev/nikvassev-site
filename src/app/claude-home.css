@@ -406,11 +406,11 @@
     font-weight: 400;
   }
 
-  .nv-hero-name .last {
-    font-family: var(--nv-serif);
+  .nv-hero .nv-hero-name .last {
+    font-family: var(--nv-sans);
     font-size: clamp(4.2rem, 10vw, 11rem);
-    font-weight: 200;
-    letter-spacing: -0.05em;
+    font-weight: 900;
+    letter-spacing: -0.07em;
   }
 }
 
@@ -429,7 +429,7 @@
   }
 
   .nv-hero .nv-hero-name .last {
-    color: #ffffff;
+    color: #E8E4D9;
     text-shadow: none;
   }
 }
