@@ -81,7 +81,7 @@ export default function AboutPage() {
 
         <MediaFrame
           src="/photos/nik-portrait-studio.jpg"
-          alt="Nik Vassev seated in a studio, black blazer and glasses, smiling at the camera."
+          alt="Nik Vassev, chest-up studio portrait in a black blazer and glasses."
           ratio="portrait"
           priority
           className="mt-10 max-h-[42rem] w-full md:max-w-2xl"
