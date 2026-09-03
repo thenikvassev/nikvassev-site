@@ -131,3 +131,17 @@ export const projects: Project[] = [
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
+
+export const activeProjects = projects.filter((p) => p.status === "active");
+export const priorProjects = projects.filter((p) => p.status === "prior");
+
+/** Shared overview card for Storyline Pros (not in the projects array). */
+export const storylineProsOverview = {
+  href: "/ai-visibility",
+  title: "Storyline Pros",
+  benefit:
+    "Narrative engineering and AI visibility for later-stage B2B emerging tech. Co-founded with Cynthia Salarizadeh.",
+  meta: "Co-Founder",
+  image: "/placeholders/storyline-media.svg",
+  imageAlt: "Placeholder for Storyline Pros",
+} as const;

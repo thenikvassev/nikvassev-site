@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MediaFrame } from "@/components/MediaFrame";
-import { ClientsRow } from "@/components/ClientsRow";
 import { PressRow } from "@/components/PressRow";
+import { ProjectsIndex } from "@/components/ProjectsIndex";
+import { TrackRecord } from "@/components/TrackRecord";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -189,7 +190,8 @@ export default function AboutPage() {
 
       </section>
 
-      <ClientsRow />
+      <TrackRecord />
+      <ProjectsIndex />
     </>
   );
 }

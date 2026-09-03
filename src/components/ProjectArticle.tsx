@@ -75,7 +75,7 @@ export function ProjectArticle({ project, extra }: Props) {
       )}
 
       <p className="mt-12">
-        <Link href="/projects" className="text-sm font-medium text-forest">
+        <Link href="/about#projects" className="text-sm font-medium text-forest">
           ← All projects
         </Link>
       </p>
