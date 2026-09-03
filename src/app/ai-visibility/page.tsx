@@ -193,7 +193,7 @@ export default function AiVisibilityPage() {
         <div className="mt-6 flex flex-wrap gap-3">
           <a
             href="https://storylinepros.com"
-            className="pill-btn bg-white text-forest hover:bg-cream"
+            className="pill-btn bg-cream text-forest hover:bg-forest hover:text-white"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -201,7 +201,7 @@ export default function AiVisibilityPage() {
           </a>
           <Link
             href="/brand-strategy"
-            className="pill-btn border border-white/30 text-white hover:bg-white/10"
+            className="pill-btn border border-white/40 text-white hover:bg-forest"
           >
             Brand strategy lane
           </Link>

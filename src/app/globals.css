@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "PP Editorial New";
+  src: url("/fonts/pp-editorial-new-ultralight.otf") format("opentype");
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+:root {
+  --font-pp-editorial: "PP Editorial New", Georgia, serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,23 +22,25 @@
   }
 
   body {
-    @apply bg-white text-ink font-sans;
+    @apply bg-cream text-ink font-sans;
   }
 
-  /* Serif titles only — Newsreader 400 */
+  /* Display titles — PP Editorial New Light */
   h1,
   h2 {
-    @apply font-serif font-normal leading-display tracking-display;
+    @apply font-serif font-extralight leading-display tracking-display;
   }
 
-  /* Small card / UI headings stay sans */
-  h3,
+  h3 {
+    @apply font-serif font-extralight;
+  }
+
   h4 {
     @apply font-sans font-semibold;
   }
 
   ::selection {
-    @apply bg-cream text-ink;
+    @apply bg-forest text-white;
   }
 }
 
@@ -36,7 +50,7 @@
   }
 
   .pill-btn {
-    @apply inline-flex items-center justify-center rounded-btn px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
   }
 
   .pill-btn-primary {
@@ -44,11 +58,11 @@
   }
 
   .pill-btn-secondary {
-    @apply pill-btn border border-forest bg-transparent text-forest hover:bg-cream;
+    @apply pill-btn border border-forest bg-transparent text-forest hover:bg-forest/10;
   }
 
   .card {
-    @apply rounded-card border border-tan/40 bg-cream-card p-6 shadow-sm transition-shadow hover:shadow-md;
+    @apply rounded-card border border-forest/15 bg-cream p-6 shadow-sm transition-shadow hover:shadow-md;
   }
 
   .prose-nik {

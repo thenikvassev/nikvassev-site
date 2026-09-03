@@ -13,16 +13,32 @@ export const siteConfig = {
   social: {
     linkedin: "https://www.linkedin.com/in/nikvassev",
     twitter: "https://twitter.com/nikvassev",
+    instagram: "https://www.instagram.com/nikvassev/",
   },
   nav: [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
     { href: "/ai-visibility", label: "AI Visibility", nowrap: true },
     { href: "/brand-strategy", label: "Brand Strategy", nowrap: true },
-    { href: "/resources", label: "Resources" },
   ],
 } as const;
+
+export const footerNav = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/about#projects", label: "Projects" },
+  { href: "/ai-visibility", label: "AI Visibility" },
+  { href: "/brand-strategy", label: "Brand Strategy" },
+] as const;
+
+export const trackRecordLogos = [
+  { src: "/logos/ibm-watson.png", alt: "IBM Watson" },
+  { src: "/logos/meta.svg", alt: "Meta" },
+  { src: "/logos/harvard.png", alt: "Harvard University" },
+  { src: "/logos/penn.png", alt: "Penn" },
+  { src: "/logos/canada.png", alt: "Government of Canada" },
+  { src: "/logos/futurpreneur.svg", alt: "Futurpreneur" },
+] as const;
 
 export type NavItem = (typeof siteConfig.nav)[number];
 

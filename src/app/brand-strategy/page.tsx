@@ -185,13 +185,13 @@ export default function BrandStrategyPage() {
         <div className="mt-6 flex flex-wrap gap-3">
           <a
             href="mailto:hello@nikvassev.com?subject=Brand%20strategy%20session"
-            className="pill-btn bg-white text-forest hover:bg-cream"
+            className="pill-btn bg-cream text-forest hover:bg-forest hover:text-white"
           >
             Email to book
           </a>
           <a
             href="https://guideiq.ai"
-            className="pill-btn border border-white/30 text-white hover:bg-white/10"
+            className="pill-btn border border-white/40 text-white hover:bg-forest"
             target="_blank"
             rel="noopener noreferrer"
           >
