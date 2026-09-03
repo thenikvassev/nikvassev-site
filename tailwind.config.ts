@@ -29,7 +29,12 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: ["var(--font-newsreader)", "Georgia", "serif"],
+        serif: [
+          "var(--font-pp-editorial)",
+          "var(--font-newsreader)",
+          "Georgia",
+          "serif",
+        ],
       },
       borderRadius: {
         card: "16px",

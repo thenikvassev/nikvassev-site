@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "PP Editorial New";
+  src: url("/fonts/pp-editorial-new-ultralight.otf") format("opentype");
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+:root {
+  --font-pp-editorial: "PP Editorial New", var(--font-newsreader), Georgia, serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,14 +25,16 @@
     @apply bg-white text-ink font-sans;
   }
 
-  /* Serif titles only — Newsreader 400 */
+  /* Display titles — PP Editorial New Ultralight (hero excluded via .nv-hero-name) */
   h1,
   h2 {
-    @apply font-serif font-normal leading-display tracking-display;
+    @apply font-serif font-extralight leading-display tracking-display;
   }
 
-  /* Small card / UI headings stay sans */
-  h3,
+  h3 {
+    @apply font-serif font-extralight;
+  }
+
   h4 {
     @apply font-sans font-semibold;
   }
