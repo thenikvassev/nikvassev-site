@@ -26,30 +26,6 @@ export default function HomePage() {
       <AboutIntro />
       <TrackRecord />
 
-      <section className="nv nv-home-block border-t border-tan/40">
-        <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-          <p className="nv-eyebrow">Founder resources</p>
-          <h2 className="nv-section-title">Explore my blog and free guides</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {guides.map((g) => (
-              <CardLink
-                key={g.slug}
-                href={g.href}
-                title={g.title}
-                benefit={g.benefit}
-                image={g.image}
-                imageAlt={g.imageAlt}
-              />
-            ))}
-          </div>
-          <div className="mt-8">
-            <Link href="/resources" className="pill-btn-secondary">
-              Resources
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section id="work" className="nv nv-ways scroll-mt-28">
         <p className="nv-ways-eyebrow">What I&apos;m building now</p>
         <h2>Three ways to work with me</h2>
@@ -84,6 +60,30 @@ export default function HomePage() {
             </p>
             <Link href="/#newsletter">Get the newsletter →</Link>
           </article>
+        </div>
+      </section>
+
+      <section className="nv nv-home-block border-t border-tan/40">
+        <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
+          <p className="nv-eyebrow">Founder resources</p>
+          <h2 className="nv-section-title">Explore my blog and free guides</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {guides.map((g) => (
+              <CardLink
+                key={g.slug}
+                href={g.href}
+                title={g.title}
+                benefit={g.benefit}
+                image={g.image}
+                imageAlt={g.imageAlt}
+              />
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link href="/resources" className="pill-btn-secondary">
+              Resources
+            </Link>
+          </div>
         </div>
       </section>
 
