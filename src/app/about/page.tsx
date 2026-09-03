@@ -82,9 +82,10 @@ export default function AboutPage() {
         <MediaFrame
           src="/photos/nik-portrait-studio.jpg"
           alt="Nik Vassev, chest-up studio portrait in a black blazer and glasses."
-          ratio="portrait"
+          ratio="tall"
           priority
-          className="mt-10 max-h-[42rem] w-full md:max-w-2xl"
+          imageClassName="object-cover object-top"
+          className="mt-10 w-full md:max-w-2xl"
         />
 
         <div className="prose-nik mt-10 max-w-reading text-base md:text-lg">
