@@ -13,8 +13,7 @@ export const siteConfig = {
   social: {
     linkedin: "https://www.linkedin.com/in/nikvassev",
     twitter: "https://twitter.com/nikvassev",
-    // Set once the Instagram handle is verified. Empty string is omitted from the footer.
-    instagram: "" as string,
+    instagram: "https://www.instagram.com/nikvassev/",
   },
   nav: [
     { href: "/", label: "Home" },

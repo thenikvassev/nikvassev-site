@@ -73,7 +73,7 @@ function FooterSocials() {
     items.push({
       name: "instagram",
       href: siteConfig.social.instagram,
-      label: "Nik Vassev on Instagram",
+      label: "Instagram",
     });
   }
 
