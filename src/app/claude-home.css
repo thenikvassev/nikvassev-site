@@ -706,7 +706,7 @@
   height: 100% !important;
   max-width: none !important;
   object-fit: cover !important;
-  object-position: 28% 18%;
+  object-position: 32% 0%;
 }
 
 .nv-speaking-card {
@@ -734,9 +734,9 @@
   font-family: var(--font-pp-editorial);
   font-style: normal;
   font-weight: 200;
-  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-size: clamp(1.55rem, 3.2vw, 2.15rem);
   letter-spacing: -0.03em;
-  line-height: 1.15;
+  line-height: 1.22;
   color: #0a3b24;
 }
 
@@ -766,13 +766,16 @@
 .nv-speaking-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: max-content;
   margin-top: 1.5rem;
-  padding: 0.72rem 1.25rem;
+  padding: 0.65rem 1.2rem;
   border-radius: 999px;
   background: #0a3b24;
   color: #e8e4d9;
   font-family: var(--nv-sans);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-decoration: none;
@@ -799,7 +802,7 @@
 
   .nv-speaking-photo img,
   .nv-speaking-img {
-    object-position: 30% 12%;
+    object-position: 32% 0%;
   }
 
   .nv-speaking-card {
@@ -835,11 +838,18 @@
   }
 
   .nv-speaking-cta {
-    width: auto;
+    display: inline-flex;
+    width: fit-content;
+    max-width: max-content;
     align-self: center;
     justify-content: center;
     margin-top: 1.75rem;
-    padding: 0.85rem 2rem;
+    padding: 0.7rem 1.35rem;
+    font-size: 0.78rem;
+  }
+
+  .nv-speaking-card h2 {
+    max-width: 14ch;
   }
 }
 
