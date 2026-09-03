@@ -100,12 +100,12 @@ export default function HomePage() {
         <div className="nv-speaking-card">
           <p className="nv-speaking-eyebrow">Speaker</p>
           <h2 id="speaking-heading">
-            Get in touch for speaking, podcasts and press.
+            Real-World Exits. Actionable Systems. Zero Hype.
           </h2>
           <p className="nv-speaking-body">
-            I speak on brand strategy, AI visibility and building companies
-            that leave room for a life. For podcasts, press or a stage, write
-            or send a LinkedIn note.
+            Bring Nik to your podcast or stage to break down the exact AI
+            workflows, brand strategies, and growth systems he uses to
+            actively scale tech startups and build high-impact brands.
           </p>
           <p className="nv-speaking-contact">
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
