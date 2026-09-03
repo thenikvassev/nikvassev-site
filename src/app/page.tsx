@@ -91,7 +91,7 @@ export default function HomePage() {
         <div className="nv-speaking-photo">
           <Image
             src="/photos/nik-speaker.jpg"
-            alt="Nik Vassev smiling in a black blazer and glasses against a light studio backdrop."
+            alt="Nik Vassev on stage with a microphone, presenting a slide on AI content."
             fill
             sizes="(min-width: 900px) 58vw, 100vw"
             className="nv-speaking-img"
