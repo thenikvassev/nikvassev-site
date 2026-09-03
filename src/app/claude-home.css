@@ -1,4 +1,4 @@
-/* Claude homepage chrome — scoped to nav / hero / about / clients only. */
+/* Claude homepage chrome — scoped to nav / hero / about / projects / clients only. */
 
 .nv {
   --nv-bg: #fbfaf7;
@@ -667,6 +667,7 @@
 
 .nv-about h2,
 .nv-section-title,
+.nv-projects h2,
 .nv-ways h2 {
   margin: 0.7rem 0 0;
   font-family: var(--font-pp-editorial);
@@ -863,6 +864,78 @@
   font-size: 0.86rem;
   font-weight: 400;
   color: #6d6b60;
+}
+
+/* ---------- Projects ---------- */
+
+.nv-projects {
+  position: relative;
+  background: #fbfaf7;
+  color: var(--nv-ink);
+  border-top: 1px solid var(--nv-hairline);
+  scroll-margin-top: 5.5rem;
+}
+
+.nv-projects-inner {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 4.4rem 1.35rem 4.6rem;
+}
+
+@media (min-width: 900px) {
+  .nv-projects-inner {
+    padding: 6rem 2.25rem 6.2rem;
+  }
+}
+
+.nv-projects-lead {
+  margin: 1.15rem 0 0;
+  max-width: 42rem;
+  font-family: var(--nv-sans);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #6d6b60;
+}
+
+.nv-projects-group {
+  margin-top: 2.75rem;
+}
+
+.nv-projects-group--prior {
+  margin-top: 3.25rem;
+}
+
+@media (min-width: 900px) {
+  .nv-projects-group {
+    margin-top: 3.25rem;
+  }
+
+  .nv-projects-group--prior {
+    margin-top: 4rem;
+  }
+}
+
+.nv-projects-group-label {
+  margin: 0;
+  font-family: var(--nv-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0a3b24;
+}
+
+.nv-projects-grid {
+  margin-top: 1.35rem;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .nv-projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
 }
 
 /* ---------- Track record ---------- */

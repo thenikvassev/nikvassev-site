@@ -5,6 +5,7 @@ import { CardLink } from "@/components/CardLink";
 import { HomeHero } from "@/components/HomeHero";
 import { AboutIntro } from "@/components/AboutIntro";
 import { TrackRecord } from "@/components/TrackRecord";
+import { ProjectsShowcase } from "@/components/ProjectsShowcase";
 import { guides } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
@@ -24,6 +25,7 @@ export default function HomePage() {
     <>
       <HomeHero />
       <AboutIntro />
+      <ProjectsShowcase variant="home" />
       <TrackRecord />
 
       <section id="work" className="nv nv-ways scroll-mt-28">
