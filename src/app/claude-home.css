@@ -541,10 +541,7 @@
 
 @media (min-width: 900px) {
   .nv-hero .nv-badge {
-    top: 12%;
-    left: 18px;
-    width: 196px;
-    height: 196px;
+    display: none;
   }
 }
 
@@ -667,7 +664,8 @@
 
 .nv-about h2,
 .nv-section-title,
-.nv-ways h2 {
+.nv-ways h2,
+.nv-speaking-card h2 {
   margin: 0.7rem 0 0;
   font-family: var(--font-pp-editorial);
   font-style: normal;
@@ -730,13 +728,6 @@
 }
 
 .nv-speaking-card h2 {
-  margin: 0.7rem 0 0;
-  font-family: var(--font-pp-editorial);
-  font-style: normal;
-  font-weight: 200;
-  font-size: clamp(1.55rem, 3.2vw, 2.15rem);
-  letter-spacing: -0.03em;
-  line-height: 1.22;
   color: #0a3b24;
 }
 
@@ -784,10 +775,10 @@
 @media (min-width: 900px) {
   .nv-speaking {
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+    grid-template-columns: 1fr 1fr;
     align-items: stretch;
     width: 100%;
-    min-height: 70vh;
+    min-height: 0;
   }
 
   .nv-speaking-photo {
@@ -795,7 +786,7 @@
     inset: auto;
     width: 100%;
     height: auto;
-    min-height: 70vh;
+    min-height: 100%;
     max-height: none;
     align-self: stretch;
   }
@@ -819,14 +810,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 3.2rem 2.8rem 3rem;
+    padding: 4.6rem 2.8rem 4.8rem;
     border-top: 0;
     border-left: 6px solid #cbbca3;
     background: #e8e4d9;
   }
 
   .nv-speaking-card h2 {
-    max-width: 18ch;
     margin-left: auto;
     margin-right: auto;
   }
@@ -846,10 +836,6 @@
     margin-top: 1.75rem;
     padding: 0.7rem 1.35rem;
     font-size: 0.78rem;
-  }
-
-  .nv-speaking-card h2 {
-    max-width: 14ch;
   }
 }
 
@@ -1054,7 +1040,7 @@
 @media (min-width: 900px) {
   .nv-ways-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.35rem;
+    gap: 1.75rem;
     margin-top: 3.2rem;
   }
 }
@@ -1064,11 +1050,32 @@
   border: 1px solid rgba(10, 59, 36, 0.16);
   border-radius: 22px;
   padding: 1.7rem 1.45rem 1.6rem;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
 }
 
 @media (min-width: 900px) {
   .nv-ways-card {
-    padding: 2rem 1.7rem 1.85rem;
+    padding: 2.55rem 2.15rem 2.4rem;
+  }
+
+  .nv-ways-card h3 {
+    font-size: 1.9rem;
+  }
+
+  .nv-ways-card p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .nv-ways-card:hover {
+    transform: translateY(-6px);
+    background: #dde6d8;
+    border-color: rgba(10, 59, 36, 0.34);
+    box-shadow: 0 16px 36px rgba(10, 59, 36, 0.12);
   }
 }
 
@@ -1109,6 +1116,57 @@
 .nv-ways-card a:hover {
   background: #032415;
   color: #e8e4d9;
+}
+
+/* ---------- Founder resources ---------- */
+
+.nv-resources-inner {
+  max-width: 73.75rem;
+  margin: 0 auto;
+  padding: 4.6rem 1.35rem 5rem;
+}
+
+.nv-resources-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+  margin-top: 2rem;
+}
+
+.nv-resource-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+  .nv-resources-inner {
+    padding: 6.2rem 2.25rem 6.6rem;
+  }
+
+  .nv-resources-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-top: 3.2rem;
+  }
+
+  .nv-resource-ctas {
+    gap: 0.85rem;
+    margin-top: 2.4rem;
+  }
+
+  .nv-resources .card h3 {
+    font-size: 1.35rem;
+  }
+
+  .nv-resources .card p {
+    font-size: 0.98rem;
+  }
+
+  .nv-resources .card > div:last-child {
+    padding: 1.75rem 1.7rem 1.85rem;
+  }
 }
 
 /* ---------- Newsletter band ---------- */
@@ -1324,7 +1382,12 @@
 
   .nv-header,
   .nv-cta,
-  .nv-logo-grid img {
+  .nv-logo-grid img,
+  .nv-ways-card {
     transition: none;
+  }
+
+  .nv-ways-card:hover {
+    transform: none;
   }
 }

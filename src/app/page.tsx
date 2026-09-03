@@ -63,11 +63,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="nv nv-home-block border-t border-tan/40">
-        <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
+      <section className="nv nv-home-block nv-resources border-t border-tan/40">
+        <div className="nv-resources-inner">
           <p className="nv-eyebrow">Founder resources</p>
           <h2 className="nv-section-title">Explore my blog and free guides</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="nv-resources-grid">
             {guides.map((g) => (
               <CardLink
                 key={g.slug}
@@ -79,9 +79,15 @@ export default function HomePage() {
               />
             ))}
           </div>
-          <div className="mt-8">
+          <div className="nv-resource-ctas">
             <Link href="/resources" className="pill-btn-secondary">
-              Resources
+              Free Guides
+            </Link>
+            <Link href="/resources" className="pill-btn-secondary">
+              Blog
+            </Link>
+            <Link href="/#newsletter" className="pill-btn-secondary">
+              Sign up for newsletter
             </Link>
           </div>
         </div>
@@ -93,7 +99,7 @@ export default function HomePage() {
             src="/photos/nik-speaker.jpg"
             alt="Nik Vassev on stage with a microphone, presenting a slide on AI content."
             fill
-            sizes="(min-width: 900px) 58vw, 100vw"
+            sizes="(min-width: 900px) 50vw, 100vw"
             className="nv-speaking-img"
           />
         </div>
