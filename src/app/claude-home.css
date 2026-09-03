@@ -706,7 +706,7 @@
   height: 100% !important;
   max-width: none !important;
   object-fit: cover !important;
-  object-position: 20% 40%;
+  object-position: 28% 18%;
 }
 
 .nv-speaking-card {
@@ -799,7 +799,7 @@
 
   .nv-speaking-photo img,
   .nv-speaking-img {
-    object-position: 18% 38%;
+    object-position: 30% 12%;
   }
 
   .nv-speaking-card {
@@ -814,10 +814,32 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2.8rem 2.4rem 2.6rem;
+    align-items: center;
+    text-align: center;
+    padding: 3.2rem 2.8rem 3rem;
     border-top: 0;
     border-left: 6px solid #cbbca3;
     background: #e8e4d9;
+  }
+
+  .nv-speaking-card h2 {
+    max-width: 18ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nv-speaking-body {
+    max-width: 34ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nv-speaking-cta {
+    width: auto;
+    align-self: center;
+    justify-content: center;
+    margin-top: 1.75rem;
+    padding: 0.85rem 2rem;
   }
 }
 
