@@ -8,7 +8,7 @@ const project = getProject("digimax");
 export const metadata: Metadata = {
   title: "Digimax",
   description:
-    "Board turnaround at Digimax: rebrand, three acquisitions, AI crypto price prediction and an expanded IBM Watson partnership. About $20M raised. About $100M valuation.",
+    "I joined the Digimax board for a strategic turnaround: rebrand, three acquisitions, AI crypto prediction and IBM Watson. Roughly $20M raised. Near $100M valuation.",
   openGraph: {
     title: "Digimax | Nik Vassev",
     description: "Prior board work. Turnaround, acquisitions and IBM Watson.",
