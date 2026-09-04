@@ -158,19 +158,12 @@ export default function BrandStrategyPage() {
         </p>
       </section>
 
-      <div className="mt-14 grid gap-4 md:grid-cols-2">
-        <MediaFrame
-          src="/photos/guide-iq-product-ui.png"
-          alt="Guide IQ product UI showing Brand Soul tone, personality, and color modules."
-          ratio="video"
-        />
-        <MediaFrame
-          src="/placeholders/guide-iq-session.svg"
-          alt="Placeholder for a Guide IQ coaching session"
-          label="Photo: Strategist session"
-          ratio="video"
-        />
-      </div>
+      <MediaFrame
+        src="/photos/guide-iq-strategy-ui.jpg"
+        alt="Guide IQ Strategy workspace with campaign cards for pilot acquisition and webinar launch."
+        ratio="video"
+        className="mt-14"
+      />
 
       <section
         id="book"
