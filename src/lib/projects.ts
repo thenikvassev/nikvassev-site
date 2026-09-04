@@ -131,6 +131,8 @@ export const projects: Project[] = [
     imageAlt:
       "Two phones showing Digimax trading favorites and SHIB buy and sell zone predictions.",
     imagePulled: true,
+    videoEmbedUrl:
+      "https://www.youtube.com/embed/EtKbkOTn0C0?si=3fI8hIfjxG12rs-x&controls=0",
   },
 ];
 
