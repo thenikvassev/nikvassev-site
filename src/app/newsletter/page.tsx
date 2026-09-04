@@ -4,9 +4,9 @@ import Link from "next/link";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { siteConfig } from "@/lib/site";
 
-const title = "Systems Over Hustle | Newsletter";
+const title = "Systems Over Hustle | Nik Vassev's weekly founder letter";
 const description =
-  "Join Systems Over Hustle, the weekly newsletter from Nik Vassev. Practical tools and strategies for growing your startup without the grind. One framework every Thursday.";
+  "Weekly letter from brand strategist Nik Vassev on brand strategy, growth marketing, and AI systems for founders building high-impact companies.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -31,23 +31,23 @@ export const metadata: Metadata = {
 const benefits = [
   {
     label: "01",
-    title: "Frameworks you can run",
-    body: "One idea each week on brand strategy, growth, or AI systems. Written so you can use it the same day.",
+    title: "One usable idea",
+    body: "Each letter covers a single move on brand, growth, or AI. Written so you can put it to work between meetings.",
   },
   {
     label: "02",
-    title: "Thursday, every week",
-    body: "The letter lands on Thursday. Same cadence, so it becomes part of how you work.",
+    title: "Operator proof, not theory",
+    body: "The frameworks come from companies I have built, sold, or advised. One receipt max. No guru stack.",
   },
   {
     label: "03",
-    title: "Built for founders",
-    body: "For entrepreneurs building real companies who want systems and freedom as they grow.",
+    title: "Built for founders shipping real work",
+    body: "For entrepreneurs building high-impact companies who want leverage as they grow, not another content hobby.",
   },
   {
     label: "04",
-    title: "Short and usable",
-    body: "One framework. Clear language. You can read it between meetings and put it to work.",
+    title: "A steady Thursday drop",
+    body: "It lands once a week so it can become part of how you run the business. Same day, same promise.",
   },
 ] as const;
 
@@ -60,26 +60,28 @@ export default function NewsletterPage() {
             <p className="section-label">Weekly newsletter</p>
             <h1 id="newsletter-heading">Systems Over Hustle</h1>
             <p className="nl-hero-lede">
-              I write this letter for founders building real companies.
-              Practical tools and strategies for growing your startup without
-              the grind.
+              The weekly letter for founders who want brand strategy, growth
+              marketing, and AI systems they can actually run.
             </p>
             <p className="nl-hero-body">
-              Every Thursday I share one actionable framework on brand
-              strategy, growth, or AI systems you can actually run, so you
-              build a company you don&apos;t need a vacation from.
+              I&apos;m Nik Vassev, a brand strategist for visionary startups.
+              Each issue teaches one move from the work I do with founders
+              building high-impact companies: clearer positioning, sharper
+              growth loops, or an AI workflow that saves real time.
             </p>
           </div>
           <div className="nl-hero-card">
-            <p className="nl-hero-card-label">Subscribe</p>
-            <p className="nl-hero-card-title">Get the next letter</p>
+            <p className="nl-hero-card-label">Join Systems Over Hustle</p>
+            <p className="nl-hero-card-title">
+              Brand strategy and AI systems to dominate your category
+            </p>
             <p className="nl-hero-card-body">
-              Join the founders who want systems over hustle. I send it every
-              Thursday.
+              Real-world brand strategy, growth marketing, and AI workflows to
+              build a high-impact company without outworking a broken process.
             </p>
             <NewsletterForm variant="dark" id="newsletter-hero-email" />
             <p className="nl-hero-card-note">
-              One framework delivered every Thursday.
+              One actionable framework every Thursday. Zero fluff.
             </p>
           </div>
         </div>
@@ -88,7 +90,7 @@ export default function NewsletterPage() {
       <section className="nl-benefits" aria-labelledby="benefits-heading">
         <div className="nl-benefits-inner">
           <p className="section-label">What you get</p>
-          <h2 id="benefits-heading">One idea a week you can actually use</h2>
+          <h2 id="benefits-heading">What you get</h2>
           <div className="nl-benefits-grid">
             {benefits.map((item) => (
               <article key={item.label} className="nl-benefit-card">
@@ -116,15 +118,16 @@ export default function NewsletterPage() {
           <p className="section-label">About Nik</p>
           <h2 id="about-nik-heading">Who writes this</h2>
           <p>
-            I am a serial founder, brand strategist, and growth marketer. I
-            built Guide IQ and co-founded Storyline Pros. I help visionary
-            startups tell their story, grow customers, and become the name in
-            their category.
+            I&apos;m a brand strategist, serial founder, and growth marketer. I
+            founded Guide IQ and co-founded Storyline Pros after building,
+            raising, and exiting tech companies. I help visionary startups tell
+            their story, win customers, and become the name AI and buyers
+            recommend in their category.
           </p>
           <p>
-            I write Systems Over Hustle from Mexico and the Caribbean coast.
-            The work is the same wherever I sit: systems that let a company
-            grow without living in the grind.
+            I write Systems Over Hustle because I burned out twice chasing
+            broken process. The letter is the personal layer of that lesson:
+            systems that let a company grow without eating the week.
           </p>
           <div className="nl-about-actions">
             <Link href="/about" className="pill-btn-secondary">
@@ -145,11 +148,15 @@ export default function NewsletterPage() {
       <section className="nl-close" aria-labelledby="close-heading">
         <div className="nl-close-inner">
           <p className="section-label">Subscribe</p>
-          <h2 id="close-heading">Get Thursday&apos;s letter</h2>
+          <h2 id="close-heading">
+            Join the entrepreneurs building smarter, not harder
+          </h2>
           <p className="nl-close-body">
-            Leave your email and I will send the next framework on Thursday.
-            Practical tools and strategies for growing your startup without the
-            grind.
+            Systems Over Hustle is the weekly letter on brand strategy, growth
+            marketing, and AI systems.
+          </p>
+          <p className="nl-close-sub">
+            One actionable framework every Thursday. Zero fluff.
           </p>
           <div className="nl-close-form">
             <NewsletterForm id="newsletter-close-email" />

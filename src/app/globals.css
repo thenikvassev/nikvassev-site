@@ -504,6 +504,14 @@
   color: #3d4848;
 }
 
+.nl-close-sub {
+  margin: 0.65rem 0 0;
+  max-width: 38rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #6d6b60;
+}
+
 .nl-close-form {
   max-width: 36rem;
   margin-top: 1.45rem;
