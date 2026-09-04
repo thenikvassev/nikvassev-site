@@ -122,12 +122,12 @@ export default function AboutPage() {
               Storyline Pros
             </a>
             , and it is what I write about in my{" "}
-            <a
+            <Link
               href="/#newsletter"
               className="font-medium text-forest underline underline-offset-4"
             >
               newsletter
-            </a>
+            </Link>
             .
           </p>
         </div>
