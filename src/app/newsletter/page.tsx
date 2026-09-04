@@ -69,20 +69,39 @@ export default function NewsletterPage() {
               growth loops, or an AI workflow that saves real time.
             </p>
           </div>
-          <div className="nl-hero-card">
-            <p className="nl-hero-card-label">Join Systems Over Hustle</p>
-            <p className="nl-hero-card-title">
-              Brand strategy and AI systems to dominate your category
-            </p>
-            <p className="nl-hero-card-body">
-              Real-world brand strategy, growth marketing, and AI workflows to
-              build a high-impact company without outworking a broken process.
-            </p>
-            <NewsletterForm variant="dark" id="newsletter-hero-email" />
-            <p className="nl-hero-card-note">
-              One actionable framework every Thursday. Zero fluff.
-            </p>
+          <div className="nl-hero-visual">
+            <Image
+              src="/photos/systems-hustle-window.png"
+              alt="Systems over Hustle — weekly insights on building freedom in the age of AI."
+              width={1920}
+              height={1080}
+              className="nl-hero-window"
+              priority
+              sizes="(min-width: 900px) 42vw, 92vw"
+            />
           </div>
+        </div>
+      </section>
+
+      {/* Same forest signup band used across the rest of the site */}
+      <section id="newsletter" className="nv nv-newsletter scroll-mt-28">
+        <div className="nv-newsletter-inner">
+          <h2>Brand strategy &amp; AI systems to dominate your category.</h2>
+          <p className="nv-newsletter-body">
+            I write a weekly letter called Systems Over Hustle. Every Thursday,
+            it&apos;s packed with real-world brand strategy, AI workflows, and
+            practical insights to help you build a high-impact company without
+            outworking a broken process.
+          </p>
+          <p className="nv-newsletter-lead">
+            Join the entrepreneurs building smarter, not harder.
+          </p>
+          <div className="nv-newsletter-form">
+            <NewsletterForm variant="dark" id="newsletter-hero-email" />
+          </div>
+          <p className="nv-newsletter-note">
+            1 actionable framework delivered every Thursday. Zero fluff.
+          </p>
         </div>
       </section>
 
@@ -109,7 +128,6 @@ export default function NewsletterPage() {
             fill
             sizes="(min-width: 900px) 42vw, 100vw"
             className="nl-about-img"
-            priority
           />
         </div>
         <div className="nl-about-card">
@@ -125,25 +143,6 @@ export default function NewsletterPage() {
             actionable systems for growth marketing, AI visibility and
             predictable growth for innovative startups.
           </p>
-        </div>
-      </section>
-
-      <section className="nl-close" aria-labelledby="close-heading">
-        <div className="nl-close-inner">
-          <p className="section-label">Subscribe</p>
-          <h2 id="close-heading">
-            Join the entrepreneurs building smarter, not harder
-          </h2>
-          <p className="nl-close-body">
-            Systems Over Hustle is the weekly letter on brand strategy, growth
-            marketing, and AI systems.
-          </p>
-          <p className="nl-close-sub">
-            One actionable framework every Thursday. Zero fluff.
-          </p>
-          <div className="nl-close-form">
-            <NewsletterForm id="newsletter-close-email" />
-          </div>
         </div>
       </section>
     </div>
