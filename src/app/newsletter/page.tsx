@@ -100,7 +100,7 @@ export default function NewsletterPage() {
             <NewsletterForm variant="dark" id="newsletter-hero-email" />
           </div>
           <p className="nv-newsletter-note">
-            1 actionable framework delivered every Thursday. Zero fluff.
+            1 actionable framework delivered every Thursday.
           </p>
         </div>
       </section>
