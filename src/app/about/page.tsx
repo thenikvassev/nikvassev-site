@@ -76,7 +76,7 @@ export default function AboutPage() {
       <article className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-24">
         <p className="section-label">About</p>
         <h1 className="mt-4 max-w-2xl text-4xl tracking-display md:text-5xl">
-          Brand strategy and systems for founders who want freedom.
+          Exited tech founder, brand strategist and growth marketer helping entrepreneurs build high-impact companies.
         </h1>
 
         <MediaFrame
