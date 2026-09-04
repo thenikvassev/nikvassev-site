@@ -41,8 +41,8 @@ export default function BrandStrategyPage() {
       </div>
 
       <MediaFrame
-        src="/photos/guide-iq-tablet.png"
-        alt="Hands holding a tablet showing the Guide IQ Brand Brain."
+        src="/photos/guide-iq-product-ui.png"
+        alt="Guide IQ Brand Soul workspace with tone calibration, personality dials, and brand colors."
         ratio="video"
         className="mt-12"
       />
@@ -160,9 +160,8 @@ export default function BrandStrategyPage() {
 
       <div className="mt-14 grid gap-4 md:grid-cols-2">
         <MediaFrame
-          src="/placeholders/guide-iq-product.svg"
-          alt="Placeholder for a Guide IQ product screenshot"
-          label="Photo: Guide IQ product"
+          src="/photos/guide-iq-product-ui.png"
+          alt="Guide IQ product UI showing Brand Soul tone, personality, and color modules."
           ratio="video"
         />
         <MediaFrame
