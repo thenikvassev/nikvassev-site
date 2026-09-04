@@ -103,6 +103,8 @@ export const projects: Project[] = [
     imageAlt:
       "Mindleap app screens for mood tracking, emotions, journey milestones and therapy sessions.",
     imagePulled: true,
+    videoEmbedUrl:
+      "https://www.youtube.com/embed/hGEM_qvd6po?si=Z4nTVK8sGYRlVCVJ&controls=0",
   },
   {
     slug: "digimax",
