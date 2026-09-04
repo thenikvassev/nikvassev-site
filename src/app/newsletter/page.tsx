@@ -69,7 +69,7 @@ export default function NewsletterPage() {
               growth loops, or an AI workflow that saves real time.
             </p>
           </div>
-          <div className="nl-hero-visual">
+          <figure className="nl-hero-visual">
             <Image
               src="/photos/systems-hustle-window.png"
               alt="Systems over Hustle — weekly insights on building freedom in the age of AI."
@@ -77,9 +77,9 @@ export default function NewsletterPage() {
               height={1080}
               className="nl-hero-window"
               priority
-              sizes="(min-width: 900px) 42vw, 92vw"
+              sizes="(min-width: 900px) 760px, 92vw"
             />
-          </div>
+          </figure>
         </div>
       </section>
 
