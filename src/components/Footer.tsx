@@ -123,7 +123,7 @@ export function Footer() {
               <NewsletterForm variant="dark" />
             </div>
             <p className="nv-newsletter-note">
-              1 actionable framework delivered every Thursday. Zero fluff.
+              1 actionable framework delivered every Thursday.
             </p>
           </div>
         </div>
