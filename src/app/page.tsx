@@ -79,17 +79,6 @@ export default function HomePage() {
               />
             ))}
           </div>
-          <div className="nv-resource-ctas">
-            <Link href="/resources" className="pill-btn-secondary">
-              Free Guides
-            </Link>
-            <Link href="/resources" className="pill-btn-secondary">
-              Blog
-            </Link>
-            <Link href="/#newsletter" className="pill-btn-secondary">
-              Sign up for newsletter
-            </Link>
-          </div>
         </div>
       </section>
 
