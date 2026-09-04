@@ -62,24 +62,25 @@ const timeline = [
     year: "2024",
     title: "The Shift to Systems",
     body: "The real change came when I stopped optimizing for hustle and started designing systems. I focused on building companies that could scale without my constant presence, with decisions that didn't require being online at all hours. I built Guide IQ, an AI-powered marketing system for founders, and started helping other founders build companies that support their lives. My businesses now run on less of my time and more leverage. Systems over hustle is how everything I build works now.",
-    image: "/photos/guide-iq.jpg",
+    image: "/photos/timeline-2024.jpg",
     imageAlt:
-      "Human and robotic hands reaching toward a glowing orange brain on a black background.",
+      "Nik during the shift to systems and building Guide IQ.",
   },
   {
     year: "2025",
     title: "The Move to Mexico",
     body: "Leaving Vancouver for Mexico was the whole point. I traded grey mornings and a packed calendar for the Caribbean coast, for warmer weather year-round and more time outdoors. Now there's a beach I can walk to whenever I want to think. The work is still demanding. My life finally has room in it.",
-    image: "/photos/nik-portrait-mexico.jpg",
-    imageAlt: "Nik Vassev portrait from Mexico.",
+    image: "/photos/timeline-2025.jpg",
+    imageAlt:
+      "Nik on Mexico's Caribbean coast after the move from Vancouver.",
   },
   {
     year: "2026",
     title: "Storyline Pros",
     body: "By 2026 it was clear: AI was becoming the new front door, and buyers were asking it who to trust instead of reading landing pages. I'd spent years building narrative engineering experience and real relationships in the media, so I co-founded Storyline Pros with Cynthia Salarizadeh to help companies become the answer AI recommends.",
-    image: "/photos/storyline-pros.jpg",
+    image: "/photos/timeline-2026.jpg",
     imageAlt:
-      "Founder pointing at stacked AI search prompts that all resolve to you.",
+      "Nik presenting What Not To Do on stage for Storyline Pros.",
   },
 ];
 
