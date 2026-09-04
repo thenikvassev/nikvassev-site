@@ -35,7 +35,7 @@ export default function BrandStrategyPage() {
         >
           Start with Guide IQ
         </a>
-        <a href="#book" className="pill-btn-secondary">
+        <a href="https://tally.so/r/QKQbBk" className="pill-btn-secondary" target="_blank" rel="noopener noreferrer">
           Book a strategist session
         </a>
       </div>
@@ -184,10 +184,12 @@ export default function BrandStrategyPage() {
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <a
-            href="mailto:hello@nikvassev.com?subject=Brand%20strategy%20session"
+            href="https://tally.so/r/QKQbBk"
             className="pill-btn bg-cream text-forest hover:bg-forest hover:text-white"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Email to book
+            Book a call
           </a>
           <a
             href="https://guideiq.ai"
