@@ -123,8 +123,8 @@ export default function NewsletterPage() {
       <section className="nl-about" aria-labelledby="about-nik-heading">
         <div className="nl-about-photo">
           <Image
-            src="/photos/nik-portrait-studio.jpg"
-            alt="Nik Vassev, chest-up studio portrait in a black blazer and glasses."
+            src="/photos/nik-portrait-newsletter.jpg"
+            alt="Nik Vassev smiling outdoors in a light polo and glasses, with tropical palms behind him."
             fill
             sizes="(min-width: 900px) 42vw, 100vw"
             className="nl-about-img"
