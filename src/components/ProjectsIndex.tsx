@@ -30,16 +30,18 @@ export function ProjectsIndex() {
             meta={storylineProsOverview.meta}
             image={storylineProsOverview.image}
             imageAlt={storylineProsOverview.imageAlt}
+            external
           />
           {activeProjects.map((p) => (
             <CardLink
               key={p.slug}
-              href={`/projects/${p.slug}`}
+              href={p.href ?? "https://guideiq.ai"}
               title={p.name}
               benefit={p.oneLiner}
               meta={p.role}
               image={p.image}
               imageAlt={p.imageAlt}
+              external
             />
           ))}
         </div>
