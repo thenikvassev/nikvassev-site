@@ -107,7 +107,7 @@ export default function NewsletterPage() {
 
       <section className="nl-benefits" aria-labelledby="benefits-heading">
         <div className="nl-benefits-inner">
-          <h2 id="benefits-heading">What you get</h2>
+          <h2 id="benefits-heading">What this newsletter is about</h2>
           <div className="nl-benefits-grid">
             {benefits.map((item) => (
               <article key={item.label} className="nl-benefit-card">
@@ -123,7 +123,7 @@ export default function NewsletterPage() {
       <section className="nl-about" aria-labelledby="about-nik-heading">
         <div className="nl-about-photo">
           <Image
-            src="/photos/nik-portrait-newsletter.jpg"
+            src="/photos/nik-portrait-newsletter-v2.jpg"
             alt="Nik Vassev smiling outdoors in a light polo and glasses, with tropical palms behind him."
             fill
             sizes="(min-width: 900px) 42vw, 100vw"
@@ -131,7 +131,6 @@ export default function NewsletterPage() {
           />
         </div>
         <div className="nl-about-card">
-          <p className="section-label">About Nik</p>
           <h2 id="about-nik-heading">About Nik</h2>
           <p>
             Nik Vassev is a serial entrepreneur and brand strategist who turns
