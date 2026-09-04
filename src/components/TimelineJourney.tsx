@@ -27,7 +27,7 @@ export function TimelineJourney({
       className="bg-forest-dark px-4 py-16 sm:px-6 md:px-8 md:py-24"
       aria-labelledby={headingId}
     >
-      <div className="mx-auto max-w-5xl rounded-3xl bg-cream px-6 py-12 sm:px-10 md:px-16 md:py-20 lg:px-20">
+      <div className="mx-auto max-w-5xl rounded-3xl bg-cream px-5 py-12 sm:px-10 md:px-16 md:py-20 lg:px-20">
         <header className="text-center">
           {eyebrow ? <p className="section-label">{eyebrow}</p> : null}
           <h2
@@ -38,28 +38,29 @@ export function TimelineJourney({
           </h2>
         </header>
 
-        <ol className="relative mt-14 space-y-16 [--image-col:13.5rem] sm:mt-16 md:mt-20 md:space-y-24 md:[--image-col:15.5rem]">
+        <ol className="relative mt-14 space-y-14 sm:mt-16 md:mt-20 md:space-y-24 md:[--image-col:15.5rem]">
+          {/* Spine only on desktop — on mobile it cut through the stacked text */}
           <div
             aria-hidden
-            className="absolute inset-y-0 left-[calc(var(--image-col)/2)] w-px bg-tan"
+            className="pointer-events-none absolute inset-y-0 left-[calc(var(--image-col)/2)] hidden w-px bg-tan md:block"
           />
           {entries.map((entry) => (
             <li
               key={entry.year}
-              className="relative grid items-start gap-6 md:grid-cols-[var(--image-col)_minmax(0,1fr)] md:gap-12 lg:gap-16"
+              className="relative grid items-start gap-5 md:grid-cols-[var(--image-col)_minmax(0,1fr)] md:gap-12 lg:gap-16"
             >
-              <div className="relative z-10 w-[var(--image-col)]">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-card">
+              <div className="relative z-10 w-full md:w-[var(--image-col)]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-card md:aspect-[3/4]">
                   <Image
                     src={entry.image}
                     alt={entry.imageAlt}
                     fill
                     className="object-cover object-top"
-                    sizes="(min-width: 768px) 248px, 216px"
+                    sizes="(min-width: 768px) 248px, 100vw"
                   />
                 </div>
               </div>
-              <div>
+              <div className="text-left">
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-section text-tan">
                   {entry.title}
                 </p>
