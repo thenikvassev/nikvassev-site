@@ -23,6 +23,14 @@ export function ProjectsIndex() {
       <section className="mt-14">
         <p className="section-label">Current ventures</p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <CardLink
+            href={storylineProsOverview.href}
+            title={storylineProsOverview.title}
+            benefit={storylineProsOverview.benefit}
+            meta={storylineProsOverview.meta}
+            image={storylineProsOverview.image}
+            imageAlt={storylineProsOverview.imageAlt}
+          />
           {activeProjects.map((p) => (
             <CardLink
               key={p.slug}
@@ -34,14 +42,6 @@ export function ProjectsIndex() {
               imageAlt={p.imageAlt}
             />
           ))}
-          <CardLink
-            href={storylineProsOverview.href}
-            title={storylineProsOverview.title}
-            benefit={storylineProsOverview.benefit}
-            meta={storylineProsOverview.meta}
-            image={storylineProsOverview.image}
-            imageAlt={storylineProsOverview.imageAlt}
-          />
         </div>
       </section>
 
