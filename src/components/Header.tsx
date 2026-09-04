@@ -5,7 +5,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site";
 
-const mobileExtraNav = [
+const mobileNav = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/ai-visibility", label: "AI Visibility" },
+  { href: "/brand-strategy", label: "Brand Strategy" },
   { href: "/newsletter", label: "Newsletter" },
   {
     href: siteConfig.bookingUrl,
@@ -143,23 +147,7 @@ export function Header() {
           </div>
 
           <nav aria-label="Mobile" className="nv-panel-nav">
-            {siteConfig.nav.map((item) => {
-              const active =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={active ? "is-active" : ""}
-                  onClick={closeMenu}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            {mobileExtraNav.map((item) => {
+            {mobileNav.map((item) => {
               if ("external" in item && item.external) {
                 return (
                   <a
@@ -173,7 +161,10 @@ export function Header() {
                   </a>
                 );
               }
-              const active = pathname.startsWith(item.href);
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
               return (
                 <Link
                   key={item.href}
@@ -206,17 +197,15 @@ export function Header() {
             >
               <IconLinkedIn />
             </a>
-            {siteConfig.social.instagram ? (
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nv-panel-social"
-                aria-label="Nik Vassev on Instagram"
-              >
-                <IconInstagram />
-              </a>
-            ) : null}
+            <a
+              href={siteConfig.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nv-panel-social"
+              aria-label="Nik Vassev on Instagram"
+            >
+              <IconInstagram />
+            </a>
           </div>
         </div>
       </header>
