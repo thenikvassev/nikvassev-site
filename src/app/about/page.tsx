@@ -38,9 +38,9 @@ const timeline = [
     year: "2018",
     title: "First Startup Failure",
     body: "That desire led me to my first company, an e-commerce dropshipping business. Sales came quickly and volume looked promising, but profits never followed. The model was flawed, and eventually the business collapsed. That failure took more from me than I expected. Burnout set in, followed by a period of depression, and I found myself back in a cubicle selling software again. It was my first real lesson that building companies requires far more than effort alone.",
-    image: "/photos/nik-portrait-studio.jpg",
+    image: "/photos/timeline-2018.jpg",
     imageAlt:
-      "Nik Vassev, chest-up studio portrait in a black blazer and glasses.",
+      "Tip Top Gizmos ecommerce homepage from Nik's first startup.",
   },
   {
     year: "2020",
