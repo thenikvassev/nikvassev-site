@@ -76,7 +76,7 @@ export function Header() {
           </nav>
 
           <div className="nv-header-right">
-            <Link href="/brand-strategy#book" className="nv-cta">
+            <Link href="https://tally.so/r/QKQbBk" className="nv-cta" target="_blank" rel="noopener noreferrer">
               Let&apos;s Talk
               <ArrowIcon />
             </Link>
