@@ -40,9 +40,9 @@ const results: ResultCard[] = [
 ];
 
 const partners = [
-  { src: "/logos/harvard.png", alt: "Harvard University", width: 120, height: 40 },
-  { src: "/logos/calgary.png", alt: "University of Calgary", width: 160, height: 36 },
-  { src: "/logos/penn.png", alt: "Penn Medicine", width: 140, height: 40 },
+  { src: "/logos/harvard-wordmark.png", alt: "Harvard University", width: 220, height: 64 },
+  { src: "/logos/calgary-wordmark.png", alt: "University of Calgary", width: 208, height: 66 },
+  { src: "/logos/penn-medicine.png", alt: "Penn Medicine", width: 347, height: 65 },
 ];
 
 function Sparkline({
@@ -98,7 +98,7 @@ export function NovobeingResults() {
       <div className="mx-auto max-w-3xl text-center">
         <p className="font-sans text-base text-cream/85 md:text-lg">Proven results</p>
         <h2 className="mt-1 font-serif text-3xl tracking-display text-cream md:text-4xl">
-          across multiple clinical trials
+          Across multiple clinical trials
         </h2>
         <p className="mt-3 text-sm text-cream/70 md:text-base">
           Validated by randomized controlled trials and hospital-led studies
@@ -152,7 +152,7 @@ export function NovobeingResults() {
             alt={p.alt}
             width={p.width}
             height={p.height}
-            className="h-9 w-auto object-contain opacity-95 mix-blend-screen"
+            className="h-10 w-auto object-contain opacity-95"
           />
         ))}
       </div>
