@@ -78,11 +78,11 @@
   }
 
   .prose-nik h2 {
-    @apply mb-3 mt-10 font-serif text-2xl font-extralight tracking-display text-ink-title;
+    @apply mb-3 mt-10 font-serif text-3xl font-semibold tracking-display text-ink-title;
   }
 
   .prose-nik h3 {
-    @apply mb-3 mt-8 font-serif text-xl font-extralight tracking-display text-ink-title;
+    @apply mb-3 mt-8 font-serif text-2xl font-semibold tracking-display text-ink-title;
   }
 
   .prose-nik h2 + p,
