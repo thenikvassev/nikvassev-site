@@ -32,7 +32,7 @@ const timeline = [
     body: "I moved into tech and started as a business development rep, cold-calling leads and working my way up. Within a few years I hit President's Club and closed enterprise deals with organizations like the NFL, Volkswagen and government agencies in both the U.S. and Canada. On paper, I had made it. The income was strong and the career path was clear, but the reality of a high-performing nine-to-five still felt limiting. I wanted more ownership and autonomy, something that was mine to build.",
     image: "/photos/timeline-2015.jpg",
     imageAlt:
-      "Nik at a tech sales desk reviewing a folder beside his phone headset and monitor.",
+      "Nik presenting a Qlik analytics whiteboard in a tech sales office.",
   },
   {
     year: "2018",
@@ -40,7 +40,7 @@ const timeline = [
     body: "That desire led me to my first company, an e-commerce dropshipping business. Sales came quickly and volume looked promising, but profits never followed. The model was flawed, and eventually the business collapsed. That failure took more from me than I expected. Burnout set in, followed by a period of depression, and I found myself back in a cubicle selling software again. It was my first real lesson that building companies requires far more than effort alone.",
     image: "/photos/timeline-2018.jpg",
     imageAlt:
-      "Tip Top Gizmos ecommerce homepage from Nik's first startup.",
+      "Shopify overview dashboard showing Tip Top Gizmos sales from late 2018.",
   },
   {
     year: "2020",
