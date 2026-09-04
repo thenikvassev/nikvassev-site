@@ -113,7 +113,7 @@ export default function NewsletterPage() {
               <article key={item.label} className="nl-benefit-card">
                 <p className="nl-benefit-label">{item.label}</p>
                 <h3>{item.title}</h3>
-                <p>{item.body}</p>
+                <p className="nl-benefit-body">{item.body}</p>
               </article>
             ))}
           </div>
