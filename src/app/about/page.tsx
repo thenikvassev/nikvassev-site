@@ -132,6 +132,49 @@ export default function AboutPage() {
           </p>
         </div>
 
+        <section className="mt-16 max-w-reading" aria-labelledby="from-unknown-heading">
+          <h2
+            id="from-unknown-heading"
+            className="text-3xl tracking-display md:text-4xl"
+          >
+            From unknown to recognized
+          </h2>
+          <div className="prose-nik mt-8 text-base md:text-lg">
+            <p>
+              It does not matter if you have the cure for cancer if nobody knows
+              about it.
+            </p>
+            <p>
+              I have watched that happen to founders who had the real thing.
+              Better technology, better science, and a market that was not
+              looking for any of it. Buyers kept buying the name they already
+              knew. Investors passed because nobody else had heard of them. The
+              work held up in the lab and still went nowhere, because nobody
+              knew it existed.
+            </p>
+            <p>
+              You can feel that from the inside. You built something that should
+              move the category, and you still have to explain it twice in every
+              room. The people with the money and the people with the customers
+              already have a name they trust, and it is not yours yet.
+            </p>
+            <p>
+              I have spent my career on that problem. I work with emerging
+              technologies nobody was looking for, make them undeniable, and
+              brand and market those companies until the sales show up. Millions
+              of dollars of them. I have founded, scaled and exited companies
+              across healthtech, AI and marketing.
+            </p>
+            <p>
+              I have raised tens of millions across private and public markets,
+              closed enterprise deals with Fortune 500s, the NFL, Volkswagen and
+              federal agencies, and co-built a therapeutic VR platform with
+              psychologists at Harvard and Penn Medicine that was validated in
+              clinical trials. That is the work, and I still do it.
+            </p>
+          </div>
+        </section>
+
         <div className="mt-10 flex flex-wrap gap-3">
           <Link href="/#newsletter" className="pill-btn-primary">
             Subscribe to the newsletter
