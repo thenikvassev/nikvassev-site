@@ -6,6 +6,8 @@ export type TimelineJourneyEntry = {
   body: string;
   image: string;
   imageAlt: string;
+  /** Optional object-position override, e.g. object-top */
+  imageClassName?: string;
 };
 
 type Props = {
@@ -38,7 +40,7 @@ export function TimelineJourney({
           </h2>
         </header>
 
-        <ol className="relative mt-14 space-y-14 sm:mt-16 md:mt-20 md:space-y-24 md:[--image-col:15.5rem]">
+        <ol className="relative mt-14 space-y-14 sm:mt-16 md:mt-20 md:space-y-24 md:[--image-col:20rem] lg:[--image-col:22rem]">
           {/* Spine only on desktop — on mobile it cut through the stacked text */}
           <div
             aria-hidden
@@ -47,16 +49,17 @@ export function TimelineJourney({
           {entries.map((entry) => (
             <li
               key={entry.year}
-              className="relative grid items-start gap-5 md:grid-cols-[var(--image-col)_minmax(0,1fr)] md:gap-12 lg:gap-16"
+              className="relative grid items-start gap-5 md:grid-cols-[var(--image-col)_minmax(0,1fr)] md:gap-10 lg:gap-14"
             >
               <div className="relative z-10 w-full md:w-[var(--image-col)]">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-card md:aspect-[3/4]">
+                {/* Same 4:3 landscape frame on mobile + desktop so photos are not tall/cropped */}
+                <div className="relative aspect-[4/3] overflow-hidden rounded-card">
                   <Image
                     src={entry.image}
                     alt={entry.imageAlt}
                     fill
-                    className="object-cover object-center"
-                    sizes="(min-width: 768px) 248px, 100vw"
+                    className={`object-cover ${entry.imageClassName ?? "object-center"}`}
+                    sizes="(min-width: 768px) 352px, 100vw"
                   />
                 </div>
               </div>
