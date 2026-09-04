@@ -137,7 +137,7 @@ export const priorProjects = projects.filter((p) => p.status === "prior");
 
 /** Shared overview card for Storyline Pros (not in the projects array). */
 export const storylineProsOverview = {
-  href: "/ai-visibility",
+  href: "https://storylinepros.com",
   title: "Storyline Pros",
   benefit:
     "Narrative engineering and AI visibility for later-stage B2B emerging tech. Co-founded with Cynthia Salarizadeh.",
