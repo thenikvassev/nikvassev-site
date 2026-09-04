@@ -53,7 +53,7 @@ export function TimelineJourney({
             >
               <div className="relative z-10 w-full md:w-[var(--image-col)]">
                 {/* Same 4:3 landscape frame on mobile + desktop so photos are not tall/cropped */}
-                <div className="relative aspect-[4/3] overflow-hidden rounded-card">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-cream">
                   <Image
                     src={entry.image}
                     alt={entry.imageAlt}
