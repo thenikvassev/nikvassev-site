@@ -62,7 +62,7 @@ export function TimelineJourney({
                 </div>
               </div>
               <div className="text-left">
-                <p className="font-sans text-[11px] font-semibold uppercase tracking-section text-tan">
+                <p className="font-sans text-[11px] font-semibold uppercase tracking-section text-[#0A3B24]">
                   {entry.title}
                 </p>
                 <h3 className="mt-2 font-serif text-4xl font-extralight tracking-display text-forest md:text-5xl">
