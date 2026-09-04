@@ -60,7 +60,7 @@ export function BlogArticle({ post, Body }: Props) {
           >
             Book a call
           </a>
-          <Link href="/#newsletter" className="pill-btn-secondary">
+          <Link href="/newsletter" className="pill-btn-secondary">
             Get the newsletter
           </Link>
         </div>

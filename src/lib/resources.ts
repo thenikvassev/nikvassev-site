@@ -46,7 +46,7 @@ export const guides: Guide[] = [
     slug: "systems-over-hustle",
     title: "Systems Over Hustle",
     benefit: "Weekly tools for growing a startup without living in the grind.",
-    href: "/#newsletter",
+    href: "/newsletter",
     image: "/placeholders/guide-systems.svg",
     imageAlt: "Placeholder frame for Systems Over Hustle",
     imagePulled: false,

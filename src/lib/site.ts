@@ -27,6 +27,7 @@ export const siteConfig = {
 export const footerNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/newsletter", label: "Newsletter" },
   { href: "/about#projects", label: "Projects" },
   { href: "/ai-visibility", label: "AI Visibility" },
   { href: "/brand-strategy", label: "Brand Strategy" },

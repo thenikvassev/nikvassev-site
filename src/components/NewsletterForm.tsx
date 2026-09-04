@@ -6,6 +6,8 @@ import { NEWSLETTER_LIST_ID, nitro } from "@/lib/nitrosend";
 
 type Props = {
   variant?: "light" | "dark";
+  /** Unique field id when more than one form is on the page. */
+  id?: string;
 };
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -14,7 +16,7 @@ function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-export function NewsletterForm({ variant = "light" }: Props) {
+export function NewsletterForm({ variant = "light", id }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
@@ -22,7 +24,7 @@ export function NewsletterForm({ variant = "light" }: Props) {
 
   const isDark = variant === "dark";
   const isLoading = status === "loading";
-  const emailId = `email-${variant}`;
+  const emailId = id ?? `email-${variant}`;
   const errorId = `${emailId}-error`;
 
   async function onSubmit(e: FormEvent) {

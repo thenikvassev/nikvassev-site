@@ -58,7 +58,7 @@ export default function HomePage() {
               strategy, growth marketing, AI systems, and building a life you
               don&apos;t need a vacation from.
             </p>
-            <Link href="/#newsletter">Get the newsletter →</Link>
+            <Link href="/newsletter">Get the newsletter →</Link>
           </article>
         </div>
       </section>

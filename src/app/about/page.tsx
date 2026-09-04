@@ -158,7 +158,7 @@ export default function AboutPage() {
             </a>
             , and it is what I write about in my{" "}
             <Link
-              href="/#newsletter"
+              href="/newsletter"
               className="font-medium text-forest underline underline-offset-4"
             >
               newsletter
@@ -211,7 +211,7 @@ export default function AboutPage() {
         </section>
 
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link href="/#newsletter" className="pill-btn-primary">
+          <Link href="/newsletter" className="pill-btn-primary">
             Subscribe to the newsletter
           </Link>
           <Link
