@@ -4,8 +4,8 @@ type ResultCard = {
   value: string;
   label: string;
   direction: "down" | "up";
-  accent: "forest" | "mid";
-  labelPos: "top" | "bottom";
+  /** Fill amount 0–100 for the subtle bar (maps to reported %) */
+  fill: number;
 };
 
 const results: ResultCard[] = [
@@ -13,82 +13,61 @@ const results: ResultCard[] = [
     value: "32%",
     label: "Less anxiety",
     direction: "down",
-    accent: "forest",
-    labelPos: "top",
+    fill: 32,
   },
   {
     value: "52%",
     label: "Pain relief",
     direction: "up",
-    accent: "mid",
-    labelPos: "bottom",
+    fill: 52,
   },
   {
     value: "24%",
     label: "Less depressive symptoms",
     direction: "down",
-    accent: "mid",
-    labelPos: "top",
+    fill: 24,
   },
   {
     value: "12%",
     label: "Higher quality of life",
     direction: "up",
-    accent: "forest",
-    labelPos: "bottom",
+    fill: 12,
   },
 ];
 
 const partners = [
-  { src: "/logos/harvard-wordmark.png", alt: "Harvard University", width: 220, height: 64 },
-  { src: "/logos/calgary-wordmark.png", alt: "University of Calgary", width: 208, height: 66 },
-  { src: "/logos/penn-medicine.png", alt: "Penn Medicine", width: 347, height: 65 },
+  { src: "/logos/harvard-wordmark.png", alt: "Harvard University", width: 560, height: 141 },
+  { src: "/logos/calgary-wordmark.png", alt: "University of Calgary", width: 520, height: 163 },
+  { src: "/logos/penn-medicine.png", alt: "Penn Medicine", width: 560, height: 89 },
 ];
 
-function Sparkline({
-  direction,
-  color,
-}: {
-  direction: "down" | "up";
-  color: string;
-}) {
-  const d =
-    direction === "down"
-      ? "M4 10 C 40 12, 70 28, 116 52"
-      : "M4 52 C 40 48, 70 28, 116 10";
-  const fill =
-    direction === "down"
-      ? "M4 10 C 40 12, 70 28, 116 52 L 116 64 L 4 64 Z"
-      : "M4 52 C 40 48, 70 28, 116 10 L 116 64 L 4 64 Z";
-  const endY = direction === "down" ? 52 : 10;
-
+function DeltaChip({ direction, value }: { direction: "down" | "up"; value: string }) {
+  const signed = direction === "down" ? `−${value}` : `+${value}`;
   return (
-    <svg
-      viewBox="0 0 120 64"
-      className="pointer-events-none absolute inset-x-3 bottom-3 h-[58%] w-[calc(100%-1.5rem)]"
+    <span
+      className="inline-flex items-center rounded-full border border-forest/15 bg-forest/5 px-2.5 py-0.5 font-sans text-xs font-medium tracking-wide text-forest"
       aria-hidden
     >
-      <defs>
-        <linearGradient id={`fill-${direction}-${color}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={color} stopOpacity="0.28" />
-          <stop offset="100%" stopColor={color} stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      {[16, 32, 48].map((y) => (
-        <line
-          key={y}
-          x1="0"
-          y1={y}
-          x2="120"
-          y2={y}
-          stroke="rgba(3,36,21,0.08)"
-          strokeWidth="1"
-        />
-      ))}
-      <path d={fill} fill={`url(#fill-${direction}-${color})`} />
-      <path d={d} fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="116" cy={endY} r="4" fill={color} />
-    </svg>
+      {signed}
+    </span>
+  );
+}
+
+function ProgressBar({ fill, direction }: { fill: number; direction: "down" | "up" }) {
+  const width = Math.max(8, Math.min(100, fill));
+  return (
+    <div
+      className="relative mt-4 h-1.5 w-full overflow-hidden rounded-full bg-forest/10"
+      aria-hidden
+    >
+      <div
+        className="absolute inset-y-0 left-0 rounded-full bg-forest transition-[width] duration-700 ease-out"
+        style={{
+          width: `${width}%`,
+          backgroundColor: direction === "up" ? "#0A3B24" : "#032415",
+        }}
+      />
+    </div>
   );
 }
 
@@ -106,42 +85,23 @@ export function NovobeingResults() {
       </div>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {results.map((r) => {
-          const color = r.accent === "forest" ? "#032415" : "#0A3B24";
-          return (
-            <div
-              key={r.label}
-              className="relative flex min-h-[168px] flex-col overflow-hidden rounded-card bg-cream px-4 py-4"
-            >
-              <Sparkline direction={r.direction} color={color} />
-              {r.labelPos === "top" ? (
-                <>
-                  <p className="relative z-10 text-sm font-medium text-forest">
-                    {r.label}
-                  </p>
-                  <p
-                    className="relative z-10 mt-auto font-serif text-4xl tracking-display"
-                    style={{ color }}
-                  >
-                    {r.value}
-                  </p>
-                </>
-              ) : (
-                <>
-                  <p
-                    className="relative z-10 font-serif text-4xl tracking-display"
-                    style={{ color }}
-                  >
-                    {r.value}
-                  </p>
-                  <p className="relative z-10 mt-auto text-sm font-medium text-forest">
-                    {r.label}
-                  </p>
-                </>
-              )}
+        {results.map((r) => (
+          <div
+            key={r.label}
+            className="relative flex min-h-[168px] flex-col rounded-card bg-cream px-4 py-5"
+          >
+            <div className="flex items-start justify-between gap-2">
+              <p className="text-sm font-medium leading-snug text-forest">{r.label}</p>
+              <DeltaChip direction={r.direction} value={r.value} />
             </div>
-          );
-        })}
+            <p className="mt-3 font-serif text-5xl tracking-display text-forest-dark md:text-[2.75rem]">
+              {r.value}
+            </p>
+            <div className="mt-auto pt-2">
+              <ProgressBar fill={r.fill} direction={r.direction} />
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
@@ -152,7 +112,8 @@ export function NovobeingResults() {
             alt={p.alt}
             width={p.width}
             height={p.height}
-            className="h-10 w-auto object-contain opacity-95"
+            className="h-11 w-auto object-contain opacity-95 md:h-12"
+            sizes="(min-width: 768px) 180px, 140px"
           />
         ))}
       </div>
