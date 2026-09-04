@@ -73,7 +73,6 @@ export const projects: Project[] = [
     imagePulled: true,
     videoEmbedUrl:
       "https://www.youtube.com/embed/qfs1jDfQn6k?si=_iFO1b_fmw9hwjVQ&controls=0",
-    href: "https://novobeing.com",
   },
   {
     slug: "mindleap",
