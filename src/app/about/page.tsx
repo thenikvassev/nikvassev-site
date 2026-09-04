@@ -39,7 +39,6 @@ const timeline = [
     title: "First Startup Failure",
     body: "That desire led me to my first company, an e-commerce dropshipping business. Sales came quickly and volume looked promising, but profits never followed. The model was flawed, and eventually the business collapsed. That failure took more from me than I expected. Burnout set in, followed by a period of depression, and I found myself back in a cubicle selling software again. It was my first real lesson that building companies requires far more than effort alone.",
     image: "/photos/timeline-2018-shopify-v2.jpg",
-    imageMobile: "/photos/timeline-2018-shopify-mobile.jpg",
     imageAlt:
       "Shopify overview dashboard showing Tip Top Gizmos sales from late 2018.",
   },
