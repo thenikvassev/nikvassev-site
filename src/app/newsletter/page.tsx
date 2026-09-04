@@ -89,8 +89,7 @@ export default function NewsletterPage() {
 
       <section className="nl-benefits" aria-labelledby="benefits-heading">
         <div className="nl-benefits-inner">
-          <p className="section-label">What you get</p>
-          <h2 id="benefits-heading">Inside every Thursday letter</h2>
+          <h2 id="benefits-heading">What you get</h2>
           <div className="nl-benefits-grid">
             {benefits.map((item) => (
               <article key={item.label} className="nl-benefit-card">
@@ -127,19 +126,6 @@ export default function NewsletterPage() {
             actionable systems for growth marketing, AI visibility and
             predictable growth for innovative startups.
           </p>
-          <div className="nl-about-actions">
-            <Link href="/about" className="pill-btn-secondary">
-              More about me
-            </Link>
-            <a
-              href={siteConfig.bookingUrl}
-              className="pill-btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a call
-            </a>
-          </div>
         </div>
       </section>
 
@@ -159,14 +145,6 @@ export default function NewsletterPage() {
           <div className="nl-close-form">
             <NewsletterForm id="newsletter-close-email" />
           </div>
-          <a
-            href={siteConfig.bookingUrl}
-            className="nl-close-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Or book a call
-          </a>
         </div>
       </section>
     </div>
