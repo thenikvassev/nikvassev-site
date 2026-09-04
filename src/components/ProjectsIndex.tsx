@@ -17,14 +17,11 @@ export function ProjectsIndex() {
         id="projects-heading"
         className="mt-4 max-w-2xl text-4xl tracking-display md:text-5xl"
       >
-        Ventures I have built and the work still shipping.
+        Explore some of the startups I&apos;ve built
       </h2>
-      <p className="mt-6 max-w-reading text-lg text-ink-muted">
-        Active products first. Prior companies for context and track record.
-      </p>
 
       <section className="mt-14">
-        <p className="section-label">Active</p>
+        <p className="section-label">Current ventures</p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {activeProjects.map((p) => (
             <CardLink
@@ -50,7 +47,7 @@ export function ProjectsIndex() {
 
       <section className="mt-16">
         <p className="section-label">Prior</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
           {priorProjects.map((p) => (
             <CardLink
               key={p.slug}
