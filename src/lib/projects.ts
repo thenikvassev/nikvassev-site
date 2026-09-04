@@ -60,13 +60,8 @@ export const projects: Project[] = [
     oneLiner:
       "Therapeutic VR for patients in hospitals. Co-developed with Harvard and Penn Medicine.",
     summary:
-      "Co-founded Novobeing to bring relief to patients in hospitals using virtual reality. The therapeutic VR platform was co-developed and validated with psychologists at Harvard and Penn Medicine. The technology showed improvements in patient outcomes for pain, stress and anxiety and is in use in leading medical centres.",
-    facts: [
-      "Co-founded. Clinical research partners at Harvard and Penn Medicine.",
-      "Four successful clinical trials.",
-      "$1.5M capital raised.",
-      "CB Insights Top 150 Digital Health ranking.",
-    ],
+      "I co-founded Novobeing to bring relief to patients in hospitals using virtual reality. We built and validated the platform alongside psychologists at Harvard and Penn Medicine, running it through four clinical trials before it reached a single hospital floor. The technology showed real improvements in pain, stress and anxiety, raised $1.5M in capital, and earned a CB Insights Top 150 Digital Health ranking along the way. It's still in use in leading medical centers today. Novobeing is part of the track record now.",
+    facts: [],
     stats: [
       { value: "4", label: "Clinical trials" },
       { value: "$1.5M", label: "Capital raised" },
@@ -88,11 +83,9 @@ export const projects: Project[] = [
     oneLiner:
       "Digital platform for psychedelic preparation and integration. Founded, shipped and acquired.",
     summary:
-      "Founded Mindleap to close a gap in psychedelic care: structured, accessible support for preparation and integration. The platform helped people navigate mental health experiences with guidance and intention. Within 24 months it was acquired by a biotech firm building psilocybin-based therapies.",
+      "I founded Mindleap to close a real gap in psychedelic care: structured, accessible support for the preparation and integration work that actually determines whether the experience helps someone. The platform grew to 30,000 users in under two years. Mydecine Innovations Group, a clinical-stage biotech developing a second-generation psilocybin drug for addiction, acquired it for $3.5M, 24 months after I started the company. Mindleap is part of the track record now.",
     facts: [
-      "Founded to support preparation and integration in psychedelic care.",
-      "Grew to 30,000 users.",
-      "$3.5M acquisition.",
+      "Building it, shipping it and exiting it taught me most of what I bring to the brand and systems work I do with founders today.",
     ],
     stats: [
       { value: "30,000", label: "Users" },
@@ -114,14 +107,8 @@ export const projects: Project[] = [
     oneLiner:
       "Board turnaround: rebrand, three acquisitions and an expanded IBM Watson partnership.",
     summary:
-      "Brought onto the board at Digimax to help lead a strategic turnaround. The work included a rebrand, three acquisitions, building an AI-powered crypto price prediction platform and expanding the company's IBM Watson partnership.",
-    facts: [
-      "Board role on a strategic turnaround.",
-      "Rebrand and three acquisitions.",
-      "AI-powered crypto price prediction platform.",
-      "IBM Watson partnership expanded.",
-      "About $20M raised. About $100M valuation reached.",
-    ],
+      "I joined the Digimax board to help lead a strategic turnaround. Over the engagement we rebranded the company, closed three acquisitions and built an AI-powered crypto price prediction platform, while expanding the company's partnership with IBM Watson. The company raised roughly $20M along the way and reached a valuation near $100M.",
+    facts: [],
     stats: [
       { value: "3", label: "Acquisitions" },
       { value: "~$20M", label: "Capital raised" },
