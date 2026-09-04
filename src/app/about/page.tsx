@@ -46,9 +46,9 @@ const timeline = [
     year: "2020",
     title: "My First Exit",
     body: "I tried again, this time with better judgment and sharper execution. Within 24 months I exited my second startup, made my first million before thirty and checked every external box of success. I helped my parents and bought the things I'd once only dreamed about. But the win didn't feel the way I expected it to. What actually mattered was the impact of building something real and useful. Founders began reaching out, so I started mentoring and sharing what I'd learned along the way.",
-    image: "/photos/nik-speaker.jpg",
+    image: "/photos/timeline-2020.jpg",
     imageAlt:
-      "Nik Vassev on stage with a microphone, presenting a slide on AI content.",
+      "Nik with his team under a Find New Perspective sign after his first exit.",
   },
   {
     year: "2021",
