@@ -10,10 +10,10 @@ const project = getProject("novobeing");
 export const metadata: Metadata = {
   title: "Novobeing",
   description:
-    "Therapeutic VR co-founded by Nik Vassev. Clinical research with Harvard and Penn Medicine. Four trials, $1.5M raised, CB Insights Top 150.",
+    "I co-founded Novobeing to bring relief to patients in hospitals using virtual reality. Four clinical trials with Harvard and Penn Medicine. $1.5M raised. CB Insights Top 150.",
   openGraph: {
     title: "Novobeing | Nik Vassev",
-    description: "Prior venture. Therapeutic VR with clinical research partners.",
+    description: "Prior venture. Therapeutic VR validated with Harvard and Penn Medicine.",
   },
 };
 
