@@ -1,10 +1,14 @@
 import Image from "next/image";
 import { trackRecordLogos } from "@/lib/site";
 
-export function TrackRecord() {
+type Props = {
+  className?: string;
+};
+
+export function TrackRecord({ className }: Props) {
   return (
     <section
-      className="nv nv-clients"
+      className={["nv nv-clients", className].filter(Boolean).join(" ")}
       aria-labelledby="track-record-heading"
     >
       <p className="nv-eyebrow">TRACK RECORD</p>
