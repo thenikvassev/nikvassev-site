@@ -146,7 +146,12 @@ export default function AboutPage() {
           <Link href="/#newsletter" className="pill-btn-primary">
             Subscribe to the newsletter
           </Link>
-          <Link href="/brand-strategy#book" className="pill-btn-secondary">
+          <Link
+            href="https://tally.so/r/QKQbBk"
+            className="pill-btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Book a call
           </Link>
         </div>
