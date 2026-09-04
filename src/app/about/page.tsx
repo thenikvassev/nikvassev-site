@@ -29,7 +29,7 @@ const timeline = [
   {
     year: "2015",
     title: "Tech Sales",
-    body: "I moved into tech and started as a business development rep, cold-calling leads and working my way up. Within a few years I hit President's Club and closed enterprise deals with organizations like the NFL, Volkswagen and government agencies in both the U.S. and Canada. On paper, I had made it. The income was strong and the career path was clear, but the reality of a high-performing nine-to-five still felt limiting. I wanted more ownership and autonomy, something that was mine to build.",
+    body: "I moved into tech and started as a business development rep, cold-calling leads and working my way up. Within a few years I hit President's Club and closed enterprise deals with organizations like the NFL, Volkswagen and government agencies in both the U.S. and Canada. On paper, I had made it. The income was strong and the career path was clear, but the reality of a high-performing nine-to-five still felt limiting. I wanted more ownership and autonomy, something that was mine to build. I knew I wanted to build my own company. I just didn't know what I wanted to do.",
     image: "/photos/timeline-2015-qlik.jpg",
     imageAlt:
       "Nik presenting a Qlik analytics whiteboard in a tech sales office.",
@@ -133,11 +133,11 @@ export default function AboutPage() {
             I have done that as a founder, and I have done it with the
             companies I work with. The job is the same every time: take
             something very new, build a brand and narrative that stand out, and
-            put it in front of the people who can buy it and fund it.
+            put it in front of the people who can buy it and fund it. Brand
+            strategy is how the story holds. Growth marketing is how customers
+            and capital show up. AI systems are how that work scales.
           </p>
           <p>
-            Brand strategy is how the story holds. Growth marketing is how
-            customers and capital show up. AI systems are how that work scales.
             That is the operating logic inside{" "}
             <a
               href="https://guideiq.ai"
@@ -234,7 +234,7 @@ export default function AboutPage() {
         entries={timeline}
       />
 
-      <TrackRecord />
+      <TrackRecord className="nv-clients--tight-top" />
       <ProjectsIndex />
     </>
   );
