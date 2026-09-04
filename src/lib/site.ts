@@ -10,6 +10,7 @@ export const siteConfig = {
   location: "Playa del Carmen",
   region: "Mexico and the Caribbean",
   email: "hello@nikvassev.com",
+  bookingUrl: "https://tally.so/r/QKQbBk",
   social: {
     linkedin: "https://www.linkedin.com/in/nikvassev",
     twitter: "https://twitter.com/nikvassev",
