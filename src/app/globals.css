@@ -77,6 +77,64 @@
     @apply mt-4;
   }
 
+  .prose-nik h2 {
+    @apply mb-3 mt-10 font-serif text-2xl font-extralight tracking-display text-ink;
+  }
+
+  .prose-nik h3 {
+    @apply mb-3 mt-8 font-serif text-xl font-extralight tracking-display text-ink;
+  }
+
+  .prose-nik h2 + p,
+  .prose-nik h3 + p {
+    @apply mt-0;
+  }
+
+  .prose-nik ul,
+  .prose-nik ol {
+    @apply my-4 pl-5;
+  }
+
+  .prose-nik ul {
+    @apply list-disc;
+  }
+
+  .prose-nik ol {
+    @apply list-decimal;
+  }
+
+  .prose-nik li + li {
+    @apply mt-2;
+  }
+
+  .prose-nik a {
+    @apply font-medium text-forest underline underline-offset-4;
+  }
+
+  .prose-nik hr {
+    @apply my-8 border-tan/40;
+  }
+
+  .prose-nik figure {
+    @apply my-8;
+  }
+
+  .prose-nik figcaption {
+    @apply mt-3 text-center text-sm text-ink-faint;
+  }
+
+  .prose-nik img {
+    @apply h-auto w-full rounded-card border border-tan/40;
+  }
+
+  .prose-nik strong {
+    @apply font-semibold text-ink;
+  }
+
+  .prose-nik em {
+    @apply italic;
+  }
+
   /* Occasional Storyline-style inverted panel */
   .panel-invert {
     @apply rounded-card bg-forest-dark text-white;

@@ -28,16 +28,18 @@ export function MediaFrame({
   priority = false,
 }: Props) {
   const isSvg = Boolean(src?.endsWith(".svg"));
+  const isGif = Boolean(src?.endsWith(".gif"));
+  const useNativeImg = isSvg || isGif;
 
   return (
     <figure
       className={`relative overflow-hidden rounded-card border border-tan/40 bg-cream ${ratioClass[ratio]} ${className}`}
     >
-      {src && isSvg && (
+      {src && useNativeImg && (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={src} alt={alt} className={`h-full w-full ${imageClassName}`} />
       )}
-      {src && !isSvg && (
+      {src && !useNativeImg && (
         <Image
           src={src}
           alt={alt}

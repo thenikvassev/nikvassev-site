@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
         destination: "/about#projects",
         permanent: true,
       },
+      {
+        source: "/resources/systems-over-hustle",
+        destination: "/resources",
+        permanent: true,
+      },
+      {
+        source: "/resources/brand-before-channels",
+        destination: "/resources",
+        permanent: true,
+      },
     ];
   },
 };

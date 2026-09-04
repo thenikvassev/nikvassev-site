@@ -5,18 +5,8 @@ import { CardLink } from "@/components/CardLink";
 import { HomeHero } from "@/components/HomeHero";
 import { AboutIntro } from "@/components/AboutIntro";
 import { TrackRecord } from "@/components/TrackRecord";
-import { blogPosts, guides } from "@/lib/resources";
+import { blogPosts, formatPostMeta, guides } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
-
-function formatPostMeta(date: string, readingMinutes: number) {
-  const formatted = new Date(`${date}T00:00:00Z`).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "UTC",
-  });
-  return `${formatted} · ${readingMinutes} min`;
-}
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} | Systems Over Hustle`,

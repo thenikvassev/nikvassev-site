@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CardLink } from "@/components/CardLink";
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { blogPosts, guides } from "@/lib/resources";
+import { blogPosts, formatPostMeta, guides } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Systems Over Hustle newsletter, guides and writing for founders building with brand strategy and practical AI systems.",
   openGraph: {
     title: "Resources | Nik Vassev",
-    description: "Newsletter, guides and sample posts from Systems Over Hustle.",
+    description: "Newsletter, guides and writing from Systems Over Hustle.",
   },
 };
 
@@ -62,14 +62,12 @@ export default function ResourcesPage() {
               href={`/resources/${post.slug}`}
               title={post.title}
               benefit={post.excerpt}
-              meta={`${post.date} · ${post.readingMinutes} min`}
+              meta={formatPostMeta(post.date, post.readingMinutes)}
+              image={post.cover}
+              imageAlt={post.coverAlt}
             />
           ))}
         </div>
-        <p className="mt-6 text-sm text-ink-faint">
-          Sample posts for the reposition. More writing to come. Bylines at
-          Entrepreneur may be linked here later.
-        </p>
       </section>
 
       <section className="mt-16">
