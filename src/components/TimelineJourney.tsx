@@ -6,8 +6,10 @@ export type TimelineJourneyEntry = {
   body: string;
   image: string;
   imageAlt: string;
-  /** Optional object-position override, e.g. object-top */
+  /** object-position, e.g. object-top — only used with cover fit */
   imageClassName?: string;
+  /** cover (default) crops to 4:3; contain shows full image inside 4:3 with cream letterbox */
+  imageFit?: "cover" | "contain";
 };
 
 type Props = {
@@ -41,41 +43,46 @@ export function TimelineJourney({
         </header>
 
         <ol className="relative mt-14 space-y-14 sm:mt-16 md:mt-20 md:space-y-24 md:[--image-col:20rem] lg:[--image-col:22rem]">
-          {/* Spine only on desktop — on mobile it cut through the stacked text */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-y-0 left-[calc(var(--image-col)/2)] hidden w-px bg-tan md:block"
           />
-          {entries.map((entry) => (
-            <li
-              key={entry.year}
-              className="relative grid items-start gap-5 md:grid-cols-[var(--image-col)_minmax(0,1fr)] md:gap-10 lg:gap-14"
-            >
-              <div className="relative z-10 w-full md:w-[var(--image-col)]">
-                {/* Same 4:3 landscape frame on mobile + desktop so photos are not tall/cropped */}
-                <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-cream">
-                  <Image
-                    src={entry.image}
-                    alt={entry.imageAlt}
-                    fill
-                    className={`object-cover ${entry.imageClassName ?? "object-center"}`}
-                    sizes="(min-width: 768px) 352px, 100vw"
-                  />
+          {entries.map((entry) => {
+            const fit = entry.imageFit ?? "cover";
+            const objectClass =
+              fit === "contain"
+                ? "object-contain object-center"
+                : `object-cover ${entry.imageClassName ?? "object-center"}`;
+            return (
+              <li
+                key={entry.year}
+                className="relative grid items-start gap-5 md:grid-cols-[var(--image-col)_minmax(0,1fr)] md:gap-10 lg:gap-14"
+              >
+                <div className="relative z-10 w-full md:w-[var(--image-col)]">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-[#E8E4D9]">
+                    <Image
+                      src={entry.image}
+                      alt={entry.imageAlt}
+                      fill
+                      className={objectClass}
+                      sizes="(min-width: 768px) 352px, 100vw"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="text-left">
-                <p className="font-sans text-[11px] font-semibold uppercase tracking-section text-tan">
-                  {entry.title}
-                </p>
-                <h3 className="mt-2 font-serif text-4xl font-extralight tracking-display text-forest md:text-5xl">
-                  {entry.year}
-                </h3>
-                <p className="mt-4 max-w-prose text-sm leading-relaxed text-ink-muted md:text-base">
-                  {entry.body}
-                </p>
-              </div>
-            </li>
-          ))}
+                <div className="text-left">
+                  <p className="font-sans text-[11px] font-semibold uppercase tracking-section text-tan">
+                    {entry.title}
+                  </p>
+                  <h3 className="mt-2 font-serif text-4xl font-extralight tracking-display text-forest md:text-5xl">
+                    {entry.year}
+                  </h3>
+                  <p className="mt-4 max-w-prose text-sm leading-relaxed text-ink-muted md:text-base">
+                    {entry.body}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </div>
     </section>
