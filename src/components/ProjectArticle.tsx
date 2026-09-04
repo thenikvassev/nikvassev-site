@@ -52,7 +52,7 @@ export function ProjectArticle({ project, extra }: Props) {
         </dl>
       )}
 
-      <div className="prose-nik mt-10 max-w-reading">
+      <div className="prose-nik mt-10 max-w-none">
         <p>{project.summary}</p>
         {project.facts.map((fact) => (
           <p key={fact}>{fact}</p>
