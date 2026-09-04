@@ -30,7 +30,7 @@ const timeline = [
     year: "2015",
     title: "Tech Sales",
     body: "I moved into tech and started as a business development rep, cold-calling leads and working my way up. Within a few years I hit President's Club and closed enterprise deals with organizations like the NFL, Volkswagen and government agencies in both the U.S. and Canada. On paper, I had made it. The income was strong and the career path was clear, but the reality of a high-performing nine-to-five still felt limiting. I wanted more ownership and autonomy, something that was mine to build.",
-    image: "/photos/timeline-2015.jpg",
+    image: "/photos/timeline-2015-qlik.jpg",
     imageAlt:
       "Nik presenting a Qlik analytics whiteboard in a tech sales office.",
   },
