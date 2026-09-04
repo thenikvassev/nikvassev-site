@@ -330,7 +330,6 @@
 }
 
 .nl-benefits {
-
   padding: 1rem 1.35rem 4.6rem;
   border-top: 1px solid rgba(10, 59, 36, 0.14);
 }
@@ -532,7 +531,6 @@
     border-radius: 16px;
   }
 
-  .nl-benefits {
   .nl-benefits {
     padding: 1.5rem 2.25rem 6.4rem;
   }
