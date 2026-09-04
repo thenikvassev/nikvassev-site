@@ -28,10 +28,10 @@ export function TimelineJourney({
   return (
     <section
       id="my-story"
-      className="bg-forest-dark px-4 py-16 sm:px-6 md:px-8 md:py-24"
+      className="bg-forest-dark px-4 pt-16 pb-8 sm:px-6 md:px-8 md:pt-24 md:pb-10"
       aria-labelledby={headingId}
     >
-      <div className="mx-auto max-w-5xl rounded-3xl bg-cream px-5 py-12 sm:px-10 md:px-16 md:py-20 lg:px-20">
+      <div className="mx-auto max-w-5xl rounded-3xl bg-cream px-5 py-12 pb-10 sm:px-10 md:px-16 md:py-20 md:pb-14 lg:px-20">
         <header className="text-center">
           {eyebrow ? <p className="section-label">{eyebrow}</p> : null}
           <h2
