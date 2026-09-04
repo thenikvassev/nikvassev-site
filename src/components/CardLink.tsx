@@ -31,6 +31,7 @@ export function CardLink({
           alt={imageAlt ?? title}
           ratio="video"
           className="rounded-none border-0 border-b border-tan/40"
+          imageClassName="object-cover object-center"
         />
       )}
       <div className="p-6">
