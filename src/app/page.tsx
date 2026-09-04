@@ -5,8 +5,18 @@ import { CardLink } from "@/components/CardLink";
 import { HomeHero } from "@/components/HomeHero";
 import { AboutIntro } from "@/components/AboutIntro";
 import { TrackRecord } from "@/components/TrackRecord";
-import { guides } from "@/lib/resources";
+import { blogPosts, guides } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
+
+function formatPostMeta(date: string, readingMinutes: number) {
+  const formatted = new Date(`${date}T00:00:00Z`).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+  return `${formatted} · ${readingMinutes} min`;
+}
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} | Systems Over Hustle`,
@@ -79,12 +89,25 @@ export default function HomePage() {
               />
             ))}
           </div>
-          <div className="nv-resource-ctas">
-            <Link href="/resources" className="pill-btn-secondary">
-              Explore guides
-            </Link>
-            <Link href="/resources" className="pill-btn-secondary">
-              Explore blog
+          <div className="nv-blog-strip">
+            <p className="nv-eyebrow">From the blog</p>
+            <div className="nv-blog-list">
+              {blogPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/resources/${post.slug}`}
+                  className="nv-blog-item"
+                >
+                  <p className="nv-blog-meta">
+                    {formatPostMeta(post.date, post.readingMinutes)}
+                  </p>
+                  <h3>{post.title}</h3>
+                  <p>{post.excerpt}</p>
+                </Link>
+              ))}
+            </div>
+            <Link href="/resources" className="nv-resources-more">
+              Browse all resources →
             </Link>
           </div>
         </div>
