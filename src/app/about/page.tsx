@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MediaFrame } from "@/components/MediaFrame";
 import { PressRow } from "@/components/PressRow";
 import { ProjectsIndex } from "@/components/ProjectsIndex";
+import { TimelineJourney } from "@/components/TimelineJourney";
 import { TrackRecord } from "@/components/TrackRecord";
 import { siteConfig } from "@/lib/site";
 
@@ -22,31 +23,48 @@ const timeline = [
     year: "2011",
     title: "How it began",
     body: "I started in commission-only, door-to-door sales. The conditions were brutal and rejection was constant. At that stage of my life hustle was not a philosophy. It was the only option. I learned to grind, to push through discomfort and to believe that outworking everyone else was the answer. For a while it worked. I made good money, put myself through school and became a top performer at a young age.",
+    images: ["/photos/nik-beach.jpg"],
+    imageAlt: "Nik Vassev working at the beach.",
   },
   {
     year: "2015",
     title: "Tech sales",
     body: "I moved into tech as a business development rep, cold-calling leads and working my way up. Within a few years I hit President's Club and closed enterprise deals with organizations like the NFL, Volkswagen and government agencies in both the U.S. and Canada. The income was strong and the career path was clear. A high-performing nine-to-five still felt limiting. I wanted ownership, autonomy and something of my own.",
+    images: ["/photos/nik-speaking.jpg"],
+    imageAlt:
+      "Nik Vassev speaking on stage, pointing at a slide titled What Not To Do.",
   },
   {
     year: "2018",
     title: "First startup failure",
     body: "That desire led to an e-commerce dropshipping business. Sales came quickly and volume looked promising. Profits never followed. The model was flawed and the business collapsed. Burnout set in, then a period of depression, and I found myself back in a cubicle selling software. Building companies takes more than effort alone.",
+    images: ["/photos/nik-portrait-studio.jpg"],
+    imageAlt:
+      "Nik Vassev, chest-up studio portrait in a black blazer and glasses.",
   },
   {
     year: "2020",
     title: "First exit",
     body: "I tried again with better judgment and sharper execution. Within 24 months I exited my second startup, made my first million before thirty and checked every external box of success. The win did not feel the way I expected. What mattered most was the impact of building something real and useful. Founders began reaching out. I started mentoring, investing and sharing what I had learned.",
+    images: ["/photos/nik-speaker.jpg"],
+    imageAlt:
+      "Nik Vassev on stage with a microphone, presenting a slide on AI content.",
   },
   {
     year: "2021",
     title: "Novobeing",
     body: "That path led me to co-found Novobeing, a therapeutic VR company designed to help patients in hospitals. We co-developed the technology with Harvard, raised capital and built a strong team around a mission that mattered. I fell back into familiar patterns: long days, non-stop meetings, constant pressure and another cycle of burnout. Outcomes improved. The way I was building had not.",
+    images: ["/photos/novobeing-vr.jpg"],
+    imageAlt:
+      "Patient wearing a Novobeing VR headset with a calm mountain waterfall and butterflies around him.",
   },
   {
     year: "2024+",
     title: "Systems, Guide IQ, Mexico",
     body: "The real change came when I stopped optimizing for hustle and started designing systems. I built Guide IQ, an AI-powered marketing system for founders, left Vancouver for Mexico and redesigned my life around freedom rather than output. I operate from Mexico and the Caribbean, build tech companies and help other founders scale with systems that support a life instead of consuming it.",
+    images: ["/photos/guide-iq.jpg"],
+    imageAlt:
+      "Human and robotic hands reaching toward a glowing orange brain on a black background.",
   },
 ];
 
@@ -192,42 +210,12 @@ export default function AboutPage() {
 
       <PressRow invert />
 
-      <section className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
-        <p className="section-label">My story</p>
-        <h2 className="mt-3 text-2xl tracking-display md:text-3xl">
-          From hustle to systems
-        </h2>
-        <ol className="mt-10 space-y-8">
-          {timeline.map((item) => (
-            <li
-              key={item.year}
-              className="grid gap-3 border-t border-tan/40 pt-8 md:grid-cols-[7rem_1fr]"
-            >
-              <p className="section-label md:pt-1">{item.year}</p>
-              <div>
-                <h3 className="text-lg">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
-                  {item.body}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ol>
-
-        <div className="mt-14 grid gap-4 sm:grid-cols-2">
-          <MediaFrame
-            src="/photos/nik-beach.jpg"
-            alt="Nik Vassev working at the beach."
-            ratio="photo"
-          />
-          <MediaFrame
-            src="/photos/nik-speaking.jpg"
-            alt="Nik Vassev speaking on stage, pointing at a slide titled What Not To Do."
-            ratio="photo"
-          />
-        </div>
-
-      </section>
+      <TimelineJourney
+        eyebrow="My story"
+        title="From hustle to systems"
+        headingId="from-hustle-heading"
+        entries={timeline}
+      />
 
       <TrackRecord />
       <ProjectsIndex />
