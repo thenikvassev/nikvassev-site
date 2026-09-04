@@ -5,11 +5,11 @@ import { MediaFrame } from "@/components/MediaFrame";
 export const metadata: Metadata = {
   title: "Brand Strategy",
   description:
-    "Early-stage brand strategy with Guide IQ and coaching from Nik Vassev. Twelve inputs, about 15 minutes. Free Brand DNA, $99 Brand Brain, $750 session.",
+    "Complete brand strategy and go-to-market clarity in 15 minutes. Brand foundation and a 90-day GTM plan embedded in the AI tools you already use.",
   openGraph: {
     title: "Brand Strategy | Nik Vassev",
     description:
-      "Guide IQ plus strategist coaching for founders who need clarity before they scale.",
+      "Complete brand strategy and go-to-market clarity in 15 minutes for early-stage startups.",
   },
 };
 
@@ -18,12 +18,12 @@ export default function BrandStrategyPage() {
     <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-24">
       <p className="section-label">Brand Strategy · Guide IQ</p>
       <h1 className="mt-4 max-w-2xl text-4xl tracking-display md:text-5xl">
-        Get brand clarity before you scale channels.
+        Complete brand strategy and go-to-market clarity in 15 minutes.
       </h1>
       <p className="mt-6 max-w-reading text-lg text-ink-muted">
-        Early-stage founders need Brand DNA, a voice that sounds like you and a
-        90-day plan you can actually run. That is Guide IQ, with optional
-        coaching from me. Twelve focused inputs. About 15 minutes.
+        Transform your early-stage startup with a complete brand foundation and
+        actionable 90-day go-to-market strategy, seamlessly embedded into the AI
+        tools you already use every day.
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3">
