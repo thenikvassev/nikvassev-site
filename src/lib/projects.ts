@@ -97,7 +97,7 @@ export const projects: Project[] = [
     ],
     image: "/photos/mindleap-app.jpg",
     imageAlt:
-      "Three Mindleap app screens showing programs, an audio session and membership options.",
+      "Mindleap app screens for mood tracking, emotions, journey milestones and therapy sessions.",
     imagePulled: true,
   },
   {
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     ],
     image: "/photos/digimax-app.jpg",
     imageAlt:
-      "A phone showing the Digimax Long-Short app with BTC and ETH prediction cards.",
+      "Two phones showing Digimax trading favorites and SHIB buy and sell zone predictions.",
     imagePulled: true,
   },
 ];
