@@ -34,9 +34,9 @@ export default function HomePage() {
             <p className="nv-ways-label">For early-stage startups</p>
             <h3>Guide IQ</h3>
             <p>
-              An AI-powered brand strategy engine I built. Give it your inputs,
-              get a complete brand strategy and 90-day go-to-market plan in 15
-              minutes.
+              Transform your early-stage startup with a complete brand foundation
+              and actionable 90-day go-to-market strategy, seamlessly embedded
+              into the AI tools you already use every day.
             </p>
             <Link href="/brand-strategy">Build your strategy →</Link>
           </article>
