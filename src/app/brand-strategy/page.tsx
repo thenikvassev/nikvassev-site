@@ -158,12 +158,18 @@ export default function BrandStrategyPage() {
         </p>
       </section>
 
-      <MediaFrame
-        src="/photos/guide-iq-strategy-ui.jpg"
-        alt="Guide IQ Strategy workspace with campaign cards for pilot acquisition and webinar launch."
-        ratio="video"
-        className="mt-14"
-      />
+      <div className="mt-14 grid gap-4 md:grid-cols-2">
+        <MediaFrame
+          src="/photos/guide-iq-strategy-ui.jpg"
+          alt="Guide IQ Strategy workspace with campaign cards for pilot acquisition and webinar launch."
+          ratio="video"
+        />
+        <MediaFrame
+          src="/photos/guide-iq-brand-dna-ui.jpg"
+          alt="Guide IQ Brand DNA workspace with ICP analysis cards and messaging tone guide."
+          ratio="video"
+        />
+      </div>
 
       <section
         id="book"
