@@ -50,13 +50,13 @@ export function TimelineJourney({
               className="relative grid items-start gap-5 md:grid-cols-[var(--image-col)_minmax(0,1fr)] md:gap-12 lg:gap-16"
             >
               <div className="relative z-10 w-full md:w-[var(--image-col)]">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-card md:aspect-[3/4]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-white md:aspect-[5/4]">
                   <Image
                     src={entry.image}
                     alt={entry.imageAlt}
                     fill
-                    className="object-cover object-top"
-                    sizes="(min-width: 768px) 248px, 100vw"
+                    className="object-contain object-center p-1"
+                    sizes="(min-width: 768px) 280px, 100vw"
                   />
                 </div>
               </div>
