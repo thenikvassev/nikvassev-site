@@ -1505,3 +1505,15 @@
     transform: none;
   }
 }
+
+
+/* Tighter gap after About timeline before Track Record */
+.nv-clients.nv-clients--tight-top {
+  padding-top: 2.4rem;
+}
+
+@media (min-width: 900px) {
+  .nv-clients.nv-clients--tight-top {
+    padding-top: 3rem;
+  }
+}
