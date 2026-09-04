@@ -138,5 +138,5 @@ export const storylineProsOverview = {
   meta: "Co-Founder",
   image: "/photos/storyline-pros.jpg",
   imageAlt:
-    "Founder pointing at stacked AI search prompts that all resolve to you.",
+    "Storyline Pros SP monogram on a deep forest background.",
 } as const;
