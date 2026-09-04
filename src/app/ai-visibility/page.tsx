@@ -179,9 +179,9 @@ export default function AiVisibilityPage() {
       <MediaFrame
         src="/photos/aiv-answer-you.png"
         alt="Founder pointing at stacked AI search prompts that all resolve to you."
-        ratio="wide"
+        ratio="video"
         className="mt-14"
-        imageClassName="object-contain"
+        imageClassName="object-cover object-[center_72%] scale-125 origin-center"
       />
 
       <section className="mt-16 panel-invert px-6 py-10 md:px-10">
