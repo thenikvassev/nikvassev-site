@@ -81,6 +81,7 @@ const timeline = [
     image: "/photos/timeline-2026.jpg",
     imageAlt:
       "Nik presenting What Not To Do on stage for Storyline Pros.",
+    imageClassName: "object-[center_20%]",
   },
 ];
 
