@@ -72,7 +72,7 @@ const timeline = [
     body: "Leaving Vancouver for Mexico was the whole point. I traded grey mornings and a packed calendar for the Caribbean coast, for warmer weather year-round and more time outdoors. Now there's a beach I can walk to whenever I want to think. The work is still demanding. My life finally has room in it.",
     image: "/photos/timeline-2025.jpg",
     imageAlt:
-      "Nik on Mexico's Caribbean coast after the move from Vancouver.",
+      "Nik and partner on Mexico's Caribbean coast near Tulum after the move from Vancouver.",
   },
   {
     year: "2026",
