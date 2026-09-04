@@ -101,8 +101,13 @@ function FooterSocials() {
 export function Footer() {
   const year = new Date().getFullYear();
   const pathname = usePathname();
-  // Dedicated /newsletter page already has signup blocks — hide sitewide band there
-  const showNewsletterBand = pathname !== "/newsletter";
+  // Hide sitewide newsletter band on pages that already end with their own CTA
+  const hideNewsletterBand = new Set([
+    "/newsletter",
+    "/ai-visibility",
+    "/brand-strategy",
+  ]);
+  const showNewsletterBand = !hideNewsletterBand.has(pathname);
 
   return (
     <footer className="w-full max-w-full">
