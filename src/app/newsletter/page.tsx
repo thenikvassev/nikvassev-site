@@ -31,23 +31,23 @@ export const metadata: Metadata = {
 const benefits = [
   {
     label: "01",
-    title: "One usable idea",
-    body: "Each letter covers a single move on brand, growth, or AI. Written so you can put it to work between meetings.",
+    title: "Proven Growth Frameworks",
+    body: "Timeless marketing and growth playbooks as well as new strategies that are working right now.",
   },
   {
     label: "02",
-    title: "Operator proof, not theory",
-    body: "The frameworks come from companies I have built, sold, or advised. One receipt max. No guru stack.",
+    title: "Contrarian Insights",
+    body: "Reality checks on startup advice that does not hold up in real life. Plus what actually works instead.",
   },
   {
     label: "03",
-    title: "Built for founders shipping real work",
-    body: "For entrepreneurs building high-impact companies who want leverage as they grow, not another content hobby.",
+    title: "Growth Tools That Actually Matter",
+    body: "Honest takes on the latest marketing tech, what is worth using right now, what to skip, and how to build leverage with AI automation.",
   },
   {
     label: "04",
-    title: "A steady Thursday drop",
-    body: "It lands once a week so it can become part of how you run the business. Same day, same promise.",
+    title: "Freedom-First Business",
+    body: "How to build companies that grow without consuming your life. Location independence, time freedom, and sustainable performance.",
   },
 ] as const;
 
@@ -90,7 +90,7 @@ export default function NewsletterPage() {
       <section className="nl-benefits" aria-labelledby="benefits-heading">
         <div className="nl-benefits-inner">
           <p className="section-label">What you get</p>
-          <h2 id="benefits-heading">What you get</h2>
+          <h2 id="benefits-heading">Inside every Thursday letter</h2>
           <div className="nl-benefits-grid">
             {benefits.map((item) => (
               <article key={item.label} className="nl-benefit-card">
@@ -116,18 +116,16 @@ export default function NewsletterPage() {
         </div>
         <div className="nl-about-card">
           <p className="section-label">About Nik</p>
-          <h2 id="about-nik-heading">Who writes this</h2>
+          <h2 id="about-nik-heading">About Nik</h2>
           <p>
-            I&apos;m a brand strategist, serial founder, and growth marketer. I
-            founded Guide IQ and co-founded Storyline Pros after building,
-            raising, and exiting tech companies. I help visionary startups tell
-            their story, win customers, and become the name AI and buyers
-            recommend in their category.
-          </p>
-          <p>
-            I write Systems Over Hustle because I burned out twice chasing
-            broken process. The letter is the personal layer of that lesson:
-            systems that let a company grow without eating the week.
+            Nik Vassev is a serial entrepreneur and brand strategist who turns
+            startup narratives into category-dominating authority. Across his
+            career building and exiting tech ventures, his companies have
+            reached nine-figure valuations and closed tens of millions in
+            enterprise deals with global institutions and Fortune 500
+            companies. Today, he translates that real-world track record into
+            actionable systems for growth marketing, AI visibility and
+            predictable growth for innovative startups.
           </p>
           <div className="nl-about-actions">
             <Link href="/about" className="pill-btn-secondary">
