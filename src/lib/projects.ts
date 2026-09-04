@@ -15,6 +15,8 @@ export type Project = {
   image: string;
   imageAlt: string;
   imagePulled: boolean;
+  /** YouTube (or other) embed URL — replaces hero image on project page when set */
+  videoEmbedUrl?: string;
   href?: string;
   ctaLabel?: string;
   ctaHref?: string;
@@ -74,6 +76,8 @@ export const projects: Project[] = [
     imageAlt:
       "Patient wearing a Novobeing VR headset with a calm mountain waterfall and butterflies around him.",
     imagePulled: true,
+    videoEmbedUrl:
+      "https://www.youtube.com/embed/qfs1jDfQn6k?si=_iFO1b_fmw9hwjVQ&controls=0",
     href: "https://novobeing.com",
   },
   {
