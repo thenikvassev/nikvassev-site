@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/site";
+
 export type Guide = {
   slug: string;
   title: string;
@@ -131,4 +133,12 @@ export function formatPostDate(date: string): string {
 
 export function formatPostMeta(date: string, readingMinutes: number): string {
   return `${formatPostDate(date)} · ${readingMinutes} min`;
+}
+
+export function formatArticleMeta(
+  date: string,
+  readingMinutes: number,
+  author = siteConfig.name,
+): string {
+  return `${formatPostDate(date)} · ${readingMinutes} min · ${author}`.toUpperCase();
 }

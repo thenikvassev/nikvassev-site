@@ -23,6 +23,7 @@ const config: Config = {
         tan: "#CBBCA3",
         ink: {
           DEFAULT: "#0A3B24",
+          title: "#17160F",
           muted: "#3d4848",
           faint: "#6b7a72",
         },
