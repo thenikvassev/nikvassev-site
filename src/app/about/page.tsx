@@ -90,28 +90,20 @@ export default function AboutPage() {
 
         <div className="prose-nik mt-10 max-w-reading text-base md:text-lg">
           <p>
-            Nik Vassev is a serial entrepreneur and brand strategist who turns
-            startup narratives into category-dominating authority. Across his
-            career building and exiting tech ventures, his companies have
-            reached nine-figure valuations and closed tens of millions in
-            enterprise deals with global institutions and Fortune 500 companies.
-            Today, he translates that real-world track record into actionable
-            systems for growth marketing, AI visibility and predictable growth
-            for innovative startups.
+            I am an entrepreneur and a brand strategist for visionary
+            companies. I help them tell their story, grow their customers, get
+            investors and become the leader in their category.
           </p>
           <p>
-            After co-founding Novobeing (a therapeutic VR platform validated in
-            clinical trials alongside researchers at Harvard and Penn Medicine)
-            and scaling Mindleap Health through to its acquisition, Nik
-            reshaped his entire approach to business. Today, he advocates for a
-            radical redefinition of entrepreneurial success: building
-            high-impact, category-defining companies through intelligent brand
-            strategy, modern growth marketing, and practical AI systems, without
-            trading away your health, sanity or freedom in the process.
+            I have done that as a founder, and I have done it with the
+            companies I work with. The job is the same every time: take
+            something new, give it a story the market can repeat, and put it in
+            front of the people who can buy it and fund it.
           </p>
           <p>
-            Currently writing from the Caribbean coast of Mexico, Nik is the
-            founder of{" "}
+            Brand strategy is how the story holds. Growth marketing is how
+            customers and capital show up. AI systems are how that work scales.
+            That is the operating logic inside{" "}
             <a
               href="https://guideiq.ai"
               className="font-medium text-forest underline underline-offset-4"
@@ -120,7 +112,7 @@ export default function AboutPage() {
             >
               Guide IQ
             </a>{" "}
-            (an AI brand strategy engine) and{" "}
+            and{" "}
             <a
               href="https://storylinepros.com"
               className="font-medium text-forest underline underline-offset-4"
@@ -128,17 +120,15 @@ export default function AboutPage() {
               rel="noopener noreferrer"
             >
               Storyline Pros
-            </a>{" "}
-            (an AI visibility and narrative engineering firm). He is a regular
-            contributor to Entrepreneur magazine, a mentor to dozens of
-            early-stage founders through Futurepreneur Canada, and the author
-            of the weekly newsletter Systems Over Hustle.
-          </p>
-          <p>
-            When he’s not designing AI workflows or helping founders scale
-            their market presence, you can find him exploring the outdoors,
-            studying human performance, and proving that the best businesses
-            are built to support your life, not consume it.
+            </a>
+            , and it is what I write about in my{" "}
+            <a
+              href="/#newsletter"
+              className="font-medium text-forest underline underline-offset-4"
+            >
+              newsletter
+            </a>
+            .
           </p>
         </div>
 
