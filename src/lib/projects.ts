@@ -42,9 +42,9 @@ export const projects: Project[] = [
       { value: "$99", label: "Full Brand Brain" },
       { value: "$750", label: "Strategist session" },
     ],
-    image: "/photos/guide-iq-tablet.png",
+    image: "/photos/guide-iq.jpg",
     imageAlt:
-      "Hands holding a tablet showing the Guide IQ Brand Brain: strategy, marketing, content and outreach.",
+      "GUIDEiQ logo with glowing orange skill pills on a black background.",
     imagePulled: true,
     href: "https://guideiq.ai",
     ctaLabel: "Visit Guide IQ",
@@ -142,6 +142,7 @@ export const storylineProsOverview = {
   benefit:
     "Narrative engineering and AI visibility for later-stage B2B emerging tech. Co-founded with Cynthia Salarizadeh.",
   meta: "Co-Founder",
-  image: "/placeholders/storyline-media.svg",
-  imageAlt: "Placeholder for Storyline Pros",
+  image: "/photos/storyline-pros.jpg",
+  imageAlt:
+    "Founder pointing at stacked AI search prompts that all resolve to you.",
 } as const;
