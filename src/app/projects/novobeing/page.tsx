@@ -25,14 +25,14 @@ export default function NovobeingPage() {
       project={project}
       extra={
         <>
-          <figure className="mt-12 overflow-hidden rounded-card border border-tan/40 bg-cream">
+          <figure className="mt-12 w-[calc(100%+1rem)] max-w-none -ml-2 overflow-hidden rounded-card border border-tan/40 bg-cream md:w-[calc(100%+2rem)] md:-ml-4">
             <Image
               src="/photos/novobeing-product-features.png"
               alt="Novobeing product features: controller-free operation, outcomes tracking, plug-and-play integration, preloaded clinical programs, and sanitization options."
               width={1280}
               height={844}
               className="h-auto w-full"
-              sizes="(min-width: 1024px) 896px, 100vw"
+              sizes="(min-width: 1024px) 960px, 100vw"
             />
           </figure>
 
