@@ -54,9 +54,9 @@ const timeline = [
     year: "2021",
     title: "My Third Startup",
     body: "That path led me to co-found Novobeing, a therapeutic VR company designed to help patients in hospitals. We co-developed the technology with Harvard, raised capital and built a strong team around a mission that genuinely mattered. Yet despite the progress, I fell back into familiar patterns: ten-hour days and constant pressure, then another cycle of burnout. My outcomes had improved. The way I was building had not.",
-    image: "/photos/novobeing-vr.jpg",
+    image: "/photos/timeline-2021.jpg",
     imageAlt:
-      "Patient wearing a Novobeing VR headset with a calm mountain waterfall and butterflies around him.",
+      "Nik presenting Novobeing at The Roux Institute with Sid Desai.",
   },
   {
     year: "2024",
