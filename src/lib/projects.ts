@@ -29,9 +29,9 @@ export const projects: Project[] = [
     role: "Founder",
     status: "active",
     oneLiner:
-      "AI Brand Strategist that turns founder inputs into Brand DNA and a 90-day GTM plan.",
+      "Complete brand strategy and go-to-market clarity in 15 minutes.",
     summary:
-      "Guide IQ is built for early-stage founders who need a real brand foundation before they scale content and campaigns. Twelve focused inputs. About 15 minutes. You get Brand DNA, voice and visuals, and a 90-day go-to-market plan you can load into ChatGPT, Claude MCP or Gemini so every output stays on brand.",
+      "Transform your early-stage startup with a complete brand foundation and actionable 90-day go-to-market strategy, seamlessly embedded into the AI tools you already use every day. Twelve focused inputs. You get Brand DNA, voice and visuals, and a plan you can load into ChatGPT, Claude MCP or Gemini so every output stays on brand.",
     facts: [
       "Twelve focused inputs. About 15 minutes to a usable Brand Brain.",
       "Path: free Brand DNA, full Brand Brain at $99, optional strategist session at $750.",
