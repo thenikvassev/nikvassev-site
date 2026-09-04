@@ -79,6 +79,14 @@ export default function HomePage() {
               />
             ))}
           </div>
+          <div className="nv-resource-ctas">
+            <Link href="/resources" className="pill-btn-secondary">
+              Explore guides
+            </Link>
+            <Link href="/resources" className="pill-btn-secondary">
+              Explore blog
+            </Link>
+          </div>
         </div>
       </section>
 

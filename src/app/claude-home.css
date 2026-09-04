@@ -1163,15 +1163,29 @@
   }
 }
 
+.nv-resource-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .nv-resource-ctas {
+    gap: 0.85rem;
+    margin-top: 2.15rem;
+  }
+}
+
 @media (min-width: 900px) {
   .nv-ways-card:hover,
   .nv-resources-grid .card:hover {
     transform: translateY(-6px);
-    background: #ffffff;
+    background: #e8e4d9;
     border-color: #cbbca3;
     box-shadow:
-      0 18px 40px rgba(3, 36, 21, 0.14),
-      0 0 0 1px rgba(3, 36, 21, 0.2);
+      0 20px 44px rgba(3, 36, 21, 0.22),
+      0 0 0 1px rgba(3, 36, 21, 0.28);
   }
 }
 
