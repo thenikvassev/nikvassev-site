@@ -36,6 +36,14 @@ export default function AiVisibilityPage() {
         </a>
       </div>
 
+      <MediaFrame
+        src="/photos/aiv-earned-media.png"
+        alt="Rolled Wall Street Journal with the line: Earned media shows AI who matters."
+        ratio="wide"
+        className="mt-12"
+        imageClassName="object-contain"
+      />
+
       <section className="mt-16">
         <p className="section-label">GEO in plain terms</p>
         <h2 className="mt-3 text-2xl tracking-display">
@@ -72,13 +80,6 @@ export default function AiVisibilityPage() {
           The system covers high-impact narrative engineering, tier-one media,
           and AI search visibility across a 6-channel ecosystem.
         </p>
-        <MediaFrame
-          src="/placeholders/geoview-diagram.svg"
-          alt="Visual of a narrative engineering and AI visibility system"
-          label="Diagram: Narrative engineering system"
-          ratio="wide"
-          className="mt-6"
-        />
       </section>
 
       <section className="mt-14">
@@ -176,11 +177,11 @@ export default function AiVisibilityPage() {
       </section>
 
       <MediaFrame
-        src="/placeholders/storyline-media.svg"
-        alt="Placeholder for a Storyline earned media still"
-        label="Photo: Earned media and citations"
+        src="/photos/aiv-answer-you.png"
+        alt="Founder pointing at stacked AI search prompts that all resolve to you."
         ratio="wide"
         className="mt-14"
+        imageClassName="object-contain"
       />
 
       <section className="mt-16 panel-invert px-6 py-10 md:px-10">
