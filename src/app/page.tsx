@@ -82,7 +82,7 @@ export default function HomePage() {
           <div className="nv-blog-strip">
             <p className="nv-eyebrow">From the blog</p>
             <div className="nv-blog-list">
-              {blogPosts.map((post) => (
+              {blogPosts.slice(0, 2).map((post) => (
                 <Link
                   key={post.slug}
                   href={`/resources/${post.slug}`}
