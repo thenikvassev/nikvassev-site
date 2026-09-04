@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { MediaFrame } from "@/components/MediaFrame";
 
 export const metadata: Metadata = {
   title: "AI Visibility",
   description:
-    "Storyline Pros: narrative engineering and GEO for later-stage B2B emerging tech. Earned media, podcasts, Reddit and GeoView. Performance-based PR. No guaranteed rankings.",
+    "Storyline Pros: narrative engineering and AI visibility for later-stage B2B emerging tech. Earned media, podcasts, Reddit and community authority. Performance-based PR. No guaranteed rankings.",
   openGraph: {
     title: "AI Visibility | Storyline Pros",
     description:
@@ -33,11 +32,8 @@ export default function AiVisibilityPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Apply at Storyline Pros
+          Apply to work with us
         </a>
-        <Link href="/brand-strategy" className="pill-btn-secondary">
-          Need early-stage brand work?
-        </Link>
       </div>
 
       <section className="mt-16">
@@ -61,20 +57,25 @@ export default function AiVisibilityPage() {
       </section>
 
       <section className="mt-14">
-        <p className="section-label">GeoView</p>
+        <p className="section-label">What makes us special</p>
         <h2 className="mt-3 text-2xl tracking-display">
-          Proprietary tech for AI visibility
+          Our narrative engineering system
         </h2>
         <p className="mt-4 max-w-reading text-ink-muted">
-          GeoView is Storyline&apos;s proprietary GEO layer. It is the
-          AI-native technical stack behind the work: analytics and agents that
-          show where you appear in AI answers, what claims you own and where
-          the footprint is thin. Decisions sit on that data, not on guesswork.
+          Storyline Pros is a narrative engineering and AI visibility firm for
+          high-growth tech startups and ambitious founders who need category
+          authority. We turn company milestones into tier-one media placements,
+          podcast features, community authority, and AI search recommendations.
+        </p>
+        <p className="mt-4 max-w-reading text-ink-muted">
+          Delivery is performance-based. You pay for placements that publish.
+          The system covers high-impact narrative engineering, tier-one media,
+          and AI search visibility across a 6-channel ecosystem.
         </p>
         <MediaFrame
           src="/placeholders/geoview-diagram.svg"
-          alt="Placeholder diagram for GeoView, Storyline proprietary GEO technology"
-          label="Diagram: GeoView"
+          alt="Visual of a narrative engineering and AI visibility system"
+          label="Diagram: Narrative engineering system"
           ratio="wide"
           className="mt-6"
         />
@@ -89,89 +90,89 @@ export default function AiVisibilityPage() {
         </p>
       </section>
 
-      <section className="mt-14">
-        <p className="section-label">What we place</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <div className="card">
-            <h2 className="font-sans text-base">Earned media</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+      <section className="nv mt-14">
+        <p className="section-label">Where we show up</p>
+        <div className="nv-ways-grid md:!grid-cols-2">
+          <article className="nv-ways-card">
+            <h3>Earned media</h3>
+            <p>
               Pitched editorial features and executive interviews. The
               high-authority coverage AI and investors trust most.
             </p>
-          </div>
-          <div className="card">
-            <h2 className="font-sans text-base">Podcasts</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+          </article>
+          <article className="nv-ways-card">
+            <h3>Podcasts</h3>
+            <p>
               Strategic guest appearances. Audio transcripts become searchable,
               quotable answers to the questions buyers actually ask.
             </p>
-          </div>
-          <div className="card">
-            <h2 className="font-sans text-base">Reddit communities</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+          </article>
+          <article className="nv-ways-card">
+            <h3>Reddit communities</h3>
+            <p>
               Presence in the subreddits your buyers trust, where AI checks
               real-world sentiment.
             </p>
-          </div>
-          <div className="card">
-            <h2 className="font-sans text-base">News, listicles and reports</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+          </article>
+          <article className="nv-ways-card">
+            <h3>News, listicles and reports</h3>
+            <p>
               Company announcements, product launches and high-value assets
               built to own category queries. Access to 500+ media sites.
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section className="mt-14">
+      <section className="nv mt-14">
         <p className="section-label">How it is priced</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <div className="card">
-            <h2 className="font-sans text-base">Performance-based PR</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+        <div className="nv-ways-grid md:!grid-cols-2">
+          <article className="nv-ways-card">
+            <h3>Performance-based PR</h3>
+            <p>
               You pay for placements delivered, not retainers for promises. If
               a story does not publish, you do not pay. That is the make-good.
             </p>
-          </div>
-          <div className="card">
-            <h2 className="font-sans text-base">Narrative engineering</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+          </article>
+          <article className="nv-ways-card">
+            <h3>Narrative engineering</h3>
+            <p>
               We define the claims you should own and deploy them into earned
               media, podcasts, news and Reddit. Citation evidence is built on
               purpose.
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section className="mt-14">
+      <section className="nv mt-14">
         <p className="section-label">How it works</p>
-        <ol className="mt-6 grid gap-4 md:grid-cols-3">
-          <li className="card">
-            <p className="text-xs font-medium text-forest">01</p>
-            <h2 className="mt-2 font-sans text-base">GEO audit</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+        <div className="nv-ways-grid">
+          <article className="nv-ways-card">
+            <p className="nv-ways-label">01</p>
+            <h3>GEO audit</h3>
+            <p>
               Full audit of AI search for your category. Strategy for the
               footprint you still need.
             </p>
-          </li>
-          <li className="card">
-            <p className="text-xs font-medium text-forest">02</p>
-            <h2 className="mt-2 font-sans text-base">Narrative deploy</h2>
-            <p className="mt-2 text-sm text-ink-muted">
-              Place the storyline into trusted media and communities. GeoView
-              tracks where you surface.
+          </article>
+          <article className="nv-ways-card">
+            <p className="nv-ways-label">02</p>
+            <h3>Narrative deploy</h3>
+            <p>
+              Place the storyline into trusted media and communities. We track
+              where you surface in AI answers.
             </p>
-          </li>
-          <li className="card">
-            <p className="text-xs font-medium text-forest">03</p>
-            <h2 className="mt-2 font-sans text-base">Results</h2>
-            <p className="mt-2 text-sm text-ink-muted">
+          </article>
+          <article className="nv-ways-card">
+            <p className="nv-ways-label">03</p>
+            <h3>Results</h3>
+            <p>
               Share of voice across AI answers. More placements as authority
               compounds. No ranking guarantee.
             </p>
-          </li>
-        </ol>
+          </article>
+        </div>
       </section>
 
       <MediaFrame
@@ -184,13 +185,13 @@ export default function AiVisibilityPage() {
 
       <section className="mt-16 panel-invert px-6 py-10 md:px-10">
         <h2 className="text-2xl tracking-display">
-          Ready to get in the sources AI trusts?
+          Ready to become the answer AI recommends?
         </h2>
         <p className="mt-3 max-w-lg text-white/75">
-          Apply on the Storyline Pros site. If you are earlier stage and still
-          shaping brand fundamentals, start with Guide IQ.
+          Apply at Storyline Pros for performance-based narrative engineering
+          built for later-stage B2B emerging tech.
         </p>
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6">
           <a
             href="https://storylinepros.com"
             className="pill-btn bg-cream text-forest hover:bg-forest hover:text-white"
@@ -199,12 +200,6 @@ export default function AiVisibilityPage() {
           >
             Apply to work with us
           </a>
-          <Link
-            href="/brand-strategy"
-            className="pill-btn border border-white/40 text-white hover:bg-forest"
-          >
-            Brand strategy lane
-          </Link>
         </div>
       </section>
     </div>
