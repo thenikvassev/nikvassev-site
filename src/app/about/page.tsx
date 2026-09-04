@@ -41,7 +41,6 @@ const timeline = [
     image: "/photos/timeline-2018-shopify.jpg",
     imageAlt:
       "Shopify overview dashboard showing Tip Top Gizmos sales from late 2018.",
-    imageFit: "contain",
   },
   {
     year: "2020",
