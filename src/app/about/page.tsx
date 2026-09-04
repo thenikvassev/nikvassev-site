@@ -23,8 +23,8 @@ const timeline = [
     year: "2011",
     title: "How it began",
     body: "I started my career in commission-only, door-to-door sales. The conditions were brutal and rejection was constant, but at that stage of my life hustle wasn't a philosophy, it was the only option. I learned to push through discomfort and to believe that outworking everyone else was the answer. For a while it worked. I made good money and paid my way through school, becoming a top performer at a young age. Effort felt like the solution to every problem, and I carried that belief into everything that followed.",
-    image: "/photos/nik-beach.jpg",
-    imageAlt: "Nik Vassev working at the beach.",
+    image: "/photos/timeline-2011.jpg",
+    imageAlt: "Nik receiving a trophy at an outdoor awards ceremony early in his career.",
   },
   {
     year: "2015",
