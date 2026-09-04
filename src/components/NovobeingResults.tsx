@@ -1,73 +1,43 @@
 import Image from "next/image";
 
 type ResultCard = {
-  value: string;
+  signed: string;
   label: string;
-  direction: "down" | "up";
-  /** Fill amount 0–100 for the subtle bar (maps to reported %) */
-  fill: number;
 };
 
 const results: ResultCard[] = [
   {
-    value: "32%",
+    signed: "−32%",
     label: "Less anxiety",
-    direction: "down",
-    fill: 32,
   },
   {
-    value: "52%",
-    label: "Pain relief",
-    direction: "up",
-    fill: 52,
-  },
-  {
-    value: "24%",
+    signed: "−24%",
     label: "Less depressive symptoms",
-    direction: "down",
-    fill: 24,
   },
   {
-    value: "12%",
+    signed: "+52%",
+    label: "Pain relief",
+  },
+  {
+    signed: "+12%",
     label: "Higher quality of life",
-    direction: "up",
-    fill: 12,
   },
 ];
 
 const partners = [
-  { src: "/logos/harvard-wordmark.png", alt: "Harvard University", width: 560, height: 141 },
-  { src: "/logos/calgary-wordmark.png", alt: "University of Calgary", width: 520, height: 163 },
-  { src: "/logos/penn-medicine.png", alt: "Penn Medicine", width: 560, height: 89 },
+  { src: "/logos/harvard-wordmark.png", alt: "Harvard University", width: 646, height: 179 },
+  { src: "/logos/calgary-wordmark.png", alt: "University of Calgary", width: 609, height: 184 },
+  { src: "/logos/penn-medicine.png", alt: "Penn Medicine", width: 1027, height: 181 },
 ];
 
-function DeltaChip({ direction, value }: { direction: "down" | "up"; value: string }) {
-  const signed = direction === "down" ? `−${value}` : `+${value}`;
+function SignedPill({ value }: { value: string }) {
   return (
     <span
-      className="inline-flex items-center rounded-full border border-forest/15 bg-forest/5 px-2.5 py-0.5 font-sans text-xs font-medium tracking-wide text-forest"
+      className="inline-flex items-center justify-center rounded-full border border-forest/15 bg-forest/5 px-4 py-1.5 font-serif text-2xl tracking-display text-forest-dark md:px-5 md:py-2 md:text-3xl"
       aria-hidden
     >
-      {signed}
+      {value}
     </span>
-  );
-}
-
-function ProgressBar({ fill, direction }: { fill: number; direction: "down" | "up" }) {
-  const width = Math.max(8, Math.min(100, fill));
-  return (
-    <div
-      className="relative mt-4 h-1.5 w-full overflow-hidden rounded-full bg-forest/10"
-      aria-hidden
-    >
-      <div
-        className="absolute inset-y-0 left-0 rounded-full bg-forest transition-[width] duration-700 ease-out"
-        style={{
-          width: `${width}%`,
-          backgroundColor: direction === "up" ? "#0A3B24" : "#032415",
-        }}
-      />
-    </div>
   );
 }
 
@@ -88,17 +58,11 @@ export function NovobeingResults() {
         {results.map((r) => (
           <div
             key={r.label}
-            className="relative flex min-h-[168px] flex-col rounded-card bg-cream px-4 py-5"
+            className="relative flex min-h-[140px] flex-col justify-between rounded-card bg-cream px-4 py-5"
           >
-            <div className="flex items-start justify-between gap-2">
-              <p className="text-sm font-medium leading-snug text-forest">{r.label}</p>
-              <DeltaChip direction={r.direction} value={r.value} />
-            </div>
-            <p className="mt-3 font-serif text-5xl tracking-display text-forest-dark md:text-[2.75rem]">
-              {r.value}
-            </p>
-            <div className="mt-auto pt-2">
-              <ProgressBar fill={r.fill} direction={r.direction} />
+            <p className="text-sm font-medium leading-snug text-forest">{r.label}</p>
+            <div className="mt-4 flex justify-end">
+              <SignedPill value={r.signed} />
             </div>
           </div>
         ))}
@@ -112,7 +76,7 @@ export function NovobeingResults() {
             alt={p.alt}
             width={p.width}
             height={p.height}
-            className="h-11 w-auto object-contain opacity-95 md:h-12"
+            className="h-10 w-auto object-contain opacity-95 md:h-12"
             sizes="(min-width: 768px) 180px, 140px"
           />
         ))}
