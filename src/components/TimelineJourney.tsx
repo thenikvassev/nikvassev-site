@@ -1,10 +1,10 @@
-import { TimelineEntryMedia } from "./TimelineEntryMedia";
+import Image from "next/image";
 
 export type TimelineJourneyEntry = {
   year: string;
   title: string;
   body: string;
-  images: readonly string[];
+  image: string;
   imageAlt: string;
 };
 
@@ -49,10 +49,15 @@ export function TimelineJourney({
               className="relative grid items-start gap-6 md:grid-cols-[var(--image-col)_minmax(0,1fr)] md:gap-12 lg:gap-16"
             >
               <div className="relative z-10 w-[var(--image-col)]">
-                <TimelineEntryMedia
-                  images={entry.images}
-                  alt={entry.imageAlt}
-                />
+                <div className="relative aspect-[3/4] overflow-hidden rounded-card">
+                  <Image
+                    src={entry.image}
+                    alt={entry.imageAlt}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(min-width: 768px) 248px, 216px"
+                  />
+                </div>
               </div>
               <div>
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-section text-tan">

@@ -23,14 +23,14 @@ const timeline = [
     year: "2011",
     title: "How it began",
     body: "I started my career in commission-only, door-to-door sales. The conditions were brutal and rejection was constant, but at that stage of my life hustle wasn't a philosophy, it was the only option. I learned to push through discomfort and to believe that outworking everyone else was the answer. For a while it worked. I made good money and paid my way through school, becoming a top performer at a young age. Effort felt like the solution to every problem, and I carried that belief into everything that followed.",
-    images: ["/photos/nik-beach.jpg"],
+    image: "/photos/nik-beach.jpg",
     imageAlt: "Nik Vassev working at the beach.",
   },
   {
     year: "2015",
     title: "Tech Sales",
     body: "I moved into tech and started as a business development rep, cold-calling leads and working my way up. Within a few years I hit President's Club and closed enterprise deals with organizations like the NFL, Volkswagen and government agencies in both the U.S. and Canada. On paper, I had made it. The income was strong and the career path was clear, but the reality of a high-performing nine-to-five still felt limiting. I wanted more ownership and autonomy, something that was mine to build.",
-    images: ["/photos/nik-speaking.jpg"],
+    image: "/photos/nik-speaking.jpg",
     imageAlt:
       "Nik Vassev speaking on stage, pointing at a slide titled What Not To Do.",
   },
@@ -38,7 +38,7 @@ const timeline = [
     year: "2018",
     title: "First Startup Failure",
     body: "That desire led me to my first company, an e-commerce dropshipping business. Sales came quickly and volume looked promising, but profits never followed. The model was flawed, and eventually the business collapsed. That failure took more from me than I expected. Burnout set in, followed by a period of depression, and I found myself back in a cubicle selling software again. It was my first real lesson that building companies requires far more than effort alone.",
-    images: ["/photos/nik-portrait-studio.jpg"],
+    image: "/photos/nik-portrait-studio.jpg",
     imageAlt:
       "Nik Vassev, chest-up studio portrait in a black blazer and glasses.",
   },
@@ -46,7 +46,7 @@ const timeline = [
     year: "2020",
     title: "My First Exit",
     body: "I tried again, this time with better judgment and sharper execution. Within 24 months I exited my second startup, made my first million before thirty and checked every external box of success. I helped my parents and bought the things I'd once only dreamed about. But the win didn't feel the way I expected it to. What actually mattered was the impact of building something real and useful. Founders began reaching out, so I started mentoring and sharing what I'd learned along the way.",
-    images: ["/photos/nik-speaker.jpg"],
+    image: "/photos/nik-speaker.jpg",
     imageAlt:
       "Nik Vassev on stage with a microphone, presenting a slide on AI content.",
   },
@@ -54,7 +54,7 @@ const timeline = [
     year: "2021",
     title: "My Third Startup",
     body: "That path led me to co-found Novobeing, a therapeutic VR company designed to help patients in hospitals. We co-developed the technology with Harvard, raised capital and built a strong team around a mission that genuinely mattered. Yet despite the progress, I fell back into familiar patterns: ten-hour days and constant pressure, then another cycle of burnout. My outcomes had improved. The way I was building had not.",
-    images: ["/photos/novobeing-vr.jpg"],
+    image: "/photos/novobeing-vr.jpg",
     imageAlt:
       "Patient wearing a Novobeing VR headset with a calm mountain waterfall and butterflies around him.",
   },
@@ -62,7 +62,7 @@ const timeline = [
     year: "2024",
     title: "The Shift to Systems",
     body: "The real change came when I stopped optimizing for hustle and started designing systems. I focused on building companies that could scale without my constant presence, with decisions that didn't require being online at all hours. I built Guide IQ, an AI-powered marketing system for founders, and started helping other founders build companies that support their lives. My businesses now run on less of my time and more leverage. Systems over hustle is how everything I build works now.",
-    images: ["/photos/guide-iq.jpg"],
+    image: "/photos/guide-iq.jpg",
     imageAlt:
       "Human and robotic hands reaching toward a glowing orange brain on a black background.",
   },
@@ -70,14 +70,14 @@ const timeline = [
     year: "2025",
     title: "The Move to Mexico",
     body: "Leaving Vancouver for Mexico was the whole point. I traded grey mornings and a packed calendar for the Caribbean coast, for warmer weather year-round and more time outdoors. Now there's a beach I can walk to whenever I want to think. The work is still demanding. My life finally has room in it.",
-    images: ["/photos/nik-portrait-mexico.jpg"],
+    image: "/photos/nik-portrait-mexico.jpg",
     imageAlt: "Nik Vassev portrait from Mexico.",
   },
   {
     year: "2026",
     title: "Storyline Pros",
     body: "By 2026 it was clear: AI was becoming the new front door, and buyers were asking it who to trust instead of reading landing pages. I'd spent years building narrative engineering experience and real relationships in the media, so I co-founded Storyline Pros with Cynthia Salarizadeh to help companies become the answer AI recommends.",
-    images: ["/photos/storyline-pros.jpg"],
+    image: "/photos/storyline-pros.jpg",
     imageAlt:
       "Founder pointing at stacked AI search prompts that all resolve to you.",
   },
