@@ -353,10 +353,10 @@
 
 .nl-benefits h2 {
   margin: 0;
-  max-width: 14ch;
+  max-width: 18ch;
   font-size: clamp(2.35rem, 5.4vw, 3.55rem);
   letter-spacing: -0.035em;
-  color: #17160f;
+  color: #0a3b24;
 }
 
 .nl-benefits-grid {
@@ -367,43 +367,45 @@
 }
 
 .nl-benefit-card {
-  background: #f7f4ec;
-  border: 1px solid rgba(3, 36, 21, 0.12);
-  border-top: 3px solid #0a3b24;
+  background: #e8e4d9;
+  border: 1px solid rgba(10, 59, 36, 0.16);
   border-radius: 22px;
-  padding: 2rem 1.7rem 1.95rem;
-  box-shadow:
-    0 18px 40px rgba(3, 36, 21, 0.12),
-    0 1px 0 rgba(255, 255, 255, 0.72) inset;
+  padding: 1.7rem 1.45rem 1.6rem;
+  box-shadow: none;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
 }
 
 .nl-benefit-card .nl-benefit-label {
   margin: 0;
   font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #0a3b24;
 }
 
 .nl-benefit-card h3 {
-  margin: 0.8rem 0 0;
-  font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: 1.22rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  color: #032415;
+  margin: 0.85rem 0 0;
+  font-family: var(--font-pp-editorial), Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #0a3b24;
 }
 
 .nl-benefit-card .nl-benefit-body {
-  margin: 0.7rem 0 0;
+  margin: 0.75rem 0 0;
   font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.98rem;
   font-weight: 400;
-  line-height: 1.62;
-  color: #5c5a52;
+  line-height: 1.65;
+  color: #6d6b60;
 }
 
 .nl-about {
@@ -561,32 +563,26 @@
   }
 
   .nl-benefit-card {
-    padding: 2.7rem 2.4rem 2.55rem;
-    transition:
-      transform 220ms ease,
-      box-shadow 220ms ease,
-      border-color 220ms ease,
-      background-color 220ms ease;
+    padding: 3.05rem 2.45rem 2.9rem;
   }
 
   .nl-benefit-card:hover {
-    transform: translateY(-5px);
-    background: #f3efe6;
+    transform: translateY(-6px);
     border-color: #cbbca3;
-    border-top-color: #032415;
     box-shadow:
-      0 26px 52px rgba(3, 36, 21, 0.18),
-      0 0 0 1px rgba(3, 36, 21, 0.16);
+      0 20px 44px rgba(3, 36, 21, 0.22),
+      0 0 0 1px rgba(3, 36, 21, 0.28);
   }
 
   .nl-benefit-card h3 {
-    font-size: 1.32rem;
-    font-weight: 800;
-    color: #032415;
+    font-size: 2.15rem;
+    font-weight: 700;
+    color: #0a3b24;
   }
 
   .nl-benefit-card .nl-benefit-body {
-    font-size: 1.04rem;
+    font-size: 1.12rem;
+    line-height: 1.68;
   }
 
   .nl-about {
