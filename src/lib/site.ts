@@ -10,6 +10,7 @@ export const siteConfig = {
   location: "Playa del Carmen",
   region: "Mexico and the Caribbean",
   email: "hello@nikvassev.com",
+  bookingUrl: "https://tally.so/r/QKQbBk",
   social: {
     linkedin: "https://www.linkedin.com/in/nikvassev",
     twitter: "https://twitter.com/nikvassev",
@@ -26,6 +27,7 @@ export const siteConfig = {
 export const footerNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/newsletter", label: "Newsletter" },
   { href: "/about#projects", label: "Projects" },
   { href: "/ai-visibility", label: "AI Visibility" },
   { href: "/brand-strategy", label: "Brand Strategy" },

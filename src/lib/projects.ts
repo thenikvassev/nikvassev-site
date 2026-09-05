@@ -15,6 +15,8 @@ export type Project = {
   image: string;
   imageAlt: string;
   imagePulled: boolean;
+  /** YouTube (or other) embed URL — replaces hero image on project page when set */
+  videoEmbedUrl?: string;
   href?: string;
   ctaLabel?: string;
   ctaHref?: string;
@@ -27,9 +29,9 @@ export const projects: Project[] = [
     role: "Founder",
     status: "active",
     oneLiner:
-      "AI Brand Strategist that turns founder inputs into Brand DNA and a 90-day GTM plan.",
+      "Complete brand strategy and go-to-market clarity in 15 minutes.",
     summary:
-      "Guide IQ is built for early-stage founders who need a real brand foundation before they scale content and campaigns. Twelve focused inputs. About 15 minutes. You get Brand DNA, voice and visuals, and a 90-day go-to-market plan you can load into ChatGPT, Claude MCP or Gemini so every output stays on brand.",
+      "Transform your early-stage startup with a complete brand foundation and actionable 90-day go-to-market strategy, seamlessly embedded into the AI tools you already use every day. Twelve focused inputs. You get Brand DNA, voice and visuals, and a plan you can load into ChatGPT, Claude MCP or Gemini so every output stays on brand.",
     facts: [
       "Twelve focused inputs. About 15 minutes to a usable Brand Brain.",
       "Path: free Brand DNA, full Brand Brain at $99, optional strategist session at $750.",
@@ -42,9 +44,9 @@ export const projects: Project[] = [
       { value: "$99", label: "Full Brand Brain" },
       { value: "$750", label: "Strategist session" },
     ],
-    image: "/photos/guide-iq-tablet.png",
+    image: "/photos/guide-iq.jpg",
     imageAlt:
-      "Hands holding a tablet showing the Guide IQ Brand Brain: strategy, marketing, content and outreach.",
+      "Human and robotic hands reaching toward a glowing orange brain on a black background.",
     imagePulled: true,
     href: "https://guideiq.ai",
     ctaLabel: "Visit Guide IQ",
@@ -58,23 +60,19 @@ export const projects: Project[] = [
     oneLiner:
       "Therapeutic VR for patients in hospitals. Co-developed with Harvard and Penn Medicine.",
     summary:
-      "Co-founded Novobeing to bring relief to patients in hospitals using virtual reality. The therapeutic VR platform was co-developed and validated with psychologists at Harvard and Penn Medicine. The technology showed improvements in patient outcomes for pain, stress and anxiety and is in use in leading medical centres.",
-    facts: [
-      "Co-founded. Clinical research partners at Harvard and Penn Medicine.",
-      "Four successful clinical trials.",
-      "$1.5M capital raised.",
-      "CB Insights Top 150 Digital Health ranking.",
-    ],
+      "I co-founded Novobeing to bring relief to patients in hospitals using virtual reality. We built and validated the platform alongside psychologists at Harvard and Penn Medicine, running it through four clinical trials before it reached a single hospital floor. The technology showed real improvements in pain, stress and anxiety, raised $1.5M in capital, and earned a CB Insights Top 150 Digital Health ranking along the way. It's still in use in leading medical centers today. Novobeing is part of the track record now.",
+    facts: [],
     stats: [
       { value: "4", label: "Clinical trials" },
       { value: "$1.5M", label: "Capital raised" },
       { value: "Top 150", label: "CB Insights Digital Health" },
     ],
-    image: "/photos/novobeing-vr.png",
+    image: "/photos/novobeing-vr.jpg",
     imageAlt:
-      "A person wearing a VR headset, with a hospital setting on one side and a calm sunset landscape on the other.",
+      "Patient wearing a Novobeing VR headset with a calm mountain waterfall and butterflies around him.",
     imagePulled: true,
-    href: "https://novobeing.com",
+    videoEmbedUrl:
+      "https://www.youtube.com/embed/qfs1jDfQn6k?si=_iFO1b_fmw9hwjVQ&controls=0",
   },
   {
     slug: "mindleap",
@@ -84,11 +82,9 @@ export const projects: Project[] = [
     oneLiner:
       "Digital platform for psychedelic preparation and integration. Founded, shipped and acquired.",
     summary:
-      "Founded Mindleap to close a gap in psychedelic care: structured, accessible support for preparation and integration. The platform helped people navigate mental health experiences with guidance and intention. Within 24 months it was acquired by a biotech firm building psilocybin-based therapies.",
+      "I founded Mindleap to close a real gap in psychedelic care: structured, accessible support for the preparation and integration work that actually determines whether the experience helps someone. The platform grew to 30,000 users in under two years. Mydecine Innovations Group, a clinical-stage biotech developing a second-generation psilocybin drug for addiction, acquired it for $3.5M, 24 months after I started the company. Mindleap is part of the track record now.",
     facts: [
-      "Founded to support preparation and integration in psychedelic care.",
-      "Grew to 30,000 users.",
-      "$3.5M acquisition.",
+      "Building it, shipping it and exiting it taught me most of what I bring to the brand and systems work I do with founders today.",
     ],
     stats: [
       { value: "30,000", label: "Users" },
@@ -97,8 +93,10 @@ export const projects: Project[] = [
     ],
     image: "/photos/mindleap-app.jpg",
     imageAlt:
-      "Three Mindleap app screens showing programs, an audio session and membership options.",
+      "Mindleap app screens for mood tracking, emotions, journey milestones and therapy sessions.",
     imagePulled: true,
+    videoEmbedUrl:
+      "https://www.youtube.com/embed/hGEM_qvd6po?si=Z4nTVK8sGYRlVCVJ&controls=0",
   },
   {
     slug: "digimax",
@@ -108,14 +106,8 @@ export const projects: Project[] = [
     oneLiner:
       "Board turnaround: rebrand, three acquisitions and an expanded IBM Watson partnership.",
     summary:
-      "Brought onto the board at Digimax to help lead a strategic turnaround. The work included a rebrand, three acquisitions, building an AI-powered crypto price prediction platform and expanding the company's IBM Watson partnership.",
-    facts: [
-      "Board role on a strategic turnaround.",
-      "Rebrand and three acquisitions.",
-      "AI-powered crypto price prediction platform.",
-      "IBM Watson partnership expanded.",
-      "About $20M raised. About $100M valuation reached.",
-    ],
+      "I joined the Digimax board to help lead a strategic turnaround. Over the engagement we rebranded the company, closed three acquisitions and built an AI-powered crypto price prediction platform, while expanding the company's partnership with IBM Watson. The company raised roughly $20M along the way and reached a valuation near $100M.",
+    facts: [],
     stats: [
       { value: "3", label: "Acquisitions" },
       { value: "~$20M", label: "Capital raised" },
@@ -123,8 +115,10 @@ export const projects: Project[] = [
     ],
     image: "/photos/digimax-app.jpg",
     imageAlt:
-      "A phone showing the Digimax Long-Short app with BTC and ETH prediction cards.",
+      "Two phones showing Digimax trading favorites and SHIB buy and sell zone predictions.",
     imagePulled: true,
+    videoEmbedUrl:
+      "https://www.youtube.com/embed/EtKbkOTn0C0?si=3fI8hIfjxG12rs-x&controls=0",
   },
 ];
 
@@ -137,11 +131,12 @@ export const priorProjects = projects.filter((p) => p.status === "prior");
 
 /** Shared overview card for Storyline Pros (not in the projects array). */
 export const storylineProsOverview = {
-  href: "/ai-visibility",
+  href: "https://storylinepros.com",
   title: "Storyline Pros",
   benefit:
-    "Narrative engineering and AI visibility for later-stage B2B emerging tech. Co-founded with Cynthia Salarizadeh.",
+    "Narrative engineering and AI visibility for emerging tech companies. Co-founded with Cynthia Salarizadeh.",
   meta: "Co-Founder",
-  image: "/placeholders/storyline-media.svg",
-  imageAlt: "Placeholder for Storyline Pros",
+  image: "/photos/storyline-pros.jpg",
+  imageAlt:
+    "Storyline Pros SP monogram on a deep forest background.",
 } as const;

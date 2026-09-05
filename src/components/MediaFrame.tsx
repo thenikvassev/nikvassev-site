@@ -4,8 +4,9 @@ type Props = {
   src?: string;
   alt: string;
   label?: string;
-  ratio?: "video" | "photo" | "portrait" | "wide";
+  ratio?: "video" | "photo" | "portrait" | "tall" | "wide";
   className?: string;
+  imageClassName?: string;
   priority?: boolean;
 };
 
@@ -13,6 +14,7 @@ const ratioClass = {
   video: "aspect-video",
   photo: "aspect-[4/3]",
   portrait: "aspect-[3/4]",
+  tall: "aspect-[2/3]",
   wide: "aspect-[16/7]",
 };
 
@@ -22,25 +24,28 @@ export function MediaFrame({
   label,
   ratio = "video",
   className = "",
+  imageClassName = "object-cover object-top",
   priority = false,
 }: Props) {
   const isSvg = Boolean(src?.endsWith(".svg"));
+  const isGif = Boolean(src?.endsWith(".gif"));
+  const useNativeImg = isSvg || isGif;
 
   return (
     <figure
       className={`relative overflow-hidden rounded-card border border-tan/40 bg-cream ${ratioClass[ratio]} ${className}`}
     >
-      {src && isSvg && (
+      {src && useNativeImg && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} className="h-full w-full object-cover" />
+        <img src={src} alt={alt} className={`h-full w-full ${imageClassName}`} />
       )}
-      {src && !isSvg && (
+      {src && !useNativeImg && (
         <Image
           src={src}
           alt={alt}
           fill
           priority={priority}
-          className="object-cover"
+          className={imageClassName}
           sizes="(min-width: 1024px) 896px, 100vw"
         />
       )}

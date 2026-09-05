@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { footerNav, siteConfig } from "@/lib/site";
 import { NewsletterForm } from "./NewsletterForm";
 
@@ -97,29 +100,39 @@ function FooterSocials() {
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const pathname = usePathname();
+  // Hide sitewide newsletter band on pages that already end with their own CTA
+  const hideNewsletterBand = new Set([
+    "/newsletter",
+    "/ai-visibility",
+    "/brand-strategy",
+  ]);
+  const showNewsletterBand = !hideNewsletterBand.has(pathname);
 
   return (
-    <footer className="mt-24">
-      <div id="newsletter" className="nv nv-newsletter scroll-mt-28">
-        <div className="nv-newsletter-inner">
-          <h2>Brand strategy &amp; AI systems to dominate your category.</h2>
-          <p className="nv-newsletter-body">
-            I write a weekly letter called Systems Over Hustle. Every Thursday,
-            it&apos;s packed with real-world brand strategy, AI workflows, and
-            practical insights to help you build a high-impact company without
-            outworking a broken process.
-          </p>
-          <p className="nv-newsletter-lead">
-            Join the entrepreneurs building smarter, not harder.
-          </p>
-          <div className="nv-newsletter-form">
-            <NewsletterForm variant="dark" />
+    <footer className="w-full max-w-full">
+      {showNewsletterBand ? (
+        <div id="newsletter" className="nv nv-newsletter scroll-mt-28">
+          <div className="nv-newsletter-inner">
+            <h2>Brand strategy &amp; AI systems to dominate your category.</h2>
+            <p className="nv-newsletter-body">
+              I write a weekly letter called Systems Over Hustle. Every Thursday,
+              it&apos;s packed with real-world brand strategy, AI workflows, and
+              practical insights to help you build a high-impact company without
+              outworking a broken process.
+            </p>
+            <p className="nv-newsletter-lead">
+              Join the entrepreneurs building smarter, not harder.
+            </p>
+            <div className="nv-newsletter-form">
+              <NewsletterForm variant="dark" />
+            </div>
+            <p className="nv-newsletter-note">
+              1 actionable framework delivered every Thursday.
+            </p>
           </div>
-          <p className="nv-newsletter-note">
-            1 actionable framework delivered every Thursday. Zero fluff.
-          </p>
         </div>
-      </div>
+      ) : null}
 
       <div className="nv-legal">
         <div className="nv-legal-inner">

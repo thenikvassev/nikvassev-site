@@ -17,26 +17,12 @@ export function ProjectsIndex() {
         id="projects-heading"
         className="mt-4 max-w-2xl text-4xl tracking-display md:text-5xl"
       >
-        Ventures I have built and the work still shipping.
+        Explore some of the startups I&apos;ve built
       </h2>
-      <p className="mt-6 max-w-reading text-lg text-ink-muted">
-        Active products first. Prior companies for context and track record.
-      </p>
 
       <section className="mt-14">
-        <p className="section-label">Active</p>
+        <p className="section-label">Current ventures</p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {activeProjects.map((p) => (
-            <CardLink
-              key={p.slug}
-              href={`/projects/${p.slug}`}
-              title={p.name}
-              benefit={p.oneLiner}
-              meta={p.role}
-              image={p.image}
-              imageAlt={p.imageAlt}
-            />
-          ))}
           <CardLink
             href={storylineProsOverview.href}
             title={storylineProsOverview.title}
@@ -44,13 +30,26 @@ export function ProjectsIndex() {
             meta={storylineProsOverview.meta}
             image={storylineProsOverview.image}
             imageAlt={storylineProsOverview.imageAlt}
+            external
           />
+          {activeProjects.map((p) => (
+            <CardLink
+              key={p.slug}
+              href={p.href ?? "https://guideiq.ai"}
+              title={p.name}
+              benefit={p.oneLiner}
+              meta={p.role}
+              image={p.image}
+              imageAlt={p.imageAlt}
+              external
+            />
+          ))}
         </div>
       </section>
 
       <section className="mt-16">
         <p className="section-label">Prior</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
           {priorProjects.map((p) => (
             <CardLink
               key={p.slug}

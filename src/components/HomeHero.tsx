@@ -15,13 +15,18 @@ export function HomeHero() {
     ).matches;
     const media = mediaRef.current;
     const badge = badgeRef.current;
-    if (!media || !badge) return;
+    if (!media) return;
+
+    const isBadgeVisible = (el: HTMLElement | null): el is HTMLElement =>
+      !!el && el.getClientRects().length > 0;
 
     const onScroll = () => {
       if (reduceMotion.current) return;
       const y = window.scrollY;
       media.style.transform = `translate3d(0, ${y * 0.14}px, 0)`;
-      badge.style.transform = `translate3d(0, ${y * 0.05}px, 0)`;
+      if (isBadgeVisible(badge)) {
+        badge.style.transform = `translate3d(0, ${y * 0.05}px, 0)`;
+      }
     };
 
     if (reduceMotion.current) {
@@ -29,7 +34,7 @@ export function HomeHero() {
     }
 
     const mark = document.querySelector<HTMLElement>(".nv-mark");
-    if (mark && window.scrollY < 8) {
+    if (mark && isBadgeVisible(badge) && window.scrollY < 8) {
       const markBox = mark.getBoundingClientRect();
       const restBox = badge.getBoundingClientRect();
       const fromX =

@@ -23,8 +23,7 @@ Build: npm run build && npm start
 - /ai-visibility Storyline Pros
 - /brand-strategy Guide IQ + coaching
 - /resources Blog + guides
-- /resources/systems-over-hustle
-- /resources/brand-before-channels
+- /resources/[slug] Imported Scribbles posts
 
 ## Placeholders for Nik
 
@@ -32,7 +31,7 @@ Build: npm run build && npm start
 - Book call is mailto hello@nikvassev.com
 - Digimax omitted per Brand DNA
 - Guide IQ pricing confirm on guideiq.ai
-- Two sample blog posts
+- Five Scribbles posts at /resources/[slug]
 - Social handles in src/lib/site.ts
 - OG images later
 - Novobeing/Mindleap wording may need Nik pass
