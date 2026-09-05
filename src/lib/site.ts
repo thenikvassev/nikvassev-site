@@ -31,6 +31,7 @@ export const footerNav = [
   { href: "/about#projects", label: "Projects" },
   { href: "/ai-visibility", label: "AI Visibility" },
   { href: "/brand-strategy", label: "Brand Strategy" },
+  { href: "/resources", label: "Resources" },
 ] as const;
 
 export const trackRecordLogos = [

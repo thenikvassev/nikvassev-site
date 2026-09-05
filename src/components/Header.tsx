@@ -10,6 +10,7 @@ const mobileNav = [
   { href: "/about", label: "About" },
   { href: "/ai-visibility", label: "AI Visibility" },
   { href: "/brand-strategy", label: "Brand Strategy" },
+  { href: "/resources", label: "Resources" },
   { href: "/newsletter", label: "Newsletter" },
   {
     href: siteConfig.bookingUrl,
@@ -146,7 +147,7 @@ export function Header() {
             </button>
           </div>
 
-          <nav aria-label="Mobile" className="nv-panel-nav">
+          <nav aria-label="Site" className="nv-panel-nav">
             {mobileNav.map((item) => {
               if ("external" in item && item.external) {
                 return (
