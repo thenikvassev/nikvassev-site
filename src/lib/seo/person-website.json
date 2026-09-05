@@ -1,0 +1,58 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nikvassev.com/#person",
+      "name": "Nik Vassev",
+      "url": "https://nikvassev.com",
+      "image": "https://nikvassev.com/og/nikvassev-home.png",
+      "jobTitle": "Brand Strategist",
+      "description": "Brand strategist, serial founder and growth marketer helping entrepreneurs build high-impact companies using brand strategy, growth marketing and AI systems.",
+      "sameAs": [
+        "https://twitter.com/nikvassev",
+        "https://www.linkedin.com/in/nikvassev",
+        "https://www.instagram.com/nikvassev/"
+      ],
+      "knowsAbout": [
+        "Brand strategy",
+        "Growth marketing",
+        "AI visibility",
+        "Generative engine optimization",
+        "Narrative engineering",
+        "Startup positioning"
+      ],
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Futurpreneur Canada"
+      },
+      "founder": [
+        { "@type": "Organization", "name": "Guide IQ", "url": "https://guideiq.ai" },
+        { "@type": "Organization", "name": "Storyline Pros", "url": "https://storylinepros.com" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nikvassev.com/#website",
+      "url": "https://nikvassev.com",
+      "name": "Nik Vassev",
+      "description": "Brand Strategist for visionary startups. Brand strategy, growth marketing and AI systems.",
+      "publisher": { "@id": "https://nikvassev.com/#person" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://nikvassev.com/#webpage",
+      "url": "https://nikvassev.com",
+      "name": "Nik Vassev | Brand Strategist for Visionary Startups",
+      "isPartOf": { "@id": "https://nikvassev.com/#website" },
+      "about": { "@id": "https://nikvassev.com/#person" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://nikvassev.com/og/nikvassev-home.png",
+        "width": 1200,
+        "height": 630
+      }
+    }
+  ]
+}
