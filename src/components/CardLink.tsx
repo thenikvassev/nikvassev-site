@@ -31,6 +31,7 @@ export function CardLink({
           alt={imageAlt ?? title}
           ratio="video"
           className="rounded-none border-0 border-b border-tan/40"
+          imageClassName="object-cover object-center"
         />
       )}
       <div className="p-6">
@@ -40,7 +41,7 @@ export function CardLink({
         </h3>
         <p className="mt-2 text-sm leading-relaxed text-ink-muted">{benefit}</p>
         <span className="mt-4 inline-block text-sm font-semibold text-forest">
-          {external ? "Visit →" : "Read more →"}
+          {external ? "Learn more →" : "Read more →"}
         </span>
       </div>
     </>

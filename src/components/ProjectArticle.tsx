@@ -20,13 +20,26 @@ export function ProjectArticle({ project, extra }: Props) {
       <p className="mt-3 text-sm font-medium text-forest">{project.role}</p>
       <p className="mt-4 text-lg text-ink-muted">{project.oneLiner}</p>
 
-      <MediaFrame
-        src={project.image}
-        alt={project.imageAlt}
-        ratio="video"
-        priority
-        className="mt-10"
-      />
+      {project.videoEmbedUrl ? (
+        <div className="relative mt-10 aspect-video overflow-hidden rounded-card border border-tan/40 bg-forest-dark">
+          <iframe
+            src={project.videoEmbedUrl}
+            title={`${project.name} video`}
+            className="absolute inset-0 h-full w-full border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      ) : (
+        <MediaFrame
+          src={project.image}
+          alt={project.imageAlt}
+          ratio="video"
+          priority
+          className="mt-10"
+        />
+      )}
 
       {project.stats.length > 0 && (
         <dl className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -39,7 +52,7 @@ export function ProjectArticle({ project, extra }: Props) {
         </dl>
       )}
 
-      <div className="prose-nik mt-10 max-w-reading">
+      <div className="prose-nik mt-10 max-w-none">
         <p>{project.summary}</p>
         {project.facts.map((fact) => (
           <p key={fact}>{fact}</p>

@@ -8,10 +8,10 @@ const project = getProject("mindleap");
 export const metadata: Metadata = {
   title: "Mindleap Health",
   description:
-    "Digital mental health platform for psychedelic preparation and integration. Founded by Nik Vassev. 30,000 users. $3.5M acquisition.",
+    "I founded Mindleap for psychedelic preparation and integration. 30,000 users. Acquired by Mydecine for $3.5M in 24 months.",
   openGraph: {
     title: "Mindleap Health | Nik Vassev",
-    description: "Built and acquired. Track record in digital mental health.",
+    description: "Prior venture. Founded, shipped and acquired.",
   },
 };
 

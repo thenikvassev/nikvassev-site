@@ -5,6 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/content/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -22,6 +23,7 @@ const config: Config = {
         tan: "#CBBCA3",
         ink: {
           DEFAULT: "#0A3B24",
+          title: "#17160F",
           muted: "#3d4848",
           faint: "#6b7a72",
         },

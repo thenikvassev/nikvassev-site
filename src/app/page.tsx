@@ -5,7 +5,7 @@ import { CardLink } from "@/components/CardLink";
 import { HomeHero } from "@/components/HomeHero";
 import { AboutIntro } from "@/components/AboutIntro";
 import { TrackRecord } from "@/components/TrackRecord";
-import { guides } from "@/lib/resources";
+import { blogPosts, formatPostMeta, guides } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -34,14 +34,14 @@ export default function HomePage() {
             <p className="nv-ways-label">For early-stage startups</p>
             <h3>Guide IQ</h3>
             <p>
-              An AI-powered brand strategy engine I built. Give it your inputs,
-              get a complete brand strategy and 90-day go-to-market plan in 15
-              minutes.
+              Transform your early-stage startup with a complete brand foundation
+              and actionable 90-day go-to-market strategy, seamlessly embedded
+              into the AI tools you already use every day.
             </p>
             <Link href="/brand-strategy">Build your strategy →</Link>
           </article>
           <article className="nv-ways-card">
-            <p className="nv-ways-label">For growth-stage startups</p>
+            <p className="nv-ways-label">For emerging tech</p>
             <h3>Storyline Pros</h3>
             <p>
               My AI visibility and narrative engineering firm, for startups who
@@ -58,16 +58,16 @@ export default function HomePage() {
               strategy, growth marketing, AI systems, and building a life you
               don&apos;t need a vacation from.
             </p>
-            <Link href="/#newsletter">Get the newsletter →</Link>
+            <Link href="/newsletter">Get the newsletter →</Link>
           </article>
         </div>
       </section>
 
-      <section className="nv nv-home-block border-t border-tan/40">
-        <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-20">
+      <section className="nv nv-home-block nv-resources border-t border-tan/40">
+        <div className="nv-resources-inner">
           <p className="nv-eyebrow">Founder resources</p>
           <h2 className="nv-section-title">Explore my blog and free guides</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="nv-resources-grid">
             {guides.map((g) => (
               <CardLink
                 key={g.slug}
@@ -79,9 +79,25 @@ export default function HomePage() {
               />
             ))}
           </div>
-          <div className="mt-8">
-            <Link href="/resources" className="pill-btn-secondary">
-              Resources
+          <div className="nv-blog-strip">
+            <p className="nv-eyebrow">From the blog</p>
+            <div className="nv-blog-list">
+              {blogPosts.slice(0, 2).map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/resources/${post.slug}`}
+                  className="nv-blog-item"
+                >
+                  <p className="nv-blog-meta">
+                    {formatPostMeta(post.date, post.readingMinutes)}
+                  </p>
+                  <h3>{post.title}</h3>
+                  <p>{post.excerpt}</p>
+                </Link>
+              ))}
+            </div>
+            <Link href="/resources" className="nv-resources-more">
+              Browse all resources →
             </Link>
           </div>
         </div>
@@ -91,37 +107,33 @@ export default function HomePage() {
         <div className="nv-speaking-photo">
           <Image
             src="/photos/nik-speaker.jpg"
-            alt="Nik Vassev smiling in a black blazer and glasses against a light studio backdrop."
+            alt="Nik Vassev on stage with a microphone, presenting a slide on AI content."
             fill
-            sizes="(min-width: 900px) 58vw, 100vw"
+            sizes="(min-width: 900px) 50vw, 100vw"
             className="nv-speaking-img"
           />
         </div>
         <div className="nv-speaking-card">
           <p className="nv-speaking-eyebrow">Speaker</p>
           <h2 id="speaking-heading">
-            Get in touch for speaking, podcasts and press.
+            Real-World Exits.
+            <br />
+            Actionable Systems.
+            <br />
+            Zero Hype.
           </h2>
           <p className="nv-speaking-body">
-            I speak on brand strategy, AI visibility and building companies
-            that leave room for a life. For podcasts, press or a stage, write
-            or send a LinkedIn note.
-          </p>
-          <p className="nv-speaking-contact">
-            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            <a
-              href={siteConfig.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
+            Bring Nik to your podcast or stage to break down the exact AI
+            workflows, brand strategies, and growth systems he uses to
+            actively scale tech startups and build high-impact brands.
           </p>
           <a
             className="nv-speaking-cta"
-            href={`mailto:${siteConfig.email}`}
+            href="https://tally.so/r/7RkyqR"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Hire Nik to speak →
+            Book Nik
           </a>
         </div>
       </section>
