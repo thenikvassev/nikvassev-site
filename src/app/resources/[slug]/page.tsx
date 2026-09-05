@@ -19,14 +19,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Not found" };
   }
 
+  const description = post.description ?? post.excerpt;
+
   return {
     title: post.title,
-    description: post.excerpt,
+    description,
     alternates: { canonical: `/resources/${slug}` },
     openGraph: {
       title: post.title,
-      description: post.excerpt,
+      description,
+      url: `/resources/${slug}`,
+      type: "article",
       images: [{ url: post.cover, alt: post.coverAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+      images: [post.cover],
     },
   };
 }
