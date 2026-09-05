@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Mindleap Health",
   description:
     "I founded Mindleap for psychedelic preparation and integration. 30,000 users. Acquired by Mydecine for $3.5M in 24 months.",
+  alternates: { canonical: "/projects/mindleap" },
   openGraph: {
     title: "Mindleap Health | Nik Vassev",
     description: "Prior venture. Founded, shipped and acquired.",

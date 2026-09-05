@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 import "./claude-home.css";
+
+const defaultTitle = "Nik Vassev | Brand Strategist for Visionary Startups";
+const homeOgImage = {
+  url: "https://nikvassev.com/og/nikvassev-home.png",
+  width: 1200,
+  height: 630,
+  alt: "Nik Vassev — Brand Strategist for Visionary Startups",
+};
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,7 +25,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | ${siteConfig.tagline}`,
+    default: defaultTitle,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -25,13 +34,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title: defaultTitle,
     description: siteConfig.description,
+    images: [homeOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title: defaultTitle,
     description: siteConfig.description,
+    images: [homeOgImage.url],
   },
   robots: {
     index: true,
@@ -64,6 +75,10 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        {process.env.NODE_ENV === "production" &&
+        process.env.NEXT_PUBLIC_GA_ID ? (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        ) : null}
       </body>
     </html>
   );

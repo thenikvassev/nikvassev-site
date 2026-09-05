@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Digimax",
   description:
     "I joined the Digimax board for a strategic turnaround: rebrand, three acquisitions, AI crypto prediction and IBM Watson. Roughly $20M raised. Near $100M valuation.",
+  alternates: { canonical: "/projects/digimax" },
   openGraph: {
     title: "Digimax | Nik Vassev",
     description: "Prior board work. Turnaround, acquisitions and IBM Watson.",

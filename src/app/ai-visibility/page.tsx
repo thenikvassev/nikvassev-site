@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "AI Visibility",
   description:
     "Storyline Pros: narrative engineering and AI visibility for emerging tech companies. Earned media, podcasts, Reddit and community authority. Performance-based PR. No guaranteed rankings.",
+  alternates: { canonical: "/ai-visibility" },
   openGraph: {
     title: "AI Visibility | Storyline Pros",
     description:

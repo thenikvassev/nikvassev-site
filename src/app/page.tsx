@@ -4,24 +4,43 @@ import Image from "next/image";
 import { CardLink } from "@/components/CardLink";
 import { HomeHero } from "@/components/HomeHero";
 import { AboutIntro } from "@/components/AboutIntro";
+import { PersonWebsiteJsonLd } from "@/components/PersonWebsiteJsonLd";
 import { TrackRecord } from "@/components/TrackRecord";
 import { blogPosts, formatPostMeta, guides } from "@/lib/resources";
-import { siteConfig } from "@/lib/site";
+
+const title = "Nik Vassev | Brand Strategist for Visionary Startups";
+const description =
+  "Brand strategist, serial founder and growth marketer. Brand strategy, growth marketing and AI systems for high-impact companies. Guide IQ, Storyline Pros, and Systems Over Hustle.";
+const ogImage = {
+  url: "https://nikvassev.com/og/nikvassev-home.png",
+  width: 1200,
+  height: 630,
+  alt: "Nik Vassev — Brand Strategist for Visionary Startups",
+};
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} | Systems Over Hustle`,
-  description:
-    "Brand strategy, growth marketing and AI visibility for startups scaling revenue with GEO and AI agents.",
+  title: { absolute: title },
+  description,
+  alternates: { canonical: "https://nikvassev.com" },
   openGraph: {
-    title: `${siteConfig.name} | Systems Over Hustle`,
-    description:
-      "Brand strategy, growth marketing and AI visibility for startups scaling revenue with GEO and AI agents.",
+    type: "website",
+    url: "https://nikvassev.com",
+    title,
+    description,
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [ogImage.url],
   },
 };
 
 export default function HomePage() {
   return (
     <>
+      <PersonWebsiteJsonLd />
       <HomeHero />
       <AboutIntro />
       <TrackRecord />
