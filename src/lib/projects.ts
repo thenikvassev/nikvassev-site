@@ -134,7 +134,7 @@ export const storylineProsOverview = {
   href: "https://storylinepros.com",
   title: "Storyline Pros",
   benefit:
-    "Narrative engineering and AI visibility for later-stage B2B emerging tech. Co-founded with Cynthia Salarizadeh.",
+    "Narrative engineering and AI visibility for emerging tech companies. Co-founded with Cynthia Salarizadeh.",
   meta: "Co-Founder",
   image: "/photos/storyline-pros.jpg",
   imageAlt:

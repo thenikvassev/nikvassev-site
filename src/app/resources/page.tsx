@@ -83,7 +83,7 @@ export default function ResourcesPage() {
           <CardLink
             href="/ai-visibility"
             title="AI visibility"
-            benefit="Storyline Pros for later-stage B2B emerging tech."
+            benefit="Storyline Pros for emerging tech companies."
             image="/placeholders/storyline-media.svg"
             imageAlt="Placeholder for Storyline Pros"
           />

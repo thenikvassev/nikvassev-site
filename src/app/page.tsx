@@ -41,7 +41,7 @@ export default function HomePage() {
             <Link href="/brand-strategy">Build your strategy →</Link>
           </article>
           <article className="nv-ways-card">
-            <p className="nv-ways-label">For growth-stage startups</p>
+            <p className="nv-ways-label">For emerging tech</p>
             <h3>Storyline Pros</h3>
             <p>
               My AI visibility and narrative engineering firm, for startups who

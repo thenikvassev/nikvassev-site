@@ -4,11 +4,11 @@ import { MediaFrame } from "@/components/MediaFrame";
 export const metadata: Metadata = {
   title: "AI Visibility",
   description:
-    "Storyline Pros: narrative engineering and AI visibility for later-stage B2B emerging tech. Earned media, podcasts, Reddit and community authority. Performance-based PR. No guaranteed rankings.",
+    "Storyline Pros: narrative engineering and AI visibility for emerging tech companies. Earned media, podcasts, Reddit and community authority. Performance-based PR. No guaranteed rankings.",
   openGraph: {
     title: "AI Visibility | Storyline Pros",
     description:
-      "Become the answer AI recommends. Narrative engineering for later-stage B2B emerging tech.",
+      "Become the answer AI recommends. Narrative engineering for emerging tech companies.",
   },
 };
 
@@ -21,8 +21,8 @@ export default function AiVisibilityPage() {
       </h1>
       <p className="mt-6 max-w-reading text-lg text-ink-muted">
         Buyers and investors ask AI before they visit your site. Storyline Pros
-        builds the verifiable digital footprint later-stage B2B emerging tech
-        companies need to show up in those answers.
+        builds the verifiable digital footprint emerging tech companies need to
+        show up in those answers.
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3">
@@ -85,8 +85,8 @@ export default function AiVisibilityPage() {
       <section className="mt-14">
         <p className="section-label">Who this is for</p>
         <p className="mt-4 max-w-reading text-ink-muted">
-          Later-stage B2B companies in cleantech, fintech, biotech, healthtech
-          and related emerging tech. Not a fit for early e-commerce or consumer
+          Emerging tech companies in cleantech, fintech, biotech, healthtech
+          and related categories. Not a fit for early e-commerce or consumer
           brands looking for vanity coverage.
         </p>
       </section>
@@ -190,7 +190,7 @@ export default function AiVisibilityPage() {
         </h2>
         <p className="mt-3 max-w-lg text-white/75">
           Apply at Storyline Pros for performance-based narrative engineering
-          built for later-stage B2B emerging tech.
+          built for emerging tech companies.
         </p>
         <div className="mt-6">
           <a

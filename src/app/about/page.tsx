@@ -194,7 +194,12 @@ export default function AboutPage() {
               already have a name they trust, and it is not yours yet.
             </p>
             <p>
-              I have spent my career on that problem. I work with emerging
+              I have spent my career on that problem. I have sold and scaled
+              data analytics, cybersecurity, telemedicine, digital therapeutics,
+              and virtual reality in categories where the product was novel and
+              the market was not yet looking for it. That experience is why I
+              help founders in emerging tech and healthcare build the company
+              story that gets them known, funded, and growing. I work with
               technologies nobody was looking for, make them undeniable, and
               brand and market those companies until the sales show up. Millions
               of dollars of them. I have founded, scaled and exited companies
