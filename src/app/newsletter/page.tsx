@@ -73,8 +73,8 @@ export default function NewsletterPage() {
             <Image
               src="/photos/systems-hustle-window.png"
               alt="Systems Over Hustle window graphic"
-              width={1920}
-              height={1080}
+              width={2560}
+              height={1440}
               className="nl-hero-window"
               priority
               sizes="(min-width: 900px) 760px, 92vw"
