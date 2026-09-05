@@ -188,7 +188,11 @@ export default function AiVisibilityPage() {
         <h2 className="text-2xl tracking-display">
           Ready to become the answer AI recommends?
         </h2>
-        {/* TODO: replace end CTA paragraph with Nik-approved conversion copy. Do not ship the weak "Apply at Storyline Pros for performance-based narrative engineering built for emerging tech companies." line. */}
+        <p className="mt-3 max-w-lg text-white/75">
+          We help high-growth startups build the verifiable digital footprint
+          required to dominate AI search engines and get noticed by investors
+          and customers.
+        </p>
         <div className="mt-6">
           <a
             href="https://storylinepros.com"
