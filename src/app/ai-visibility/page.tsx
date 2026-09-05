@@ -15,14 +15,15 @@ export const metadata: Metadata = {
 export default function AiVisibilityPage() {
   return (
     <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-24">
-      <p className="section-label">AI Visibility · Storyline Pros</p>
+      <p className="section-label">AI Visibility</p>
       <h1 className="mt-4 max-w-2xl text-4xl tracking-display md:text-5xl">
         Become the answer AI recommends.
       </h1>
       <p className="mt-6 max-w-reading text-lg text-ink-muted">
         Buyers and investors ask AI before they visit your site. Storyline Pros
         builds the verifiable digital footprint emerging tech companies need to
-        show up in those answers.
+        show up in those answers. We work with fast-growth startups that want a
+        proven system to get into the media AI trusts, so they become the answer.
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3">
@@ -45,7 +46,23 @@ export default function AiVisibilityPage() {
       />
 
       <section className="mt-16">
-        <p className="section-label">GEO in plain terms</p>
+        <h2 className="mt-3 text-2xl tracking-display">
+          Our narrative engineering system
+        </h2>
+        <p className="mt-4 max-w-reading text-ink-muted">
+          Storyline Pros is a narrative engineering and AI visibility firm for
+          high-growth tech startups and ambitious founders who need category
+          authority. We turn company milestones into tier-one media placements,
+          podcast features, community authority, and AI search recommendations.
+        </p>
+        <p className="mt-4 max-w-reading text-ink-muted">
+          Delivery is performance-based. You pay for placements that publish.
+          The system covers high-impact narrative engineering, tier-one media,
+          and AI search visibility across a 6-channel ecosystem.
+        </p>
+      </section>
+
+      <section className="mt-14">
         <h2 className="mt-3 text-2xl tracking-display">
           Generative engine optimization
         </h2>
@@ -65,34 +82,17 @@ export default function AiVisibilityPage() {
       </section>
 
       <section className="mt-14">
-        <p className="section-label">What makes us special</p>
-        <h2 className="mt-3 text-2xl tracking-display">
-          Our narrative engineering system
-        </h2>
-        <p className="mt-4 max-w-reading text-ink-muted">
-          Storyline Pros is a narrative engineering and AI visibility firm for
-          high-growth tech startups and ambitious founders who need category
-          authority. We turn company milestones into tier-one media placements,
-          podcast features, community authority, and AI search recommendations.
-        </p>
-        <p className="mt-4 max-w-reading text-ink-muted">
-          Delivery is performance-based. You pay for placements that publish.
-          The system covers high-impact narrative engineering, tier-one media,
-          and AI search visibility across a 6-channel ecosystem.
-        </p>
-      </section>
-
-      <section className="mt-14">
         <p className="section-label">Who this is for</p>
         <p className="mt-4 max-w-reading text-ink-muted">
           Emerging tech companies in cleantech, fintech, biotech, healthtech
-          and related categories. Not a fit for early e-commerce or consumer
-          brands looking for vanity coverage.
+          and related categories. Teams that need their category story cited
+          when buyers, investors and analysts ask AI who leads the space, with
+          placements built for GEO and share of voice, not one-off coverage.
         </p>
       </section>
 
       <section className="nv mt-14">
-        <p className="section-label">Where we show up</p>
+        <p className="section-label">We build an ecosystem of media</p>
         <div className="nv-ways-grid md:!grid-cols-2">
           <article className="nv-ways-card">
             <h3>Earned media</h3>
@@ -109,17 +109,31 @@ export default function AiVisibilityPage() {
             </p>
           </article>
           <article className="nv-ways-card">
-            <h3>Reddit communities</h3>
+            <h3>Reddit</h3>
             <p>
               Presence in the subreddits your buyers trust, where AI checks
               real-world sentiment.
             </p>
           </article>
           <article className="nv-ways-card">
-            <h3>News, listicles and reports</h3>
+            <h3>Company news</h3>
             <p>
-              Company announcements, product launches and high-value assets
-              built to own category queries. Access to 500+ media sites.
+              Company announcements and product launches placed where AI and
+              the market notice momentum.
+            </p>
+          </article>
+          <article className="nv-ways-card">
+            <h3>Listicles</h3>
+            <p>
+              High-value roundups and ranked lists built to own category
+              queries buyers already search.
+            </p>
+          </article>
+          <article className="nv-ways-card">
+            <h3>Industry websites</h3>
+            <p>
+              Trade and niche sites in your category that train AI on who
+              belongs in the conversation.
             </p>
           </article>
         </div>
