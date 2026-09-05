@@ -202,12 +202,6 @@
   cursor: pointer;
 }
 
-@media (min-width: 861px) {
-  .nv-burger {
-    display: none;
-  }
-}
-
 .nv-burger span {
   display: block;
   width: 1.15rem;
@@ -356,13 +350,6 @@
 .nv-panel-social svg {
   width: 1.4rem;
   height: 1.4rem;
-}
-
-@media (min-width: 861px) {
-  .nv-panel,
-  .nv-panel.is-open {
-    display: none !important;
-  }
 }
 
 .nv-nav-spacer {
