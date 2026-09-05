@@ -72,7 +72,7 @@ export default function NewsletterPage() {
           <figure className="nl-hero-visual">
             <Image
               src="/photos/systems-hustle-window.png"
-              alt="Systems over Hustle — weekly insights on building freedom in the age of AI."
+              alt="Systems Over Hustle window graphic"
               width={1920}
               height={1080}
               className="nl-hero-window"
