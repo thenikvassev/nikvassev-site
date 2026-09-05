@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Guide IQ",
   description:
     "AI Brand Strategist for early-stage founders. Twelve inputs, about 15 minutes. Free Brand DNA, $99 Brand Brain, $750 strategist session.",
+  alternates: { canonical: "/projects/guide-iq" },
   openGraph: {
     title: "Guide IQ | Nik Vassev",
     description:

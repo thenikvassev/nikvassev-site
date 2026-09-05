@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Brand Strategy",
   description:
     "Complete brand strategy and go-to-market clarity in 15 minutes. Brand foundation and a 90-day GTM plan embedded in the AI tools you already use.",
+  alternates: { canonical: "/brand-strategy" },
   openGraph: {
     title: "Brand Strategy | Nik Vassev",
     description:

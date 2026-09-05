@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Nik Vassev is a brand strategist, serial founder and growth marketer. He founded Guide IQ and Mindleap Health, co-founded Storyline Pros and Novobeing, and writes Systems Over Hustle from Mexico and the Caribbean.",
+  alternates: { canonical: "/about" },
   openGraph: {
     title: "About Nik Vassev",
     description:

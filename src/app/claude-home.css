@@ -535,11 +535,13 @@
 }
 
 .nv-hero-tagline {
+  display: block;
   margin: 1.15rem 0 0;
   font-family: var(--nv-sans);
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.18em;
+  line-height: 1.4;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.86);
 }

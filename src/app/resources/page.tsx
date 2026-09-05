@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Resources",
   description:
     "Systems Over Hustle newsletter, guides and writing for founders building with brand strategy and practical AI systems.",
+  alternates: { canonical: "/resources" },
   openGraph: {
     title: "Resources | Nik Vassev",
     description: "Newsletter, guides and writing from Systems Over Hustle.",

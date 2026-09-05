@@ -123,11 +123,11 @@ export function HomeHero() {
             <h1 className="nv-hero-name">
               <span className="first">Nik</span>
               <span className="last">Vassev</span>
+              <span className="sr-only"> — </span>
+              <span className="nv-hero-tagline">
+                Brand Strategist for Visionary Startups
+              </span>
             </h1>
-            <p className="nv-hero-tagline">
-              <span className="founder">Serial Founder · </span>
-              Brand Strategist · Growth Marketer
-            </p>
             <p className="nv-hero-seen">
               <strong>As Seen In</strong>
               <span className="nv-hero-press">
