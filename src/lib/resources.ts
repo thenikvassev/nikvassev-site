@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
     slug: "what-ai-search-actually-rewards",
     title: "What AI search actually rewards (and why your blog fire hose fails)",
     excerpt:
-      "When was the last time you clicked through two pages of Google results? Most of us do not. We ask ChatGPT or Claude because it is faster. That habit change is the point of this piece.",
+      "One of the biggest shifts in marketing since the dawn of the internet is currently happening. Those who take advantage will be granted a large amount of traffic and customers by AI engines.",
     description:
       "AI search rewards third-party brand authority, not an owned blog fire hose of AI slop. How confidence signals and earned media beat volume.",
     date: "2026-09-05",
