@@ -1,8 +1,6 @@
 import { BlogHtml } from "@/components/BlogHtml";
 
-export const html = `<p>One of the biggest shifts in marketing since the dawn of the internet is currently happening. This transition is still underway, and those who take advantage will be granted a large amount of traffic and customers by AI engines.</p>
-
-<p>The work that wins is deeper. You build verifiable brand authority in the places answer engines already trust.</p>
+export const html = `<p>The work that wins is deeper. You build verifiable brand authority in the places answer engines already trust.</p>
 
 <h3>What is going wrong?</h3>
 
