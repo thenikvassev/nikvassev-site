@@ -458,6 +458,8 @@
 .guide-section > .guide-benefit-table,
 .guide-section > .guide-rules,
 .guide-section > .guide-steps,
+.guide-section > .guide-rule-block,
+.guide-section > .guide-plain-list,
 .guide-section > .guide-chart {
   max-width: 40rem;
 }
@@ -549,7 +551,8 @@
   color: #0a3b24;
 }
 
-.guide-compare-row [data-col]::before {
+.guide-compare-row [data-col]::before,
+.guide-overview-row [data-col]::before {
   content: attr(data-col);
   display: block;
   margin-bottom: 0.2rem;
@@ -558,6 +561,63 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #cbbca3;
+}
+
+.guide-overview {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.5rem 0 0;
+}
+
+.guide-overview-head {
+  display: none;
+}
+
+.guide-overview-row {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(203, 188, 163, 0.7);
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.guide-overview-row span:first-child {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0a3b24;
+}
+
+.guide-plain-list {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.guide-plain-list li + li {
+  margin-top: 0.45rem;
+}
+
+.guide-plain-list li {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #3d4848;
+}
+
+.guide-rule-block {
+  margin: 1.4rem 0 0;
+  padding: 1.15rem 1.2rem;
+  border-left: 4px solid #0a3b24;
+  border-radius: 0 16px 16px 0;
+  background: #ffffff;
+}
+
+.guide-rule-block p {
+  margin: 0;
+  font-size: 1rem !important;
+  color: #17160f !important;
 }
 
 .guide-chart {
@@ -900,8 +960,28 @@
     gap: 1rem;
   }
 
-  .guide-compare-row [data-col]::before {
+  .guide-compare-row [data-col]::before,
+  .guide-overview-row [data-col]::before {
     display: none;
+  }
+
+  .guide-overview-head {
+    display: grid;
+    grid-template-columns: 0.8fr 1.3fr 1fr;
+    gap: 1rem;
+    padding: 0 0.2rem;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #0a3b24;
+  }
+
+  .guide-overview-row {
+    grid-template-columns: 0.8fr 1.3fr 1fr;
+    align-items: start;
+    gap: 1rem;
   }
 
   .guide-benefit-row,

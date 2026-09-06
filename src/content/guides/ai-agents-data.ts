@@ -116,9 +116,8 @@ export const setupSteps: SetupStep[] = [
   {
     title: "Sign in to Grok Bot",
     paragraphs: [
-      "Sign in with the same Cursor account that owns the plan. This is the teammate view: named jobs, a live chat, routines. Desktop and phone.",
+      "Sign in with the same Cursor account that owns the plan. Named jobs, a live chat, routines. Desktop and phone.",
     ],
-    chart: "Teammate view on desktop and phone",
   },
   {
     title: "Create your first agent",
@@ -131,16 +130,7 @@ export const setupSteps: SetupStep[] = [
     title: "Dump your context in",
     paragraphs: [
       "The first dump is the briefing you would give a hire. If you already wrote that briefing in Claude or ChatGPT, bring it over. Add the docs that show what good looks like.",
-      "Drop Brand DNA in Drive. Positioning, voice, claims you will stand behind, claims you will never make, who you write for. Point the bot at that file and tell it to open it. Do not summarize DNA into the description and hope. Memory goes stale. The file does not.",
-      "If you have no DNA yet, sit down for an hour and write:",
-      "Drop the file in Drive before you create the second bot. If you want a structured version, that is what Guide IQ is for. Twelve founder inputs become the brief the agents read.",
-    ],
-    list: [
-      "Who you serve, in their words",
-      "The offer in one sentence",
-      "Two claims you can prove with a receipt",
-      "The words you refuse",
-      "How you want to sound on a call with a friend",
+      "Then point the bot at Brand DNA in Drive and tell it to open the file. Do not summarize DNA into the description and hope. The full dump lives later in this guide, under what you feed them.",
     ],
   },
   {
@@ -152,7 +142,7 @@ export const setupSteps: SetupStep[] = [
       "Least privilege is the rule. A content bot does not need the ads account. An influencer bot does not need the personal inbox.",
       "Never paste an API key into chat. Cursor has a secret store.",
       "For sites with no plugin, take over the Grok Bot computer. You sign in. It never sees the password. You type the 2FA. The session stays. One login can serve more than one bot because they share the computer.",
-      "If the job is code, do not let the bot write it on the Grok Bot computer. That burns the weekly Grok Bot bucket. A Cursor Cloud Agent does the repo work on Cursor credits. The bot stays the coordinator.",
+      "If the job is code, the bot stays the coordinator. The Cloud Agent rule is later in this guide.",
     ],
   },
   {
@@ -174,11 +164,106 @@ export const setupSteps: SetupStep[] = [
   {
     title: "Turn repeats into routines",
     paragraphs: [
-      "Standing rules go in the description. Today's task goes in Talk. A job you do every weekday becomes a routine. Write the prompt as the job, not as a frozen recipe. A weekday-morning brief. A weekly content pack.",
-      "Correct it when it is wrong. If the brief invents a meeting, fix the source. Memory keeps the role. A new chat on a named bot still knows the job. A General Helper starts over every time.",
+      "Recurring work becomes a routine. A weekday-morning brief. A weekly content pack. Write the routine as the job, not as a frozen recipe.",
+      "Standing rules stay in the description. Today's task goes in Talk. How you train those repeats is its own section below.",
     ],
-    note: "Mistakes I have already paid for: do not connect your whole life; they invent a meeting, a number, or a category if the source file is not open; they burn the weekly bucket reformatting a giant CRM and still ship a broken import (you upload the sheet); a bot that sends without you can wreck a domain or a relationship (draft, you say send); a bot that can spend will spend; secrets never go in chat.",
   },
+];
+
+export type JobOverview = {
+  name: string;
+  owns: string;
+  stayOn: string;
+};
+
+export const jobsOverview: JobOverview[] = [
+  {
+    name: "Chief of Staff",
+    owns: "Calendar, mail, morning brief, routing, meetings",
+    stayOn: "Anything leaving the company",
+  },
+  {
+    name: "Content",
+    owns: "Newsletter, social, decks, proposals, images, scripts",
+    stayOn: "Publish",
+  },
+  {
+    name: "Outbound",
+    owns: "Lists, sequences, meeting books",
+    stayOn: "First send and the daily cap",
+  },
+  {
+    name: "Specialist",
+    owns: "Research, media, community, booking, or investor relations",
+    stayOn: "The list and the send",
+  },
+  {
+    name: "Influencers",
+    owns: "Creator lists, outreach, briefs",
+    stayOn: "Every send",
+  },
+  {
+    name: "Webmaster",
+    owns: "Sites, deploys, metadata",
+    stayOn: "Production",
+  },
+  {
+    name: "AI Visibility",
+    owns: "Brand DNA pages and placements",
+    stayOn: "The story",
+  },
+  {
+    name: "Community",
+    owns: "Native answers",
+    stayOn: "The live batch",
+  },
+  {
+    name: "Client Ops",
+    owns: "Status, deadlines, customer updates",
+    stayOn: "Customer email",
+  },
+  {
+    name: "Media Buyer",
+    owns: "Keywords, ads, caps",
+    stayOn: "Spend",
+  },
+  {
+    name: "Finance",
+    owns: "Invoices, recurring books, payment follow-up",
+    stayOn: "Money movement",
+  },
+  {
+    name: "Development",
+    owns: "Repeat tickets, scaffolding, custom software",
+    stayOn: "Merge and ship",
+  },
+  {
+    name: "Bug tracking",
+    owns: "Incoming bugs, repro notes, triage",
+    stayOn: "What gets fixed first",
+  },
+  {
+    name: "Coach",
+    owns: "A standing place to think",
+    stayOn: "Optional",
+  },
+];
+
+export const feedThemList = [
+  "Who you serve, in their words",
+  "The offer in one sentence",
+  "Two claims you can prove with a receipt",
+  "The words you refuse",
+  "How you want to sound on a call with a friend",
+];
+
+export const keepHumanMistakes = [
+  "Do not connect your whole life. Each bot gets only the access that job needs.",
+  "They invent a meeting, a number, or a category if the source file is not open.",
+  "They will burn the weekly bucket reformatting a giant CRM and still ship a broken import. You upload the sheet.",
+  "A bot that sends without you can wreck a domain or a relationship. Draft. You say send.",
+  "A bot that can spend will spend. Draft the plan. You approve the number.",
+  "Secrets never go in chat. You take the computer for passwords and 2FA.",
 ];
 
 export const jobs: JobCard[] = [

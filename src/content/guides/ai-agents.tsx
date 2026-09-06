@@ -1,8 +1,11 @@
 import { GuideReveal } from "@/components/GuideReveal";
 import {
   agentBenefits,
+  feedThemList,
   humanizerRules,
   jobs,
+  jobsOverview,
+  keepHumanMistakes,
   llmVsAgent,
   openingRest,
   setupSteps,
@@ -29,8 +32,27 @@ export function GuideBody() {
       </GuideReveal>
 
       <GuideReveal>
-        <section className="guide-section" aria-labelledby="what-is-an-agent">
+        <section className="guide-section" aria-labelledby="who-should-use-this">
           <p className="guide-kicker">01</p>
+          <h2 id="who-should-use-this">Who should use this</h2>
+          <p>
+            You are building a real company. You want systems and some of your
+            time back. Another clever prompt will not clear the inbox, the
+            calendar, the site, or the pipeline.
+          </p>
+          <p>
+            Start with three seats that pay for themselves: an EA for time, an
+            SDR for revenue, and a Dev bot for shipping. Add Content or a
+            specialist when the same work keeps stacking and you want a clean
+            job for it. The roster later in this guide is a menu, not a day-one
+            checklist.
+          </p>
+        </section>
+      </GuideReveal>
+
+      <GuideReveal>
+        <section className="guide-section" aria-labelledby="what-is-an-agent">
+          <p className="guide-kicker">02</p>
           <h2 id="what-is-an-agent">What is a Grok Bot agent</h2>
           <p>
             Grok Bot is an AI teammate. It has a name, a title, a description, a
@@ -39,6 +61,11 @@ export function GuideBody() {
             rules and the approval boundary.
           </p>
           <p>
+            This is the teammate view. Desktop and phone. Named jobs, a live
+            chat, routines.
+          </p>
+          <ChartSlot label="Teammate view on desktop and phone" />
+          <p>
             Plugins sit on your Cursor account so every agent can use them.
             Sites with no plugin run in a browser on a cloud computer. You take
             that computer over and sign in. It never sees your password and can
@@ -46,14 +73,15 @@ export function GuideBody() {
           </p>
           <p>
             A General Helper has no job, so it keeps no useful memory. Never
-            start with one General Helper.
+            start with one General Helper. Cursor caps an account at 50 bots
+            and group chats. You will hit a foggy helper long before 50.
           </p>
         </section>
       </GuideReveal>
 
       <GuideReveal>
         <section className="guide-section" aria-labelledby="llm-vs-agent">
-          <p className="guide-kicker">02</p>
+          <p className="guide-kicker">03</p>
           <h2 id="llm-vs-agent">How is an agent different from an LLM</h2>
           <p>
             An LLM answers a prompt. An agent has a job. That is the whole split.
@@ -94,7 +122,7 @@ export function GuideBody() {
 
       <GuideReveal>
         <section className="guide-section" aria-labelledby="what-you-get">
-          <p className="guide-kicker">03</p>
+          <p className="guide-kicker">04</p>
           <h2 id="what-you-get">What do you get from an agent</h2>
           <div className="guide-benefit-table" role="table" aria-label="What you get from an agent">
             <div className="guide-benefit-head" role="row">
@@ -113,8 +141,8 @@ export function GuideBody() {
 
       <GuideReveal>
         <section className="guide-section" aria-labelledby="setup">
-          <p className="guide-kicker">04</p>
-          <h2 id="setup">How you set this up</h2>
+          <p className="guide-kicker">05</p>
+          <h2 id="setup">How do you set this up</h2>
           <p className="guide-setup-rule">
             Setup before talk. First you give the bot a job, context, and
             access. Only then do you assign work.
@@ -124,23 +152,10 @@ export function GuideBody() {
               <li key={step.title} className="guide-step">
                 <p className="guide-step-num">{String(index + 1).padStart(2, "0")}</p>
                 <h3>{step.title}</h3>
-                {step.paragraphs.slice(0, step.list ? 3 : undefined).map((paragraph) => (
+                {step.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
-                {step.list ? (
-                  <>
-                    <ul>
-                      {step.list.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                    {step.paragraphs.slice(3).map((paragraph) => (
-                      <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-                    ))}
-                  </>
-                ) : null}
                 {step.chart ? <ChartSlot label={step.chart} /> : null}
-                {step.note ? <p className="guide-step-note">{step.note}</p> : null}
               </li>
             ))}
           </ol>
@@ -148,14 +163,14 @@ export function GuideBody() {
       </GuideReveal>
 
       <GuideReveal>
-        <section className="guide-section" aria-labelledby="jobs">
-          <p className="guide-kicker">05</p>
-          <h2 id="jobs">Which jobs you name</h2>
+        <section className="guide-section" aria-labelledby="jobs-first">
+          <p className="guide-kicker">06</p>
+          <h2 id="jobs-first">Which jobs should you name first</h2>
           <p>
             Name each bot so it feels personal. What I named mine is not the
-            point. The roster is a menu, not a day-one checklist. Start with
-            three. Add the rest when the Chief of Staff starts holding two
-            brains.
+            point. If a workflow hits you over and over, it can be a job:
+            invoices, books, bug tickets, repeat build work. Start with three.
+            Add the rest when the Chief of Staff starts holding two brains.
           </p>
           <aside className="guide-callout" aria-label="Start with three">
             <p className="guide-callout-label">Start with three</p>
@@ -174,6 +189,35 @@ export function GuideBody() {
               </li>
             </ul>
           </aside>
+          <div className="guide-overview" role="table" aria-label="Jobs at a glance">
+            <div className="guide-overview-head" role="row">
+              <span role="columnheader">Job</span>
+              <span role="columnheader">What it owns</span>
+              <span role="columnheader">You stay on</span>
+            </div>
+            {jobsOverview.map((row) => (
+              <div className="guide-overview-row" role="row" key={row.name}>
+                <span role="rowheader">{row.name}</span>
+                <span role="cell" data-col="Owns">
+                  {row.owns}
+                </span>
+                <span role="cell" data-col="You stay on">
+                  {row.stayOn}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+      </GuideReveal>
+
+      <GuideReveal>
+        <section className="guide-section" aria-labelledby="jobs">
+          <p className="guide-kicker">07</p>
+          <h2 id="jobs">The full roster</h2>
+          <p>
+            For each job: what it owns, day-one access, what you stay on, who
+            it is for, skills, routines, and tools.
+          </p>
           <div className="guide-jobs">
             {jobs.map((job, index) => (
               <article className="guide-job" key={job.name}>
@@ -216,9 +260,63 @@ export function GuideBody() {
       </GuideReveal>
 
       <GuideReveal>
+        <section className="guide-section" aria-labelledby="when-to-add">
+          <p className="guide-kicker">08</p>
+          <h2 id="when-to-add">When do you add the rest</h2>
+          <p>
+            Add a bot when the same job keeps landing on the Chief of Staff and
+            the context is getting muddy. Content, a specialist, influencers, or
+            finance only when that loop is real.
+          </p>
+          <p>
+            AI Visibility is later-stage. Wait until you have a stamped story to
+            feed it, and until customers ask ChatGPT who to hire.
+          </p>
+          <p>
+            Client Ops is useful the moment you have more than two customers
+            and you are the only person who knows the state.
+          </p>
+          <p>
+            Coach is optional. A standing place to think that does not also
+            hold the inbox.
+          </p>
+        </section>
+      </GuideReveal>
+
+      <GuideReveal>
+        <section className="guide-section" aria-labelledby="ship-software">
+          <p className="guide-kicker">09</p>
+          <h2 id="ship-software">How do you ship software</h2>
+          <p>
+            If the job is code, do not let the bot write it on the Grok Bot
+            computer. That burns the weekly Grok Bot bucket. A Cursor Cloud
+            Agent does the repo work on Cursor credits.
+          </p>
+          <p>
+            The bot stays the coordinator. It names the repo, the branch, and
+            the full task. It launches the Cloud Agent. Then it watches and
+            reports. Use your Cloud Agent default model unless you name one.
+          </p>
+          <p>
+            Put this in the description of any bot that ships software. Day
+            one, not after it has already burned a week of local edits.
+          </p>
+          <blockquote className="guide-rule-block">
+            <p>
+              Do not write or edit product code on your Grok Bot computer. For
+              any coding, repo, PR, test, or CI work, launch a Cursor Cloud
+              Agent on my connected repo. Pass the full task, repo, and branch.
+              Then monitor that agent and report back. Use my Cloud Agent
+              default model unless I name one.
+            </p>
+          </blockquote>
+        </section>
+      </GuideReveal>
+
+      <GuideReveal>
         <section className="guide-section" aria-labelledby="tools">
-          <p className="guide-kicker">06</p>
-          <h2 id="tools">Which tools you connect</h2>
+          <p className="guide-kicker">10</p>
+          <h2 id="tools">Which tools should you connect</h2>
           <p>
             This is the stack I actually run. Connect once on the Cursor
             account. Every bot can use those plugins. Assign per job. Give each
@@ -266,9 +364,74 @@ export function GuideBody() {
       </GuideReveal>
 
       <GuideReveal>
+        <section className="guide-section" aria-labelledby="feed-them">
+          <p className="guide-kicker">11</p>
+          <h2 id="feed-them">What do you feed them</h2>
+          <p>
+            A Brand DNA document. One file in Drive. Positioning, voice, claims
+            you will stand behind, claims you will never make, who you write
+            for.
+          </p>
+          <p>
+            Point every bot at that file. Tell them to open it. An agent that
+            writes without DNA invents a category.
+          </p>
+          <p>If you have no DNA yet, sit down for an hour and write:</p>
+          <ul className="guide-plain-list">
+            {feedThemList.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p>
+            Drop the file in Drive before you create the second bot. If you
+            want a structured version, that is what{" "}
+            <a href="https://guideiq.ai" target="_blank" rel="noopener noreferrer">
+              Guide IQ
+            </a>{" "}
+            is for. Twelve founder inputs become the brief the agents read.
+          </p>
+        </section>
+      </GuideReveal>
+
+      <GuideReveal>
+        <section className="guide-section" aria-labelledby="repeats">
+          <p className="guide-kicker">12</p>
+          <h2 id="repeats">How do you train the repeats</h2>
+          <p>
+            Standing rules go in the description. Today&apos;s task goes in
+            Talk. A job you do every weekday becomes a routine. Write the
+            prompt as the job. Read tomorrow&apos;s calendar. Write a brief. Do
+            not email anyone.
+          </p>
+          <p>
+            Correct it when it is wrong. If the brief invents a meeting, fix
+            the source. Memory keeps the role. A new chat on a named bot still
+            knows the job. A General Helper starts over every time.
+          </p>
+        </section>
+      </GuideReveal>
+
+      <GuideReveal>
+        <section className="guide-section" aria-labelledby="keep-it-human">
+          <p className="guide-kicker">13</p>
+          <h2 id="keep-it-human">How do you keep it human</h2>
+          <p>
+            Bots augment you. They do not replace judgment. You stay on send,
+            spend, and the story.
+          </p>
+          <p>Mistakes I have already paid for:</p>
+          <ul className="guide-plain-list">
+            {keepHumanMistakes.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+      </GuideReveal>
+
+      <GuideReveal>
         <section className="guide-section" aria-labelledby="humanizer">
-          <p className="guide-kicker">07</p>
-          <h2 id="humanizer">How you keep the writing human</h2>
+          <p className="guide-kicker">14</p>
+          <h2 id="humanizer">How you stop the writing from sounding like a model</h2>
           <p>
             A model predicts the next likely word. That is why the prose drifts
             toward phrases that fit every case and sound like nobody.
@@ -338,8 +501,8 @@ export function GuideBody() {
 
       <GuideReveal>
         <section className="guide-section" aria-labelledby="teammates">
-          <p className="guide-kicker">08</p>
-          <h2 id="teammates">How a teammate gets in</h2>
+          <p className="guide-kicker">15</p>
+          <h2 id="teammates">How does a teammate get in</h2>
           <p>
             They do not sit in your sidebar. Email the bot as the primary path
             for partners. Give the bot a receive-only alias. It replies as their
@@ -360,7 +523,7 @@ export function GuideBody() {
 
       <GuideReveal>
         <section className="guide-section guide-close" aria-labelledby="why-this-matters">
-          <p className="guide-kicker">09</p>
+          <p className="guide-kicker">16</p>
           <h2 id="why-this-matters">Why this matters now</h2>
           <p>
             A founder used to be one person with one laptop. The constraint was
