@@ -1,8 +1,6 @@
 import { BlogHtml } from "@/components/BlogHtml";
 
-export const html = `<p>When was the last time you clicked through two pages of Google results?</p>
-
-<p>Most of us do not. We ask ChatGPT or Claude because it is faster. That habit change is the point of this piece. It is one of the biggest shifts in marketing since the open web, and a lot of companies are answering it with more AI-written pages that never move the needle.</p>
+export const html = `<p>One of the biggest shifts in marketing since the dawn of the internet is currently happening. This transition is still underway, and those who take advantage will be granted a large amount of traffic and customers by AI engines.</p>
 
 <p>The work that wins is deeper. You build verifiable brand authority in the places answer engines already trust.</p>
 
