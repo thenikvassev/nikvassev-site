@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { longGuides } from "@/lib/guides";
 import { projects } from "@/lib/projects";
 import { blogPosts } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
@@ -33,5 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...projectRoutes, ...postRoutes];
+  const guideRoutes = longGuides.map((g) => ({
+    url: `${base}${g.href}`,
+    lastModified: new Date(g.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...guideRoutes, ...postRoutes];
 }
