@@ -29,7 +29,7 @@ export const guides: Guide[] = [
     slug: "ai-agents",
     title: "How to build your AI Agent workforce",
     benefit: "Real output and no payroll.",
-    href: "/resources",
+    href: "/resources/ai-agents",
     image: "/photos/guides/guide-01-ai-agents.png",
     imageAlt: "Guide cover: How to build your AI Agent workforce",
     imagePulled: true,
