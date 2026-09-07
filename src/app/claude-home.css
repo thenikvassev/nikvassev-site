@@ -1230,6 +1230,15 @@
     background-color 220ms ease;
 }
 
+.nv-resources-grid .card .card-copy {
+  text-align: center;
+}
+
+.nv-resources .card h3 {
+  text-wrap: pretty;
+  text-wrap: balance;
+}
+
 @media (min-width: 900px) {
   .nv-resources-inner {
     padding: 7.2rem 2.25rem 7.6rem;

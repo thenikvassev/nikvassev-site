@@ -1,5 +1,10 @@
 import { siteConfig } from "@/lib/site";
 
+/** Join the last two words so a title cannot wrap a single orphan onto its own line. */
+function titleWithoutOrphan(title: string): string {
+  return title.replace(/\s+(\S+)$/, "\u00A0$1");
+}
+
 export type Guide = {
   slug: string;
   title: string;
@@ -27,7 +32,7 @@ export type BlogPost = {
 export const guides: Guide[] = [
   {
     slug: "how-to-build-your-ai-agent-workforce",
-    title: "How to build your AI Agent workforce",
+    title: titleWithoutOrphan("How to build your AI Agent workforce"),
     benefit: "Real output and no payroll.",
     href: "/resources/how-to-build-your-ai-agent-workforce",
     image: "/photos/guides/guide-01-ai-agents.png",
@@ -36,7 +41,9 @@ export const guides: Guide[] = [
   },
   {
     slug: "build-a-distribution-engine-the-ultimate-marketing-guide-for-founders",
-    title: "Build a distribution engine: the ultimate marketing guide for founders",
+    title: titleWithoutOrphan(
+      "Build a distribution engine: the ultimate marketing guide for founders",
+    ),
     benefit: "Playbooks and campaigns that work",
     href: "/resources/build-a-distribution-engine-the-ultimate-marketing-guide-for-founders",
     image: "/guides/distribution-engine/hero-hand-bars.png",
@@ -45,7 +52,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "brand-strategy",
-    title: "How to build a brand that gets remembered",
+    title: titleWithoutOrphan("How to build a brand that gets remembered"),
     benefit: "Narrative, positioning, visual identity and more",
     href: "/brand-strategy",
     image: "/photos/guides/guide-03-brand-strategy.png",
