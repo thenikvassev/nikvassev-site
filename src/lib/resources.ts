@@ -51,12 +51,14 @@ export const guides: Guide[] = [
     imagePulled: true,
   },
   {
-    slug: "brand-strategy",
-    title: titleWithoutOrphan("How to build a brand that gets remembered"),
+    slug: "build-an-iconic-brand-the-brand-strategy-guide-for-founders",
+    title: titleWithoutOrphan(
+      "Build an iconic brand: the brand strategy guide for founders",
+    ),
     benefit: "Narrative, positioning, visual identity and more",
-    href: "/brand-strategy",
+    href: "/resources/build-an-iconic-brand-the-brand-strategy-guide-for-founders",
     image: "/photos/guides/guide-03-brand-strategy.png",
-    imageAlt: "Guide cover: How to build a brand that gets remembered",
+    imageAlt: "Guide cover: Build an iconic brand",
     imagePulled: true,
   },
 ];

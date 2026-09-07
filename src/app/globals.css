@@ -483,6 +483,7 @@
 .guide-opening p,
 .guide-section > p,
 .guide-section > h2,
+.guide-section > h3,
 .guide-section > .guide-kicker,
 .guide-section > .guide-setup-rule,
 .guide-section > .guide-rule-block,
@@ -530,6 +531,15 @@
   line-height: 1.15;
   color: #17160f;
   scroll-margin-top: 7.2rem;
+}
+
+.guide-section > h3 {
+  margin: 1.85rem auto 0.65rem;
+  font-family: var(--guide-serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: #17160f;
 }
 
 .guide-kicker {
@@ -669,6 +679,10 @@
   margin: 0;
   font-size: 1rem !important;
   color: #17160f !important;
+}
+
+.guide-rule-block p + p {
+  margin-top: 0.85rem !important;
 }
 
 .guide-chart {
