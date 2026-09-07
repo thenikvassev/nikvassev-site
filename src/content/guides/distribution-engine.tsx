@@ -59,6 +59,13 @@ export function GuideBody() {
             running campaigns you can measure.
           </p>
           <GuideFigure
+            src="/guides/distribution-engine/hero-hand-bars.png"
+            alt="Hand lifting the tallest bar on a growth chart — pushing distribution results above the baseline."
+            width={1200}
+            height={635}
+            caption="Pushing distribution results above the baseline."
+          />
+          <GuideFigure
             src="/guides/distribution-engine/digital-marketing-market.png"
             alt="Digital Marketing Market chart: USD 598.58 billion in 2025 growing to USD 1,440 billion in 2034 at a CAGR of 9.2 percent."
             width={1000}
