@@ -337,6 +337,19 @@ export function GuideBody() {
                     </p>
                     <p>{step.paragraphs[1]}</p>
                   </>
+                ) : step.title === "Founder content" ? (
+                  <>
+                    {step.paragraphs.map((paragraph) => (
+                      <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                    ))}
+                    <GuideFigure
+                      src="/guides/distribution-engine/video-marketing-2026.png"
+                      alt="Video Marketing in 2026: 91 percent of businesses use video, 93 percent call it important, short-form is the highest ROI format."
+                      width={1200}
+                      height={1200}
+                      caption="Video marketing in 2026. Sources: Wyzowl 2026, HubSpot 2026."
+                    />
+                  </>
                 ) : (
                   step.paragraphs.map((paragraph) => (
                     <p key={paragraph.slice(0, 40)}>{paragraph}</p>
