@@ -95,44 +95,44 @@ export default function AiVisibilityPage() {
       <section className="nv mt-14">
         <p className="section-label">We build an ecosystem of media</p>
         <div className="nv-ways-grid md:!grid-cols-2">
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Earned media</h3>
-            <p>
+            <p className="nl-benefit-body">
               Pitched editorial features and executive interviews. The
               high-authority coverage AI and investors trust most.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Podcasts</h3>
-            <p>
+            <p className="nl-benefit-body">
               Strategic guest appearances. Audio transcripts become searchable,
               quotable answers to the questions buyers actually ask.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Reddit</h3>
-            <p>
+            <p className="nl-benefit-body">
               Presence in the subreddits your buyers trust, where AI checks
               real-world sentiment.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Company news</h3>
-            <p>
+            <p className="nl-benefit-body">
               Company announcements and product launches placed where AI and
               the market notice momentum.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Listicles</h3>
-            <p>
+            <p className="nl-benefit-body">
               High-value roundups and ranked lists built to own category
               queries buyers already search.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Industry websites</h3>
-            <p>
+            <p className="nl-benefit-body">
               Trade and niche sites in your category that train AI on who
               belongs in the conversation.
             </p>
@@ -143,16 +143,16 @@ export default function AiVisibilityPage() {
       <section className="nv mt-14">
         <p className="section-label">How it is priced</p>
         <div className="nv-ways-grid md:!grid-cols-2">
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Performance-based PR</h3>
-            <p>
+            <p className="nl-benefit-body">
               You pay for placements delivered, not retainers for promises. If
               a story does not publish, you do not pay. That is the make-good.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Narrative engineering</h3>
-            <p>
+            <p className="nl-benefit-body">
               We define the claims you should own and deploy them into earned
               media, podcasts, news and Reddit. Citation evidence is built on
               purpose.
@@ -164,26 +164,26 @@ export default function AiVisibilityPage() {
       <section className="nv mt-14">
         <p className="section-label">How it works</p>
         <div className="nv-ways-grid">
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">01</p>
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">01</p>
             <h3>GEO audit</h3>
-            <p>
+            <p className="nl-benefit-body">
               Full audit of AI search for your category. Strategy for the
               footprint you still need.
             </p>
           </article>
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">02</p>
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">02</p>
             <h3>Narrative deploy</h3>
-            <p>
+            <p className="nl-benefit-body">
               Place the storyline into trusted media and communities. We track
               where you surface in AI answers.
             </p>
           </article>
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">03</p>
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">03</p>
             <h3>Results</h3>
-            <p>
+            <p className="nl-benefit-body">
               Share of voice across AI answers. More placements as authority
               compounds. No ranking guarantee.
             </p>

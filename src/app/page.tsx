@@ -49,30 +49,30 @@ export default function HomePage() {
         <p className="nv-ways-eyebrow">What I&apos;m building now</p>
         <h2>Three ways to work with me</h2>
         <div className="nv-ways-grid">
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">For early-stage startups</p>
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">For early-stage startups</p>
             <h3>Guide IQ</h3>
-            <p>
+            <p className="nl-benefit-body">
               Transform your early-stage startup with a complete brand foundation
               and actionable 90-day go-to-market strategy, seamlessly embedded
               into the AI tools you already use every day.
             </p>
             <Link href="/brand-strategy">Build your strategy →</Link>
           </article>
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">For emerging tech</p>
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">For emerging tech</p>
             <h3>Storyline Pros</h3>
-            <p>
-              My AI visibility and narrative engineering firm, for startups who
-              need to become the answer AI search engines recommend in their
-              category.
+            <p className="nl-benefit-body">
+              Transform your emerging tech company&apos;s visibility in AI search
+              with narrative engineering and a verifiable digital footprint that
+              gets you noticed by investors and customers.
             </p>
             <Link href="/ai-visibility">See how it works →</Link>
           </article>
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">My weekly newsletter</p>
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">My weekly newsletter</p>
             <h3>Systems Over Hustle</h3>
-            <p>
+            <p className="nl-benefit-body">
               Every Thursday, I share one actionable framework on brand
               strategy, growth marketing, AI systems, and building a life you
               don&apos;t need a vacation from.

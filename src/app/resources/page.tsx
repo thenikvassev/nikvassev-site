@@ -78,15 +78,15 @@ export default function ResourcesPage() {
             href="/brand-strategy"
             title="Brand strategy"
             benefit="Guide IQ and coaching for early-stage brand clarity."
-            image="/photos/guide-iq-tablet.png"
-            imageAlt="Guide IQ on a tablet"
+            image="/photos/guide-iq-product-ui.png"
+            imageAlt="Guide IQ Brand Soul workspace with tone calibration and brand colors."
           />
           <CardLink
             href="/ai-visibility"
             title="AI visibility"
             benefit="Storyline Pros for emerging tech companies."
-            image="/placeholders/storyline-media.svg"
-            imageAlt="Placeholder for Storyline Pros"
+            image="/photos/aiv-answer-you.png"
+            imageAlt="Storyline Pros: AI search answers pointing to you."
           />
         </div>
       </section>
