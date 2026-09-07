@@ -39,8 +39,8 @@ export const guides: Guide[] = [
     title: "Build a distribution engine: the ultimate marketing guide for founders",
     benefit: "Playbooks and campaigns that work",
     href: "/resources/distribution-engine",
-    image: "/photos/guides/guide-02-growth-marketing.png",
-    imageAlt: "Guide cover: Build a distribution engine",
+    image: "/guides/distribution-engine/hero-hand-bars.png",
+    imageAlt: "Guide cover: hand lifting the tallest bar on a growth chart",
     imagePulled: true,
   },
   {
