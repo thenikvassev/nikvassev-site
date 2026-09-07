@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { GuideFigure } from "@/components/GuideFigure";
 import { GuideReveal } from "@/components/GuideReveal";
 import {
   defaultFive,
@@ -57,6 +58,13 @@ export function GuideBody() {
             delays the real work: naming the market, locking the story and
             running campaigns you can measure.
           </p>
+          <GuideFigure
+            src="/guides/distribution-engine/digital-marketing-market.png"
+            alt="Digital Marketing Market chart: USD 598.58 billion in 2025 growing to USD 1,440 billion in 2034 at a CAGR of 9.2 percent."
+            width={1000}
+            height={667}
+            caption="Digital marketing market forecast. Research and Markets — https://www.researchandmarkets.com/reports/5775236"
+          />
         </section>
       </GuideReveal>
 
@@ -95,6 +103,13 @@ export function GuideBody() {
             forecasts global creators to reach 1.1 billion by 2032, a 76% rise.
             You are competing with everyone who can hit record.
           </p>
+          <GuideFigure
+            src="/guides/distribution-engine/influencer-marketing-growth.jpg"
+            alt="Influencer marketing industry growth projection from 2020 to 2030: $9.5 billion to $97 billion plus."
+            width={1536}
+            height={1024}
+            caption="Influencer marketing industry growth projection, 2020–2030. Source: SharkPlatform Research."
+          />
           <p>
             The feed trained people to skim.{" "}
             <GuideLink href="https://www.asurion.com/press-releases/americans-check-their-phones-96-times-a-day/">
