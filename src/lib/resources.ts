@@ -35,12 +35,12 @@ export const guides: Guide[] = [
     imagePulled: true,
   },
   {
-    slug: "growth-marketing",
-    title: "How to build a marketing growth engine",
+    slug: "distribution-engine",
+    title: "Build a distribution engine: the ultimate marketing guide for founders",
     benefit: "Playbooks and campaigns that work",
-    href: "/resources",
-    image: "/photos/guides/guide-02-growth-marketing.png",
-    imageAlt: "Guide cover: How to build a marketing growth engine",
+    href: "/resources/distribution-engine",
+    image: "/guides/distribution-engine/hero-hand-bars.png",
+    imageAlt: "Guide cover: hand lifting the tallest bar on a growth chart",
     imagePulled: true,
   },
   {

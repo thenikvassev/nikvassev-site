@@ -48,6 +48,34 @@ export const longGuides: LongGuide[] = [
       { id: "why-this-matters", label: "Why this matters" },
     ],
   },
+  {
+    slug: "distribution-engine",
+    title: "Build a distribution engine: the ultimate marketing guide for founders",
+    excerpt:
+      "This guide is how sophisticated founders build a distribution engine when creation is cheap, attention is short and buyers are careful with every dollar. It is written for people building real companies who already can ship and need a repeatable way to get customers. Another content calendar will leave you busy and under-learned. What you need is a clear market, a clear differentiator, a map of where those buyers actually show up, a short list of playbooks and tools sized to budget and team, then real campaigns with dates and kill criteria.",
+    description:
+      "How sophisticated founders build a distribution engine when creation is cheap, attention is short and buyers are careful. Lock market and differentiation, map reach, then run campaign-based playbooks.",
+    date: "2026-09-07",
+    readingMinutes: 16,
+    cover: "/guides/distribution-engine/hero-hand-bars.png",
+    coverAlt: "Hand lifting the tallest bar on a growth chart — pushing distribution results above the baseline.",
+    href: "/resources/distribution-engine",
+    toc: [
+      { id: "what-changed", label: "What changed" },
+      { id: "attention", label: "Attention" },
+      { id: "how-to-play", label: "How to play" },
+      { id: "five-choices", label: "Five choices" },
+      { id: "process", label: "The process" },
+      { id: "wasting-time", label: "Wasting time" },
+      { id: "playbook-menu", label: "Playbook menu" },
+      { id: "default-five", label: "Default five" },
+      { id: "meta-2026", label: "Meta in 2026" },
+      { id: "keys-to-paid", label: "Keys to paid" },
+      { id: "do-today", label: "Do this today" },
+      { id: "how-you-know", label: "How you know" },
+      { id: "why-this-matters", label: "Why this matters" },
+    ],
+  },
 ];
 
 export function getGuide(slug: string): LongGuide | undefined {

@@ -543,6 +543,16 @@
   font-weight: 600;
 }
 
+.guide-steps + .guide-setup-rule {
+  margin-top: 1.4rem;
+}
+
+.guide-write-in {
+  display: block;
+  min-height: 1.35em;
+  border-bottom: 1px solid rgba(10, 59, 36, 0.18);
+}
+
 .guide-compare,
 .guide-benefit-table,
 .guide-rules {
