@@ -1139,6 +1139,10 @@
     gap: 2rem;
     margin-top: 3.7rem;
   }
+
+  .nv-ways-grid.nv-ways-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .nv-ways-card {

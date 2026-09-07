@@ -48,44 +48,44 @@ export default function BrandStrategyPage() {
       <section className="nv mt-16">
         <p className="section-label">What Guide IQ builds</p>
         <div className="nv-ways-grid">
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Brand DNA</h3>
-            <p>
+            <p className="nl-benefit-body">
               Positioning, messaging, UVP and buyer personas from a focused set
               of founder inputs. The foundation every output is built on.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Brand Soul</h3>
-            <p>
+            <p className="nl-benefit-body">
               Tone, personality, point of view and visual identity. Calibration
               so AI output stops sounding generic.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>90-day GTM</h3>
-            <p>
+            <p className="nl-benefit-body">
               A growth plan with campaigns, playbooks and a tool stack matched
               to your stage and budget.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Marketing skills</h3>
-            <p>
+            <p className="nl-benefit-body">
               Frameworks across content, copy, email, SEO, AI search, outreach,
               paid ads and PR. Judgment you can reuse, not a one-off prompt.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>Loads into your AI</h3>
-            <p>
+            <p className="nl-benefit-body">
               Claude MCP loads automatically. ChatGPT and Gemini take a custom
               GPT or Gem. You keep the asset.
             </p>
           </article>
-          <article className="nv-ways-card">
+          <article className="nl-benefit-card">
             <h3>You stay in charge</h3>
-            <p>
+            <p className="nl-benefit-body">
               Guide IQ is not an unsupervised campaign agent. It gives your AI
               the brand context it is missing. You still decide what ships.
             </p>
@@ -95,50 +95,39 @@ export default function BrandStrategyPage() {
 
       <section className="nv mt-14">
         <p className="section-label">How a Brand Brain gets made</p>
-        <div className="nv-ways-grid">
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">01</p>
+        <div className="nv-ways-grid nv-ways-grid-4">
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">01</p>
             <h3>Answer</h3>
-            <p>
+            <p className="nl-benefit-body">
               Walk through twelve questions about the business, the buyers and
               where you are headed. No marketing background needed.
             </p>
           </article>
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">02</p>
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">02</p>
             <h3>Refine</h3>
-            <p>
+            <p className="nl-benefit-body">
               Review what Guide IQ builds and adjust until it sounds like you.
             </p>
           </article>
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">03</p>
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">03</p>
             <h3>Load</h3>
-            <p>Drop the Brand Brain into Claude, ChatGPT or Gemini.</p>
+            <p className="nl-benefit-body">
+              Drop the Brand Brain into Claude, ChatGPT or Gemini.
+            </p>
           </article>
-          <article className="nv-ways-card">
-            <p className="nv-ways-label">04</p>
+          <article className="nl-benefit-card">
+            <p className="nl-benefit-label">04</p>
             <h3>Prompt as usual</h3>
-            <p>
+            <p className="nl-benefit-body">
               Ask for a post, an email or a campaign. The output stays on brand
               because the context is already there.
             </p>
           </article>
         </div>
       </section>
-
-      <div className="mt-14 grid gap-4 md:grid-cols-2">
-        <MediaFrame
-          src="/photos/guide-iq-strategy-ui.jpg"
-          alt="Guide IQ Strategy workspace with campaign cards for pilot acquisition and webinar launch."
-          ratio="video"
-        />
-        <MediaFrame
-          src="/photos/guide-iq-brand-dna-ui.jpg"
-          alt="Guide IQ Brand DNA workspace with ICP analysis cards and messaging tone guide."
-          ratio="video"
-        />
-      </div>
 
       <section className="mt-16 panel-invert px-6 py-10 md:px-10">
         <h2 className="text-2xl tracking-display">Get started with Guide IQ</h2>

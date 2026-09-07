@@ -1264,6 +1264,31 @@
   color: rgba(232, 228, 217, 0.82);
 }
 
+.nl-benefit-card > h3:first-child {
+  margin-top: 0;
+}
+
+.nl-benefit-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.35rem;
+  padding: 0.62rem 1.15rem;
+  border-radius: 999px;
+  background: #e8e4d9;
+  color: #032415;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.nl-benefit-card a:hover {
+  background: #fff;
+  color: #032415;
+}
+
 .nl-about {
   background: #032415;
   color: #e8e4d9;
