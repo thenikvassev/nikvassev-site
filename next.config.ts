@@ -24,6 +24,12 @@ const nextConfig: NextConfig = {
         destination: "/resources/how-to-build-your-ai-agent-workforce",
         permanent: true,
       },
+      {
+        source: "/resources/distribution-engine",
+        destination:
+          "/resources/build-a-distribution-engine-the-ultimate-marketing-guide-for-founders",
+        permanent: true,
+      },
     ];
   },
 };

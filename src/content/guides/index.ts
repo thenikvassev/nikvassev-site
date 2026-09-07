@@ -4,5 +4,6 @@ import { GuideBody as distributionEngineBody } from "./distribution-engine";
 
 export const guideBodies: Record<string, ComponentType> = {
   "how-to-build-your-ai-agent-workforce": aiAgentsBody,
-  "distribution-engine": distributionEngineBody,
+  "build-a-distribution-engine-the-ultimate-marketing-guide-for-founders":
+    distributionEngineBody,
 };

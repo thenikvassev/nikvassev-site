@@ -49,7 +49,7 @@ export const longGuides: LongGuide[] = [
     ],
   },
   {
-    slug: "distribution-engine",
+    slug: "build-a-distribution-engine-the-ultimate-marketing-guide-for-founders",
     title: "Build a distribution engine: the ultimate marketing guide for founders",
     excerpt:
       "This guide is how sophisticated founders build a distribution engine when creation is cheap, attention is short and buyers are careful with every dollar. It is written for people building real companies who already can ship and need a repeatable way to get customers. Another content calendar will leave you busy and under-learned. What you need is a clear market, a clear differentiator, a map of where those buyers actually show up, a short list of playbooks and tools sized to budget and team, then real campaigns with dates and kill criteria.",
@@ -59,7 +59,7 @@ export const longGuides: LongGuide[] = [
     readingMinutes: 16,
     cover: "/guides/distribution-engine/hero-hand-bars.png",
     coverAlt: "Hand lifting the tallest bar on a growth chart — pushing distribution results above the baseline.",
-    href: "/resources/distribution-engine",
+    href: "/resources/build-a-distribution-engine-the-ultimate-marketing-guide-for-founders",
     toc: [
       { id: "what-changed", label: "What changed" },
       { id: "attention", label: "Attention" },
