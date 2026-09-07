@@ -57,8 +57,8 @@ export const longGuides: LongGuide[] = [
       "How sophisticated founders build a distribution engine when creation is cheap, attention is short and buyers are careful. Lock market and differentiation, map reach, then run campaign-based playbooks.",
     date: "2026-09-07",
     readingMinutes: 16,
-    cover: "/photos/guides/guide-02-growth-marketing.png",
-    coverAlt: "Guide cover: Build a distribution engine",
+    cover: "/guides/distribution-engine/hero-hand-bars.png",
+    coverAlt: "Hand lifting the tallest bar on a growth chart — pushing distribution results above the baseline.",
     href: "/resources/distribution-engine",
     toc: [
       { id: "what-changed", label: "What changed" },
