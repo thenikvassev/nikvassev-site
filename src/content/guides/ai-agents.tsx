@@ -1,3 +1,4 @@
+import { GuideFigure } from "@/components/GuideFigure";
 import { GuideReveal } from "@/components/GuideReveal";
 import {
   agentBenefits,
@@ -11,16 +12,6 @@ import {
   setupSteps,
   tools,
 } from "./ai-agents-data";
-
-function ChartSlot({ label }: { label: string }) {
-  return (
-    <figure className="guide-chart">
-      <p className="guide-chart-kicker">Doc chart</p>
-      <p className="guide-chart-label">{`[CHART: ${label}]`}</p>
-      <figcaption>Placeholder for the original guide chart. Binary not available in this repo.</figcaption>
-    </figure>
-  );
-}
 
 export function GuideBody() {
   return (
@@ -64,7 +55,13 @@ export function GuideBody() {
             This is the teammate view. Desktop and phone. Named jobs, a live
             chat, routines.
           </p>
-          <ChartSlot label="Teammate view on desktop and phone" />
+          <GuideFigure
+            src="/guides/ai-agents/teammate-view.jpg"
+            alt="Grok Bot teammate view on desktop and phone, with named jobs, a live chat, and routines."
+            width={1999}
+            height={1040}
+            caption="Teammate view. Desktop and phone."
+          />
           <p>
             Plugins sit on your Cursor account so every agent can use them.
             Sites with no plugin run in a browser on a cloud computer. You take
@@ -110,13 +107,25 @@ export function GuideBody() {
             Look at Grok next to GPT and Fable. The model holds. It also routes
             to Claude for certain tasks.
           </p>
-          <ChartSlot label="Grok next to GPT and Fable, quality holds" />
+          <GuideFigure
+            src="/guides/ai-agents/model-compare.jpg"
+            alt="Benchmark table comparing Grok 4.6 High with Grok 4.5 High, GPT-5.6 Sol Max, and Fable 5 Max."
+            width={738}
+            height={415}
+            caption="Grok next to GPT and Fable."
+          />
           <p>
             Then look at the cost. Grok 4.6 ranked first among models tested
             under a $5 workload budget. Intelligence per dollar is getting
             ridiculously high.
           </p>
-          <ChartSlot label="Grok 4.6 intelligence per dollar under a $5 workload" />
+          <GuideFigure
+            src="/guides/ai-agents/cost-chart.jpg"
+            alt="Bar chart of best models under five dollars per defined workload. Grok 4.6 ranks first."
+            width={1200}
+            height={960}
+            caption="Grok 4.6 under a $5 workload budget."
+          />
         </section>
       </GuideReveal>
 
@@ -155,7 +164,6 @@ export function GuideBody() {
                 {step.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
-                {step.chart ? <ChartSlot label={step.chart} /> : null}
               </li>
             ))}
           </ol>

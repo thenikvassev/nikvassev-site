@@ -359,6 +359,33 @@
   border-radius: 14px;
 }
 
+.guide-figure {
+  margin: 1.4rem 0 0;
+}
+
+.guide-figure-frame {
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(203, 188, 163, 0.7);
+  background: #e8e4d9;
+  padding: 0.45rem;
+}
+
+.guide-figure-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.guide-figure figcaption {
+  margin: 0.7rem 0 0;
+  text-align: center;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.88rem;
+  color: #6b7a72;
+}
+
 .guide-scroll {
   display: inline-flex;
   flex-direction: column;
@@ -460,6 +487,7 @@
 .guide-section > .guide-steps,
 .guide-section > .guide-rule-block,
 .guide-section > .guide-plain-list,
+.guide-section > .guide-figure,
 .guide-section > .guide-chart {
   max-width: 40rem;
 }
@@ -922,7 +950,8 @@
     font-size: 1.15rem;
   }
 
-  .guide-cover-frame {
+  .guide-cover-frame,
+  .guide-figure-frame {
     padding: 0.65rem;
   }
 
