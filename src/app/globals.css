@@ -282,6 +282,10 @@
 .guide-article {
   --guide-serif: var(--font-newsreader), var(--font-pp-editorial), Georgia, serif;
   --guide-accent: var(--font-pp-editorial), Georgia, serif;
+  --guide-shell: 72rem;
+  --guide-hero: 46rem;
+  --guide-measure: 42rem;
+  --guide-wide: 64rem;
   background: #e8e4d9;
   color: #17160f;
   padding: 1.25rem 0 5rem;
@@ -289,8 +293,8 @@
 
 .guide-hero {
   position: relative;
-  max-width: 46rem;
-  margin: 0 auto;
+  max-width: var(--guide-hero);
+  margin-inline: auto;
   padding: 1.25rem 1.25rem 0;
   text-align: center;
 }
@@ -333,7 +337,7 @@
 
 .guide-lede {
   margin: 1.25rem auto 0;
-  max-width: 36rem;
+  max-width: min(48rem, 100%);
   color: #3d4848;
   font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 1.08rem;
@@ -430,9 +434,9 @@
 .guide-toc ol {
   display: flex;
   gap: 0.45rem;
-  margin: 0 auto;
+  margin-inline: auto;
   padding: 0 1.25rem;
-  max-width: 72rem;
+  max-width: var(--guide-shell);
   list-style: none;
   overflow-x: auto;
   scrollbar-width: none;
@@ -465,14 +469,14 @@
 }
 
 .guide-body {
-  max-width: 72rem;
-  margin: 0 auto;
+  max-width: var(--guide-shell);
+  margin-inline: auto;
   padding: 0 1.25rem;
 }
 
 .guide-opening,
 .guide-section {
-  max-width: 64rem;
+  max-width: var(--guide-shell);
   margin: 2.6rem auto 0;
 }
 
@@ -481,15 +485,24 @@
 .guide-section > h2,
 .guide-section > .guide-kicker,
 .guide-section > .guide-setup-rule,
+.guide-section > .guide-rule-block,
+.guide-section > .guide-plain-list {
+  max-width: var(--guide-measure);
+  margin-inline: auto;
+}
+
 .guide-section > .guide-compare,
 .guide-section > .guide-benefit-table,
 .guide-section > .guide-rules,
 .guide-section > .guide-steps,
-.guide-section > .guide-rule-block,
-.guide-section > .guide-plain-list,
 .guide-section > .guide-figure,
-.guide-section > .guide-chart {
-  max-width: 40rem;
+.guide-section > .guide-chart,
+.guide-section > .guide-overview,
+.guide-section > .guide-callout,
+.guide-section > .guide-jobs,
+.guide-section > .guide-tools {
+  max-width: var(--guide-wide);
+  margin-inline: auto;
 }
 
 .guide-opening p,
@@ -509,7 +522,7 @@
 }
 
 .guide-section h2 {
-  margin: 0.35rem 0 1rem;
+  margin: 0.35rem auto 1rem;
   font-family: var(--guide-accent);
   font-size: clamp(1.85rem, 4.4vw, 2.7rem);
   font-weight: 200;
@@ -917,7 +930,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  max-width: 40rem;
+  max-width: var(--guide-shell);
   margin: 3.4rem auto 0;
   padding: 0 1.25rem;
 }
@@ -960,6 +973,12 @@
   .guide-reveal.is-in {
     opacity: 1;
     transform: none;
+  }
+
+  .guide-article {
+    --guide-hero: min(56rem, 92vw);
+    --guide-measure: 46rem;
+    --guide-wide: min(68rem, 100%);
   }
 
   .guide-hero {
@@ -1059,25 +1078,28 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
-    max-width: 44rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .guide-hero {
-    max-width: 52rem;
+  .guide-article {
+    --guide-hero: min(64rem, 92vw);
+    --guide-measure: 48rem;
+    --guide-wide: min(72rem, 100%);
   }
 
-  .guide-jobs {
-    max-width: 64rem;
-    margin-left: auto;
-    margin-right: auto;
+  .guide-title {
+    font-size: clamp(2.35rem, 5.6vw, 3.95rem);
   }
 
-  .guide-tools {
-    max-width: 64rem;
-    margin-left: auto;
-    margin-right: auto;
+  .guide-lede {
+    font-size: 1.2rem;
+  }
+
+  .guide-opening p,
+  .guide-section p,
+  .guide-plain-list li {
+    font-size: 1.12rem;
   }
 
   .guide-job:hover,
