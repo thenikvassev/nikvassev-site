@@ -18,7 +18,7 @@ export type LongGuide = {
 
 export const longGuides: LongGuide[] = [
   {
-    slug: "ai-agents",
+    slug: "how-to-build-your-ai-agent-workforce",
     title: "How to build your AI Agent workforce",
     excerpt:
       "Grok Bot lets you hire named AI teammates. Each one has a job, a memory, and access to your real systems. You talk to them the way you talk to an employee. They keep working after you close the laptop.",
@@ -28,7 +28,7 @@ export const longGuides: LongGuide[] = [
     readingMinutes: 22,
     cover: "/photos/guides/guide-01-ai-agents.png",
     coverAlt: "Guide cover: How to build your AI Agent workforce",
-    href: "/resources/ai-agents",
+    href: "/resources/how-to-build-your-ai-agent-workforce",
     toc: [
       { id: "who-should-use-this", label: "Who this is for" },
       { id: "what-is-an-agent", label: "What is an agent" },
