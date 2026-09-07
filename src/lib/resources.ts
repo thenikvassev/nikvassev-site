@@ -26,10 +26,10 @@ export type BlogPost = {
 
 export const guides: Guide[] = [
   {
-    slug: "ai-agents",
+    slug: "how-to-build-your-ai-agent-workforce",
     title: "How to build your AI Agent workforce",
     benefit: "Real output and no payroll.",
-    href: "/resources/ai-agents",
+    href: "/resources/how-to-build-your-ai-agent-workforce",
     image: "/photos/guides/guide-01-ai-agents.png",
     imageAlt: "Guide cover: How to build your AI Agent workforce",
     imagePulled: true,

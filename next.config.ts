@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
         destination: "/resources",
         permanent: true,
       },
+      {
+        source: "/resources/ai-agents",
+        destination: "/resources/how-to-build-your-ai-agent-workforce",
+        permanent: true,
+      },
     ];
   },
 };
