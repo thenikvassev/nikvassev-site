@@ -76,6 +76,37 @@ export const longGuides: LongGuide[] = [
       { id: "why-this-matters", label: "Why this matters" },
     ],
   },
+  {
+    slug: "build-an-iconic-brand-the-brand-strategy-guide-for-founders",
+    title: "Build an iconic brand: the brand strategy guide for founders",
+    excerpt:
+      "Brand is a measurable growth engine in 2026. In an AI-saturated market, tactical execution got cheap and distinctiveness got rare. The founders who win lock a clear position, consistent expression, and emotional differentiation that compounds, then stamp it as Brand DNA so people and AI work from one consistent version of the truth. This guide is how you build that Brand DNA document in one sitting: a practical worksheet with the 2026 why woven in through cited sources.",
+    description:
+      "How founders lock Brand DNA so people and AI work from one consistent version of the truth. Position, voice, proof, and channel rules in one stamped file.",
+    date: "2026-09-07",
+    readingMinutes: 22,
+    cover: "/guides/brand-strategy/brand-dna-hero.png",
+    coverAlt: "Guide cover: Brand DNA as the stamped source of truth",
+    href: "/resources/build-an-iconic-brand-the-brand-strategy-guide-for-founders",
+    toc: [
+      { id: "why-brand-2026", label: "Why brand in 2026" },
+      { id: "five-decisions", label: "Five decisions" },
+      { id: "what-brand-dna-is", label: "What Brand DNA is" },
+      { id: "why-dna-matters", label: "Why DNA matters" },
+      { id: "walk-away-with", label: "What you walk away with" },
+      { id: "how-to-use", label: "How to use this" },
+      { id: "company-foundation", label: "Company foundation" },
+      { id: "target-market", label: "Target market" },
+      { id: "personality-voice", label: "Personality and voice" },
+      { id: "proof-hierarchy", label: "Proof hierarchy" },
+      { id: "messaging", label: "Messaging" },
+      { id: "channel-guidelines", label: "Channel guidelines" },
+      { id: "load-into-ai", label: "Load into AI" },
+      { id: "ai-instructions", label: "AI instructions" },
+      { id: "test-refine", label: "Test and refine" },
+      { id: "stamp-the-story", label: "Stamp the story" },
+    ],
+  },
 ];
 
 export function getGuide(slug: string): LongGuide | undefined {

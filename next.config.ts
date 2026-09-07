@@ -30,6 +30,24 @@ const nextConfig: NextConfig = {
           "/resources/build-a-distribution-engine-the-ultimate-marketing-guide-for-founders",
         permanent: true,
       },
+      {
+        source: "/resources/brand-dna",
+        destination:
+          "/resources/build-an-iconic-brand-the-brand-strategy-guide-for-founders",
+        permanent: true,
+      },
+      {
+        source: "/resources/iconic-brand",
+        destination:
+          "/resources/build-an-iconic-brand-the-brand-strategy-guide-for-founders",
+        permanent: true,
+      },
+      {
+        source: "/resources/brand-strategy-guide",
+        destination:
+          "/resources/build-an-iconic-brand-the-brand-strategy-guide-for-founders",
+        permanent: true,
+      },
     ];
   },
 };
