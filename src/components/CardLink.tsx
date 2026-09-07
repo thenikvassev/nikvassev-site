@@ -11,6 +11,11 @@ type Props = {
   imageAlt?: string;
 };
 
+/** Keep the last two words together so a title never ends with a single-word line. */
+function preventOrphan(text: string): string {
+  return text.replace(/\s+(\S+)$/, "\u00A0$1");
+}
+
 export function CardLink({
   href,
   title,
@@ -34,12 +39,14 @@ export function CardLink({
           imageClassName="object-cover object-center"
         />
       )}
-      <div className="p-6">
+      <div className="card-copy p-6">
         {meta && <p className="section-label mb-3">{meta}</p>}
-        <h3 className="text-lg tracking-tight text-ink group-hover:text-forest">
-          {title}
+        <h3 className="text-balance text-lg tracking-tight text-ink group-hover:text-forest">
+          {preventOrphan(title)}
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-ink-muted">{benefit}</p>
+        <p className="mt-2 text-pretty text-sm leading-relaxed text-ink-muted">
+          {benefit}
+        </p>
         <span className="mt-4 inline-block text-sm font-semibold text-forest">
           {external ? "Learn more →" : "Read more →"}
         </span>
