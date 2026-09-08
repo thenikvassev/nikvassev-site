@@ -85,8 +85,8 @@ export const longGuides: LongGuide[] = [
       "How founders lock Brand DNA so people and AI work from one consistent version of the truth. Position, voice, proof, and channel rules in one stamped file.",
     date: "2026-09-07",
     readingMinutes: 22,
-    cover: "/guides/brand-strategy/brand-dna-hero.png",
-    coverAlt: "Guide cover: Brand DNA as the stamped source of truth",
+    cover: "/photos/guides/guide-03-brand-strategy.png",
+    coverAlt: "Guide cover: Build an iconic brand — a mark people remember",
     href: "/resources/build-an-iconic-brand-the-brand-strategy-guide-for-founders",
     toc: [
       { id: "why-brand-2026", label: "Why brand in 2026" },
