@@ -1145,6 +1145,77 @@
   }
 }
 
+/* Brand Strategy bubbles — compact cards, not equal-height pillars.
+   Scoped so homepage “three ways” and newsletter benefit grids stay unchanged. */
+.nv-bs-page {
+  max-width: 70rem;
+}
+
+.nv-bs-bubbles .nv-ways-grid {
+  align-items: start;
+  gap: 0.85rem;
+  max-width: none;
+  margin-top: 1.15rem;
+}
+
+.nv-bs-bubbles .nl-benefit-card {
+  align-self: start;
+  height: auto;
+  padding: 1.15rem 1.2rem 1.2rem;
+}
+
+.nv-bs-bubbles .nl-benefit-card h3 {
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.nv-bs-bubbles .nl-benefit-card > h3:first-child {
+  margin-top: 0;
+}
+
+.nv-bs-bubbles .nl-benefit-card .nl-benefit-body {
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .nv-bs-bubbles .nv-ways-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .nv-bs-bubbles .nv-ways-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  /* Stay 2×2 until the page is wide enough for a compact 4-up row. */
+  .nv-bs-bubbles .nv-ways-grid.nv-ways-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nv-bs-bubbles .nl-benefit-card {
+    padding: 1.25rem 1.25rem 1.3rem;
+  }
+
+  .nv-bs-bubbles .nl-benefit-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .nv-bs-bubbles .nl-benefit-card .nl-benefit-body {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+}
+
+@media (min-width: 1100px) {
+  .nv-bs-bubbles .nv-ways-grid.nv-ways-grid-4 {
+    grid-template-columns: repeat(4, minmax(12.5rem, 1fr));
+  }
+}
+
 .nv-ways-card {
   background: #e8e4d9;
   border: 1px solid rgba(10, 59, 36, 0.16);
