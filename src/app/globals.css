@@ -135,6 +135,21 @@
     @apply italic;
   }
 
+  .prose-nik pre {
+    @apply my-6 overflow-x-auto rounded-card border border-tan/40 bg-white/60 p-4 text-ink;
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  .prose-nik pre code {
+    display: block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    white-space: pre;
+    tab-size: 2;
+  }
+
   /* Occasional Storyline-style inverted panel */
   .panel-invert {
     @apply rounded-card bg-forest-dark text-white;
