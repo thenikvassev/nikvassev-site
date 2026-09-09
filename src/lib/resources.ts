@@ -65,6 +65,19 @@ export const guides: Guide[] = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-make-ai-writing-sound-human-skill-included",
+    title: "How to make AI writing sound human [skill included]",
+    excerpt:
+      "Dead Internet Theory stopped feeling like a theory a while ago. Feeds, landing pages, founder emails, and “thought leadership” are drowning in AI slop.",
+    description:
+      "Dead Internet Theory stopped feeling like a theory a while ago. Feeds, landing pages, founder emails, and “thought leadership” are drowning in AI slop. The texture is everywhere: looping openers, fake contrast, punchline stacks that land like a metronome.",
+    date: "2026-09-09",
+    readingMinutes: 6,
+    cover:
+      "/blog/how-to-make-ai-writing-sound-human-skill-included/cover.jpeg",
+    coverAlt: "Human hand and robotic hand typing on the same laptop keyboard",
+  },
+  {
     slug: "what-ai-search-actually-rewards",
     title: "What AI search actually rewards (and why your blog fire hose fails)",
     excerpt:

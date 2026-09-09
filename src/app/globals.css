@@ -135,6 +135,21 @@
     @apply italic;
   }
 
+  .prose-nik pre {
+    @apply my-6 overflow-x-auto rounded-card border border-tan/40 bg-white/60 p-4 text-ink;
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  .prose-nik pre code {
+    display: block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    white-space: pre;
+    tab-size: 2;
+  }
+
   /* Occasional Storyline-style inverted panel */
   .panel-invert {
     @apply rounded-card bg-forest-dark text-white;
@@ -251,6 +266,63 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.survey-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin: 1.5rem 0;
+}
+
+.survey-card {
+  padding: 1.15rem 1.1rem 1.25rem;
+  border: 1px solid #cbbca3;
+  border-radius: 22px;
+  background: #e8e4d9;
+}
+
+.survey-card-value {
+  margin: 0;
+  color: #0a3b24;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: clamp(2.35rem, 5vw, 3.05rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.prose-nik .survey-cards {
+  margin-top: 1.5rem;
+}
+
+.survey-card-extra,
+.survey-card-label {
+  margin: 0.45rem 0 0;
+  color: #0a3b24;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.survey-card-extra {
+  color: #0a3b24;
+}
+
+.survey-card-body {
+  margin: 0.45rem 0 0;
+  color: #3d4848;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .survey-cards {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (min-width: 720px) {
