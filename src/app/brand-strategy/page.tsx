@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function BrandStrategyPage() {
   return (
-    <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-24">
+    <div className="nv-bs-page mx-auto px-5 py-16 md:px-8 md:py-24">
       <p className="section-label">Brand Strategy · Guide IQ</p>
       <h1 className="mt-4 max-w-2xl text-4xl tracking-display md:text-5xl">
         Complete brand strategy and go-to-market clarity in 15 minutes.
@@ -45,7 +45,7 @@ export default function BrandStrategyPage() {
         </a>
       </div>
 
-      <section className="nv mt-16">
+      <section className="nv nv-bs-bubbles mt-16">
         <p className="section-label">What Guide IQ builds</p>
         <div className="nv-ways-grid">
           <article className="nl-benefit-card">
@@ -93,7 +93,7 @@ export default function BrandStrategyPage() {
         </div>
       </section>
 
-      <section className="nv mt-14">
+      <section className="nv nv-bs-bubbles mt-14">
         <p className="section-label">How a Brand Brain gets made</p>
         <div className="nv-ways-grid nv-ways-grid-4">
           <article className="nl-benefit-card">
