@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/ai-visibility",
     "/brand-strategy",
-    "/humanizer",
     "/newsletter",
     "/resources",
   ].map((path) => ({

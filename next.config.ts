@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/humanizer",
+        destination:
+          "/resources/how-to-make-ai-writing-sound-human-skill-included",
+        permanent: true,
+      },
+      {
         source: "/resources/systems-over-hustle",
         destination: "/resources",
         permanent: true,
