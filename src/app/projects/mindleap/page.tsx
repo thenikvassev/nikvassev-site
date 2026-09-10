@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProjectArticle } from "@/components/ProjectArticle";
 import { getProject } from "@/lib/projects";
+import { defaultShareImage } from "@/lib/site";
 
 const project = getProject("mindleap");
 
@@ -13,6 +14,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mindleap Health | Nik Vassev",
     description: "Prior venture. Founded, shipped and acquired.",
+    images: [defaultShareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [defaultShareImage.url],
   },
 };
 

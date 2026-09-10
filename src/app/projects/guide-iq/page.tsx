@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MediaFrame } from "@/components/MediaFrame";
 import { ProjectArticle } from "@/components/ProjectArticle";
 import { getProject } from "@/lib/projects";
+import { defaultShareImage } from "@/lib/site";
 
 const project = getProject("guide-iq");
 
@@ -16,6 +17,11 @@ export const metadata: Metadata = {
     title: "Guide IQ | Nik Vassev",
     description:
       "AI Brand Strategist for early-stage founders. Brand DNA and 90-day GTM.",
+    images: [defaultShareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [defaultShareImage.url],
   },
 };
 

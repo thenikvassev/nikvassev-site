@@ -6,6 +6,7 @@ import { postBodies } from "@/content/blog";
 import { guideBodies } from "@/content/guides";
 import { getGuide, longGuides } from "@/lib/guides";
 import { blogPosts, getPost } from "@/lib/resources";
+import { defaultShareImage } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -31,13 +32,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: guide.description,
         url: guide.href,
         type: "article",
-        images: [{ url: guide.cover, alt: guide.coverAlt }],
+        images: [defaultShareImage],
       },
       twitter: {
         card: "summary_large_image",
         title: guide.title,
         description: guide.description,
-        images: [guide.cover],
+        images: [defaultShareImage.url],
       },
     };
   }
@@ -58,13 +59,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       url: `/resources/${slug}`,
       type: "article",
-      images: [{ url: post.cover, alt: post.coverAlt }],
+      images: [defaultShareImage],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description,
-      images: [post.cover],
+      images: [defaultShareImage.url],
     },
   };
 }

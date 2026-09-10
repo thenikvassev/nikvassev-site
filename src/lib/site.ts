@@ -24,6 +24,22 @@ export const siteConfig = {
   ],
 } as const;
 
+/** Sitewide share/cover image for blogs, resources, and other non-home pages. */
+export const defaultShareImage = {
+  url: `${siteConfig.url}/og/default-share.jpg`,
+  width: 1200,
+  height: 630,
+  alt: "Nik Vassev",
+} as const;
+
+/** Dedicated homepage Open Graph photo. */
+export const homeOgImage = {
+  url: `${siteConfig.url}/og/nikvassev-home.png`,
+  width: 1200,
+  height: 630,
+  alt: "Nik Vassev — Brand Strategist for Visionary Startups",
+} as const;
+
 export const footerNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },

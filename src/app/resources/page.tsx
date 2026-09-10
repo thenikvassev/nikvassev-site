@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CardLink } from "@/components/CardLink";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { blogPosts, formatPostMeta, guides } from "@/lib/resources";
-import { siteConfig } from "@/lib/site";
+import { defaultShareImage, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Resources | Nik Vassev",
     description: "Newsletter, guides and writing from Systems Over Hustle.",
+    images: [defaultShareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [defaultShareImage.url],
   },
 };
 

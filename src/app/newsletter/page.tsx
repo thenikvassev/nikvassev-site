@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { siteConfig } from "@/lib/site";
+import { defaultShareImage, siteConfig } from "@/lib/site";
 
 const title = "Systems Over Hustle | Nik Vassev's weekly founder letter";
 const description =
@@ -19,11 +19,13 @@ export const metadata: Metadata = {
     url: "/newsletter",
     type: "website",
     siteName: siteConfig.name,
+    images: [defaultShareImage],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: [defaultShareImage.url],
   },
 };
 
