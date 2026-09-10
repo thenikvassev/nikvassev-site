@@ -3,17 +3,11 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter, Newsreader } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { siteConfig } from "@/lib/site";
+import { defaultShareImage, siteConfig } from "@/lib/site";
 import "./globals.css";
 import "./claude-home.css";
 
 const defaultTitle = "Nik Vassev | Brand Strategist for Visionary Startups";
-const homeOgImage = {
-  url: "https://nikvassev.com/og/nikvassev-home.png",
-  width: 1200,
-  height: 630,
-  alt: "Nik Vassev — Brand Strategist for Visionary Startups",
-};
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,13 +37,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: defaultTitle,
     description: siteConfig.description,
-    images: [homeOgImage],
+    images: [defaultShareImage],
   },
   twitter: {
     card: "summary_large_image",
     title: defaultTitle,
     description: siteConfig.description,
-    images: [homeOgImage.url],
+    images: [defaultShareImage.url],
   },
   robots: {
     index: true,
@@ -57,11 +51,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
-      { url: "/icon.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon.ico?v=nv", sizes: "any" },
+      { url: "/favicon-32.png?v=nv", type: "image/png", sizes: "32x32" },
+      { url: "/icon.png?v=nv", type: "image/png", sizes: "48x48" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/apple-icon.png?v=nv", sizes: "180x180" }],
   },
 };
 

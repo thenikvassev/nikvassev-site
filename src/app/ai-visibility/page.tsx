@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MediaFrame } from "@/components/MediaFrame";
+import { defaultShareImage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "AI Visibility",
@@ -10,6 +11,11 @@ export const metadata: Metadata = {
     title: "AI Visibility | Storyline Pros",
     description:
       "Become the answer AI recommends. Narrative engineering for emerging tech companies.",
+    images: [defaultShareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [defaultShareImage.url],
   },
 };
 

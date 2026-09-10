@@ -5,7 +5,7 @@ import { PressRow } from "@/components/PressRow";
 import { ProjectsIndex } from "@/components/ProjectsIndex";
 import { TimelineJourney } from "@/components/TimelineJourney";
 import { TrackRecord } from "@/components/TrackRecord";
-import { siteConfig } from "@/lib/site";
+import { defaultShareImage, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     title: "About Nik Vassev",
     description:
       "Brand strategist, serial founder and growth marketer. Systems Over Hustle.",
+    images: [defaultShareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [defaultShareImage.url],
   },
 };
 

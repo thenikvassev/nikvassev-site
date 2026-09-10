@@ -24,6 +24,65 @@ export const siteConfig = {
   ],
 } as const;
 
+/** Fallback share image when a page has no cover/hero. */
+export const defaultShareImage = {
+  url: `${siteConfig.url}/og/default-share.jpg`,
+  width: 1200,
+  height: 630,
+  alt: "Nik Vassev",
+} as const;
+
+export function toAbsoluteUrl(path: string): string {
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    return path;
+  }
+  return `${siteConfig.url}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+/**
+ * Use the article cover for OG/Twitter when one exists.
+ * Oversized source files map to a compressed JPEG of the same cover
+ * so social scrapers do not drop a 7–11MB PNG.
+ */
+const compressedCoverBySource: Record<string, string> = {
+  "/photos/guides/guide-01-ai-agents.png":
+    "/og/articles/how-to-build-your-ai-agent-workforce.jpg",
+  "/photos/guides/guide-02-growth-marketing.png":
+    "/og/articles/build-a-distribution-engine.jpg",
+  "/photos/guides/guide-03-brand-strategy.png":
+    "/og/articles/build-an-iconic-brand.jpg",
+  "/blog/what-ai-search-actually-rewards/cover.png":
+    "/og/articles/what-ai-search-actually-rewards.jpg",
+  "/blog/why-brand-aligned-marketing-wins/cover.png":
+    "/og/articles/why-brand-aligned-marketing-wins.jpg",
+  "/blog/how-to-rank-on-ai-search-in-2026-the-aeo-playbook-for-founders/cover.png":
+    "/og/articles/how-to-rank-on-ai-search-in-2026.jpg",
+};
+
+export function articleShareImage(
+  cover?: string,
+  alt?: string,
+): { url: string; width: number; height: number; alt: string } {
+  if (!cover) {
+    return defaultShareImage;
+  }
+  const path = compressedCoverBySource[cover] ?? cover;
+  return {
+    url: toAbsoluteUrl(path),
+    width: 1200,
+    height: 630,
+    alt: alt ?? "Nik Vassev",
+  };
+}
+
+/** Dedicated homepage Open Graph photo. */
+export const homeOgImage = {
+  url: `${siteConfig.url}/og/nikvassev-home.png`,
+  width: 1200,
+  height: 630,
+  alt: "Nik Vassev — Brand Strategist for Visionary Startups",
+} as const;
+
 export const footerNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },

@@ -6,6 +6,7 @@ import { postBodies } from "@/content/blog";
 import { guideBodies } from "@/content/guides";
 import { getGuide, longGuides } from "@/lib/guides";
 import { blogPosts, getPost } from "@/lib/resources";
+import { articleShareImage } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const guide = getGuide(slug);
   if (guide) {
+    const share = articleShareImage(guide.cover, guide.coverAlt);
     return {
       title: guide.title,
       description: guide.description,
@@ -31,13 +33,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: guide.description,
         url: guide.href,
         type: "article",
-        images: [{ url: guide.cover, alt: guide.coverAlt }],
+        images: [share],
       },
       twitter: {
         card: "summary_large_image",
         title: guide.title,
         description: guide.description,
-        images: [guide.cover],
+        images: [share.url],
       },
     };
   }
@@ -48,6 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const description = post.description ?? post.excerpt;
+  const share = articleShareImage(post.cover, post.coverAlt);
 
   return {
     title: post.title,
@@ -58,13 +61,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       url: `/resources/${slug}`,
       type: "article",
-      images: [{ url: post.cover, alt: post.coverAlt }],
+      images: [share],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description,
-      images: [post.cover],
+      images: [share.url],
     },
   };
 }

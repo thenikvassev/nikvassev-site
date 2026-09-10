@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { NovobeingResults } from "@/components/NovobeingResults";
 import { ProjectArticle } from "@/components/ProjectArticle";
 import { getProject } from "@/lib/projects";
+import { defaultShareImage } from "@/lib/site";
 
 const project = getProject("novobeing");
 
@@ -15,6 +16,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Novobeing | Nik Vassev",
     description: "Prior venture. Therapeutic VR validated with Harvard and Penn Medicine.",
+    images: [defaultShareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [defaultShareImage.url],
   },
 };
 

@@ -758,7 +758,10 @@
   color: #0a3b24 !important;
 }
 
-.nv-about h2,
+.nv-about h2 {
+  margin: 0;
+}
+
 .nv-section-title,
 .nv-ways h2,
 .nv-speaking-card h2 {

@@ -58,7 +58,7 @@ export function HomeHero() {
   }, []);
 
   return (
-    <section className="nv nv-hero" aria-label="Introduction">
+    <section className="nv nv-hero">
       <div className="nv-hero-media" ref={mediaRef}>
         <Image
           src="/photos/nik-hero-mobile.jpg"

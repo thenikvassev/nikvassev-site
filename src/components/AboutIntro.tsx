@@ -10,7 +10,6 @@ export function AboutIntro() {
     <section id="about" className="nv nv-about" aria-labelledby="about-heading">
       <div className="nv-about-inner">
         <div>
-          <p className="nv-eyebrow">Introduction</p>
           <h2 id="about-heading">About Me</h2>
           <p className="nv-about-bio">
             Nik Vassev is a serial entrepreneur and brand strategist who turns

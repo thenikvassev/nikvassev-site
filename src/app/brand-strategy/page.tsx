@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MediaFrame } from "@/components/MediaFrame";
+import { defaultShareImage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Brand Strategy",
@@ -11,6 +12,11 @@ export const metadata: Metadata = {
     title: "Brand Strategy | Nik Vassev",
     description:
       "Complete brand strategy and go-to-market clarity in 15 minutes for early-stage startups.",
+    images: [defaultShareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [defaultShareImage.url],
   },
 };
 
