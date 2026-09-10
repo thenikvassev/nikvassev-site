@@ -4,7 +4,7 @@ import type { ComponentType } from "react";
 import { GuideToc } from "@/components/GuideToc";
 import type { LongGuide } from "@/lib/guides";
 import { formatArticleMeta } from "@/lib/resources";
-import { defaultShareImage, siteConfig } from "@/lib/site";
+import { articleShareImage, siteConfig } from "@/lib/site";
 
 function GuideJsonLd({ guide }: { guide: LongGuide }) {
   const json = {
@@ -18,7 +18,7 @@ function GuideJsonLd({ guide }: { guide: LongGuide }) {
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    image: defaultShareImage.url,
+    image: articleShareImage(guide.cover, guide.coverAlt).url,
     mainEntityOfPage: `${siteConfig.url}${guide.href}`,
   };
 
