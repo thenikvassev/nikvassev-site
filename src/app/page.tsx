@@ -6,7 +6,7 @@ import { HomeHero } from "@/components/HomeHero";
 import { AboutIntro } from "@/components/AboutIntro";
 import { PersonWebsiteJsonLd } from "@/components/PersonWebsiteJsonLd";
 import { TrackRecord } from "@/components/TrackRecord";
-import { blogPosts, formatPostMeta, guides } from "@/lib/resources";
+import { formatPostMeta, guides, publishedBlogPosts } from "@/lib/resources";
 
 const title = "Nik Vassev | Brand Strategist for Visionary Startups";
 const description =
@@ -101,7 +101,7 @@ export default function HomePage() {
           <div className="nv-blog-strip">
             <p className="nv-eyebrow">From the blog</p>
             <div className="nv-blog-list">
-              {blogPosts.slice(0, 2).map((post) => (
+              {publishedBlogPosts().slice(0, 2).map((post) => (
                 <Link
                   key={post.slug}
                   href={`/resources/${post.slug}`}
