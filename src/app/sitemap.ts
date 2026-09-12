@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { longGuides } from "@/lib/guides";
 import { projects } from "@/lib/projects";
-import { blogPosts } from "@/lib/resources";
+import { publishedBlogPosts } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const postRoutes = blogPosts.map((p) => ({
+  const postRoutes = publishedBlogPosts().map((p) => ({
     url: `${base}/resources/${p.slug}`,
     lastModified: new Date(p.date),
     changeFrequency: "monthly" as const,

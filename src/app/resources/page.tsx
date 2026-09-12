@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CardLink } from "@/components/CardLink";
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { blogPosts, formatPostMeta, guides } from "@/lib/resources";
+import { formatPostMeta, guides, publishedBlogPosts } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function ResourcesPage() {
       <section className="mt-16">
         <p className="section-label">From the blog</p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {blogPosts.map((post) => (
+          {publishedBlogPosts().map((post) => (
             <CardLink
               key={post.slug}
               href={`/resources/${post.slug}`}

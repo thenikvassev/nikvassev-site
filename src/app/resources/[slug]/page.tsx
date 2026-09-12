@@ -5,7 +5,9 @@ import { GuideArticle } from "@/components/GuideArticle";
 import { postBodies } from "@/content/blog";
 import { guideBodies } from "@/content/guides";
 import { getGuide, longGuides } from "@/lib/guides";
-import { blogPosts, getPost } from "@/lib/resources";
+import { blogPosts, getPost, isPostPublished } from "@/lib/resources";
+
+export const revalidate = 60;
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -43,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const post = getPost(slug);
-  if (!post) {
+  if (!post || !isPostPublished(post)) {
     return { title: "Not found" };
   }
 
@@ -82,7 +84,7 @@ export default async function ResourcePage({ params }: PageProps) {
   const post = getPost(slug);
   const Body = postBodies[slug];
 
-  if (!post || !Body) {
+  if (!post || !Body || !isPostPublished(post)) {
     notFound();
   }
 

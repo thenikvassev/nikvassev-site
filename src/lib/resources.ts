@@ -24,6 +24,8 @@ export type BlogPost = {
   excerpt: string;
   description?: string;
   date: string;
+  /** ISO timestamp; when set, the post is hidden until this instant. */
+  publishAt?: string;
   readingMinutes: number;
   cover: string;
   coverAlt: string;
@@ -66,6 +68,22 @@ export const guides: Guide[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "when-a-pr-retainer-stops-moving-the-needle",
+    title:
+      "When a PR Retainer Stops Moving the Needle (and What to Measure Instead)",
+    metaTitle: "When a PR Retainer Stops Moving the Needle",
+    excerpt:
+      "A traditional PR retainer often keeps shipping activity while failing the metrics that matter for tech brands in an AI-search era.",
+    description:
+      "Traditional PR retainers ship pitches and clips while missing AI-era metrics: category narrative, earned consensus models can cite, and buyer-prompt visibility.",
+    date: "2026-09-13",
+    publishAt: "2026-09-13T09:00:00-05:00",
+    readingMinutes: 6,
+    cover: "/blog/when-a-pr-retainer-stops-moving-the-needle/cover.png",
+    coverAlt:
+      "stack of newspapers labeled media coverage highlights beside a tablet showing media measurement dashboard",
+  },
   {
     slug: "geo-vs-seo-misses-the-real-gap",
     title:
@@ -169,6 +187,17 @@ export const blogPosts: BlogPost[] = [
       "https://blog.nikvassev.com/post/how-to-rank-on-ai-search-in-2026-the-aeo-playbook-for-founders",
   },
 ];
+
+export function isPostPublished(post: BlogPost, now = new Date()): boolean {
+  if (!post.publishAt) return true;
+  const publishAt = new Date(post.publishAt);
+  if (Number.isNaN(publishAt.getTime())) return false;
+  return now.getTime() >= publishAt.getTime();
+}
+
+export function publishedBlogPosts(now = new Date()): BlogPost[] {
+  return blogPosts.filter((post) => isPostPublished(post, now));
+}
 
 export function getPost(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
