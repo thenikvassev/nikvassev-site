@@ -822,6 +822,15 @@
   color: #17160f;
 }
 
+.guide-step h4 {
+  margin: 1.05rem 0 0.4rem;
+  font-family: var(--guide-serif);
+  font-size: 1.12rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #17160f;
+}
+
 .guide-step p + p,
 .guide-step ul {
   margin-top: 0.85rem;
