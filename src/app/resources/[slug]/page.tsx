@@ -48,13 +48,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const description = post.description ?? post.excerpt;
+  const title = post.metaTitle ?? post.title;
 
   return {
-    title: post.title,
+    title,
     description,
     alternates: { canonical: `/resources/${slug}` },
     openGraph: {
-      title: post.title,
+      title,
       description,
       url: `/resources/${slug}`,
       type: "article",
@@ -62,7 +63,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title,
       description,
       images: [post.cover],
     },
