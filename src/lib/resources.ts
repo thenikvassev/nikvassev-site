@@ -19,6 +19,8 @@ export type Guide = {
 export type BlogPost = {
   slug: string;
   title: string;
+  /** Short document / social title. Layout still appends `| Nik Vassev`. */
+  metaTitle?: string;
   excerpt: string;
   description?: string;
   date: string;
@@ -64,6 +66,21 @@ export const guides: Guide[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "geo-vs-seo-misses-the-real-gap",
+    title:
+      "GEO vs SEO Misses the Real Gap: Why Tech Brands Need PR and AI Visibility Together",
+    metaTitle: "GEO vs SEO Misses the Real Gap",
+    excerpt:
+      "The GEO versus SEO debate is the wrong argument. Tech brands do not need a new label for title tags.",
+    description:
+      "Comparing GEO to SEO alone misses the real gap. Tech brands need earned PR, narrative engineering, and AI visibility as one system.",
+    date: "2026-09-12",
+    readingMinutes: 7,
+    cover: "/blog/geo-vs-seo-misses-the-real-gap/cover.png",
+    coverAlt:
+      "Two professionals on separate pillars, one shouting through a megaphone across a gap",
+  },
   {
     slug: "how-to-make-ai-writing-sound-human-skill-included",
     title: "How to make AI writing sound human [skill included]",
