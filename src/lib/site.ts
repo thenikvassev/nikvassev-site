@@ -32,6 +32,7 @@ export const footerNav = [
   { href: "/ai-visibility", label: "AI Visibility" },
   { href: "/brand-strategy", label: "Brand Strategy" },
   { href: "/resources", label: "Resources" },
+  { href: "/privacy", label: "Privacy" },
 ] as const;
 
 export const trackRecordLogos = [

@@ -74,10 +74,10 @@ export default function NewsletterPage() {
           </div>
           <figure className="nl-hero-visual">
             <Image
-              src="/photos/systems-hustle-window.png"
+              src="/photos/systems-hustle-window.webp"
               alt="Systems Over Hustle window graphic"
-              width={2560}
-              height={1440}
+              width={1920}
+              height={1080}
               className="nl-hero-window"
               priority
               sizes="(min-width: 900px) 760px, 92vw"
