@@ -8,6 +8,8 @@ import { PersonWebsiteJsonLd } from "@/components/PersonWebsiteJsonLd";
 import { TrackRecord } from "@/components/TrackRecord";
 import { formatPostMeta, guides, publishedBlogPosts } from "@/lib/resources";
 
+export const revalidate = 60;
+
 const title = "Nik Vassev | Brand Strategist for Visionary Startups";
 const description =
   "Brand strategist, serial founder and growth marketer. Brand strategy, growth marketing and AI systems for high-impact companies. Guide IQ, Storyline Pros, and Systems Over Hustle.";

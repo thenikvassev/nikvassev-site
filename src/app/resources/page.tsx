@@ -5,6 +5,8 @@ import { NewsletterForm } from "@/components/NewsletterForm";
 import { formatPostMeta, guides, publishedBlogPosts } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: "Resources",
   description:
