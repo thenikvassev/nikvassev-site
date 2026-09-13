@@ -3,11 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MediaFrame } from "@/components/MediaFrame";
 import { ProjectArticle } from "@/components/ProjectArticle";
+import { withOgImages } from "@/lib/og";
 import { getProject } from "@/lib/projects";
 
 const project = getProject("guide-iq");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withOgImages({
   title: "Guide IQ",
   description:
     "AI Brand Strategist for early-stage founders. Twelve inputs, about 15 minutes. Free Brand DNA, $99 Brand Brain, $750 strategist session.",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "AI Brand Strategist for early-stage founders. Brand DNA and 90-day GTM.",
   },
-};
+});
 
 export default function GuideIqPage() {
   if (!project) notFound();

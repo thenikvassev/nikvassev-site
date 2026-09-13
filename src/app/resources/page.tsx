@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CardLink } from "@/components/CardLink";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { withOgImages } from "@/lib/og";
 import { formatPostMeta, guides, publishedBlogPosts } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
 export const revalidate = 60;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withOgImages({
   title: "Resources",
   description:
     "Systems Over Hustle newsletter, guides and writing for founders building with brand strategy and practical AI systems.",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     title: "Resources | Nik Vassev",
     description: "Newsletter, guides and writing from Systems Over Hustle.",
   },
-};
+});
 
 export default function ResourcesPage() {
   return (

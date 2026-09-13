@@ -18,7 +18,7 @@ function GuideJsonLd({ guide }: { guide: LongGuide }) {
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    image: `${siteConfig.url}${guide.cover}`,
+    image: `${siteConfig.url}${guide.ogImage}`,
     mainEntityOfPage: `${siteConfig.url}${guide.href}`,
   };
 

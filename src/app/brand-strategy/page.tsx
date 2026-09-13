@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MediaFrame } from "@/components/MediaFrame";
+import { withOgImages } from "@/lib/og";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withOgImages({
   title: "Brand Strategy",
   description:
     "Complete brand strategy and go-to-market clarity in 15 minutes. Brand foundation and a 90-day GTM plan embedded in the AI tools you already use.",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Complete brand strategy and go-to-market clarity in 15 minutes for early-stage startups.",
   },
-};
+});
 
 export default function BrandStrategyPage() {
   return (

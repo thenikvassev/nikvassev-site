@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProjectArticle } from "@/components/ProjectArticle";
+import { withOgImages } from "@/lib/og";
 import { getProject } from "@/lib/projects";
 
 const project = getProject("mindleap");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withOgImages({
   title: "Mindleap Health",
   description:
     "I founded Mindleap for psychedelic preparation and integration. 30,000 users. Acquired by Mydecine for $3.5M in 24 months.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: "Mindleap Health | Nik Vassev",
     description: "Prior venture. Founded, shipped and acquired.",
   },
-};
+});
 
 export default function MindleapPage() {
   if (!project) notFound();
