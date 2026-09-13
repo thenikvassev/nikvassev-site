@@ -4,6 +4,8 @@ import { projects } from "@/lib/projects";
 import { publishedBlogPosts } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
+export const revalidate = 60;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
   const staticRoutes = [
