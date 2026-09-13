@@ -12,6 +12,8 @@ export type LongGuide = {
   readingMinutes: number;
   cover: string;
   coverAlt: string;
+  /** Lean 1200x630 share image. Keep `cover` as the on-page hero. */
+  ogImage: string;
   href: string;
   toc: GuideTocItem[];
 };
@@ -28,6 +30,7 @@ export const longGuides: LongGuide[] = [
     readingMinutes: 22,
     cover: "/photos/guides/guide-01-ai-agents.png",
     coverAlt: "Guide cover: How to build your AI Agent workforce",
+    ogImage: "/og/guide-01-ai-agents.jpg",
     href: "/resources/how-to-build-your-ai-agent-workforce",
     toc: [
       { id: "who-should-use-this", label: "Who this is for" },
@@ -59,6 +62,7 @@ export const longGuides: LongGuide[] = [
     readingMinutes: 16,
     cover: "/photos/guides/guide-02-growth-marketing.png",
     coverAlt: "Guide cover: Build a distribution engine",
+    ogImage: "/og/guide-02-growth-marketing.jpg",
     href: "/resources/build-a-distribution-engine-the-ultimate-marketing-guide-for-founders",
     toc: [
       { id: "what-changed", label: "What changed" },
@@ -87,6 +91,7 @@ export const longGuides: LongGuide[] = [
     readingMinutes: 22,
     cover: "/photos/guides/guide-03-brand-strategy.png",
     coverAlt: "Guide cover: Build an iconic brand — a mark people remember",
+    ogImage: "/og/guide-03-brand-strategy.jpg",
     href: "/resources/build-an-iconic-brand-the-brand-strategy-guide-for-founders",
     toc: [
       { id: "why-brand-2026", label: "Why brand in 2026" },

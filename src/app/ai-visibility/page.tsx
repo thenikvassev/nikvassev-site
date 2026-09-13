@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { MediaFrame } from "@/components/MediaFrame";
+import { withOgImages } from "@/lib/og";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withOgImages({
   title: "AI Visibility",
   description:
     "Storyline Pros: narrative engineering and AI visibility for emerging tech companies. Earned media, podcasts, Reddit and community authority. Performance-based PR. No guaranteed rankings.",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Become the answer AI recommends. Narrative engineering for emerging tech companies.",
   },
-};
+});
 
 export default function AiVisibilityPage() {
   return (

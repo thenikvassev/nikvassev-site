@@ -5,9 +5,10 @@ import { PressRow } from "@/components/PressRow";
 import { ProjectsIndex } from "@/components/ProjectsIndex";
 import { TimelineJourney } from "@/components/TimelineJourney";
 import { TrackRecord } from "@/components/TrackRecord";
+import { withOgImages } from "@/lib/og";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withOgImages({
   title: "About",
   description:
     "Nik Vassev is a brand strategist, serial founder and growth marketer. He founded Guide IQ and Mindleap Health, co-founded Storyline Pros and Novobeing, and writes Systems Over Hustle from Mexico and the Caribbean.",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Brand strategist, serial founder and growth marketer. Systems Over Hustle.",
   },
-};
+});
 
 const timeline = [
   {

@@ -3,11 +3,12 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { NovobeingResults } from "@/components/NovobeingResults";
 import { ProjectArticle } from "@/components/ProjectArticle";
+import { withOgImages } from "@/lib/og";
 import { getProject } from "@/lib/projects";
 
 const project = getProject("novobeing");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withOgImages({
   title: "Novobeing",
   description:
     "I co-founded Novobeing to bring relief to patients in hospitals using virtual reality. Four clinical trials with Harvard and Penn Medicine. $1.5M raised. CB Insights Top 150.",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     title: "Novobeing | Nik Vassev",
     description: "Prior venture. Therapeutic VR validated with Harvard and Penn Medicine.",
   },
-};
+});
 
 export default function NovobeingPage() {
   if (!project) notFound();

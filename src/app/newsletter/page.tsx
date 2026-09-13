@@ -1,31 +1,34 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { newsletterOgImage, withOgImages } from "@/lib/og";
 import { siteConfig } from "@/lib/site";
 
 const title = "Systems Over Hustle | Nik Vassev's weekly founder letter";
 const description =
   "Weekly letter from brand strategist Nik Vassev on brand strategy, growth marketing, and AI systems for founders building high-impact companies.";
 
-export const metadata: Metadata = {
-  title: { absolute: title },
-  description,
-  alternates: {
-    canonical: "/newsletter",
-  },
-  openGraph: {
-    title,
+export const metadata: Metadata = withOgImages(
+  {
+    title: { absolute: title },
     description,
-    url: "/newsletter",
-    type: "website",
-    siteName: siteConfig.name,
+    alternates: {
+      canonical: "/newsletter",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "/newsletter",
+      type: "website",
+      siteName: siteConfig.name,
+    },
+    twitter: {
+      title,
+      description,
+    },
   },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-  },
-};
+  newsletterOgImage,
+);
 
 const benefits = [
   {

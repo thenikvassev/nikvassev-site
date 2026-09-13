@@ -5,6 +5,7 @@ import { GuideArticle } from "@/components/GuideArticle";
 import { postBodies } from "@/content/blog";
 import { guideBodies } from "@/content/guides";
 import { getGuide, longGuides } from "@/lib/guides";
+import { ogImage, withOgImages } from "@/lib/og";
 import { blogPosts, getPost, isPostPublished } from "@/lib/resources";
 
 export const revalidate = 60;
@@ -24,24 +25,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const guide = getGuide(slug);
   if (guide) {
-    return {
-      title: guide.title,
-      description: guide.description,
-      alternates: { canonical: guide.href },
-      openGraph: {
+    return withOgImages(
+      {
         title: guide.title,
         description: guide.description,
-        url: guide.href,
-        type: "article",
-        images: [{ url: guide.cover, alt: guide.coverAlt }],
+        alternates: { canonical: guide.href },
+        openGraph: {
+          title: guide.title,
+          description: guide.description,
+          url: guide.href,
+          type: "article",
+        },
+        twitter: {
+          title: guide.title,
+          description: guide.description,
+        },
       },
-      twitter: {
-        card: "summary_large_image",
-        title: guide.title,
-        description: guide.description,
-        images: [guide.cover],
-      },
-    };
+      ogImage(guide.ogImage, guide.coverAlt),
+    );
   }
 
   const post = getPost(slug);
@@ -52,24 +53,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const description = post.description ?? post.excerpt;
   const title = post.metaTitle ?? post.title;
 
-  return {
-    title,
-    description,
-    alternates: { canonical: `/resources/${slug}` },
-    openGraph: {
+  return withOgImages(
+    {
       title,
       description,
-      url: `/resources/${slug}`,
-      type: "article",
-      images: [{ url: post.cover, alt: post.coverAlt }],
+      alternates: { canonical: `/resources/${slug}` },
+      openGraph: {
+        title,
+        description,
+        url: `/resources/${slug}`,
+        type: "article",
+      },
+      twitter: {
+        title,
+        description,
+      },
     },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [post.cover],
-    },
-  };
+    ogImage(post.cover, post.coverAlt),
+  );
 }
 
 export default async function ResourcePage({ params }: PageProps) {
