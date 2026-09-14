@@ -9,7 +9,7 @@ export const siteConfig = {
     "Brand strategist, serial founder and growth marketer helping entrepreneurs build high-impact companies using brand strategy, growth marketing and AI systems.",
   location: "Playa del Carmen",
   region: "Mexico and the Caribbean",
-  email: "hello@nikvassev.com",
+  email: "nik@guideiq.ai",
   bookingUrl: "https://tally.so/r/QKQbBk",
   social: {
     linkedin: "https://www.linkedin.com/in/nikvassev",
@@ -32,6 +32,7 @@ export const footerNav = [
   { href: "/ai-visibility", label: "AI Visibility" },
   { href: "/brand-strategy", label: "Brand Strategy" },
   { href: "/resources", label: "Resources" },
+  { href: "/privacy", label: "Privacy" },
 ] as const;
 
 export const trackRecordLogos = [

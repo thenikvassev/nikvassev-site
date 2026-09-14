@@ -106,6 +106,7 @@ export function Footer() {
     "/newsletter",
     "/ai-visibility",
     "/brand-strategy",
+    "/privacy",
   ]);
   const showNewsletterBand = !hideNewsletterBand.has(pathname);
 
