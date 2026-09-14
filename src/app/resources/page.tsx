@@ -74,26 +74,6 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section className="mt-16">
-        <p className="section-label">Offers</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <CardLink
-            href="/brand-strategy"
-            title="Brand strategy"
-            benefit="Guide IQ and coaching for early-stage brand clarity."
-            image="/photos/guide-iq-product-ui.png"
-            imageAlt="Guide IQ Brand Soul workspace with tone calibration and brand colors."
-          />
-          <CardLink
-            href="/ai-visibility"
-            title="AI visibility"
-            benefit="Storyline Pros for emerging tech companies."
-            image="/photos/aiv-answer-you.png"
-            imageAlt="Storyline Pros: AI search answers pointing to you."
-          />
-        </div>
-      </section>
-
       <p className="mt-12 text-sm">
         <Link href="/" className="font-medium text-forest">
           ← Home
