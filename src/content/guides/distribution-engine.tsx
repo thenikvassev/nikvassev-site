@@ -336,11 +336,24 @@ export function GuideBody() {
                 {step.title === "AI search and SEO" ? (
                   <>
                     <p>{step.paragraphs[0]}</p>
+                    <h4>AI search visibility</h4>
                     <p>
-                      <GuideLink href="https://guideiq.ai">Guide IQ</GuideLink>{" "}
-                      is how I get founders that brief without a six-week
-                      strategy project: answer the questions, get the brand and
-                      go-to-market strategy, then publish pages that match it.
+                      You need to pull the prompts your buyers actually ask, the
+                      fanout queries engines decompose them into, the gaps
+                      where you should appear and don&apos;t, and your share of
+                      answer against the competitors you lose to. Using that
+                      you need to create on page and off page content using the
+                      keywords and prompts you are targeting. The biggest key
+                      to this is creating newsworthy events that get you in top
+                      tier media.
+                    </p>
+                    <p>
+                      If you need a done for you service to get AI to recommend
+                      your company, explore{" "}
+                      <GuideLink href="https://storylinepros.com">
+                        Storyline Pros
+                      </GuideLink>
+                      .
                     </p>
                     <p>{step.paragraphs[1]}</p>
                   </>
