@@ -28,7 +28,7 @@ Build: npm run build && npm start
 ## Placeholders for Nik
 
 - Newsletter ESP not wired (UI only)
-- Book call is mailto hello@nikvassev.com
+- Book call is mailto nik@guideiq.ai
 - Digimax omitted per Brand DNA
 - Guide IQ pricing confirm on guideiq.ai
 - Five Scribbles posts at /resources/[slug]

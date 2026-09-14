@@ -9,7 +9,7 @@ export const siteConfig = {
     "Brand strategist, serial founder and growth marketer helping entrepreneurs build high-impact companies using brand strategy, growth marketing and AI systems.",
   location: "Playa del Carmen",
   region: "Mexico and the Caribbean",
-  email: "hello@nikvassev.com",
+  email: "nik@guideiq.ai",
   bookingUrl: "https://tally.so/r/QKQbBk",
   social: {
     linkedin: "https://www.linkedin.com/in/nikvassev",
