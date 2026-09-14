@@ -54,6 +54,26 @@ const nextConfig: NextConfig = {
           "/resources/build-an-iconic-brand-the-brand-strategy-guide-for-founders",
         permanent: true,
       },
+      {
+        source: "/photos/guides/guide-01-ai-agents.webp",
+        destination: "/photos/guides/guide-01-ai-agents.png",
+        permanent: true,
+      },
+      {
+        source: "/photos/guides/guide-01-ai-agents.jpg",
+        destination: "/photos/guides/guide-01-ai-agents.png",
+        permanent: true,
+      },
+      {
+        source: "/photos/guides/guide-03-brand-strategy.webp",
+        destination: "/photos/guides/guide-03-brand-strategy.png",
+        permanent: true,
+      },
+      {
+        source: "/photos/guides/guide-03-brand-strategy.jpg",
+        destination: "/photos/guides/guide-03-brand-strategy.png",
+        permanent: true,
+      },
     ];
   },
 };
