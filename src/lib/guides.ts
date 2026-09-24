@@ -112,6 +112,32 @@ export const longGuides: LongGuide[] = [
       { id: "stamp-the-story", label: "Stamp the story" },
     ],
   },
+  {
+    slug: "how-to-configure-an-ai-sales-agent-guide",
+    title: "How to Configure an AI Sales Agent 2026 Guide",
+    excerpt:
+      "Most founder's GTM motion has multiple tools, manual processes, and an old-school CRM that sucks up hours a week to keep on track. For solopreneurs, agency owners, and B2B SaaS companies, the founder does the sales in the early stage, and new opportunities must fill the calendar for the company to succeed.",
+    description:
+      "How to configure a Grok Bot sales agent: a job card, Basho cold notes, two prospecting lanes, and a founder gate on every send.",
+    date: "2026-09-24",
+    readingMinutes: 18,
+    cover: "/photos/guides/guide-04-ai-sales-agent.jpg",
+    coverAlt: "Guide cover: How to Configure an AI Sales Agent",
+    ogImage: "/og/guide-04-ai-sales-agent.jpg",
+    href: "/resources/how-to-configure-an-ai-sales-agent-guide",
+    toc: [
+      { id: "why-different", label: "Why different" },
+      { id: "what-it-owns", label: "What it owns" },
+      { id: "two-lanes", label: "Two lanes" },
+      { id: "basho", label: "Basho" },
+      { id: "skills", label: "Skills" },
+      { id: "routines", label: "Routines" },
+      { id: "tools", label: "Tools" },
+      { id: "setup", label: "Setup" },
+      { id: "what-you-approve", label: "What you approve" },
+      { id: "conclusion", label: "Conclusion" },
+    ],
+  },
 ];
 
 export function getGuide(slug: string): LongGuide | undefined {

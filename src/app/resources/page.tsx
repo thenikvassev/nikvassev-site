@@ -43,7 +43,7 @@ export default function ResourcesPage() {
 
       <section className="mt-16">
         <p className="section-label">Guides</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
           {guides.map((g) => (
             <CardLink
               key={g.slug}

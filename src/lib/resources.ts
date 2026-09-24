@@ -65,6 +65,15 @@ export const guides: Guide[] = [
     imageAlt: "Guide cover: Build an iconic brand",
     imagePulled: true,
   },
+  {
+    slug: "how-to-configure-an-ai-sales-agent-guide",
+    title: titleWithoutOrphan("How to Configure an AI Sales Agent 2026 Guide"),
+    benefit: "A sales agent with a founder gate on send.",
+    href: "/resources/how-to-configure-an-ai-sales-agent-guide",
+    image: "/photos/guides/guide-04-ai-sales-agent.jpg",
+    imageAlt: "Guide cover: How to Configure an AI Sales Agent",
+    imagePulled: true,
+  },
 ];
 
 export const blogPosts: BlogPost[] = [
