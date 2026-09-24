@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/how-to-configure-an-ai-sales-agent-guide",
+        destination: "/resources/how-to-configure-an-ai-sales-agent-guide",
+        permanent: true,
+      },
+      {
         source: "/resources/systems-over-hustle",
         destination: "/resources",
         permanent: true,
