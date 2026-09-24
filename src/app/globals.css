@@ -631,6 +631,7 @@
 .guide-section a {
   font-weight: 600;
   color: #0a3b24;
+  text-decoration: underline;
   text-underline-offset: 4px;
 }
 
