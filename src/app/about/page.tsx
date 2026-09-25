@@ -95,7 +95,32 @@ export default function AboutPage() {
     jobTitle: "Brand strategist, serial founder and growth marketer",
     email: siteConfig.email,
     url: siteConfig.url,
-    sameAs: [siteConfig.social.linkedin, siteConfig.social.twitter],
+    sameAs: [
+      siteConfig.social.linkedin,
+      siteConfig.social.twitter,
+      siteConfig.social.instagram,
+      "https://www.storylinepros.com/about#nik-vassev",
+      "https://guideiq.ai",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      "@id": "https://www.storylinepros.com/#organization",
+      name: "Storyline Pros",
+      url: "https://www.storylinepros.com",
+    },
+    founderOf: [
+      {
+        "@type": "Organization",
+        "@id": "https://www.storylinepros.com/#organization",
+        name: "Storyline Pros",
+        url: "https://www.storylinepros.com",
+      },
+      {
+        "@type": "Organization",
+        name: "Guide IQ",
+        url: "https://guideiq.ai",
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: siteConfig.location,
