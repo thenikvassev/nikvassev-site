@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 import { GuideBody as aiAgentsBody } from "./ai-agents";
+import { GuideBody as salesAgentBody } from "./ai-sales-agent";
 import { GuideBody as brandStrategyBody } from "./build-an-iconic-brand";
 import { GuideBody as distributionEngineBody } from "./distribution-engine";
 
@@ -9,4 +10,5 @@ export const guideBodies: Record<string, ComponentType> = {
     distributionEngineBody,
   "build-an-iconic-brand-the-brand-strategy-guide-for-founders":
     brandStrategyBody,
+  "how-to-configure-an-ai-sales-agent-guide": salesAgentBody,
 };

@@ -112,6 +112,32 @@ export const longGuides: LongGuide[] = [
       { id: "stamp-the-story", label: "Stamp the story" },
     ],
   },
+  {
+    slug: "how-to-configure-an-ai-sales-agent-guide",
+    title: "How to Configure an AI Sales Agent 2026 Guide",
+    excerpt:
+      "Most founder's GTM motion has multiple tools, manual processes, and an old-school CRM that sucks up hours a week to keep on track. For solopreneurs, agency owners, and B2B SaaS companies, the founder does the sales in the early stage, and new opportunities must fill the calendar for the company to succeed.",
+    description:
+      "How to configure a Grok Bot sales agent: a job card, Basho cold notes, two prospecting lanes, and a founder gate on every send.",
+    date: "2026-09-24",
+    readingMinutes: 18,
+    cover: "/photos/guides/guide-04-ai-sales-agent.jpg",
+    coverAlt: "Guide cover: How to Configure an AI Sales Agent",
+    ogImage: "/og/guide-04-ai-sales-agent.jpg",
+    href: "/resources/how-to-configure-an-ai-sales-agent-guide",
+    toc: [
+      { id: "agent-vs-llm", label: "Agent vs LLM" },
+      { id: "what-it-owns", label: "What the agent owns" },
+      { id: "two-lanes", label: "Two cold prospecting lanes" },
+      { id: "basho", label: "How Basho emails work" },
+      { id: "skills", label: "Skills to install" },
+      { id: "routines", label: "Routines to schedule" },
+      { id: "tools", label: "AI Sales Agent Tools" },
+      { id: "setup", label: "Setup on Grok Bot" },
+      { id: "what-you-approve", label: "What the founder still approves" },
+      { id: "conclusion", label: "What you walk away with" },
+    ],
+  },
 ];
 
 export function getGuide(slug: string): LongGuide | undefined {

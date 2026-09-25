@@ -559,7 +559,8 @@
 .guide-section > .guide-kicker,
 .guide-section > .guide-setup-rule,
 .guide-section > .guide-rule-block,
-.guide-section > .guide-plain-list {
+.guide-section > .guide-plain-list,
+.guide-section > .guide-tick-list {
   max-width: var(--guide-measure);
   margin-inline: auto;
 }
@@ -573,7 +574,10 @@
 .guide-section > .guide-overview,
 .guide-section > .guide-callout,
 .guide-section > .guide-jobs,
-.guide-section > .guide-tools {
+.guide-section > .guide-tools,
+.guide-section > .guide-job,
+.guide-section > .guide-paste,
+.guide-section > .guide-skills {
   max-width: var(--guide-wide);
   margin-inline: auto;
 }
@@ -627,6 +631,7 @@
 .guide-section a {
   font-weight: 600;
   color: #0a3b24;
+  text-decoration: underline;
   text-underline-offset: 4px;
 }
 
@@ -737,6 +742,76 @@
   font-size: 1.05rem;
   line-height: 1.65;
   color: #3d4848;
+}
+
+.guide-tick-list {
+  margin: 0.9rem 0 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+ol.guide-tick-list {
+  list-style: decimal;
+}
+
+.guide-tick-list li + li {
+  margin-top: 0.45rem;
+}
+
+.guide-tick-list li {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #3d4848;
+}
+
+.guide-job .guide-tick-list {
+  margin-top: 0.35rem;
+}
+
+.guide-section > .guide-job {
+  margin-top: 1.4rem;
+}
+
+.guide-skills {
+  display: grid;
+  gap: 1.4rem;
+  margin: 1.6rem 0 0;
+}
+
+.guide-skill h3 {
+  margin: 0 0 0.7rem;
+  font-family: var(--guide-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: #17160f;
+}
+
+.guide-paste {
+  margin: 0.85rem 0 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border: 1px solid rgba(203, 188, 163, 0.7);
+  border-radius: 16px;
+  background: #ffffff;
+  color: #17160f;
+  white-space: pre-wrap;
+}
+
+.guide-paste code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.guide-tool-name a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  letter-spacing: inherit;
 }
 
 .guide-rule-block {
