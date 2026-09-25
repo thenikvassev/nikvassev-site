@@ -202,7 +202,7 @@ export function GuideBody() {
             anatomy below. Do not invent expansions for the letters.
           </p>
           <GuideFigure
-            src="/photos/guides/ai-sales-agent/basho-anatomy.png"
+            src="/photos/guides/ai-sales-agent/basho-anatomy.jpg"
             alt="The anatomy of a Basho email: hyper-personalized subject, the hook, the value hook, and a soft CTA, plus a comparison with traditional cold email. Under 90 words."
             width={1100}
             height={618}
@@ -342,7 +342,7 @@ export function GuideBody() {
             app. Connect only what you will actually use this month.
           </p>
           <GuideFigure
-            src="/photos/guides/ai-sales-agent/ai-sales-agent-tools.png"
+            src="/photos/guides/ai-sales-agent/ai-sales-agent-tools.jpg"
             alt="AI Sales Agent Tools. Connected tools around a Sales Agent hub: Breakcold CRM, Clay, LinkedIn, Smartlead, WhatsApp, TrulyInbox, and Email. You still approve sends."
             width={1100}
             height={618}
