@@ -73,11 +73,9 @@ export function GuideBody() {
       </GuideReveal>
 
       <GuideReveal>
-        <section className="guide-section" aria-labelledby="why-different">
+        <section className="guide-section" aria-labelledby="agent-vs-llm">
           <p className="guide-kicker">01</p>
-          <h2 id="why-different">
-            Why is a sales agent different from ChatGPT with a sales prompt?
-          </h2>
+          <h2 id="agent-vs-llm">Agent vs LLM</h2>
           <p>
             A chat tab answers and forgets and requires you. A sales agent has
             a goal, standing routines in its profile, logins on a shared
@@ -634,7 +632,7 @@ export function GuideBody() {
       <GuideReveal>
         <section className="guide-section guide-close" aria-labelledby="conclusion">
           <p className="guide-kicker">10</p>
-          <h2 id="conclusion">Conclusion</h2>
+          <h2 id="conclusion">What you walk away with</h2>
           <p>
             An AI sales agent is useful when it owns a narrow path and you
             still own the gate. Be strategic with how you approach outbound
