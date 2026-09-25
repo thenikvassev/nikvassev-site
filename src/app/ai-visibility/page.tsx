@@ -22,7 +22,15 @@ export default function AiVisibilityPage() {
         Become the answer AI recommends.
       </h1>
       <p className="mt-6 max-w-reading text-lg text-ink-muted">
-        Buyers and investors ask AI before they visit your site. Storyline Pros
+        Buyers and investors ask AI before they visit your site.{" "}
+        <a
+          href="https://www.storylinepros.com/ai-visibility"
+          className="font-medium text-forest underline underline-offset-4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Storyline Pros AI visibility
+        </a>{" "}
         builds the verifiable digital footprint emerging tech companies need to
         show up in those answers. We work with fast-growth startups that want a
         proven system to get into the media AI trusts, so they become the answer.

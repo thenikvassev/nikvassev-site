@@ -7,12 +7,34 @@
       "name": "Nik Vassev",
       "url": "https://nikvassev.com",
       "image": "https://nikvassev.com/og/nikvassev-home.png",
+      "email": "nik@guideiq.ai",
       "jobTitle": "Brand Strategist",
       "description": "Brand strategist, serial founder and growth marketer helping entrepreneurs build high-impact companies using brand strategy, growth marketing and AI systems.",
       "sameAs": [
-        "https://twitter.com/nikvassev",
         "https://www.linkedin.com/in/nikvassev",
-        "https://www.instagram.com/nikvassev/"
+        "https://twitter.com/nikvassev",
+        "https://www.instagram.com/nikvassev/",
+        "https://www.storylinepros.com/about#nik-vassev",
+        "https://guideiq.ai"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://www.storylinepros.com/#organization",
+        "name": "Storyline Pros",
+        "url": "https://www.storylinepros.com"
+      },
+      "founderOf": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.storylinepros.com/#organization",
+          "name": "Storyline Pros",
+          "url": "https://www.storylinepros.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "Guide IQ",
+          "url": "https://guideiq.ai"
+        }
       ],
       "knowsAbout": [
         "Brand strategy",
@@ -25,11 +47,7 @@
       "alumniOf": {
         "@type": "Organization",
         "name": "Futurpreneur Canada"
-      },
-      "founder": [
-        { "@type": "Organization", "name": "Guide IQ", "url": "https://guideiq.ai" },
-        { "@type": "Organization", "name": "Storyline Pros", "url": "https://storylinepros.com" }
-      ]
+      }
     },
     {
       "@type": "WebSite",
