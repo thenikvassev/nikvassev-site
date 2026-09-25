@@ -132,7 +132,7 @@ export const longGuides: LongGuide[] = [
       { id: "basho", label: "How Basho emails work" },
       { id: "skills", label: "Skills to install" },
       { id: "routines", label: "Routines to schedule" },
-      { id: "tools", label: "Sales agent tools" },
+      { id: "tools", label: "What the AI sales agent uses" },
       { id: "setup", label: "Setup on Grok Bot" },
       { id: "what-you-approve", label: "What the founder still approves" },
       { id: "conclusion", label: "What you walk away with" },

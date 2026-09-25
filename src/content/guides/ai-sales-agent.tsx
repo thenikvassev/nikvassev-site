@@ -203,10 +203,10 @@ export function GuideBody() {
           </p>
           <GuideFigure
             src="/photos/guides/ai-sales-agent/basho-anatomy.png"
-            alt="Basho email anatomy: hyper-personalized subject, hook, value hook, and soft CTA, each under 90 words."
+            alt="The anatomy of a Basho email: hyper-personalized subject, the hook, the value hook, and a soft CTA, plus a comparison with traditional cold email. Under 90 words."
             width={1280}
-            height={900}
-            caption="Basho anatomy. Under 90 words. Precision over volume."
+            height={720}
+            caption="The anatomy of a Basho email. Under 90 words. Precision over volume."
           />
           <h3>The anatomy (under 90 words, precision over volume)</h3>
           <div className="guide-rules" role="table" aria-label="Basho anatomy">
@@ -336,17 +336,17 @@ export function GuideBody() {
       <GuideReveal>
         <section className="guide-section" aria-labelledby="tools">
           <p className="guide-kicker">07</p>
-          <h2 id="tools">AI Agent Sales Tools</h2>
+          <h2 id="tools">What the AI sales agent uses</h2>
           <p>
             Give every tool one job so the agent cannot hide truth in the wrong
             app. Connect only what you will actually use this month.
           </p>
           <GuideFigure
             src="/photos/guides/ai-sales-agent/ai-sales-agent-tools.png"
-            alt="AI sales agent tool stack: Breakcold as system of record, with Clay, TrulyInbox, Smartlead, Gmail, Cal.com, LinkedIn, and WhatsApp around the agent."
-            width={1680}
-            height={1580}
-            caption="One job per tool. Breakcold stays the system of record."
+            alt="What the AI sales agent uses. Connected tools around a Sales Agent hub: Breakcold CRM, Clay, LinkedIn, Smartlead, TrulyInbox, WhatsApp, and Email. You still approve sends."
+            width={1280}
+            height={720}
+            caption="What the AI sales agent uses. Connected tools. You still approve sends."
           />
           <ul className="guide-tools">
             <li className="guide-tool">
