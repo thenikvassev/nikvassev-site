@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 
+import { PostBody as narrativeEngineeringBody } from "./what-is-narrative-engineering";
 import { PostBody as prRetainerBody } from "./when-a-pr-retainer-stops-moving-the-needle";
 import { PostBody as geoVsSeoBody } from "./geo-vs-seo-misses-the-real-gap";
 import { PostBody as humanizerBody } from "./how-to-make-ai-writing-sound-human-skill-included";
@@ -11,6 +12,7 @@ import { PostBody as brandAlignedBody } from "./why-brand-aligned-marketing-wins
 import { PostBody as aeoBody } from "./how-to-rank-on-ai-search-in-2026-the-aeo-playbook-for-founders";
 
 export const postBodies: Record<string, ComponentType> = {
+  "what-is-narrative-engineering": narrativeEngineeringBody,
   "when-a-pr-retainer-stops-moving-the-needle": prRetainerBody,
   "geo-vs-seo-misses-the-real-gap": geoVsSeoBody,
   "how-to-make-ai-writing-sound-human-skill-included": humanizerBody,

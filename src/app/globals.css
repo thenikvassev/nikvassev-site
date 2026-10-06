@@ -150,6 +150,38 @@
     tab-size: 2;
   }
 
+  .prose-nik .table-wrap {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+
+  .prose-nik table {
+    width: 100%;
+    min-width: 36rem;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .prose-nik th,
+  .prose-nik td {
+    border: 1px solid #cbbca3;
+    padding: 0.65rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .prose-nik th {
+    background: #0a3b24;
+    color: #e8e4d9;
+    font-weight: 600;
+  }
+
+  .prose-nik td:first-child {
+    font-weight: 600;
+    color: #0a3b24;
+  }
+
   /* Occasional Storyline-style inverted panel */
   .panel-invert {
     @apply rounded-card bg-forest-dark text-white;
