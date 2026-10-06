@@ -78,6 +78,21 @@ export const guides: Guide[] = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "what-is-narrative-engineering",
+    title: "What is narrative engineering? A founder's guide for tech startups",
+    metaTitle: "What Is Narrative Engineering? A Guide for Tech Startups",
+    excerpt:
+      "Narrative engineering is the systematic process of optimizing messaging, positioning, and proof so a company’s public story is coherent, newsworthy, and repeatable by third parties (press, buyers, and AI), creating differentiation that drives brand mentions, sales, and investment.",
+    description:
+      "Narrative engineering decides the claims a startup should own and proves them where buyers and AI look. What it is, why it matters now, and how it works.",
+    date: "2026-10-06",
+    publishAt: "2026-10-06T09:00:00-05:00",
+    readingMinutes: 12,
+    cover: "/blog/what-is-narrative-engineering/cover.png",
+    coverAlt:
+      "Glowing wireframe head in profile, woven from golden threads that connect floating documents and charts",
+  },
+  {
     slug: "when-a-pr-retainer-stops-moving-the-needle",
     title:
       "When a PR Retainer Stops Moving the Needle (and What to Measure Instead)",
