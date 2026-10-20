@@ -4,6 +4,7 @@ import type { ComponentType } from "react";
 import { GuideToc } from "@/components/GuideToc";
 import type { LongGuide } from "@/lib/guides";
 import { formatArticleMeta } from "@/lib/resources";
+import { shapeLine } from "@/lib/shape-line";
 import { siteConfig } from "@/lib/site";
 
 function GuideJsonLd({ guide }: { guide: LongGuide }) {
@@ -36,16 +37,19 @@ type Props = {
 };
 
 export function GuideArticle({ guide, Body }: Props) {
+  const title =
+    guide.slug === "how-to-market-to-ai-agents" ? shapeLine(guide.title) : guide.title;
+
   return (
-    <article className="guide-article">
+    <article className="guide-article" data-guide={guide.slug}>
       <GuideJsonLd guide={guide} />
       <header className="guide-hero">
         <p className="guide-badge">Guide</p>
         <p className="guide-meta">
           {formatArticleMeta(guide.date, guide.readingMinutes)}
         </p>
-        <h1 className="guide-title">{guide.title}</h1>
-        <p className="guide-lede">{guide.excerpt}</p>
+        <h1 className="guide-title">{title}</h1>
+        {guide.excerpt ? <p className="guide-lede">{guide.excerpt}</p> : null}
         <figure className="guide-cover">
           <div className="guide-cover-frame">
             <Image
