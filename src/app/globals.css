@@ -1715,8 +1715,34 @@ ol.guide-tick-list {
 
 /* This guide only: balanced headings, pretty body, readable table cells. */
 .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-title,
-.guide-article[data-guide="how-to-market-to-ai-agents"] h2 {
+.guide-article[data-guide="how-to-market-to-ai-agents"] .guide-lede,
+.guide-article[data-guide="how-to-market-to-ai-agents"] h2,
+.guide-article[data-guide="how-to-market-to-ai-agents"] h3,
+.guide-article[data-guide="how-to-market-to-ai-agents"] .guide-define-title {
   text-wrap: balance;
+}
+
+.guide-article[data-guide="how-to-market-to-ai-agents"] .guide-define {
+  max-width: var(--guide-measure);
+  margin: 1.75rem auto 0;
+  padding: 1.15rem 1.2rem 1.25rem;
+  border: 1px solid rgba(203, 188, 163, 0.9);
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.guide-article[data-guide="how-to-market-to-ai-agents"] .guide-define-title {
+  margin: 0;
+  font-family: var(--guide-serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: #17160f;
+}
+
+.guide-article[data-guide="how-to-market-to-ai-agents"] .guide-define p + p {
+  margin-top: 0.65rem;
 }
 
 .guide-article[data-guide="how-to-market-to-ai-agents"] p,

@@ -1,7 +1,18 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { GuideReveal } from "@/components/GuideReveal";
 import { guideSource as source } from "@/content/guides/how-to-market-to-ai-agents.source";
+import { getGuide } from "@/lib/guides";
 import { shapeLine } from "@/lib/shape-line";
+
+const DIRECT_ANSWER =
+  "To market to AI agents, make your site easy for machines to read, collect recent and specific reviews, and earn third-party coverage that confirms the same story. Agents check whether outside sources agree with what you say about yourself.";
+
+const DEFINITION_TITLE = "What is an AI agent?";
+const DEFINITION_BODY =
+  "An AI agent is software that acts for a person instead of only answering their questions. It can compare vendors, read reviews and press coverage, and hand the person a shortlist, often of one, that they approve without doing the research themselves.";
+
+const SEMRUSH_PHRASE = "Top Domains Cited by LLMs";
+const SEMRUSH_HREF = "https://www.semrush.com/ai-search-ranking/";
 
 const SITE = "https://nikvassev.com";
 
@@ -135,7 +146,7 @@ function renderInlines(text: string): ReactNode[] {
   return parts.map((part, index) => {
     const next = parts[index + 1];
     if (part.type === "strong") {
-      return <strong key={index}>{shapeLine(part.text)}</strong>;
+      return <strong key={index}>{renderInlines(part.text)}</strong>;
     }
     if (part.type === "link") {
       const href = normalizeHref(part.href);
@@ -203,6 +214,20 @@ function GuideTable({ headers, rows }: { headers: string[]; rows: string[][] }) 
   );
 }
 
+function FaqAnswer({ text }: { text: string }) {
+  const index = text.indexOf(SEMRUSH_PHRASE);
+  if (index === -1) return <>{shapeLine(text)}</>;
+  return (
+    <>
+      {shapeLine(text.slice(0, index))}
+      <a href={SEMRUSH_HREF} target="_blank" rel="noopener noreferrer">
+        {shapeLine(SEMRUSH_PHRASE)}
+      </a>
+      {shapeLine(text.slice(index + SEMRUSH_PHRASE.length))}
+    </>
+  );
+}
+
 function renderBlock(block: Block, index: number) {
   if (block.type === "p") {
     return <p key={index}>{renderInlines(block.text)}</p>;
@@ -226,7 +251,7 @@ function renderBlock(block: Block, index: number) {
 const blocks = parseBlocks(source);
 
 export function GuideBody() {
-  const groups: { title?: string; blocks: Block[] }[] = [{ blocks: [] }];
+  const groups: { title?: string; blocks: Block[]; faq?: boolean }[] = [{ blocks: [] }];
   for (const block of blocks) {
     if (block.type === "h2") {
       groups.push({ title: block.text, blocks: [] });
@@ -235,6 +260,19 @@ export function GuideBody() {
     }
   }
 
+  groups[0].blocks.unshift({ type: "p", text: DIRECT_ANSWER });
+
+  const closing = groups.findIndex((group) => group.title === "Where this leaves you");
+  if (closing > 0) {
+    groups.splice(closing, 0, {
+      title: "Frequently asked questions",
+      blocks: [],
+      faq: true,
+    });
+  }
+
+  const faq = getGuide("how-to-market-to-ai-agents")?.faq ?? [];
+
   return (
     <>
       {groups.map((group, index) => {
@@ -242,6 +280,10 @@ export function GuideBody() {
           return (
             <GuideReveal className="guide-opening" key="opening">
               {group.blocks.map(renderBlock)}
+              <aside className="guide-define">
+                <p className="guide-define-title">{shapeLine(DEFINITION_TITLE)}</p>
+                <p>{shapeLine(DEFINITION_BODY)}</p>
+              </aside>
             </GuideReveal>
           );
         }
@@ -252,7 +294,16 @@ export function GuideBody() {
             <section className="guide-section" aria-labelledby={id}>
               <p className="guide-kicker">{kicker}</p>
               <h2 id={id}>{shapeLine(group.title)}</h2>
-              {group.blocks.map(renderBlock)}
+              {group.faq
+                ? faq.map((item) => (
+                    <Fragment key={item.question}>
+                      <h3>{shapeLine(item.question)}</h3>
+                      <p>
+                        <FaqAnswer text={item.answer} />
+                      </p>
+                    </Fragment>
+                  ))
+                : group.blocks.map(renderBlock)}
             </section>
           </GuideReveal>
         );

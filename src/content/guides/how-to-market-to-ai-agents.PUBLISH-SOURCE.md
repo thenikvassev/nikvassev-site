@@ -108,7 +108,7 @@ After that, find the "best of" articles agents already cite in your category. Pi
 
 ## Step 6: Earn media coverage that makes agents trust you
 
-AI values the media because the media builds trust, and budgets are moving the same way. **Inc. reported in May 2026 that Gartner predicts PR and earned media budgets will double by 2027**, driven by mass adoption of public LLMs as an alternative to search. A credible outlet gives an agent independent confirmation of the story on your site.
+AI values the media because the media builds trust, and budgets are moving the same way. **Inc. reported in May 2026 that [Gartner](https://www.gartner.com/en/communications/research/communications-predictions) predicts PR and earned media budgets will double by 2027**, driven by mass adoption of public LLMs as an alternative to search. A credible outlet gives an agent independent confirmation of the story on your site.
 
 Reporters cover what's newsworthy, which comes down to timeliness, trends, novelty, fame, significance and localization. Design your news to hit at least two of them:
 

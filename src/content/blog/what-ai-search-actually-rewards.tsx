@@ -64,6 +64,8 @@ export const html = `<p>The work that wins is deeper. You build verifiable brand
 
 <p>Winning this era is not outpublishing competitors with a fire hose of AI slop. It is earning a reputation coherent enough that answer engines can recommend you without inventing you. Agents are already researching options and shaping purchase shortlists. If your digital footprint is only an echo chamber of your own marketing, that shortlist will not include you.</p>
 
+<p>See <a href="/resources/how-to-market-to-ai-agents">how to market to AI agents</a>.</p>
+
 <p>If you want the weekly operator notes behind this kind of work, get on <a href="https://nikvassev.com/newsletter" target="_blank" rel="noopener noreferrer">Systems Over Hustle</a> at https://nikvassev.com/newsletter.</p>
 `;
 

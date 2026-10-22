@@ -115,7 +115,9 @@ export function Footer() {
       {showNewsletterBand ? (
         <div id="newsletter" className="nv nv-newsletter scroll-mt-28">
           <div className="nv-newsletter-inner">
-            <h2>Brand strategy &amp; AI systems to dominate your category.</h2>
+            <p className="nv-newsletter-title">
+              Brand strategy &amp; AI systems to dominate your category.
+            </p>
             <p className="nv-newsletter-body">
               I write a weekly letter called Systems Over Hustle. Every Thursday,
               it&apos;s packed with real-world brand strategy, AI workflows, and

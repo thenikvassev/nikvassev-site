@@ -122,6 +122,8 @@ export const html = `<p>Narrative engineering is the systematic process of optim
 
 <p>Ahrefs notes that correlation is not causation, but the pattern matches what we see: being discussed across trusted sites does more for AI visibility than publishing more of your own pages. That is why we run PR and GEO as one system. For the tactical side, see our guide on how to <a href="https://www.storylinepros.com/get-cited-by-chatgpt" target="_blank" rel="noopener noreferrer">get cited by ChatGPT</a>.</p>
 
+<p>Read the guide on <a href="/resources/how-to-market-to-ai-agents">narrative engineering for AI agents</a>.</p>
+
 <h3>Is narrative engineering manipulation?</h3>
 
 <p>Some coverage of the term, such as a <a href="https://www.ibtimes.com/why-worlds-smartest-brands-are-investing-narrative-engineering-3779035" target="_blank" rel="noopener noreferrer">2025 IBTimes feature</a> on large consumer brands, describes narrative engineering as a way to control the conversation. That framing makes people nervous, and for a startup it is also impractical. You do not have the budget to control anything, and buyers verify what they read.</p>

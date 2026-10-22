@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { MediaFrame } from "@/components/MediaFrame";
 import { withOgImages } from "@/lib/og";
 
@@ -82,6 +83,16 @@ export default function AiVisibilityPage() {
           systems pull from third-party press, podcast transcripts and
           communities like Reddit more than they pull from your own site. If
           those sources do not mention you, you are outside the answer.
+        </p>
+        <p className="mt-4 max-w-reading text-ink-muted">
+          Read{" "}
+          <Link
+            href="/resources/how-to-market-to-ai-agents"
+            className="font-semibold text-forest underline underline-offset-4"
+          >
+            our guide to marketing to AI agents
+          </Link>
+          .
         </p>
         <p className="mt-4 max-w-reading text-ink-muted">
           Storyline Pros does not sell guaranteed rankings. We place your story
