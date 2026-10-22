@@ -21,15 +21,15 @@ export type LongGuide = {
 export const longGuides: LongGuide[] = [
   {
     slug: "how-to-build-your-ai-agent-workforce",
-    title: "How to build your AI Agent workforce",
+    title: "How to Build Your AI Agent Workforce",
     excerpt:
       "Grok Bot lets you hire named AI teammates. Each one has a job, a memory, and access to your real systems. You talk to them the way you talk to an employee. They keep working after you close the laptop.",
     description:
-      "How to hire named AI teammates in Grok Bot. Setup first, then talk. Start with an EA, an SDR, and a Dev bot. Real access, real jobs, and no extra payroll.",
+      "Hire named AI teammates that work inside your real email, calendar and code. Start with three that pay for themselves: an assistant, an SDR and a developer.",
     date: "2026-09-06",
     readingMinutes: 22,
     cover: "/photos/guides/guide-01-ai-agents.png",
-    coverAlt: "Guide cover: How to build your AI Agent workforce",
+    coverAlt: "Guide cover: How to Build Your AI Agent Workforce",
     ogImage: "/og/guide-01-ai-agents.jpg",
     href: "/resources/how-to-build-your-ai-agent-workforce",
     toc: [
