@@ -4,7 +4,7 @@ Meta description: AI agents now shortlist companies for buyers. Here's how I get
 
 My companies and the companies I work with are already getting traffic from AI agents, and most of the changes that got us there were really small. Agents are shortlisting businesses for people who never open a search tab. They decide by checking whether the internet agrees with what you say about yourself.
 
-So your marketing now has a second audience. It reads your reviews and press before a human ever hears your name.
+[Coatue](https://www.coatue.com/c/takes/chart-of-the-day-2026-10-05), citing Cloudflare data, reported in October 2026 that agentic traffic had passed human traffic online for the first time, 1.5 to 2.5 years sooner than expected. So your marketing now has a second audience. It reads your reviews and press before a human ever hears your name.
 
 Below are the six things I'd do this week to get recommended by agents. There's also a checklist at the end you can finish in a few hours.
 
