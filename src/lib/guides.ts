@@ -138,6 +138,54 @@ export const longGuides: LongGuide[] = [
       { id: "conclusion", label: "What you walk away with" },
     ],
   },
+  {
+    slug: "how-to-market-to-ai-agents",
+    title: "How to Market to AI Agents (2026)",
+    excerpt: "",
+    description:
+      "AI agents now shortlist companies for buyers. Here's how I get companies recommended by ChatGPT, Claude and other agents, step by step.",
+    date: "2026-10-20",
+    readingMinutes: 12,
+    cover: "/photos/guides/guide-how-to-market-to-ai-agents.jpg",
+    coverAlt:
+      "Cream card on a dark green grid titled How to Market to AI Agents, with a 2026 label and a stack of pages",
+    ogImage: "/og/guide-how-to-market-to-ai-agents.jpg",
+    href: "/resources/how-to-market-to-ai-agents",
+    toc: [
+      { id: "what-changed-when-ai-moved-to-agents", label: "What changed" },
+      {
+        id: "how-an-agent-decides-who-to-recommend",
+        label: "How an agent decides",
+      },
+      {
+        id: "step-1-map-the-questions-an-agent-is-answering",
+        label: "Map the questions",
+      },
+      {
+        id: "step-2-make-your-website-machine-readable",
+        label: "Machine readable",
+      },
+      {
+        id: "step-3-gather-reviews-that-prove-youre-legitimate",
+        label: "Reviews",
+      },
+      {
+        id: "step-4-tell-a-story-specific-enough-to-get-picked",
+        label: "Specific story",
+      },
+      {
+        id: "step-5-publish-fair-comparisons-and-how-tos",
+        label: "Comparisons",
+      },
+      {
+        id: "step-6-earn-media-coverage-that-makes-agents-trust-you",
+        label: "Media coverage",
+      },
+      { id: "your-checklist-for-this-week", label: "Checklist" },
+      { id: "when-this-wont-work", label: "Won't work" },
+      { id: "where-this-leaves-you", label: "Where this leaves you" },
+    ],
+  },
 ];
 
 export function getGuide(slug: string): LongGuide | undefined {

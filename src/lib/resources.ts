@@ -1,3 +1,4 @@
+import { shapeLine } from "@/lib/shape-line";
 import { siteConfig } from "@/lib/site";
 
 /** Join the last two words so a title cannot wrap a single orphan onto its own line. */
@@ -72,6 +73,18 @@ export const guides: Guide[] = [
     href: "/resources/how-to-configure-an-ai-sales-agent-guide",
     image: "/photos/guides/guide-04-ai-sales-agent.jpg",
     imageAlt: "Guide cover: How to Configure an AI Sales Agent",
+    imagePulled: true,
+  },
+  {
+    slug: "how-to-market-to-ai-agents",
+    title: shapeLine("How to Market to AI Agents (2026)"),
+    benefit: shapeLine(
+      "Agents are shortlisting businesses for people who never open a search tab.",
+    ),
+    href: "/resources/how-to-market-to-ai-agents",
+    image: "/photos/guides/guide-how-to-market-to-ai-agents.jpg",
+    imageAlt:
+      "Cream card on a dark green grid titled How to Market to AI Agents, with a 2026 label and a stack of pages",
     imagePulled: true,
   },
 ];
