@@ -9,11 +9,71 @@ type Props = {
   Body: ComponentType;
 };
 
+function BlogPostingJsonLd({ post }: { post: BlogPost }) {
+  const pageUrl = `${siteConfig.url}/resources/${post.slug}`;
+  const person = {
+    "@type": "Person",
+    "@id": `${siteConfig.url}/#person`,
+    name: "Nik Vassev",
+    url: siteConfig.url,
+  };
+  const article = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: person,
+    publisher: person,
+    image: `${siteConfig.url}${post.cover}`,
+    mainEntityOfPage: pageUrl,
+    url: pageUrl,
+  };
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Resources",
+        item: `${siteConfig.url}/resources`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: pageUrl,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+    </>
+  );
+}
+
 export function BlogArticle({ post, Body }: Props) {
   const isAnimatedCover = post.cover.endsWith(".gif");
 
   return (
     <article className="blog-article">
+      <BlogPostingJsonLd post={post} />
       <header className="blog-article-header">
         <p className="blog-article-badge">Blog</p>
         <p className="blog-article-meta">

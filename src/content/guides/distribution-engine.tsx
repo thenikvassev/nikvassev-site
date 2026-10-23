@@ -30,6 +30,22 @@ function GuideLink({
   );
 }
 
+const PR_ANCHOR = "Third-party validation";
+
+function playbookFor(row: { playbook: string; for: string }) {
+  if (row.playbook !== "PR" || !row.for.startsWith(PR_ANCHOR)) {
+    return row.for;
+  }
+  return (
+    <>
+      <GuideLink href="https://www.storylinepros.com/public-relations">
+        {PR_ANCHOR}
+      </GuideLink>
+      {row.for.slice(PR_ANCHOR.length)}
+    </>
+  );
+}
+
 export function GuideBody() {
   return (
     <>
@@ -315,7 +331,7 @@ export function GuideBody() {
             {playbooks.map((row) => (
               <div className="guide-benefit-row" role="row" key={row.playbook}>
                 <span role="rowheader">{row.playbook}</span>
-                <span role="cell">{row.for}</span>
+                <span role="cell">{playbookFor(row)}</span>
               </div>
             ))}
           </div>

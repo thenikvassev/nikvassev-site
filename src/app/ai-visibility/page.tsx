@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { MediaFrame } from "@/components/MediaFrame";
 import { withOgImages } from "@/lib/og";
 
+const description =
+  "Why AI answers pull from press, podcasts and communities, and how I run AI visibility for tech startups through Storyline Pros.";
+
 export const metadata: Metadata = withOgImages({
   title: "AI Visibility",
-  description:
-    "Storyline Pros: narrative engineering and AI visibility for emerging tech companies. Earned media, podcasts, Reddit and community authority. Performance-based PR. No guaranteed rankings.",
+  description,
   alternates: { canonical: "/ai-visibility" },
   openGraph: {
     title: "AI Visibility | Storyline Pros",
-    description:
-      "Become the answer AI recommends. Narrative engineering for emerging tech companies.",
+    description,
   },
 });
 
@@ -19,7 +20,7 @@ export default function AiVisibilityPage() {
     <div className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-24">
       <p className="section-label">AI Visibility</p>
       <h1 className="mt-4 max-w-2xl text-4xl tracking-display md:text-5xl">
-        Become the answer AI recommends.
+        How I think about AI visibility for startups
       </h1>
       <p className="mt-6 max-w-reading text-lg text-ink-muted">
         Buyers and investors ask AI before they visit your site.{" "}
