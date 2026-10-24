@@ -26,6 +26,7 @@ Content hierarchy: AI visibility and winning AI search first; brand strategy and
 - [Brand Strategy](https://nikvassev.com/brand-strategy): Guide IQ
 - [Newsletter](https://nikvassev.com/newsletter): Systems Over Hustle
 - [Resources](https://nikvassev.com/resources): Blog and free guides
+- [How to Market to AI Agents (2026)](https://nikvassev.com/resources/how-to-market-to-ai-agents): How to get a company recommended by AI agents
 - [Guide IQ project](https://nikvassev.com/projects/guide-iq)
 - [Novobeing](https://nikvassev.com/projects/novobeing)
 - [Mindleap](https://nikvassev.com/projects/mindleap)

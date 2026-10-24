@@ -8,26 +8,85 @@ import { shapeLine } from "@/lib/shape-line";
 import { siteConfig } from "@/lib/site";
 
 function GuideJsonLd({ guide }: { guide: LongGuide }) {
-  const json = {
+  const pageUrl = `${siteConfig.url}${guide.href}`;
+  const article = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: guide.title,
     description: guide.description,
     datePublished: guide.date,
+    dateModified: guide.dateModified ?? guide.date,
     author: {
       "@type": "Person",
       name: siteConfig.name,
       url: siteConfig.url,
     },
+    publisher: {
+      "@type": "Person",
+      "@id": `${siteConfig.url}/#person`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      image: `${siteConfig.url}/og/nikvassev-home.png`,
+    },
     image: `${siteConfig.url}${guide.ogImage}`,
-    mainEntityOfPage: `${siteConfig.url}${guide.href}`,
+    mainEntityOfPage: pageUrl,
   };
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Resources",
+        item: `${siteConfig.url}/resources`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: guide.title,
+        item: pageUrl,
+      },
+    ],
+  };
+  const faq = guide.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: guide.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      {faq ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+        />
+      ) : null}
+    </>
   );
 }
 
@@ -37,8 +96,9 @@ type Props = {
 };
 
 export function GuideArticle({ guide, Body }: Props) {
-  const title =
-    guide.slug === "how-to-market-to-ai-agents" ? shapeLine(guide.title) : guide.title;
+  const shape = guide.slug === "how-to-market-to-ai-agents";
+  const title = shape ? shapeLine(guide.title) : guide.title;
+  const lede = guide.excerpt ? (shape ? shapeLine(guide.excerpt) : guide.excerpt) : "";
 
   return (
     <article className="guide-article" data-guide={guide.slug}>
@@ -49,7 +109,7 @@ export function GuideArticle({ guide, Body }: Props) {
           {formatArticleMeta(guide.date, guide.readingMinutes)}
         </p>
         <h1 className="guide-title">{title}</h1>
-        {guide.excerpt ? <p className="guide-lede">{guide.excerpt}</p> : null}
+        {lede ? <p className="guide-lede">{lede}</p> : null}
         <figure className="guide-cover">
           <div className="guide-cover-frame">
             <Image
