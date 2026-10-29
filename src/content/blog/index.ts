@@ -10,8 +10,10 @@ import { PostBody as foundationBody } from "./the-missing-foundation-that-s-kill
 import { PostBody as briefingBody } from "./how-to-build-a-daily-briefing-system-with-ai";
 import { PostBody as brandAlignedBody } from "./why-brand-aligned-marketing-wins";
 import { PostBody as aeoBody } from "./how-to-rank-on-ai-search-in-2026-the-aeo-playbook-for-founders";
+import { PostBody as founderLedBody } from "./founder-led-marketing-no-one-cares-about-your-product";
 
 export const postBodies: Record<string, ComponentType> = {
+  "founder-led-marketing-no-one-cares-about-your-product": founderLedBody,
   "what-is-narrative-engineering": narrativeEngineeringBody,
   "when-a-pr-retainer-stops-moving-the-needle": prRetainerBody,
   "geo-vs-seo-misses-the-real-gap": geoVsSeoBody,
