@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description,
       },
     },
-    ogImage(post.cover, post.coverAlt),
+    ogImage(post.shareImage ?? post.cover, post.coverAlt),
   );
 }
 

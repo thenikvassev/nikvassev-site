@@ -28,6 +28,7 @@ function BlogPostingJsonLd({ post }: { post: BlogPost }) {
     image: `${siteConfig.url}${post.cover}`,
     mainEntityOfPage: pageUrl,
     url: pageUrl,
+    ...(post.description ? { description: post.description } : {}),
   };
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -92,8 +93,8 @@ export function BlogArticle({ post, Body }: Props) {
             <Image
               src={post.cover}
               alt={post.coverAlt}
-              width={1600}
-              height={900}
+              width={post.coverWidth ?? 1600}
+              height={post.coverHeight ?? 900}
               priority
             />
           )}
