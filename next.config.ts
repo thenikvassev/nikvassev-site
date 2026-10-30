@@ -1,7 +1,66 @@
 import type { NextConfig } from "next";
 
+/**
+ * Report-only until it has been watched on real traffic.
+ * Built from what this site actually loads:
+ * - Next.js inline bootstrap and self-hosted next/font files
+ * - GA4 via @next/third-parties (gtag.js), production only
+ * - YouTube embeds on project pages
+ * - Browser newsletter client calls to api.nitrosend.com
+ * - Cloudflare Turnstile, loaded by the in-flight newsletter rewrite
+ * 'unsafe-inline' is required for the Next.js bootstrap and the GA init
+ * snippet. A nonce policy needs per-request middleware and is not set here.
+ */
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'self'",
+  "form-action 'self'",
+  "script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://challenges.cloudflare.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://stats.g.doubleclick.net",
+  "font-src 'self'",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://api.nitrosend.com https://challenges.cloudflare.com",
+  "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://challenges.cloudflare.com",
+  "worker-src 'none'",
+  "manifest-src 'self'",
+].join("; ");
+
+const securityHeaders = [
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
+  },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  {
+    key: "Permissions-Policy",
+    value:
+      "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()",
+  },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  {
+    key: "Content-Security-Policy-Report-Only",
+    value: contentSecurityPolicy,
+  },
+];
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
+  images: {
+    // Keep SVG out of the image optimizer. Default is already false.
+    dangerouslyAllowSVG: false,
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders,
+      },
+    ];
+  },
   async redirects() {
     return [
       {
