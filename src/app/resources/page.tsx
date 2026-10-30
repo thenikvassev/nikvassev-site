@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CardLink } from "@/components/CardLink";
-import { NewsletterForm } from "@/components/NewsletterForm";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { withOgImages } from "@/lib/og";
 import { formatPostMeta, guides, publishedBlogPosts } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
@@ -37,7 +37,7 @@ export default function ResourcesPage() {
           {siteConfig.newsletterPitch} Weekly on Thursdays.
         </p>
         <div className="mt-5 max-w-md">
-          <NewsletterForm />
+          <NewsletterSignup />
         </div>
       </section>
 

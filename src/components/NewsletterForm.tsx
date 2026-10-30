@@ -1,8 +1,8 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
-import { NitrosendPublicError } from "@nitrosend/sdk/browser";
-import { NEWSLETTER_LIST_ID, nitro } from "@/lib/nitrosend";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { messages } from "@/lib/newsletter/copy";
+import { normalizeEmail } from "@/lib/newsletter/email";
 
 type Props = {
   variant?: "light" | "dark";
@@ -12,14 +12,11 @@ type Props = {
 
 type Status = "idle" | "loading" | "success" | "error";
 
-function isValidEmail(value: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-}
-
 export function NewsletterForm({ variant = "light", id }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
+  const [formReady, setFormReady] = useState(false);
   const submittingRef = useRef(false);
 
   const isDark = variant === "dark";
@@ -27,14 +24,35 @@ export function NewsletterForm({ variant = "light", id }: Props) {
   const emailId = id ?? `email-${variant}`;
   const errorId = `${emailId}-error`;
 
-  async function onSubmit(e: FormEvent) {
-    e.preventDefault();
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/newsletter/challenge")
+      .then((response) => {
+        if (!cancelled && response.ok) setFormReady(true);
+      })
+      .catch(() => {
+        /* Submit tells the person to refresh if the timer cookie never arrives. */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     if (submittingRef.current) return;
 
+    const form = new FormData(event.currentTarget);
+    const honeypot = String(form.get("soh_hp") ?? "");
     const trimmed = email.trim();
-    if (!trimmed || !isValidEmail(trimmed)) {
+    if (!normalizeEmail(trimmed)) {
       setStatus("error");
-      setError("Please enter a valid email address.");
+      setError(messages.invalidEmail);
+      return;
+    }
+    if (!formReady) {
+      setStatus("error");
+      setError(messages.tooFast);
       return;
     }
 
@@ -43,19 +61,28 @@ export function NewsletterForm({ variant = "light", id }: Props) {
     setError(null);
 
     try {
-      await nitro.contacts.signup({
-        listId: NEWSLETTER_LIST_ID,
-        email: trimmed,
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: trimmed,
+          soh_hp: honeypot,
+        }),
       });
-      setEmail("");
-      setError(null);
-      setStatus("success");
-    } catch (err) {
-      const message =
-        err instanceof NitrosendPublicError && err.message
-          ? err.message
-          : "Something went wrong. Please try again.";
-      setError(message);
+      const data = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        error?: string;
+      } | null;
+      if (response.ok && data?.ok) {
+        setEmail("");
+        setError(null);
+        setStatus("success");
+        return;
+      }
+      setError(typeof data?.error === "string" ? data.error : messages.generic);
+      setStatus("error");
+    } catch {
+      setError(messages.generic);
       setStatus("error");
     } finally {
       submittingRef.current = false;
@@ -65,13 +92,13 @@ export function NewsletterForm({ variant = "light", id }: Props) {
   if (status === "success") {
     return (
       <p
-        className={`rounded-full px-4 py-3 text-sm ${
+        className={`rounded-full px-4 py-3 text-pretty text-sm ${
           isDark ? "bg-cream text-forest" : "bg-forest text-white"
         }`}
         role="status"
         aria-live="polite"
       >
-        Thanks. You are on the list for Systems Over Hustle.
+        {messages.success}
       </p>
     );
   }
@@ -80,7 +107,7 @@ export function NewsletterForm({ variant = "light", id }: Props) {
     <div className="w-full">
       <form
         onSubmit={onSubmit}
-        className="flex w-full flex-col gap-3 sm:flex-row"
+        className="relative flex w-full flex-col gap-3 sm:flex-row"
         aria-label="Subscribe to Systems Over Hustle"
         aria-busy={isLoading}
       >
@@ -98,8 +125,8 @@ export function NewsletterForm({ variant = "light", id }: Props) {
           disabled={isLoading}
           aria-invalid={status === "error"}
           aria-describedby={error ? errorId : undefined}
-          onChange={(e) => {
-            setEmail(e.target.value);
+          onChange={(event) => {
+            setEmail(event.target.value);
             if (status === "error") {
               setStatus("idle");
               setError(null);
@@ -122,12 +149,26 @@ export function NewsletterForm({ variant = "light", id }: Props) {
         >
           {isLoading ? "Subscribing…" : "Subscribe"}
         </button>
+        <div
+          className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+          aria-hidden="true"
+        >
+          <label htmlFor={`${emailId}-hp`}>Leave this field blank</label>
+          <input
+            id={`${emailId}-hp`}
+            type="text"
+            name="soh_hp"
+            tabIndex={-1}
+            autoComplete="off"
+            defaultValue=""
+          />
+        </div>
       </form>
       <p
         id={errorId}
         role="alert"
         aria-live="assertive"
-        className={`mt-2 text-sm ${
+        className={`mt-2 text-pretty text-sm ${
           error ? (isDark ? "text-white/85" : "text-ink-muted") : "sr-only"
         }`}
       >

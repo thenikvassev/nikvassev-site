@@ -87,7 +87,8 @@ export default function PrivacyPage() {
             <strong>Tally</strong> hosts the contact form
           </li>
           <li>
-            <strong>Vercel</strong> hosts the site
+            <strong>Vercel</strong> hosts the site and checks the newsletter
+            form for bots
           </li>
         </ul>
         <p>
@@ -102,8 +103,10 @@ export default function PrivacyPage() {
           The rest of the site still works.
         </p>
         <p>
-          The newsletter form and the Tally form may set cookies those tools
-          need to function.
+          The newsletter form uses Vercel BotID to block automated signups.
+          I also limit how many signups each IP address can submit. The form
+          sets a short-lived cookie so I can ignore submissions that arrive
+          too fast. The Tally form may set cookies it needs to function.
         </p>
 
         <h2>How long I keep it</h2>
@@ -140,7 +143,7 @@ export default function PrivacyPage() {
           This site is a personal brand. I do not have a separate company
           privacy office or a public street address for this site.
         </p>
-        <p>Last updated September 2026.</p>
+        <p>Last updated October 2026.</p>
       </div>
     </article>
   );

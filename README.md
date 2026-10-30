@@ -27,7 +27,7 @@ Build: npm run build && npm start
 
 ## Placeholders for Nik
 
-- Newsletter ESP not wired (UI only)
+- Newsletter signup posts to this site, then Nitrosend
 - Book call is mailto nik@guideiq.ai
 - Digimax omitted per Brand DNA
 - Guide IQ pricing confirm on guideiq.ai
