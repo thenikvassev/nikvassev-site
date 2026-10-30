@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { NewsletterForm } from "@/components/NewsletterForm";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { newsletterOgImage, withOgImages } from "@/lib/og";
 import { siteConfig } from "@/lib/site";
 
@@ -100,7 +100,7 @@ export default function NewsletterPage() {
             Join the entrepreneurs building smarter, not harder.
           </p>
           <div className="nv-newsletter-form">
-            <NewsletterForm variant="dark" id="newsletter-hero-email" />
+            <NewsletterSignup variant="dark" id="newsletter-hero-email" />
           </div>
           <p className="nv-newsletter-note">
             1 actionable framework delivered every Thursday.

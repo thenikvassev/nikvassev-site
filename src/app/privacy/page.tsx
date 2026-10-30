@@ -81,6 +81,9 @@ export default function PrivacyPage() {
             letter
           </li>
           <li>
+            <strong>Cloudflare</strong> checks the newsletter form for bots
+          </li>
+          <li>
             <strong>Google Analytics (GA4)</strong> measures traffic
           </li>
           <li>
@@ -102,8 +105,11 @@ export default function PrivacyPage() {
           The rest of the site still works.
         </p>
         <p>
-          The newsletter form and the Tally form may set cookies those tools
-          need to function.
+          The newsletter form uses Cloudflare Turnstile to block bots.
+          Cloudflare may process your IP address for that check. I also limit
+          how many signups each IP address can submit. The form sets a
+          short-lived cookie so I can ignore submissions that arrive too fast.
+          The Tally form may set cookies it needs to function.
         </p>
 
         <h2>How long I keep it</h2>
@@ -140,7 +146,7 @@ export default function PrivacyPage() {
           This site is a personal brand. I do not have a separate company
           privacy office or a public street address for this site.
         </p>
-        <p>Last updated September 2026.</p>
+        <p>Last updated October 2026.</p>
       </div>
     </article>
   );
