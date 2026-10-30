@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ComponentType } from "react";
+import { jsonLd } from "@/lib/json-ld";
 import { formatArticleMeta, type BlogPost } from "@/lib/resources";
 import { siteConfig } from "@/lib/site";
 
@@ -59,11 +60,11 @@ function BlogPostingJsonLd({ post }: { post: BlogPost }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(article) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumb) }}
       />
     </>
   );

@@ -5,6 +5,7 @@ import { PressRow } from "@/components/PressRow";
 import { ProjectsIndex } from "@/components/ProjectsIndex";
 import { TimelineJourney } from "@/components/TimelineJourney";
 import { TrackRecord } from "@/components/TrackRecord";
+import { jsonLd } from "@/lib/json-ld";
 import { withOgImages } from "@/lib/og";
 import { siteConfig } from "@/lib/site";
 
@@ -133,7 +134,7 @@ export default function AboutPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(personJsonLd) }}
       />
       <article className="mx-auto max-w-content px-5 py-16 md:px-8 md:py-24">
         <p className="section-label">About</p>

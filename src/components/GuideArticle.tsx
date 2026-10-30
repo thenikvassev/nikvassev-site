@@ -5,6 +5,7 @@ import { GuideToc } from "@/components/GuideToc";
 import type { LongGuide } from "@/lib/guides";
 import { formatArticleMeta } from "@/lib/resources";
 import { shapeLine } from "@/lib/shape-line";
+import { jsonLd } from "@/lib/json-ld";
 import { siteConfig } from "@/lib/site";
 
 function GuideJsonLd({ guide }: { guide: LongGuide }) {
@@ -26,7 +27,7 @@ function GuideJsonLd({ guide }: { guide: LongGuide }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd(json) }}
     />
   );
 }
