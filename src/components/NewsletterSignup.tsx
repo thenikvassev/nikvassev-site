@@ -1,5 +1,3 @@
-import { noteTurnstileSiteKey } from "@/lib/newsletter/turnstile";
-import { readNewsletterEnv } from "@/lib/newsletter/env";
 import { NewsletterForm } from "./NewsletterForm";
 
 type Props = {
@@ -8,13 +6,5 @@ type Props = {
 };
 
 export function NewsletterSignup({ variant, id }: Props) {
-  const env = readNewsletterEnv();
-  noteTurnstileSiteKey(env);
-  return (
-    <NewsletterForm
-      variant={variant}
-      id={id}
-      turnstileSiteKey={env.turnstileSiteKey}
-    />
-  );
+  return <NewsletterForm variant={variant} id={id} />;
 }

@@ -8,62 +8,16 @@ type Props = {
   variant?: "light" | "dark";
   /** Unique field id when more than one form is on the page. */
   id?: string;
-  turnstileSiteKey?: string;
 };
 
 type Status = "idle" | "loading" | "success" | "error";
 
-type TurnstileApi = {
-  render: (
-    element: HTMLElement,
-    options: Record<string, unknown>,
-  ) => string;
-  execute: (widgetId: string) => void;
-  reset: (widgetId: string) => void;
-  remove: (widgetId: string) => void;
-};
-
-declare global {
-  interface Window {
-    turnstile?: TurnstileApi;
-  }
-}
-
-let turnstileLoader: Promise<void> | null = null;
-
-function loadTurnstile(): Promise<void> {
-  if (typeof window === "undefined") return Promise.resolve();
-  if (window.turnstile) return Promise.resolve();
-  if (!turnstileLoader) {
-    turnstileLoader = new Promise((resolve, reject) => {
-      const script = document.createElement("script");
-      script.src =
-        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-      script.async = true;
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error("turnstile"));
-      document.head.appendChild(script);
-    });
-  }
-  return turnstileLoader;
-}
-
-export function NewsletterForm({
-  variant = "light",
-  id,
-  turnstileSiteKey = "",
-}: Props) {
+export function NewsletterForm({ variant = "light", id }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
   const [formReady, setFormReady] = useState(false);
   const submittingRef = useRef(false);
-  const widgetRef = useRef<HTMLDivElement>(null);
-  const widgetIdRef = useRef<string | null>(null);
-  const pendingRef = useRef<{
-    resolve: (token: string) => void;
-    reject: (error: Error) => void;
-  } | null>(null);
 
   const isDark = variant === "dark";
   const isLoading = status === "loading";
@@ -83,69 +37,6 @@ export function NewsletterForm({
       cancelled = true;
     };
   }, []);
-
-  useEffect(() => {
-    if (!turnstileSiteKey || !widgetRef.current) return;
-    let cancelled = false;
-    const element = widgetRef.current;
-
-    loadTurnstile()
-      .then(() => {
-        if (cancelled || !window.turnstile || !element) return;
-        widgetIdRef.current = window.turnstile.render(element, {
-          sitekey: turnstileSiteKey,
-          size: "invisible",
-          execution: "execute",
-          callback: (token: string) => {
-            pendingRef.current?.resolve(token);
-            pendingRef.current = null;
-          },
-          "error-callback": () => {
-            pendingRef.current?.reject(new Error("turnstile"));
-            pendingRef.current = null;
-          },
-        });
-      })
-      .catch(() => {
-        widgetIdRef.current = null;
-      });
-
-    return () => {
-      cancelled = true;
-      const widgetId = widgetIdRef.current;
-      if (widgetId && window.turnstile) {
-        window.turnstile.remove(widgetId);
-      }
-      widgetIdRef.current = null;
-    };
-  }, [turnstileSiteKey]);
-
-  async function turnstileToken() {
-    if (!turnstileSiteKey) return "";
-    const widgetId = widgetIdRef.current;
-    const turnstile = window.turnstile;
-    if (!widgetId || !turnstile) {
-      throw new Error("turnstile");
-    }
-    return new Promise<string>((resolve, reject) => {
-      const timer = window.setTimeout(() => {
-        pendingRef.current = null;
-        reject(new Error("turnstile"));
-      }, 20_000);
-      pendingRef.current = {
-        resolve: (token) => {
-          window.clearTimeout(timer);
-          resolve(token);
-        },
-        reject: (err) => {
-          window.clearTimeout(timer);
-          reject(err);
-        },
-      };
-      turnstile.reset(widgetId);
-      turnstile.execute(widgetId);
-    });
-  }
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -170,21 +61,12 @@ export function NewsletterForm({
     setError(null);
 
     try {
-      let challenge = "";
-      try {
-        challenge = await turnstileToken();
-      } catch {
-        setError(messages.turnstile);
-        setStatus("error");
-        return;
-      }
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: trimmed,
           soh_hp: honeypot,
-          turnstileToken: challenge,
         }),
       });
       const data = (await response.json().catch(() => null)) as {
@@ -281,7 +163,6 @@ export function NewsletterForm({
             defaultValue=""
           />
         </div>
-        <div ref={widgetRef} className="absolute left-0 top-full" />
       </form>
       <p
         id={errorId}

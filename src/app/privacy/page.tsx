@@ -81,16 +81,14 @@ export default function PrivacyPage() {
             letter
           </li>
           <li>
-            <strong>Cloudflare</strong> checks the newsletter form for bots
-          </li>
-          <li>
             <strong>Google Analytics (GA4)</strong> measures traffic
           </li>
           <li>
             <strong>Tally</strong> hosts the contact form
           </li>
           <li>
-            <strong>Vercel</strong> hosts the site
+            <strong>Vercel</strong> hosts the site and checks the newsletter
+            form for bots
           </li>
         </ul>
         <p>
@@ -105,11 +103,10 @@ export default function PrivacyPage() {
           The rest of the site still works.
         </p>
         <p>
-          The newsletter form uses Cloudflare Turnstile to block bots.
-          Cloudflare may process your IP address for that check. I also limit
-          how many signups each IP address can submit. The form sets a
-          short-lived cookie so I can ignore submissions that arrive too fast.
-          The Tally form may set cookies it needs to function.
+          The newsletter form uses Vercel BotID to block automated signups.
+          I also limit how many signups each IP address can submit. The form
+          sets a short-lived cookie so I can ignore submissions that arrive
+          too fast. The Tally form may set cookies it needs to function.
         </p>
 
         <h2>How long I keep it</h2>

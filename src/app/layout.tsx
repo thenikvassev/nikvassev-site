@@ -3,8 +3,6 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter, Newsreader } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { readNewsletterEnv } from "@/lib/newsletter/env";
-import { noteTurnstileSiteKey } from "@/lib/newsletter/turnstile";
 import { defaultOgImage } from "@/lib/og";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -67,9 +65,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const newsletterEnv = readNewsletterEnv();
-  noteTurnstileSiteKey(newsletterEnv);
-
   return (
     <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
       <body className="min-h-screen max-w-full overflow-x-hidden bg-cream font-sans antialiased">
@@ -81,7 +76,7 @@ export default function RootLayout({
         </a>
         <Header />
         <main id="main">{children}</main>
-        <Footer turnstileSiteKey={newsletterEnv.turnstileSiteKey} />
+        <Footer />
         {process.env.NODE_ENV === "production" &&
         process.env.NEXT_PUBLIC_GA_ID ? (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />

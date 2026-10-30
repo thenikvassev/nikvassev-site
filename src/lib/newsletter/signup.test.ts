@@ -2,24 +2,25 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { afterEach, describe, it } from "node:test";
+import { signStartedAt } from "./cookie";
 import { messages } from "./copy";
 import { NEWSLETTER_LIST_ID, type NewsletterEnv } from "./env";
-import { handleSignupRequest } from "./http";
+import { handleSignupRequest, resetHttpWarningsForTests } from "./http";
 import { resetNewsletterStateForTests, submitSignup } from "./signup";
 
 const NOW = Date.parse("2026-10-30T15:00:00.000Z");
 const EMAIL = "founder@example.com";
-const SECRET = "turnstile-secret";
+const COOKIE_SECRET = "cookie-secret-for-tests";
 
 afterEach(() => {
   resetNewsletterStateForTests();
+  resetHttpWarningsForTests();
 });
 
 function env(overrides: Partial<NewsletterEnv> = {}): NewsletterEnv {
   return {
-    turnstileSiteKey: "site-key",
-    turnstileSecretKey: SECRET,
     nitrosendApiKey: "nskey_test",
+    cookieSecret: COOKIE_SECRET,
     nodeEnv: "test",
     vercelEnv: "production",
     ...overrides,
@@ -46,7 +47,6 @@ describe("newsletter signup guards", () => {
       {
         email: EMAIL,
         honeypot: "filled by a bot",
-        turnstileToken: "token",
         startedAt: NOW - 10_000,
         ip: "203.0.113.10",
       },
@@ -64,82 +64,65 @@ describe("newsletter signup guards", () => {
     assert.deepEqual(result.body, { ok: true });
   });
 
-  it("rejects a missing Turnstile token in production before Nitrosend", async () => {
-    const result = await submitSignup(
-      {
-        email: EMAIL,
-        turnstileToken: "   ",
-        startedAt: NOW - 10_000,
-        ip: "203.0.113.11",
+  it("rejects a bot in production before Nitrosend", async () => {
+    const response = await handleSignupRequest(signupRequest(), {
+      env: env(),
+      now: NOW,
+      log: silentLog(),
+      botCheck: async () => ({ isBot: true }),
+      fetchImpl: async () => {
+        throw new Error("network should not be called");
       },
-      {
-        env: env(),
-        now: NOW,
-        log: silentLog(),
-        fetchImpl: async () => {
-          throw new Error("network should not be called");
-        },
-      },
-    );
+    });
 
-    assert.equal(result.status, 400);
-    assert.equal(result.body.ok, false);
-    if (!result.body.ok) assert.equal(result.body.error, messages.turnstile);
+    assert.equal(response.status, 403);
+    assert.deepEqual(await response.json(), { ok: false, error: messages.bot });
   });
 
-  it("rejects an invalid Turnstile token in production before Nitrosend", async () => {
-    const calls: string[] = [];
-    const result = await submitSignup(
-      {
-        email: EMAIL,
-        turnstileToken: "bad-token",
-        startedAt: NOW - 10_000,
-        ip: "203.0.113.12",
-      },
-      {
-        env: env(),
-        now: NOW,
-        log: silentLog(),
-        fetchImpl: async (url) => {
-          const href = String(url);
-          calls.push(href);
-          if (href.includes("siteverify")) return jsonResponse({ success: false });
-          throw new Error(`unexpected ${href}`);
-        },
-      },
-    );
-
-    assert.equal(result.status, 400);
-    assert.equal(calls.some((href) => href.includes("nitrosend.com")), false);
-    assert.equal(calls.some((href) => href.includes("siteverify")), true);
-  });
-
-  it("fails closed in production when the Turnstile secret is missing", async () => {
+  it("fails closed in production when the BotID check throws", async () => {
     const errors: unknown[] = [];
-    const result = await submitSignup(
-      {
-        email: EMAIL,
-        turnstileToken: "token",
-        startedAt: NOW - 10_000,
-        ip: "203.0.113.13",
-      },
-      {
-        env: env({ turnstileSecretKey: "" }),
-        now: NOW,
-        log: {
-          warn() {},
-          error(...args) {
-            errors.push(args);
-          },
+    const response = await handleSignupRequest(signupRequest(), {
+      env: env(),
+      now: NOW,
+      log: {
+        warn() {},
+        error(...args) {
+          errors.push(args);
         },
+      },
+      botCheck: async () => {
+        throw new Error("oidc missing");
+      },
+      fetchImpl: async () => {
+        throw new Error("network should not be called");
+      },
+    });
+
+    assert.equal(response.status, 503);
+    assert.match(JSON.stringify(errors), /BotID check failed/);
+  });
+
+  it("rejects a forged fill-time cookie", async () => {
+    const signed = signStartedAt(COOKIE_SECRET, NOW - 10_000);
+    const [payload, signature] = signed.split(".");
+    const forged = `${payload}.${signature.slice(0, -1)}${signature.endsWith("a") ? "b" : "a"}`;
+    const response = await handleSignupRequest(
+      signupRequest({ cookie: `soh_started=${forged}` }),
+      {
+        env: env(),
+        now: NOW,
+        log: silentLog(),
+        botCheck: async () => ({ isBot: false }),
         fetchImpl: async () => {
           throw new Error("network should not be called");
         },
       },
     );
 
-    assert.equal(result.status, 503);
-    assert.match(JSON.stringify(errors), /TURNSTILE_SECRET_KEY/);
+    assert.equal(response.status, 400);
+    const body = (await response.json()) as { ok: boolean; error?: string };
+    assert.equal(body.ok, false);
+    assert.equal(body.error, messages.refresh);
   });
 
   it("adds a valid submission to list 10418 with source nikvassev.com", async () => {
@@ -147,7 +130,6 @@ describe("newsletter signup guards", () => {
     const result = await submitSignup(
       {
         email: EMAIL,
-        turnstileToken: "token-ok",
         startedAt: NOW - 10_000,
         ip: "203.0.113.15",
       },
@@ -157,11 +139,6 @@ describe("newsletter signup guards", () => {
         log: silentLog(),
         fetchImpl: async (url, init) => {
           const call = record(calls, url, init);
-          if (call.url.includes("siteverify")) {
-            const raw = typeof call.body === "string" ? call.body : "";
-            assert.match(raw, /response=token-ok/);
-            return jsonResponse({ success: true });
-          }
           if (call.method === "GET" && call.url.includes("/v1/my/contacts?")) {
             return jsonResponse([]);
           }
@@ -197,21 +174,13 @@ describe("newsletter signup guards", () => {
     assert.equal(create.headers.get("Authorization"), "Bearer nskey_test");
   });
 
-  it("still accepts a signup in preview when Turnstile keys are missing", async () => {
+  it("accepts an unsigned fill-time cookie in preview when the secret is unset", async () => {
     const warnings: unknown[] = [];
     const calls: Call[] = [];
-    const result = await submitSignup(
+    const response = await handleSignupRequest(
+      signupRequest({ cookie: `soh_started=${NOW - 10_000}` }),
       {
-        email: EMAIL,
-        startedAt: NOW - 10_000,
-        ip: "203.0.113.14",
-      },
-      {
-        env: env({
-          vercelEnv: "preview",
-          turnstileSecretKey: "",
-          turnstileSiteKey: "",
-        }),
+        env: env({ vercelEnv: "preview", cookieSecret: "" }),
         now: NOW,
         log: {
           warn(...args) {
@@ -219,12 +188,18 @@ describe("newsletter signup guards", () => {
           },
           error() {},
         },
+        botCheck: async () => ({ isBot: false }),
         fetchImpl: async (url, init) => {
           const call = record(calls, url, init);
           if (call.method === "GET") return jsonResponse([]);
           if (call.url.endsWith("/v1/my/contacts")) {
             return jsonResponse(
-              { id: 1, email: EMAIL, source: "nikvassev.com", list_ids: [10418] },
+              {
+                id: 1,
+                email: EMAIL,
+                source: "nikvassev.com",
+                list_ids: [NEWSLETTER_LIST_ID],
+              },
               201,
             );
           }
@@ -233,11 +208,17 @@ describe("newsletter signup guards", () => {
       },
     );
 
-    assert.equal(result.status, 200);
-    assert.match(JSON.stringify(warnings), /TURNSTILE_SECRET_KEY/);
+    assert.equal(response.status, 200);
+    assert.match(JSON.stringify(warnings), /NEWSLETTER_COOKIE_SECRET/);
     assert.equal(
-      calls.some((call) => call.url.includes("siteverify")),
-      false,
+      calls.some(
+        (call) =>
+          call.method === "POST" &&
+          call.url.endsWith("/v1/my/contacts") &&
+          (call.body as { list_ids?: number[] }).list_ids?.[0] ===
+            NEWSLETTER_LIST_ID,
+      ),
+      true,
     );
   });
 
@@ -247,12 +228,10 @@ describe("newsletter signup guards", () => {
       headers: {
         "Content-Type": "application/json",
         "x-forwarded-for": "203.0.113.18",
-        cookie: `soh_started=${NOW - 10_000}`,
       },
       body: JSON.stringify({
         email: EMAIL,
         company: "Bot Co",
-        turnstileToken: "token",
       }),
     });
     const response = await handleSignupRequest(request, {
@@ -281,12 +260,32 @@ describe("newsletter signup guards", () => {
       assert.equal(text.includes("wpkey_live_"), false, file);
       assert.equal(text.includes("nskey_live_"), false, file);
       assert.equal(text.includes("@nitrosend/sdk"), false, file);
+      assert.equal(text.includes("TURNSTILE_"), false, file);
     }
     const form = readFileSync("src/components/NewsletterForm.tsx", "utf8");
     assert.equal(form.includes("api.nitrosend.com"), false);
-    assert.match(form, /messages\.success/);
+    assert.equal(form.includes("challenges.cloudflare.com"), false);
   });
 });
+
+function signupRequest(options?: { cookie?: string }) {
+  const headers = new Headers({
+    "Content-Type": "application/json",
+    "x-forwarded-for": "203.0.113.20",
+  });
+  if (options?.cookie) headers.set("cookie", options.cookie);
+  else {
+    headers.set(
+      "cookie",
+      `soh_started=${signStartedAt(COOKIE_SECRET, NOW - 10_000)}`,
+    );
+  }
+  return new Request("https://nikvassev.com/api/newsletter", {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ email: EMAIL }),
+  });
+}
 
 function silentLog() {
   return { warn() {}, error() {} };

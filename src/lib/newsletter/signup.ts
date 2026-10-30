@@ -8,7 +8,6 @@ import {
   IP_RATE_WINDOW_MS,
   MIN_FILL_MS,
   NEWSLETTER_LIST_ID,
-  turnstileRequired,
   type NewsletterEnv,
 } from "./env";
 import { normalizeEmail } from "./email";
@@ -18,16 +17,10 @@ import {
   readListIds,
 } from "./nitrosend";
 import { rateLimit, resetRateLimits } from "./rate-limit";
-import {
-  resetTurnstileWarnings,
-  verifyTurnstileToken,
-  warnTurnstileSecretSkipped,
-} from "./turnstile";
 
 export type SignupBody = {
   email?: unknown;
   honeypot?: unknown;
-  turnstileToken?: unknown;
   /** When the form was issued, in epoch ms. Null when the cookie is missing. */
   startedAt: number | null;
   ip: string;
@@ -53,7 +46,6 @@ type Deps = {
 
 export function resetNewsletterStateForTests() {
   resetRateLimits();
-  resetTurnstileWarnings();
 }
 
 export function honeypotFilled(value: unknown): boolean {
@@ -108,9 +100,6 @@ export async function submitSignup(
   const fill = checkFillTime(input.startedAt, deps.now);
   if (fill) return fill;
 
-  const turnstile = await checkTurnstile(input, deps);
-  if (turnstile) return turnstile;
-
   if (!deps.env.nitrosendApiKey) {
     deps.log.error("NITROSEND_API_KEY is not set. Refusing newsletter signup.");
     return { status: 500, body: { ok: false, error: messages.generic } };
@@ -150,41 +139,6 @@ function checkFillTime(startedAt: number | null, now: number): SignupResult | nu
   }
   if (age > FORM_MAX_AGE_MS) {
     return { status: 400, body: { ok: false, error: messages.refresh } };
-  }
-  return null;
-}
-
-async function checkTurnstile(
-  input: SignupBody,
-  deps: Deps,
-): Promise<SignupResult | null> {
-  const required = turnstileRequired(deps.env);
-  const token =
-    typeof input.turnstileToken === "string" ? input.turnstileToken.trim() : "";
-
-  if (!deps.env.turnstileSecretKey) {
-    if (required) {
-      deps.log.error(
-        "TURNSTILE_SECRET_KEY is not set. Refusing newsletter signup.",
-      );
-      return { status: 503, body: { ok: false, error: messages.generic } };
-    }
-    warnTurnstileSecretSkipped(deps.log);
-    return null;
-  }
-
-  if (!token) {
-    return { status: 400, body: { ok: false, error: messages.turnstile } };
-  }
-
-  const ok = await verifyTurnstileToken({
-    secret: deps.env.turnstileSecretKey,
-    token,
-    ip: input.ip,
-    fetchImpl: deps.fetchImpl,
-  });
-  if (!ok) {
-    return { status: 400, body: { ok: false, error: messages.turnstile } };
   }
   return null;
 }

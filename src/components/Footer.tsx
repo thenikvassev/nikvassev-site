@@ -98,11 +98,7 @@ function FooterSocials() {
   );
 }
 
-export function Footer({
-  turnstileSiteKey = "",
-}: {
-  turnstileSiteKey?: string;
-}) {
+export function Footer() {
   const year = new Date().getFullYear();
   const pathname = usePathname();
   // Hide sitewide newsletter band on pages that already end with their own CTA
@@ -130,10 +126,7 @@ export function Footer({
               Join the entrepreneurs building smarter, not harder.
             </p>
             <div className="nv-newsletter-form">
-              <NewsletterForm
-                variant="dark"
-                turnstileSiteKey={turnstileSiteKey}
-              />
+              <NewsletterForm variant="dark" />
             </div>
             <p className="nv-newsletter-note">
               1 actionable framework delivered every Thursday.
