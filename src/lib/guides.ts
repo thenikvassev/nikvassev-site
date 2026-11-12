@@ -3,12 +3,19 @@ export type GuideTocItem = {
   label: string;
 };
 
+export type GuideFaq = {
+  question: string;
+  answer: string;
+};
+
 export type LongGuide = {
   slug: string;
   title: string;
   excerpt: string;
   description: string;
   date: string;
+  /** Schema only. Falls back to `date` so the visible byline stays put. */
+  dateModified?: string;
   readingMinutes: number;
   cover: string;
   coverAlt: string;
@@ -16,6 +23,7 @@ export type LongGuide = {
   ogImage: string;
   href: string;
   toc: GuideTocItem[];
+  faq?: GuideFaq[];
 };
 
 export const longGuides: LongGuide[] = [
@@ -141,10 +149,12 @@ export const longGuides: LongGuide[] = [
   {
     slug: "how-to-market-to-ai-agents",
     title: "How to Market to AI Agents (2026)",
-    excerpt: "",
+    excerpt:
+      "This guide explains how AI agents choose which companies to recommend, then walks through six steps to get on their shortlist and a checklist you can finish this week.",
     description:
       "AI agents now shortlist companies for buyers. Here's how I get companies recommended by ChatGPT, Claude and other agents, step by step.",
     date: "2026-10-20",
+    dateModified: "2026-10-20",
     readingMinutes: 12,
     cover: "/photos/guides/guide-how-to-market-to-ai-agents.jpg",
     coverAlt:
@@ -163,7 +173,7 @@ export const longGuides: LongGuide[] = [
       },
       {
         id: "step-2-make-your-website-machine-readable",
-        label: "Machine readable",
+        label: "Machine-readable",
       },
       {
         id: "step-3-gather-reviews-that-prove-youre-legitimate",
@@ -183,7 +193,40 @@ export const longGuides: LongGuide[] = [
       },
       { id: "your-checklist-for-this-week", label: "Checklist" },
       { id: "when-this-wont-work", label: "Won't work" },
+      { id: "frequently-asked-questions", label: "Frequently asked questions" },
       { id: "where-this-leaves-you", label: "Where this leaves you" },
+    ],
+    faq: [
+      {
+        question: "What does it mean to market to AI agents?",
+        answer:
+          "It means making your company easy for an AI agent to find, understand and recommend when it builds a shortlist for a buyer. Agents check whether your website, your reviews and your press coverage all tell the same story.",
+      },
+      {
+        question: "How do AI agents decide which companies to recommend?",
+        answer:
+          "They triangulate consensus, which means they check whether multiple sources agree about you. Then they weigh that against what they know about the person they are working for. Your homepage is one input, and what other people say about you makes up most of the rest.",
+      },
+      {
+        question: "Which websites do AI tools cite most often?",
+        answer:
+          "Semrush's Top Domains Cited by LLMs report for January 2026 put reddit.com at 11.23% of LLM citations, linkedin.com at 11.03%, wikipedia.org at 9.53%, github.com at 8.77% and medium.com at 5.82%. On every one of them, people other than the brand do most of the talking.",
+      },
+      {
+        question: "Do I need an llms.txt file?",
+        answer:
+          "It helps but it is not required. llms.txt is a proposed standard with uneven support, so treat it as cheap insurance that points models to your key pages.",
+      },
+      {
+        question: "How long does it take for AI agents to start recommending you?",
+        answer:
+          "Early signals can show up within weeks, like more AI referrals or getting named in new prompts. A real shift in how agents describe you usually takes quarters, because models weigh years of what the web has said about you.",
+      },
+      {
+        question: "Does this work if I have no customers yet?",
+        answer:
+          "Partly. Start with mapping buyer questions, making your site machine-readable and sharpening your story. Come back to reviews and media coverage once you have proof.",
+      },
     ],
   },
 ];

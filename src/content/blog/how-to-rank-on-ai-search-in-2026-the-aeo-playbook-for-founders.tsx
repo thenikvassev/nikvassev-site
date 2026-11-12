@@ -16,6 +16,8 @@ export const html = `<p>Most founders are invisible to AI search and have no ide
 
 <p>In AI search, the goal is different. You want AI models to ingest your brand's logic and cite it as a source of truth. You want Perplexity to recommend you when someone asks "what is the best AI marketing tool for founders?" You want ChatGPT to surface your product or service when someone is shopping for it and looking for comparisons.</p>
 
+<p>The next step is <a href="/resources/how-to-market-to-ai-agents">marketing to AI agents</a>.</p>
+
 <p><a href="https://www.semrush.com/blog/ai-seo-statistics/" target="_blank" rel="noopener noreferrer">Roughly 60% of searches</a> on traditional search engines now yield no clicks at all. The answer appears on the results page and the user moves on. If you are not the source being cited, you are invisible and are not getting the traffic.</p>
 
 <p>The old game was ranking. The new game is being the source that the AI trusts.</p>

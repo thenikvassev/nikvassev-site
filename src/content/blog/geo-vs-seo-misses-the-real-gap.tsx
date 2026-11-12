@@ -4,6 +4,8 @@ export const html = `<p>The GEO versus SEO debate is the wrong argument. Tech br
 
 <p>SEO still matters for the human web. It is not enough when ChatGPT, Perplexity, Claude, and Google AI Overviews shortlist companies before anyone clicks. If you only optimize pages you control, and you still lack third-party proof in sources models cite, you are polishing the wrong surface.</p>
 
+<p>Here is <a href="/resources/how-to-market-to-ai-agents">how AI agents choose who to recommend</a>.</p>
+
 <h3>Why does comparing GEO to SEO miss the real gap?</h3>
 
 <p>GEO, or generative engine optimization, is the work of becoming nameable inside AI answers. SEO is still the craft of ranking and earning clicks on the classic web. Both are useful. Treating them as a binary choice is what breaks strategy.</p>

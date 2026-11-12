@@ -4,7 +4,7 @@ Meta description: AI agents now shortlist companies for buyers. Here's how I get
 
 My companies and the companies I work with are already getting traffic from AI agents, and most of the changes that got us there were really small. Agents are shortlisting businesses for people who never open a search tab. They decide by checking whether the internet agrees with what you say about yourself.
 
-**Coatue estimates that agentic traffic reached 50.1% of all internet traffic as of June 2026**, a milestone they flag as arriving 1.5 to 2.5 years earlier than predicted. So your marketing now has a second audience. It reads your reviews and press before a human ever hears your name.
+[Coatue](https://www.coatue.com/c/takes/chart-of-the-day-2026-10-05), citing Cloudflare data, reported in October 2026 that agentic traffic had passed human traffic online for the first time, 1.5 to 2.5 years sooner than expected. So your marketing now has a second audience. It reads your reviews and press before a human ever hears your name.
 
 Below are the six things I'd do this week to get recommended by agents. There's also a checklist at the end you can finish in a few hours.
 
@@ -89,7 +89,7 @@ This is where narrative engineering comes in. It's shaping your messaging and pr
 
 ## Step 5: Publish fair comparisons and how-tos
 
-Format matters more than most people expect. **Dry Atlas analyzed more than 500,000 queries and found that lists and listicles account for 48% of AI citations by content type**. Step-by-step guides came next at 17%. That matches my experience that formats that are easy to extract get cited more.
+Format matters more than most people expect. [NP Digital](https://neilpatel.com/marketing-stats/ai-citation-frequency-by-content-type/) analyzed 1,000 AI prompts and found that lists and listicles accounted for 48% of AI citations by content type, with step-by-step guides next at 17%. That matches my experience that formats that are easy to extract get cited more.
 
 The catch is bias. A list on your own site with your product at number one and six strawmen underneath reads as an ad. An agent checking it against reviews will discount it too. A fair comparison is one an outsider could check and agree with:
 
@@ -108,7 +108,7 @@ After that, find the "best of" articles agents already cite in your category. Pi
 
 ## Step 6: Earn media coverage that makes agents trust you
 
-AI values the media because the media builds trust, and budgets are moving the same way. **Inc. reported in May 2026 that Gartner predicts PR and earned media budgets will double by 2027**, driven by mass adoption of public LLMs as an alternative to search. A credible outlet gives an agent independent confirmation of the story on your site.
+AI values the media because the media builds trust, and budgets are moving the same way. [Gartner](https://www.gartner.com/en/communications/research/communications-predictions) predicts that PR and earned media budgets will double by 2027, driven by mass adoption of public LLMs as a replacement for traditional search. [Inc.](https://www.inc.com/victoria-watters/gartner-says-pr-budgets-will-double-by-2027-ai-search-is-why/91345318) covered the forecast in May 2026. A credible outlet gives an agent independent confirmation of the story on your site.
 
 Reporters cover what's newsworthy, which comes down to timeliness, trends, novelty, fame, significance and localization. Design your news to hit at least two of them:
 
