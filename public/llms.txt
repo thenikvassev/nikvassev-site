@@ -36,3 +36,6 @@ Content hierarchy: AI visibility and winning AI search first; brand strategy and
 - Legal brand name: Nik Vassev. Domains: nikvassev.com, guideiq.ai, storylinepros.com
 - As seen in: Forbes, The Guardian, Entrepreneur
 - Social: https://twitter.com/nikvassev · https://www.linkedin.com/in/nikvassev · https://www.instagram.com/nikvassev/
+
+## Writing
+- [How to get AI to recommend your business over your competitors](https://nikvassev.com/resources/how-to-get-ai-to-recommend-your-business-over-your-competitors): Buyers build an AI shortlist before they reach your site. How to get named, from a niche you can own, to proof, to earned coverage.

@@ -1,3 +1,4 @@
+import { faqs as aiRecommendFaqs } from "@/content/blog/how-to-get-ai-to-recommend-your-business-over-your-competitors";
 import { shapeLine } from "@/lib/shape-line";
 import { siteConfig } from "@/lib/site";
 
@@ -36,7 +37,15 @@ export type BlogPost = {
   coverHeight?: number;
   /** 1200 by 630 image for Open Graph and Twitter. Falls back to the cover. */
   shareImage?: string;
+  /** Cover has a transparent background and should not go through the image optimizer. */
+  coverTransparent?: boolean;
   sourceUrl?: string;
+  keywords?: string[];
+  wordCount?: number;
+  authorUrl?: string;
+  sameAs?: string[];
+  citations?: { name: string; url: string }[];
+  faqs?: { question: string; answer: string }[];
 };
 
 export const guides: Guide[] = [
@@ -95,6 +104,89 @@ export const guides: Guide[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "how-to-get-ai-to-recommend-your-business-over-your-competitors",
+    title: "How to get AI to recommend your business over your competitors",
+    metaTitle: "How to get AI to recommend your business",
+    excerpt:
+      "Your next customer has probably built a shortlist before they ever land on your website, and an AI built it for them. In a vendor study by Citation Labs and Clickstream Solutions, 48 people researched big purchases in Google's AI Mode, and 74% of their final shortlists came straight from the AI's answer, while 64% of them never clicked a single link.",
+    description:
+      "How to get AI to recommend your business before buyers reach your site. What I use: a clear niche, checkable proof, and earned coverage AI already trusts.",
+    date: "2026-11-17",
+    publishAt: "2026-11-17T09:00:00-05:00",
+    readingMinutes: 12,
+    cover:
+      "/blog/how-to-get-ai-to-recommend-your-business-over-your-competitors/cover.webp",
+    coverAlt: "Businessman in a suit reading a newspaper on a green chair",
+    coverWidth: 864,
+    coverHeight: 1080,
+    coverTransparent: true,
+    shareImage:
+      "/blog/how-to-get-ai-to-recommend-your-business-over-your-competitors/og.jpg",
+    keywords: [
+      "get AI to recommend your business",
+      "AI visibility",
+      "GEO",
+      "AEO",
+      "earned media",
+    ],
+    wordCount: 2370,
+    authorUrl: "https://www.nikvassev.com",
+    sameAs: [
+      "https://www.linkedin.com/in/nikvassev",
+      "https://twitter.com/nikvassev",
+      "https://www.instagram.com/nikvassev/",
+      "https://www.storylinepros.com/about#nik-vassev",
+      "https://guideiq.ai",
+    ],
+    citations: [
+      {
+        name: "Citation Labs, Xofu and Clickstream Solutions, AI Mode shortlisting study (2 Apr 2026)",
+        url: "https://citationlabs.com/funnels-new-gatekeeper-google-search-ai-mode-shortlisting-behavioral-study/",
+      },
+      {
+        name: "Forrester, The State Of Business Buying, 2026 (21 Jan 2026)",
+        url: "https://www.forrester.com/blogs/state-of-business-buying-2026/",
+      },
+      {
+        name: "G2, 2026 Buyer Behavior Report announcement (22 Jul 2026)",
+        url: "https://company.g2.com/news/buyer-behavior-2026",
+      },
+      {
+        name: "SparkToro, In 2026, less than one third of Google searches still send a click",
+        url: "https://sparktoro.com/blog/in-2026-less-than-one-third-of-google-searches-still-send-a-click/",
+      },
+      {
+        name: "Pew Research Center, Google users are less likely to click on links when an AI summary appears (22 Jul 2025)",
+        url: "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/",
+      },
+      {
+        name: "Search Engine Land, Your SEO share of voice doesn't tell you if AI recommends your brand (13 Nov 2026)",
+        url: "https://searchengineland.com/seo-share-of-voice-ai-recommend-brand-501495",
+      },
+      {
+        name: "OpenAI, Introducing Businesses in ChatGPT (10 Nov 2026)",
+        url: "https://openai.com/index/introducing-businesses-chatgpt/",
+      },
+      {
+        name: "TechCrunch, Reddit tests ads in search results (3 Nov 2026)",
+        url: "https://techcrunch.com/2026/11/03/reddit-tests-ads-in-search-results-as-traffic-declines-and-growth-concerns-mount/",
+      },
+      {
+        name: "Muck Rack / Generative Pulse, What Is AI Reading? October 2026 (28 Oct 2026)",
+        url: "https://www.globenewswire.com/news-release/2026/10/28/3390134/0/en/generative-pulse-earned-media-still-drives-more-than-84-of-ai-citations.html",
+      },
+      {
+        name: "Inc., Gartner says PR budgets will double by 2027 (18 May 2026)",
+        url: "https://www.inc.com/victoria-watters/gartner-says-pr-budgets-will-double-by-2027-ai-search-is-why/91345318",
+      },
+      {
+        name: "Google Search Central, AI features and your website (updated 10 Dec 2025)",
+        url: "https://developers.google.com/search/docs/appearance/ai-features",
+      },
+    ],
+    faqs: [...aiRecommendFaqs],
+  },
   {
     slug: "founder-led-marketing-no-one-cares-about-your-product",
     title:

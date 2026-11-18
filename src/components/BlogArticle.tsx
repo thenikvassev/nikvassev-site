@@ -11,12 +11,15 @@ type Props = {
 
 function BlogPostingJsonLd({ post }: { post: BlogPost }) {
   const pageUrl = `${siteConfig.url}/resources/${post.slug}`;
+  const rich = Boolean(post.keywords || post.faqs || post.citations);
   const person = {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
     name: "Nik Vassev",
-    url: siteConfig.url,
+    url: post.authorUrl ?? siteConfig.url,
+    ...(post.sameAs ? { sameAs: post.sameAs } : {}),
   };
+  const shareImage = post.shareImage ?? post.cover;
   const article = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -25,11 +28,46 @@ function BlogPostingJsonLd({ post }: { post: BlogPost }) {
     dateModified: post.date,
     author: person,
     publisher: person,
-    image: `${siteConfig.url}${post.cover}`,
-    mainEntityOfPage: pageUrl,
+    image: rich
+      ? {
+          "@type": "ImageObject",
+          url: `${siteConfig.url}${shareImage}`,
+          width: 1200,
+          height: 630,
+          caption: post.coverAlt,
+        }
+      : `${siteConfig.url}${post.cover}`,
+    mainEntityOfPage: rich
+      ? { "@type": "WebPage", "@id": pageUrl }
+      : pageUrl,
     url: pageUrl,
     ...(post.description ? { description: post.description } : {}),
+    ...(post.keywords ? { keywords: post.keywords.join(", ") } : {}),
+    ...(post.wordCount ? { wordCount: post.wordCount } : {}),
+    ...(post.citations
+      ? {
+          citation: post.citations.map((source) => ({
+            "@type": "CreativeWork",
+            name: source.name,
+            url: source.url,
+          })),
+        }
+      : {}),
   };
+  const faq = post.faqs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faqs.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -65,6 +103,12 @@ function BlogPostingJsonLd({ post }: { post: BlogPost }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
+      {faq && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+        />
+      )}
     </>
   );
 }
@@ -86,9 +130,15 @@ export function BlogArticle({ post, Body }: Props) {
 
       <figure className="blog-article-cover">
         <div className="blog-article-cover-frame">
-          {isAnimatedCover ? (
+          {isAnimatedCover || post.coverTransparent ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={post.cover} alt={post.coverAlt} />
+            <img
+              src={post.cover}
+              alt={post.coverAlt}
+              width={post.coverWidth ?? 1600}
+              height={post.coverHeight ?? 900}
+              fetchPriority={post.coverTransparent ? "high" : undefined}
+            />
           ) : (
             <Image
               src={post.cover}
