@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 
+import { PostBody as aiRecommendBody } from "./how-to-get-ai-to-recommend-your-business-over-your-competitors";
 import { PostBody as narrativeEngineeringBody } from "./what-is-narrative-engineering";
 import { PostBody as prRetainerBody } from "./when-a-pr-retainer-stops-moving-the-needle";
 import { PostBody as geoVsSeoBody } from "./geo-vs-seo-misses-the-real-gap";
@@ -13,6 +14,7 @@ import { PostBody as aeoBody } from "./how-to-rank-on-ai-search-in-2026-the-aeo-
 import { PostBody as founderLedBody } from "./founder-led-marketing-no-one-cares-about-your-product";
 
 export const postBodies: Record<string, ComponentType> = {
+  "how-to-get-ai-to-recommend-your-business-over-your-competitors": aiRecommendBody,
   "founder-led-marketing-no-one-cares-about-your-product": founderLedBody,
   "what-is-narrative-engineering": narrativeEngineeringBody,
   "when-a-pr-retainer-stops-moving-the-needle": prRetainerBody,

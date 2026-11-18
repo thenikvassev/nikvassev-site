@@ -96,6 +96,24 @@ export const guides: Guide[] = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-get-ai-to-recommend-your-business-over-your-competitors",
+    title: "How to get AI to recommend your business over your competitors",
+    excerpt:
+      "Your next customer has probably built a shortlist before they ever land on your website, and an AI built it for them. In a vendor study by Citation Labs and Clickstream Solutions, 48 people researched big purchases in Google's AI Mode, and 74% of their final shortlists came straight from the AI's answer, while 64% of them never clicked a single link.",
+    description:
+      "AI now builds your buyers' shortlist before they reach your site. Here's how I get businesses recommended, with fresh 2026 data on what AI trusts.",
+    date: "2026-11-17",
+    publishAt: "2026-11-17T09:00:00-05:00",
+    readingMinutes: 8,
+    cover:
+      "/blog/how-to-get-ai-to-recommend-your-business-over-your-competitors/cover.webp",
+    coverAlt: "Businessman in a suit reading a newspaper on a green chair",
+    coverWidth: 864,
+    coverHeight: 1080,
+    shareImage:
+      "/blog/how-to-get-ai-to-recommend-your-business-over-your-competitors/og.jpg",
+  },
+  {
     slug: "founder-led-marketing-no-one-cares-about-your-product",
     title:
       "No one cares about your product: how founder-led marketing really works",
