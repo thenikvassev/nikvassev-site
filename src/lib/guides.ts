@@ -16,6 +16,8 @@ export type LongGuide = {
   ogImage: string;
   href: string;
   toc: GuideTocItem[];
+  /** Preview only: noindex, and left out of the sitemap. Remove to publish. */
+  noindex?: boolean;
 };
 
 export const longGuides: LongGuide[] = [
@@ -184,6 +186,96 @@ export const longGuides: LongGuide[] = [
       { id: "your-checklist-for-this-week", label: "Checklist" },
       { id: "when-this-wont-work", label: "Won't work" },
       { id: "where-this-leaves-you", label: "Where this leaves you" },
+    ],
+  },
+  {
+    slug: "signal-based-selling-for-startups",
+    title:
+      "Signal-Based Selling for Startups: How to Reach Buyers the Week They Need You",
+    excerpt: "",
+    description:
+      "Same-day outreach on a buying signal got a 21.3% reply rate in lemlist data, against 8.1% after a week. How to spot buying signals and reach buyers the week they need you.",
+    date: "2026-11-23",
+    readingMinutes: 24,
+    // No hero yet: repo default share image until the guide cover is made.
+    cover: "/og/default.jpg",
+    coverAlt: "Nik Vassev, brand strategist for visionary startups",
+    ogImage: "/og/default.jpg",
+    href: "/resources/signal-based-selling-for-startups",
+    noindex: true,
+    toc: [
+      {
+        id: "signal-based-selling-the-key-facts",
+        label: "Key facts",
+      },
+      {
+        id: "what-is-signal-based-selling",
+        label: "What it is",
+      },
+      {
+        id: "how-is-signal-based-selling-different-from-intent-data",
+        label: "Signals vs intent",
+      },
+      {
+        id: "why-does-timing-beat-volume-in-startup-outbound",
+        label: "Timing vs volume",
+      },
+      {
+        id: "which-trigger-events-should-a-startup-track",
+        label: "Triggers to track",
+      },
+      {
+        id: "where-do-you-find-trigger-events-without-paid-data",
+        label: "Where to find them",
+      },
+      {
+        id: "how-do-you-decide-which-signals-to-act-on",
+        label: "Which to act on",
+      },
+      {
+        id: "which-other-buying-signals-are-worth-watching",
+        label: "Other signals",
+      },
+      {
+        id: "what-should-a-trigger-email-say",
+        label: "The email",
+      },
+      {
+        id: "how-do-you-check-who-ai-recommends-before-you-write",
+        label: "The AI check",
+      },
+      {
+        id: "how-do-you-turn-a-signal-into-a-daily-routine",
+        label: "Daily routine",
+      },
+      {
+        id: "how-many-follow-ups-should-you-send",
+        label: "Follow-ups",
+      },
+      {
+        id: "how-do-you-measure-whether-a-play-is-working",
+        label: "Scorecard",
+      },
+      {
+        id: "what-does-a-full-set-of-signal-based-selling-plays-look-like",
+        label: "Five plays",
+      },
+      {
+        id: "when-does-signal-based-selling-not-work",
+        label: "Won't work",
+      },
+      {
+        id: "who-i-quoted-in-this-guide",
+        label: "Who I quoted",
+      },
+      {
+        id: "frequently-asked-questions",
+        label: "FAQ",
+      },
+      {
+        id: "where-this-leaves-you",
+        label: "Where this leaves you",
+      },
     ],
   },
 ];

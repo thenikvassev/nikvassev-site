@@ -38,7 +38,10 @@ type Props = {
 
 export function GuideArticle({ guide, Body }: Props) {
   const title =
-    guide.slug === "how-to-market-to-ai-agents" ? shapeLine(guide.title) : guide.title;
+    guide.slug === "how-to-market-to-ai-agents" ||
+    guide.slug === "signal-based-selling-for-startups"
+      ? shapeLine(guide.title)
+      : guide.title;
 
   return (
     <article className="guide-article" data-guide={guide.slug}>

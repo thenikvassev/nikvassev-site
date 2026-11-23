@@ -37,7 +37,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const guideRoutes = longGuides.map((g) => ({
+  const guideRoutes = longGuides
+    .filter((g) => !g.noindex)
+    .map((g) => ({
     url: `${base}${g.href}`,
     lastModified: new Date(g.date),
     changeFrequency: "monthly" as const,

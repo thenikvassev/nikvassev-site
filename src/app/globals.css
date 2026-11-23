@@ -1752,23 +1752,31 @@ ol.guide-tick-list {
   }
 }
 
-/* This guide only: balanced headings, pretty body, readable table cells. */
+/* These guides only: balanced headings, pretty body, readable table cells. */
 .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-title,
-.guide-article[data-guide="how-to-market-to-ai-agents"] h2 {
+.guide-article[data-guide="signal-based-selling-for-startups"] .guide-title,
+.guide-article[data-guide="how-to-market-to-ai-agents"] h2,
+.guide-article[data-guide="signal-based-selling-for-startups"] h2 {
   text-wrap: balance;
 }
 
 .guide-article[data-guide="how-to-market-to-ai-agents"] p,
-.guide-article[data-guide="how-to-market-to-ai-agents"] li {
+.guide-article[data-guide="signal-based-selling-for-startups"] p,
+.guide-article[data-guide="how-to-market-to-ai-agents"] li,
+.guide-article[data-guide="signal-based-selling-for-startups"] li {
   text-wrap: pretty;
   orphans: 3;
   widows: 3;
 }
 
 .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-overview-row span,
+.guide-article[data-guide="signal-based-selling-for-startups"] .guide-overview-row span,
 .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-benefit-row span,
+.guide-article[data-guide="signal-based-selling-for-startups"] .guide-benefit-row span,
 .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-overview-head span,
-.guide-article[data-guide="how-to-market-to-ai-agents"] .guide-benefit-head span {
+.guide-article[data-guide="signal-based-selling-for-startups"] .guide-overview-head span,
+.guide-article[data-guide="how-to-market-to-ai-agents"] .guide-benefit-head span,
+.guide-article[data-guide="signal-based-selling-for-startups"] .guide-benefit-head span {
   font-family: var(--font-inter), system-ui, sans-serif;
   line-height: 1.45;
   text-wrap: pretty;
@@ -1776,13 +1784,16 @@ ol.guide-tick-list {
   widows: 3;
 }
 
-.guide-article[data-guide="how-to-market-to-ai-agents"] strong {
+.guide-article[data-guide="how-to-market-to-ai-agents"] strong,
+.guide-article[data-guide="signal-based-selling-for-startups"] strong {
   font-weight: 600;
   color: #17160f;
 }
 
 .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-benefit-row span:first-child,
-.guide-article[data-guide="how-to-market-to-ai-agents"] .guide-overview-row span:first-child {
+.guide-article[data-guide="signal-based-selling-for-startups"] .guide-benefit-row span:first-child,
+.guide-article[data-guide="how-to-market-to-ai-agents"] .guide-overview-row span:first-child,
+.guide-article[data-guide="signal-based-selling-for-startups"] .guide-overview-row span:first-child {
   text-transform: none;
   letter-spacing: 0;
   font-size: 1rem;
@@ -1790,12 +1801,16 @@ ol.guide-tick-list {
 
 @media (min-width: 720px) {
   .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-overview-head,
-  .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-overview-row {
+  .guide-article[data-guide="signal-based-selling-for-startups"] .guide-overview-head,
+  .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-overview-row,
+  .guide-article[data-guide="signal-based-selling-for-startups"] .guide-overview-row {
     grid-template-columns: 0.62fr 1.15fr 1.35fr;
   }
 
   .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-benefit-head,
-  .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-benefit-row {
+  .guide-article[data-guide="signal-based-selling-for-startups"] .guide-benefit-head,
+  .guide-article[data-guide="how-to-market-to-ai-agents"] .guide-benefit-row,
+  .guide-article[data-guide="signal-based-selling-for-startups"] .guide-benefit-row {
     grid-template-columns: 1fr 1.2fr;
   }
 }
