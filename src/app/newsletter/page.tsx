@@ -136,14 +136,12 @@ export default function NewsletterPage() {
         <div className="nl-about-card">
           <h2 id="about-nik-heading">About Nik</h2>
           <p>
-            Nik Vassev is a serial entrepreneur and brand strategist who turns
-            startup narratives into category-dominating authority. Across his
-            career building and exiting tech ventures, his companies have
-            reached nine-figure valuations and closed tens of millions in
-            enterprise deals with global institutions and Fortune 500
-            companies. Today, he translates that real-world track record into
-            actionable systems for growth marketing, AI visibility and
-            predictable growth for innovative startups.
+            Nik Vassev is a multi-time exited tech founder and the Co-founder
+            and Managing Director of Storyline Pros. In his ten years in B2B he
+            has built startups that generated tens of millions in revenue,
+            including a health tech exit, and helped hundreds of tech startups
+            as a brand strategist and growth marketer. He writes for
+            Entrepreneur.com and formerly wrote for Forbes.
           </p>
         </div>
       </section>

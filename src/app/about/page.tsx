@@ -79,7 +79,7 @@ const timeline = [
   {
     year: "2026",
     title: "Storyline Pros",
-    body: "By 2026 it was clear: AI was becoming the new front door, and buyers were asking it who to trust instead of reading landing pages. I'd spent years building narrative engineering experience and real relationships in the media, so I co-founded Storyline Pros with Cynthia Salarizadeh to help companies become the answer AI recommends.",
+    body: "By 2026 it was clear: AI was becoming the new front door, and buyers were asking it who to trust instead of reading landing pages. I'd spent years building companies and real relationships in the media, so I co-founded Storyline Pros with Cynthia Salarizadeh. It's a communications firm that helps disruptive companies become impossible to ignore, and we get our clients in the press and named by AI.",
     image: "/photos/timeline-2026.jpg",
     imageAlt:
       "Nik presenting What Not To Do on stage for Storyline Pros.",

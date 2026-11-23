@@ -19,15 +19,6 @@ export const html = `<p>The hardest part about AI marketing in 2026 is not makin
 
 <p>AI gave every business the same marketing superpowers at roughly the same time. The same tools, the same models, the same prompts. The result is a feed full of content that seemsidentical. Same hooks, same structure, same generic claims written in the same confident tone about the same vague benefits.</p>
 
-<p><a href="https://web.superagi.com/how-ai-is-revolutionizing-social-media-content-creation-trends-and-strategies-for-2025" target="_blank" rel="noopener noreferrer">According to SuperAGI</a>:</p>
-
-<ul>
-  <li>-75% of marketers are already using AI to create content</li>
-  <li>-54% of them still struggle to create content that resonates with their audience</li>
-</ul>
-
-<p>Those two numbers together tell you everything.</p>
-
 <p>When every business uses the same AI the same way, the output converges. Your content starts to sound like your competitors. Your competitors start to sound like you. Prospects scroll past all of it because nothing creates a clear enough reason to stop.</p>
 
 <p><strong>Why Generic Marketing Puts You at a Disadvantage</strong></p>
@@ -60,16 +51,7 @@ export const html = `<p>The hardest part about AI marketing in 2026 is not makin
 
 <p>The tool stays the same. What it knows changes everything.</p>
 
-<p>This is not a theoretical advantage. <a href="https://web.superagi.com/how-ai-is-revolutionizing-social-media-content-creation-trends-and-strategies-for-2025" target="_blank" rel="noopener noreferrer">Research shows</a> that brands using AI trained on their specific brand strategy see measurable results:</p>
-
-<ul>
-  <li>-Up to 30% higher engagement rates</li>
-  <li>-Up to 50% faster content production</li>
-  <li>-73% of buyers are more likely to choose a brand that offers personalized experiences</li>
-  <li>-60% of buyers feel frustrated when content is not tailored to their interests</li>
-</ul>
-
-<p>Personalization at that level used to require a dedicated marketing team. It does not anymore. It requires your AI to know your business the way a good marketer would.</p>
+<p>This is not a theoretical advantage. Personalization at that level used to require a dedicated marketing team. It does not anymore. It requires your AI to know your business the way a good marketer would.</p>
 
 <p><strong>The Three Things Every AI Is Missing</strong></p>
 

@@ -146,11 +146,11 @@ export const html = `<p>Most founders are invisible to AI search and have no ide
 
 <p><a href="https://www.linkedin.com/company/setup/new/" target="_blank" rel="noopener noreferrer">LinkedIn Company Page - </a>Indexed heavily; signals legitimacy to AI crawlers</p>
 
-<p><a href="https://www.trustpilot.com/evaluate/signup" target="_blank" rel="noopener noreferrer">Trustpilot - </a>Social proof plus domain authority</p>
+<p><a href="https://signup.business.trustpilot.com/create-account" target="_blank" rel="noopener noreferrer">Trustpilot - </a>Social proof plus domain authority</p>
 
 <p><a href="https://www.capterra.com/vendors/sign-up" target="_blank" rel="noopener noreferrer">Capterra - </a>High DA; SaaS buyers browse this regularly</p>
 
-<p><a href="https://sell.g2.com/free-profile" target="_blank" rel="noopener noreferrer">G2 - </a>Industry standard for software reviews</p>
+<p><a href="https://sell.g2.com/" target="_blank" rel="noopener noreferrer">G2 - </a>Industry standard for software reviews</p>
 
 <p><a href="https://www.getapp.com/list-your-product/" target="_blank" rel="noopener noreferrer">GetApp - </a>Same audience as Capterra, additional reach</p>
 
