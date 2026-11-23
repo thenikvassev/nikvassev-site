@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MediaFrame } from "@/components/MediaFrame";
 import { withOgImages } from "@/lib/og";
+import { shapeLine } from "@/lib/shape-line";
 
 const description =
   "Why AI answers pull from press, podcasts and communities, and how I run AI visibility for tech startups through Storyline Pros.";
@@ -10,10 +11,44 @@ export const metadata: Metadata = withOgImages({
   description,
   alternates: { canonical: "/ai-visibility" },
   openGraph: {
-    title: "AI Visibility | Storyline Pros",
+    title: "AI Visibility | Nik Vassev",
+    description,
+  },
+  twitter: {
+    title: "AI Visibility | Nik Vassev",
     description,
   },
 });
+
+function CtaButtons({ invert = false }: { invert?: boolean }) {
+  const primary = invert
+    ? "pill-btn bg-cream text-forest hover:bg-forest hover:text-white"
+    : "pill-btn-primary";
+  const secondary = invert
+    ? "pill-btn border border-cream/40 bg-transparent text-cream hover:bg-white/10"
+    : "pill-btn-secondary";
+
+  return (
+    <div className="mt-6 flex flex-wrap gap-3">
+      <a
+        href="https://www.storylinepros.com/ai-visibility-audit"
+        className={primary}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Get your free AI Visibility Audit
+      </a>
+      <a
+        href="https://cal.com/nik-vassev/30min"
+        className={secondary}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book a strategy session
+      </a>
+    </div>
+  );
+}
 
 export default function AiVisibilityPage() {
   return (
@@ -30,23 +65,15 @@ export default function AiVisibilityPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Storyline Pros AI visibility
+          Storyline Pros
         </a>{" "}
-        builds the verifiable digital footprint emerging tech companies need to
-        show up in those answers. We work with fast-growth startups that want a
-        proven system to get into the media AI trusts, so they become the answer.
+        is a communications firm that helps disruptive companies become
+        impossible to ignore. We get you in the press and named by AI. GeoView
+        shows you what moved. I co-founded it with Cynthia Salarizadeh, and the
+        two of us lead every account.
       </p>
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <a
-          href="https://storylinepros.com"
-          className="pill-btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Apply to work with us
-        </a>
-      </div>
+      <CtaButtons />
 
       <MediaFrame
         src="/photos/aiv-earned-media.png"
@@ -58,18 +85,18 @@ export default function AiVisibilityPage() {
 
       <section className="mt-16">
         <h2 className="mt-3 text-2xl tracking-display">
-          Our narrative engineering system
+          {shapeLine("How Storyline Pros works")}
         </h2>
         <p className="mt-4 max-w-reading text-ink-muted">
-          Storyline Pros is a narrative engineering and AI visibility firm for
-          high-growth tech startups and ambitious founders who need category
-          authority. We turn company milestones into tier-one media placements,
-          podcast features, community authority, and AI search recommendations.
+          We work with health tech, biotech, fintech, cleantech and B2B software
+          companies whose buyers and investors check before they trust. Our
+          publicists earn the coverage. GeoBuild, our on-site agent, builds the
+          pages, and GeoView tracks how often AI names you.
         </p>
         <p className="mt-4 max-w-reading text-ink-muted">
-          Delivery is performance-based. You pay for placements that publish.
-          The system covers high-impact narrative engineering, tier-one media,
-          and AI search visibility across a 6-channel ecosystem.
+          Working with us starts at $5,000. Early-stage companies start with the
+          AI Visibility Boost, a 90-day program paid once with no retainer, and
+          companies that need steady news flow work with us on Full-Service PR.
         </p>
       </section>
 
@@ -151,21 +178,20 @@ export default function AiVisibilityPage() {
       </section>
 
       <section className="nv mt-14">
-        <p className="section-label">How it is priced</p>
+        <p className="section-label">{shapeLine("How to start")}</p>
         <div className="nv-ways-grid md:!grid-cols-2">
           <article className="nl-benefit-card">
-            <h3>Performance-based PR</h3>
+            <h3>AI Visibility Boost</h3>
             <p className="nl-benefit-body">
-              You pay for placements delivered, not retainers for promises. If
-              a story does not publish, you do not pay. That is the make-good.
+              For pre-seed and seed companies. Ten deliverables over 90 days,
+              $5,000 paid once.
             </p>
           </article>
           <article className="nl-benefit-card">
-            <h3>Narrative engineering</h3>
+            <h3>Full-Service PR</h3>
             <p className="nl-benefit-body">
-              We define the claims you should own and deploy them into earned
-              media, podcasts, news and Reddit. Citation evidence is built on
-              purpose.
+              A monthly program for companies with proof in market, scoped on a
+              strategy session with me.
             </p>
           </article>
         </div>
@@ -211,23 +237,14 @@ export default function AiVisibilityPage() {
 
       <section className="mt-16 panel-invert px-6 py-10 md:px-10">
         <h2 className="text-2xl tracking-display">
-          Ready to become the answer AI recommends?
+          {shapeLine("Want to see how AI describes your company today?")}
         </h2>
         <p className="mt-3 max-w-lg text-white/75">
-          We help high-growth startups build the verifiable digital footprint
-          required to dominate AI search engines and get noticed by investors
-          and customers.
+          Run the free AI Visibility Audit to see where you stand, or book a
+          strategy session with me and we&apos;ll go through your category
+          together.
         </p>
-        <div className="mt-6">
-          <a
-            href="https://storylinepros.com"
-            className="pill-btn bg-cream text-forest hover:bg-forest hover:text-white"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Apply to work with us
-          </a>
-        </div>
+        <CtaButtons invert />
       </section>
     </div>
   );

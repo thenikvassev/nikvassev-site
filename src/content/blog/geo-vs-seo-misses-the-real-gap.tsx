@@ -8,7 +8,7 @@ export const html = `<p>The GEO versus SEO debate is the wrong argument. Tech br
 
 <p>GEO, or generative engine optimization, is the work of becoming nameable inside AI answers. SEO is still the craft of ranking and earning clicks on the classic web. Both are useful. Treating them as a binary choice is what breaks strategy.</p>
 
-<p>Founders hear a loud argument: SEO is dead and GEO replaces it, or GEO is just SEO with a new acronym. Neither framing helps an operator allocate the next quarter. Search demand for the new nouns is real. From Storyline’s OpenSEO / Google demand observation in the Aug 2026 fact pack, US monthly searches for “generative engine optimization” sit near 4.4k, with adjacent “AI SEO” interest. That demand tells you people are shopping for a method. It does not tell you that swapping a blog calendar for a “GEO calendar” will get you recommended.</p>
+<p>Founders hear a loud argument: SEO is dead and GEO replaces it, or GEO is just SEO with a new acronym. Neither framing helps an operator allocate the next quarter. Search demand for the new nouns is real. In our own keyword research from October 2026, US monthly searches for "generative engine optimization" sat near 4,400, and there's more interest around "AI SEO". That demand tells you people are shopping for a method. It does not tell you that swapping a blog calendar for a “GEO calendar” will get you recommended.</p>
 
 <p>The real gap sits between owned optimization and earned consensus. Blue-link SEO rewards structure, relevance, and links on surfaces you partly control. Answer engines weight what credible third parties already repeat about a category. A clean FAQ helps extraction. It rarely creates the confidence score on its own. I covered that distinction in <a href="https://www.nikvassev.com/resources/what-ai-search-actually-rewards">What AI search actually rewards</a>. Short version: models listen to the industry party, not your brand shouting in an empty room.</p>
 
@@ -28,7 +28,7 @@ export const html = `<p>The GEO versus SEO debate is the wrong argument. Tech br
 
 <p>In my view, almost nobody packages that triad the same way. Plenty of firms sell retainer PR. Plenty of shops sell GEO as page optimization or a tracker. A smaller set talks about “AI PR” without locking the narrative map that makes placements compound.</p>
 
-<p>That packaging gap is why I co-built <a href="https://www.storylinepros.com/" target="_blank" rel="noopener noreferrer">Storyline Pros</a>. The firm combines traditional earned PR with generative engine optimization and narrative engineering for high-growth tech companies: tier-one media and a 6-channel ecosystem aimed at the sources AI already trusts, with performance-based delivery on placements rather than activity theater. That is my unlike-line, labeled as observation from the work. If you are already in the AI-visibility job and need the operating system, Storyline is the door. If you are still building operator habits, stay on the newsletter.</p>
+<p>That packaging gap is why I co-built <a href="https://www.storylinepros.com/" target="_blank" rel="noopener noreferrer">Storyline Pros</a>. Storyline Pros is a communications firm that helps disruptive companies become impossible to ignore. We get you in the press and named by AI. GeoView shows you what moved. If you're already working on AI visibility and want press and AI run as one program, that's the work my team and I do at Storyline Pros.</p>
 
 <h3>What does the one-system loop look like in practice?</h3>
 
