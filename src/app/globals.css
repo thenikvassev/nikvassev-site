@@ -1833,6 +1833,168 @@ ol.guide-tick-list {
   background: #fbf9f4;
 }
 
-.guide-facts td:first-child {
+.guide-facts td:first-child,
+.guide-facts th:first-child {
   width: 34%;
+}
+
+.guide-facts table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.guide-facts th,
+.guide-facts td {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 719px) {
+  .guide-facts th,
+  .guide-facts td {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Row components (compare, benefit, rules, overview) render as the plain site table:
+   dark green header, cream lines, bold green first column, body width, no side scroll. */
+.guide-section > .guide-compare,
+.guide-section > .guide-benefit-table,
+.guide-section > .guide-rules,
+.guide-section > .guide-overview {
+  max-width: var(--guide-measure);
+}
+
+.guide-article .guide-section .guide-compare,
+.guide-article .guide-section .guide-benefit-table,
+.guide-article .guide-section .guide-rules,
+.guide-article .guide-section .guide-overview {
+  display: block;
+  margin-top: 1.4rem;
+  border: 1px solid #cbbca3;
+  border-radius: 0;
+  background: #fbf9f4;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.guide-article .guide-section .guide-compare > .guide-compare-head,
+.guide-article .guide-section .guide-benefit-table > .guide-benefit-head,
+.guide-article .guide-section .guide-rules > .guide-rules-head,
+.guide-article .guide-section .guide-overview > .guide-overview-head,
+.guide-article .guide-section .guide-compare > .guide-compare-row,
+.guide-article .guide-section .guide-benefit-table > .guide-benefit-row,
+.guide-article .guide-section .guide-rules > .guide-rules-row,
+.guide-article .guide-section .guide-overview > .guide-overview-row {
+  display: grid;
+  grid-template-columns: minmax(0, 34fr) minmax(0, 66fr);
+  gap: 0;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.guide-article .guide-section .guide-compare > .guide-compare-head,
+.guide-article .guide-section .guide-compare > .guide-compare-row {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.1fr) minmax(0, 1.1fr);
+}
+
+.guide-article .guide-section .guide-overview > .guide-overview-head,
+.guide-article .guide-section .guide-overview > .guide-overview-row {
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.1fr) minmax(0, 1.15fr);
+}
+
+.guide-article .guide-section .guide-compare > .guide-compare-head,
+.guide-article .guide-section .guide-benefit-table > .guide-benefit-head,
+.guide-article .guide-section .guide-rules > .guide-rules-head,
+.guide-article .guide-section .guide-overview > .guide-overview-head {
+  background: #0a3b24;
+  color: #e8e4d9;
+}
+
+.guide-article .guide-section .guide-compare > .guide-compare-row,
+.guide-article .guide-section .guide-benefit-table > .guide-benefit-row,
+.guide-article .guide-section .guide-rules > .guide-rules-row,
+.guide-article .guide-section .guide-overview > .guide-overview-row {
+  border-top: 1px solid #cbbca3;
+}
+
+.guide-article .guide-section .guide-compare > div > span,
+.guide-article .guide-section .guide-benefit-table > div > span,
+.guide-article .guide-section .guide-rules > div > span,
+.guide-article .guide-section .guide-overview > div > span {
+  display: block;
+  min-width: 0;
+  padding: 0.65rem 0.75rem;
+  overflow-wrap: break-word;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: left;
+  color: #17160f;
+}
+
+.guide-article .guide-section .guide-compare > div > span + span,
+.guide-article .guide-section .guide-benefit-table > div > span + span,
+.guide-article .guide-section .guide-rules > div > span + span,
+.guide-article .guide-section .guide-overview > div > span + span {
+  border-left: 1px solid #cbbca3;
+}
+
+.guide-article .guide-section .guide-compare > [role="row"]:first-child > span,
+.guide-article .guide-section .guide-benefit-table > [role="row"]:first-child > span,
+.guide-article .guide-section .guide-rules > [role="row"]:first-child > span,
+.guide-article .guide-section .guide-overview > [role="row"]:first-child > span {
+  font-weight: 600;
+  color: #e8e4d9;
+}
+
+.guide-article .guide-section .guide-compare > .guide-compare-row > span:first-child,
+.guide-article .guide-section .guide-benefit-table > .guide-benefit-row > span:first-child,
+.guide-article .guide-section .guide-rules > .guide-rules-row > span:first-child,
+.guide-article .guide-section .guide-overview > .guide-overview-row > span:first-child {
+  font-weight: 600;
+  color: #0a3b24;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.guide-article .guide-section .guide-compare [data-col]::before,
+.guide-article .guide-section .guide-overview [data-col]::before {
+  display: none;
+  content: none;
+}
+
+@media (max-width: 719px) {
+  .guide-article .guide-section .guide-compare > div > span,
+  .guide-article .guide-section .guide-overview > div > span {
+    padding: 0.55rem 0.5rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .guide-article .guide-section .guide-benefit-table > div > span,
+  .guide-article .guide-section .guide-rules > div > span {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .guide-article .guide-section .guide-compare > .guide-compare-row > span:first-child,
+  .guide-article .guide-section .guide-overview > .guide-overview-row > span:first-child {
+    font-size: 0.82rem;
+  }
+
+  .guide-article .guide-section .guide-benefit-table > .guide-benefit-row > span:first-child,
+  .guide-article .guide-section .guide-rules > .guide-rules-row > span:first-child {
+    font-size: 0.9rem;
+  }
 }
