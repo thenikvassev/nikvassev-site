@@ -57,9 +57,9 @@ export default function HomePage() {
             <p className="nl-benefit-label">For emerging tech</p>
             <h3>Storyline Pros</h3>
             <p className="nl-benefit-body">
-              Transform your emerging tech company&apos;s visibility in AI search
-              with narrative engineering and a verifiable digital footprint that
-              gets you noticed by investors and customers.
+              Storyline Pros is a communications firm that helps disruptive
+              companies become impossible to ignore. We get you in the press and
+              named by AI. GeoView shows you what moved.
             </p>
             <Link href="/ai-visibility">See how it works →</Link>
           </article>
