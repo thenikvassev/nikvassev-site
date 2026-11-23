@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { GuideReveal } from "@/components/GuideReveal";
 import { guideSource as source } from "@/content/guides/signal-based-selling-for-startups.source";
 import { shapeLine } from "@/lib/shape-line";
@@ -14,7 +15,40 @@ type Paragraph = { type: "p"; text: string };
 type Heading = { type: "h2"; text: string };
 type ListBlock = { type: "ul" | "ol"; items: string[] };
 type TableBlock = { type: "table"; headers: string[]; rows: string[][] };
-type Block = Paragraph | Heading | ListBlock | TableBlock;
+type FigureBlock = { type: "figure"; key: string };
+type Block = Paragraph | Heading | ListBlock | TableBlock | FigureBlock;
+
+type FigureSpec = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+  maxWidth?: number;
+};
+
+const FIGURES: Record<string, FigureSpec> = {
+  "buying-signals-gauge": {
+    src: "/photos/guides/signal-based-selling/buying-signals-gauge.webp",
+    alt: "A gauge labeled Buying Signals with low, medium and high zones, the needle pointing at low",
+    width: 500,
+    height: 282,
+    maxWidth: 560,
+  },
+  "pick-one-card": {
+    src: "/photos/guides/signal-based-selling/pick-one-card.jpg",
+    alt: "A person picking the one orange card out of a wall of identical green cards",
+    width: 1600,
+    height: 900,
+  },
+  "basho-emails": {
+    src: "/photos/guides/signal-based-selling/basho-emails.jpg",
+    alt: "Crafting Effective BASHO Emails infographic with eight steps: subject line, opening hook, value proposition, research, personalization, call to action, email body format and signature block",
+    width: 1600,
+    height: 900,
+    caption: "Graphic: GrowMeOrganic",
+  },
+};
 
 function headingId(text: string): string {
   return text
@@ -79,6 +113,11 @@ function parseBlocks(md: string): Block[] {
       i += 1;
       continue;
     }
+    if (line.startsWith("!figure:")) {
+      blocks.push({ type: "figure", key: line.slice(8).trim() });
+      i += 1;
+      continue;
+    }
     if (line.startsWith("## ")) {
       blocks.push({ type: "h2", text: line.slice(3).trim() });
       i += 1;
@@ -117,6 +156,7 @@ function parseBlocks(md: string): Block[] {
       i < lines.length &&
       lines[i].trim() !== "" &&
       !lines[i].startsWith("## ") &&
+      !lines[i].startsWith("!figure:") &&
       !lines[i].startsWith("|") &&
       !lines[i].startsWith("- ") &&
       !/^\d+\.\s/.test(lines[i])
@@ -159,7 +199,61 @@ function renderInlines(text: string): ReactNode[] {
   });
 }
 
+function GuideFacts({ headers, rows }: { headers: string[]; rows: string[][] }) {
+  return (
+    <div className="guide-facts prose-nik">
+      <div className="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              {headers.map((header) => (
+                <th scope="col" key={header}>
+                  {shapeLine(header)}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row[0]}>
+                <td>{shapeLine(row[0])}</td>
+                <td>{shapeLine(row[1] ?? "")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function Figure({ figureKey }: { figureKey: string }) {
+  const fig = FIGURES[figureKey];
+  if (!fig) return null;
+  return (
+    <figure
+      className="guide-figure"
+      style={fig.maxWidth ? { maxWidth: fig.maxWidth } : undefined}
+    >
+      <div className="guide-figure-frame">
+        <Image
+          src={fig.src}
+          alt={fig.alt}
+          width={fig.width}
+          height={fig.height}
+          sizes="100vw"
+          unoptimized
+        />
+      </div>
+      {fig.caption ? <figcaption>{fig.caption}</figcaption> : null}
+    </figure>
+  );
+}
+
 function GuideTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
+  if (headers[0] === "Question" && headers.length === 2) {
+    return <GuideFacts headers={headers} rows={rows} />;
+  }
   if (headers.length >= 3) {
     return (
       <div className="guide-overview" role="table" aria-label={headers.join(", ")}>
@@ -219,6 +313,9 @@ function renderBlock(block: Block, index: number) {
   }
   if (block.type === "table") {
     return <GuideTable key={index} headers={block.headers} rows={block.rows} />;
+  }
+  if (block.type === "figure") {
+    return <Figure key={index} figureKey={block.key} />;
   }
   return null;
 }

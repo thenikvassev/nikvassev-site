@@ -1814,3 +1814,25 @@ ol.guide-tick-list {
     grid-template-columns: 1fr 1.2fr;
   }
 }
+
+/* Signal guide: key facts as a plain two-column table in the site's table style. */
+.guide-section > .guide-facts {
+  max-width: var(--guide-measure);
+  margin: 1.4rem auto 0;
+}
+
+.guide-facts .table-wrap {
+  margin: 0;
+}
+
+.guide-facts table {
+  min-width: 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background: #fbf9f4;
+}
+
+.guide-facts td:first-child {
+  width: 34%;
+}

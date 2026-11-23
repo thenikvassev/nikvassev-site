@@ -197,10 +197,10 @@ export const longGuides: LongGuide[] = [
       "Same-day outreach on a buying signal got a 21.3% reply rate in lemlist data, against 8.1% after a week. How to spot buying signals and reach buyers the week they need you.",
     date: "2026-11-23",
     readingMinutes: 25,
-    // No hero yet: repo default share image until the guide cover is made.
-    cover: "/og/default.jpg",
-    coverAlt: "Nik Vassev, brand strategist for visionary startups",
-    ogImage: "/og/default.jpg",
+    cover: "/photos/guides/guide-signal-based-selling.jpg",
+    coverAlt:
+      "Cream card on a dark green grid titled Signal-Based Selling for Startups, with a Sales tape label",
+    ogImage: "/og/guide-signal-based-selling.jpg",
     href: "/resources/signal-based-selling-for-startups",
     noindex: true,
     toc: [
