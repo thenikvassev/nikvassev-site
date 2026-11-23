@@ -40,6 +40,7 @@ const FIGURES: Record<string, FigureSpec> = {
     alt: "A person picking the one orange card out of a wall of identical green cards",
     width: 1600,
     height: 900,
+    maxWidth: 560,
   },
   "basho-emails": {
     src: "/photos/guides/signal-based-selling/basho-emails.jpg",
@@ -208,7 +209,7 @@ function GuideFacts({ headers, rows }: { headers: string[]; rows: string[][] }) 
             <tr>
               {headers.map((header) => (
                 <th scope="col" key={header}>
-                  {shapeLine(header)}
+                  {header}
                 </th>
               ))}
             </tr>
@@ -216,8 +217,8 @@ function GuideFacts({ headers, rows }: { headers: string[]; rows: string[][] }) 
           <tbody>
             {rows.map((row) => (
               <tr key={row[0]}>
-                <td>{shapeLine(row[0])}</td>
-                <td>{shapeLine(row[1] ?? "")}</td>
+                <td>{row[0]}</td>
+                <td>{row[1] ?? ""}</td>
               </tr>
             ))}
           </tbody>
@@ -251,7 +252,7 @@ function Figure({ figureKey }: { figureKey: string }) {
 }
 
 function GuideTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
-  if (headers[0] === "Question" && headers.length === 2) {
+  if (headers.length === 2) {
     return <GuideFacts headers={headers} rows={rows} />;
   }
   if (headers.length >= 3) {
@@ -260,16 +261,16 @@ function GuideTable({ headers, rows }: { headers: string[]; rows: string[][] }) 
         <div className="guide-overview-head" role="row">
           {headers.map((header) => (
             <span role="columnheader" key={header}>
-              {shapeLine(header)}
+              {header}
             </span>
           ))}
         </div>
         {rows.map((row) => (
           <div className="guide-overview-row" role="row" key={row[0]}>
-            <span role="rowheader">{shapeLine(row[0])}</span>
+            <span role="rowheader">{row[0]}</span>
             {row.slice(1).map((cell, index) => (
               <span role="cell" data-col={headers[index + 1]} key={headers[index + 1]}>
-                {shapeLine(cell)}
+                {cell}
               </span>
             ))}
           </div>
@@ -283,14 +284,14 @@ function GuideTable({ headers, rows }: { headers: string[]; rows: string[][] }) 
       <div className="guide-benefit-head" role="row">
         {headers.map((header) => (
           <span role="columnheader" key={header}>
-            {shapeLine(header)}
+            {header}
           </span>
         ))}
       </div>
       {rows.map((row) => (
         <div className="guide-benefit-row" role="row" key={row[0]}>
-          <span role="rowheader">{shapeLine(row[0])}</span>
-          <span role="cell">{shapeLine(row[1] ?? "")}</span>
+          <span role="rowheader">{row[0]}</span>
+          <span role="cell">{row[1] ?? ""}</span>
         </div>
       ))}
     </div>
