@@ -196,7 +196,7 @@ export const longGuides: LongGuide[] = [
     description:
       "Same-day outreach on a buying signal got a 21.3% reply rate in lemlist data, against 8.1% after a week. How to spot buying signals and reach buyers the week they need you.",
     date: "2026-11-23",
-    readingMinutes: 24,
+    readingMinutes: 25,
     // No hero yet: repo default share image until the guide cover is made.
     cover: "/og/default.jpg",
     coverAlt: "Nik Vassev, brand strategist for visionary startups",
