@@ -184,7 +184,7 @@ export default function AiVisibilityPage() {
             <h3>AI Visibility Boost</h3>
             <p className="nl-benefit-body">
               For pre-seed and seed companies. Ten deliverables over 90 days,
-              $5,000 paid once.
+              $5,000 paid once.
             </p>
           </article>
           <article className="nl-benefit-card">

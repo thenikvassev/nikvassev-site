@@ -141,7 +141,7 @@ export default function NewsletterPage() {
             has built startups that generated tens of millions in revenue,
             including a health tech exit, and helped hundreds of tech startups
             as a brand strategist and growth marketer. He writes for
-            Entrepreneur.com and formerly wrote for Forbes.
+            Entrepreneur.com and formerly wrote for Forbes.
           </p>
         </div>
       </section>
