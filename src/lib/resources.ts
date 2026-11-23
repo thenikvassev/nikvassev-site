@@ -101,6 +101,18 @@ export const guides: Guide[] = [
       "Cream card on a dark green grid titled How to Market to AI Agents, with a 2026 label and a stack of pages",
     imagePulled: true,
   },
+  {
+    slug: "signal-based-selling-for-startups",
+    title: shapeLine(
+      "Signal-Based Selling for Startups: How to Reach Buyers the Week They Need You",
+    ),
+    benefit: shapeLine("Reach buyers the week something changes at their company."),
+    href: "/resources/signal-based-selling-for-startups",
+    image: "/photos/guides/guide-signal-based-selling.jpg",
+    imageAlt:
+      "Cream card on a dark green grid titled Signal-Based Selling for Startups, with a Sales tape label",
+    imagePulled: true,
+  },
 ];
 
 export const blogPosts: BlogPost[] = [

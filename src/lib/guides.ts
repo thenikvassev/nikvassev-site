@@ -202,7 +202,6 @@ export const longGuides: LongGuide[] = [
       "Cream card on a dark green grid titled Signal-Based Selling for Startups, with a Sales tape label",
     ogImage: "/og/guide-signal-based-selling.jpg",
     href: "/resources/signal-based-selling-for-startups",
-    noindex: true,
     toc: [
       {
         id: "signal-based-selling-the-key-facts",

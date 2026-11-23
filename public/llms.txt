@@ -38,4 +38,5 @@ Content hierarchy: AI visibility and winning AI search first; brand strategy and
 - Social: https://twitter.com/nikvassev · https://www.linkedin.com/in/nikvassev · https://www.instagram.com/nikvassev/
 
 ## Writing
+- [Signal-Based Selling for Startups: How to Reach Buyers the Week They Need You](https://nikvassev.com/resources/signal-based-selling-for-startups): How to pick the few buying signals that mean a company needs you now, find them in public, write to what you found, and run each play as a daily routine.
 - [How to get AI to recommend your business over your competitors](https://nikvassev.com/resources/how-to-get-ai-to-recommend-your-business-over-your-competitors): Buyers build an AI shortlist before they reach your site. How to get named, from a niche you can own, to proof, to earned coverage.
