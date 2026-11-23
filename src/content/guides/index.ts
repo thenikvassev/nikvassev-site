@@ -4,6 +4,7 @@ import { GuideBody as salesAgentBody } from "./ai-sales-agent";
 import { GuideBody as brandStrategyBody } from "./build-an-iconic-brand";
 import { GuideBody as distributionEngineBody } from "./distribution-engine";
 import { GuideBody as marketToAgentsBody } from "./market-to-ai-agents";
+import { GuideBody as signalSellingBody } from "./signal-based-selling";
 
 export const guideBodies: Record<string, ComponentType> = {
   "how-to-build-your-ai-agent-workforce": aiAgentsBody,
@@ -13,4 +14,5 @@ export const guideBodies: Record<string, ComponentType> = {
     brandStrategyBody,
   "how-to-configure-an-ai-sales-agent-guide": salesAgentBody,
   "how-to-market-to-ai-agents": marketToAgentsBody,
+  "signal-based-selling-for-startups": signalSellingBody,
 };
